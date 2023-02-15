@@ -36,13 +36,16 @@
 
     --fundoBranco: #F5F5F5;
     --fundoAzul: #95D4CC;
-    --labelForm: #EFEFEF;
+    --fundoLabelForm: #EFEFEF;
 
     --vidroGradient: linear-gradient(242.06deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 46.75%, rgba(255, 255, 255, 0) 98.63%);
     --vidroBorder: 0.5px solid #FFFFFF;
     --vidroShadow: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.25));
 
     --shadowCards: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    
+    --fontSizeText: 1.125em;
+    --fontSizeTitle: 2em;
 }
 ```
 
