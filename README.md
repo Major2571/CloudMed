@@ -47,7 +47,10 @@
 ```
 
 
+```
+<button onclick="goBack()">Go Back</button>
 
-<button onclick="history.go(-1);">
-    <img src="img/voltar.png" alt="">
-</button>
+  function goBack() {
+    window.history.go(-1);
+  }
+```
