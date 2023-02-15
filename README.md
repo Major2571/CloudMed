@@ -48,4 +48,6 @@
 
 
 
-
+<button onclick="history.go(-1);">
+    <img src="img/voltar.png" alt="">
+</button>
