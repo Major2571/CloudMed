@@ -14,5 +14,9 @@
     --shadowCards: 0px 10px 30px rgba(0, 0, 0, 0.25);
 
     --fontSizeText: 1.125em;
-    --fontSizeTitle: 2em;
+    --fontSizeTitle: 1.7em;
+}
+
+* {
+    margin: 0;
 }

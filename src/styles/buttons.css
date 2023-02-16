@@ -1,0 +1,44 @@
+.nav-menu button.btnLogin {
+    padding: 0.75em 2em;
+    font-size: 0.85em;
+    border: 2px solid var(--btnSingIn);
+    border-radius: 100em;
+    color: var(--btnSingIn);
+    transition: all .3s ease-in;
+    cursor: pointer;
+}
+
+.nav-menu button.btnLogin:hover {
+    background-color: var(--btnSingIn);
+    color: white;
+    transition: all .3s ease-in;
+}
+
+
+
+#toTopButton {
+    display: none;
+    position: fixed;
+    bottom: 3.5vh;
+    right: 3.5vh;
+    z-index: 10;
+    outline: none;
+    border: 3px solid var(--titulosEFundoBtn);
+    background-color: #00535b96;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 6vh;
+    height: 6vh;
+    filter: drop-shadow(1px 1px 3px rgba(134, 134, 134, 0.644));
+}
+
+#toTopButton img {
+    width: 100%;
+    align-items: center;
+    filter: brightness(10);
+}
+
+#toTopButton:hover {
+    transition: all .3s ease;
+    background-color: var(--titulosEFundoBtn);
+}
