@@ -43,9 +43,10 @@
     --vidroShadow: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.25));
 
     --shadowCards: 0px 10px 30px rgba(0, 0, 0, 0.25);
-    
-    --fontSizeText: 1.125em;
-    --fontSizeTitle: 2em;
+    --shadowTitle: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+    --fontSizeText: clamp(0.5em, 1em, 1.125em);
+    --fontSizeTitle: clamp(1.2em, 1.7em, 2em);
 }
 ```
 
