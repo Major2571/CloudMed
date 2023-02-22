@@ -1,0 +1,36 @@
+
+/* Main 1st Divider */
+.custom-shape-divider-top-1676559725 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    background: var(--fundoAzul);
+}
+
+.custom-shape-divider-top-1676559725 img {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 100px;
+
+}
+
+/* Main 2nd Divider */
+.custom-shape-divider-top-1676995490 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1676995490 img {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+
+}

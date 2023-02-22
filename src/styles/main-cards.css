@@ -1,16 +1,9 @@
 .section-cards {
     margin: 8em 0 0;
-    text-align: center;
 }
 
 .section-cards h1 {
-    font-size: 2em;
-    font-weight: 700;
-}
-
-.section-cards h2 {
-    color: var(--titulosEFundoBtn);
-    text-shadow: rgb(0, 0, 0, 0.25) -2px 2px 2px;
+    text-align: center;
 }
 
 .container-cards {
@@ -24,12 +17,11 @@
 }
 
 .card {
-    background-color: aliceblue;
+    background-color: #EAF5F4;
     max-width: 45vh;
     padding: 3em 2.2em;
     border-radius: 10px;
     margin: 2em;
-    text-align: left;
     font-size: var(--fontSizeText);
     box-shadow: var(--shadowCards);
 }
@@ -49,33 +41,20 @@
     filter: drop-shadow(-2px 2px 2px rgb(0, 0, 0, 0.25));
 }
 
-
-
-.custom-shape-divider-top-1676995490 {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.custom-shape-divider-top-1676995490 img {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 146px;
-
-}
-
-
 .section-cards-opnion {
     background-color: #f5f5f5;
     margin: 9.1em 0 0;
     text-align: center;
     padding-top: 3%;
+    text-align: center;
 }
 
 .section-cards-opnion .card {
     max-width: 25vh;
+    line-height: 1.5em;
+}
+
+.section-cards-opnion .card i {
+    line-height: 2em;
+    filter: opacity(0.5);
 }

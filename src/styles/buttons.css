@@ -14,6 +14,26 @@
     transition: all .3s ease-in;
 }
 
+.join-us button {
+    background: var(--btnSingIn);
+    padding: 1em 2.3em;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgb(0 0 0 / 25%);
+    text-shadow: var(--shadowTitle);
+    cursor: pointer;
+    font-size: var(--fontSizeText);
+    font-weight: 550;
+    transition: all .3s ease-in;
+}
+
+.join-us button:hover {
+    background: var(--titulosEFundoBtn);
+    transition: all .3s ease-in;
+    box-shadow: 0px 2px 10px rgba(18, 118, 136, 0.733);
+}
+
 
 
 #toTopButton {
