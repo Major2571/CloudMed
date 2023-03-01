@@ -1,5 +1,5 @@
 .section-cards {
-    margin: 8em 0 0;
+    margin: 0 0 12em;
 }
 
 .section-cards h1 {
@@ -12,18 +12,30 @@
     justify-content: center;
     align-items: center;
     flex-flow: wrap row;
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 
 .card {
     background-color: #EAF5F4;
-    max-width: 45vh;
-    padding: 3em 2.2em;
-    border-radius: 10px;
-    margin: 2em;
-    font-size: var(--fontSizeText);
+    max-width: 20vh;
+    max-height: auto;
+    padding: 3.5em 3em;
+    margin: 2.2em;
+    font-size: 1em;
     box-shadow: var(--shadowCards);
+}
+
+.container-cards .card {
+    border-radius: 0;
+    border: 3px solid;
+    border-image: linear-gradient(225deg, rgba(90, 124, 145, 0), #8de6e6c0, rgba(60, 74, 83, 0))1;
+}
+
+.card div p {
+    line-height: 1.5em;
+    margin-top: 1em;
+    font-size: 1.2em;
 }
 
 .img-title {
@@ -36,22 +48,45 @@
 }
 
 .img-title img {
-    max-width: 4em;
+    max-width: 5em;
     margin-right: 1.5em;
-    filter: drop-shadow(-2px 2px 2px rgb(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 2px 3px rgb(0, 0, 0, 0.45));
+}
+
+section.section-opnions {
+    margin-top: 6em;
+    background-color: var(--fundoAzul);
+}
+
+.section-cards-opnion .card img:first-child {
+    position: absolute;
+    top: 1.1em;
+    left: 1.1em;
+    width: 3em;
+}
+
+.section-cards-opnion .card img:nth-child(3) {
+    bottom: 1.1em;
+    right: 2.2em;
+    position: absolute;
+    rotate: 180deg;
+    margin-inline-start: 8em;
+    width: 3em;
 }
 
 .section-cards-opnion {
-    background-color: #f5f5f5;
-    margin: 9.1em 0 0;
+    margin: 5em 0;
     text-align: center;
-    padding-top: 3%;
+    padding-top: 10%;
     text-align: center;
+    font-style: italic;
 }
 
 .section-cards-opnion .card {
     max-width: 25vh;
     line-height: 1.5em;
+    border: none;
+    border-radius: 10px;
 }
 
 .section-cards-opnion .card i {

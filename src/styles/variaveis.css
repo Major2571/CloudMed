@@ -1,26 +1,32 @@
 :root {
     --textos: #505A5B;
-    --titulosEFundoBtn: #00535B;
-    --btnSingIn: #65C5B9;
+    --titulos: #00535B;
+    /* --titulosEFundoBtn */
+    --btnLogin: #4A9B9B;
+    /* --btnSingIn: */
+    --vermelho: #FE6767;
+    --azulClaro: #41C7B7;
 
     --fundoBranco: #F5F5F5;
-    --fundoAzul: #95D4CC;
+    --fundoAzul: #58C2C2;
     --fundoLabelForm: #EFEFEF;
 
     --vidroGradient: linear-gradient(242.06deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 46.75%, rgba(255, 255, 255, 0) 98.63%);
     --vidroBorder: 0.5px solid #FFFFFF;
     --vidroShadow: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.25));
 
-    --shadowCards: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    --shadowCards: 0px 10px 30px rgba(0, 0, 0, 0.2);
     --shadowTitle: 0px 2px 2px rgba(0, 0, 0, 0.25);
 
     --fontSizeText: clamp(0.5em, 1em, 1.125em);
     --fontSizeTitle: clamp(1.2em, 1.7em, 2em);
+
+    --paddingBtn: 0.65em 2.5em;
 }
 
 * {
     margin: 0;
-    font-family: "Poppins","Work Sans",sans-serif;
+    font-family: 'Open Sans';
 }
 
 body::-webkit-scrollbar {
@@ -37,31 +43,29 @@ body::-webkit-scrollbar-thumb {
 }
 
 body {
-    background-color: var(--fundoAzul);
+    background-color: var(--fundoBranco);
 }
 
 p {
     font-size: var(--fontSizeText);
-    color: var(--textos);
     font-weight: 400;
-
 }
 
 h1 {
+    color: #272626;
     text-shadow: var(--shadowTitle);
     font-size: 2em;
     font-weight: 700;
-    color: var(--titulosEFundoBtn);
-    font-weight: 700;
+    line-height: 2em;
 }
 
 h2 {
-    color: var(--titulosEFundoBtn);
+    color: var(--titulos);
     text-shadow: rgb(0, 0, 0, 0.25) -2px 2px 2px;
 }
 
 footer {
-    background-color: var(--titulosEFundoBtn);
+    background-color: var(--titulos);
     display: flex;
     padding: 10em 0 1.2em 0;
     margin-top: -9em;
@@ -77,6 +81,10 @@ footer ul {
     line-height: 2em;
 }
 
-:where(.main-top, div.shape-divider, .join-us) img{
+:where(.main-top, div.shape-divider, .join-us) img {
     filter: drop-shadow(0px 2px 4px rgb(0, 0, 0, 0.15));
+}
+
+:where(.card div, .join-us) p {
+    color: var(--textos);
 }

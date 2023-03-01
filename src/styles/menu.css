@@ -4,7 +4,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--fundoBranco);
     padding: 0 2em;
     font-size: var(--fontSizeText);
 }
@@ -43,19 +42,3 @@
     transform: scaleX(1);
 }
 
-.nav-menu button.btnLogin {
-    font-size: 0.85em;
-    color: white;
-    padding: 0.75em 2em;
-    border: 2px solid var(--btnSingIn);
-    color: var(--btnSingIn);
-    border-radius: 5px;
-    transition: all .3s ease-in;
-    cursor: pointer;
-}
-
-.nav-menu button.btnLogin:hover{
-    background-color: var(--btnSingIn);
-    color: white;
-    transition: all .3s ease-in;
-}
