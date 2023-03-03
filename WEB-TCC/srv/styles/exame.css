@@ -1,0 +1,76 @@
+:root {
+    --textos: #505A5B;
+    --titulos: #00535B; /* --titulosEFundoBtn */
+    --btnLogin: #4A9B9B; /* --btnSingIn: */
+    --vermelho: #FE6767;
+    --azulClaro: #41C7B7;
+
+    --fundoBranco: #F5F5F5;
+    --fundoAzul: #58C2C2;
+    --fundoLabelForm: #EFEFEF;
+
+    --vidroGradient: linear-gradient(242.06deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 46.75%, rgba(255, 255, 255, 0) 98.63%);
+    --vidroBorder: 0.5px solid #FFFFFF;
+    --vidroShadow: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.25));
+
+    --shadowCards: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    --shadowTitle: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+    --fontSizeText: clamp(0.5em, 1em, 1.125em);
+    --fontSizeTitle: clamp(1.2em, 1.7em, 2em);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Sans-serif';
+    border-radius: var(--azulClaro);
+}   
+
+body{
+    background: url(../img/bgPadrao.png);
+    background-size: auto;
+}
+
+.form-cad-new-exam{
+    text-decoration-color: var(--textos);
+    text-align: center;
+    background: #EFEFEF;
+    width: 70%;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 5em;
+  
+}
+
+.continer-input-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.input-box label {
+    width: 80%;
+    padding: 0.7em;
+    text-align: left;
+    display: inline-block;
+}
+
+.input-box {
+    width: 70%;
+}
+
+.input-box input {
+    border: none;
+    width: 80%;
+    padding: 0.5em;
+}
+
+
+@media screen and (max-width: 800px) {
+    .continer-input-box {
+        grid-template-columns: 1fr;
+    }
+}

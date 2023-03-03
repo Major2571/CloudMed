@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/cadastro.css">
+    <link rel="stylesheet" href="styles/variaveis.css">
+    <link rel="stylesheet" href="styles/button.css">
+    <title>Web APP</title>   
+</head>
+
+<body class="session-allow">
+    <div class="form">   
+        <form method="post" action="index.html"><br>
+            <h1> Cadastre-se </h1><br><br>
+
+
+            <div class="continer-iout-box">
+                <div class="input-box"> 
+                    <label for="name"> Nome Completo</label><br><br>
+                    <input type="text" name="name" id="name" required>
+                </div>
+            
+
+                <div class="input-box"> 
+                    <label for="cpf"> CPF </label><br><br>
+                    <input type="text" name="cpf" id="cpf" placeholder="   xxx.xxx.xxx-xx  " required>
+                </div>
+
+                <div class="input-box"> 
+                    <label for="rg"> RG </label><br><br>
+                    <input type="text" name="rg" id="rg" placeholder="   xx.xxx.xxx-x  " required>
+                </div>
+
+                <div class="input-box"> 
+                    <label for="date"> Data de Nascimento </label><br><br>
+                    <input type="text" name="date" id="date" placeholder="   00 / 00 / 0000 " required>
+                </div>
+
+                <div class="input-box"> 
+                    <label for="city"> Cidade </label><br><br>
+                    <input type="text" name="text" id="text" placeholder=" Selecione " required>
+                </div>
+
+                <div class="input-box"> 
+                    <label for="estado"> Estado </label><br><br>
+                    <select>
+                        <option value=""> Selecione </option>
+                        <option value="AC"> Acre </option>
+                        <option value="AL"> Alagoas </option>
+                        <option value="AP"> Amapá </option>
+                        <option value="AM"> Amazonas </option>
+                        <option value="BA"> Bahia </option>
+                        <option value="CE"> Ceará </option>
+                        <option value="DF"> Distrito Federal </option>
+                        <option value="ES"> Espirito Santo </option>
+                        <option value="GO"> Goiás </option>
+                        <option value="MA"> Maranhão </option>
+                        <option value="MS"> Mato Grosso do Sul </option>
+                        <option value="MT"> Mato Grosso </option>
+                        <option value="MG"> Minas Gerais </option>
+                        <option value="PA"> Pará </option>
+                        <option value="PB"> Paraíba </option>
+                        <option value="PR"> Paraná </option>
+                        <option value="PE"> Pernambuco </option>
+                        <option value="PI"> Piauí </option>
+                        <option value="RJ"> Rio de Janeiro </option>
+                        <option value="RN"> Rio Grande do Norte </option>
+                        <option value="RS"> Rio Grande do Sul </option>
+                        <option value="RO"> Rondônia </option>
+                        <option value="RR"> Roraima </option>
+                        <option value="SC"> Santa Catarina </option>
+                        <option value="SP"> São Paulo </option>
+                        <option value="SE"> Sergipe </option>
+                        <option value="TO"> Tocantins </option>
+                    </select>
+                </div>
+
+                <div class="input-box"> 
+                    <label for="sus"> Número do Cartão do Sus </label><br><br>
+                    <input type="text" name="sus" id="sus"  required>
+                </div> <br><br><br>
+
+
+            </div>
+                <div class="button">
+                    <input class="btnCadastrar" type="submit" value=" Cadastre-se "> &nbsp; &nbsp;
+
+                    
+                </div><br><br>
+            
+            
+    </form>
+</body>
+</html>
