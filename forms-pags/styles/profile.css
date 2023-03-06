@@ -1,0 +1,38 @@
+.profile .form {
+    width: 60%;
+}
+
+.info-usuarios-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: 2em auto;
+}
+
+.info-usuarios-grid .input-box {
+    width: 90% !important;
+}
+
+.profile .input-box-sel {
+    margin: 0.6em 0 !important;
+}
+
+.info-clinicas-flex, .autenticar-cart-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin: 1.5em 0;
+}
+
+
+@media (max-width: 1250px) {
+    .info-usuarios-grid {
+        grid-template-columns: 1fr;
+    }
+}
