@@ -126,15 +126,3 @@ form .continer-input-box .input-box label {
     background-color: var(--fundoLabelForm);
     clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 }
-
-
-.cad-new-title {
-    border-bottom: 3px solid;
-    border-image: linear-gradient(225deg, rgba(90, 124, 145, 0), #8de6e6c0, rgba(60, 74, 83, 0))1;
-}
-
-.title-profile {
-    padding-bottom: 0.5em;
-    border-bottom: 3px solid;
-    border-image: linear-gradient(170deg, rgba(90, 124, 145, 0), var(--azulClaro), rgba(60, 74, 83, 0))1;
-}

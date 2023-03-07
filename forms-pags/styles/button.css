@@ -1,5 +1,4 @@
-
-input[type="submit"]:where(.btnCadastrar, .btnSalvar) {
+input[type="submit"]:where(.btnCadastrar, .btnSalvar, .btnAlterar, .btnSair) {
     padding: 0.65em 2.5em;
     font-size: 1em;
     border-radius: 0.4em;
@@ -9,13 +8,33 @@ input[type="submit"]:where(.btnCadastrar, .btnSalvar) {
     transition: all .3s ease-in-out;
     text-shadow: var(--shadowTitle);
     box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.25);
-    background-color: #056972;
     border: none;
 }
 
-input[type="submit"]:where(.btnCadastrar, .btnSalvar):hover{
+input[type="submit"]:where(.btnCadastrar, .btnSalvar):hover {
     transition: all .3s ease-in-out;
+    background-color: #013b41;
+}
+
+.btnCadastrar,
+.btnSalvar {
     background-color: var(--titulos);
+}
+
+.btnAlterar {
+    background-color: #4a9b79;
+}
+
+.btnAlterar:hover {
+    background-color: #0f4e34;
+}
+
+.btnSair {
+    background-color: var(--vermelho);
+}
+
+.btnSair:hover {
+    background-color: #740b0b;
 }
 
 .button {
@@ -23,4 +42,95 @@ input[type="submit"]:where(.btnCadastrar, .btnSalvar):hover{
     display: flex;
     align-items: center;
     justify-content: center;
+
+}
+
+.button input {
+    margin: 0 0.5em;
+}
+
+
+input[type=file]::file-selector-button {
+    margin-right: 1.2em;
+    border: none;
+    background: #4A9B9B;
+    padding: 1em 2em;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    display: none;
+}
+
+input[type=file]::file-selector-button:hover {
+    transition: all .3s ease-in-out;
+    background: #014349;
+}
+
+.drop-container h3 {
+    color: #033b39;
+    text-shadow: var(--shadowTitle);
+}
+
+.drop-container {
+    width: 100%;
+    margin: 2%;
+    position: relative;
+    display: flex;
+    gap: 0.5em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px dashed #505A5B;
+    color: #000000;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.drop-container:hover {
+    background: #dfe2e28c;
+    border-color: #111;
+}
+
+.drop-container:hover .drop-title {
+    color: #000B;
+}
+
+.drop-title {
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+}
+
+
+button.goBack {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 10%;
+    height: 5%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0.6em;
+    transition: left .2s ease-in;
+}
+
+button.goBack img {
+    width: 1.7em;
+    margin-right: 0.2em;
+    rotate: 270deg;
+}
+
+button.goBack:hover {
+    color: #f5f5f5;
+    filter: brightness(10);
+    transition: left .2s ease-in;
 }
