@@ -31,11 +31,13 @@
 ```
 :root {
     --textos: #505A5B;
-    --titulosEFundoBtn: #00535B;
-    --btnSingIn: #65C5B9;
+    --titulos: #00535B; /* --titulosEFundoBtn */
+    --btnLogin: #4A9B9B; /* --btnSingIn: */
+    --vermelho: #FE6767;
+    --azulClaro: #41C7B7;
 
     --fundoBranco: #F5F5F5;
-    --fundoAzul: #95D4CC;
+    --fundoAzul: #58C2C2;
     --fundoLabelForm: #EFEFEF;
 
     --vidroGradient: linear-gradient(242.06deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 46.75%, rgba(255, 255, 255, 0) 98.63%);
@@ -43,9 +45,28 @@
     --vidroShadow: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.25));
 
     --shadowCards: 0px 10px 30px rgba(0, 0, 0, 0.25);
-    
-    --fontSizeText: 1.125em;
-    --fontSizeTitle: 2em;
+    --shadowTitle: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+    --fontSizeText: clamp(0.5em, 1em, 1.125em);
+    --fontSizeTitle: clamp(1.2em, 1.7em, 2em);
+}
+
+* {
+    margin: 0;
+    font-family: 'Open Sans';
+}
+
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #7c7b7b62;
+    border-radius: 10px;
 }
 ```
 
