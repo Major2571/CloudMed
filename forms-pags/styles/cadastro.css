@@ -1,10 +1,9 @@
 .cadastros,
-.form-cad-new-exam {
-    width: 100vw;
-    height: 100vh;
-
+.form-cad-new-exam,
+.login, .card-cad-choice {
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-flow: wrap row;
     justify-content: center;
     align-items: center;
 }
@@ -37,7 +36,7 @@ form .continer-input-box .input-box {
     width: 100%;
 }
 
-form .continer-input-box .input-box input {
+form .input-box input {
     padding: 0.5em 0em 0.5em 5%;
     width: 95%;
     height: 2em;
@@ -49,11 +48,11 @@ form .continer-input-box .input-box input {
     font-size: var(--fontSizeText);
 }
 
-form .continer-input-box .input-box input:focus {
+form .input-box input:focus {
     outline: none;
 }
 
-form .continer-input-box .input-box label {
+form .input-box label {
     color: var(--textos);
     font-weight: 700;
     letter-spacing: 0.8px;
