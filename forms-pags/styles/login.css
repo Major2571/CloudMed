@@ -16,6 +16,11 @@
     padding: 2em;
 }
 
+.form-login h1 {
+    text-align: center;
+
+}
+
 .img-login img {
     width: clamp(15em, 100%, 30em);
 }
@@ -39,7 +44,7 @@
 
 .login .btnLogin:hover {
     background-color: #117c7c;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
     transition: all .3s ease-in-out;
 }
 
@@ -52,4 +57,16 @@
 .login-links a {
     text-decoration: none;
     color: var(--azulClaro);
+}
+
+
+
+
+@media (max-width: 1550px) {
+    .main-login,
+    .main {
+
+        width: auto;
+
+    }
 }

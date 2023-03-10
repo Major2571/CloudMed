@@ -75,4 +75,16 @@
     .autenticar-cart-flex {
         flex-wrap: wrap;
     }
+
+    .main-login,
+    .main {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding: 0em;
+        width: 100%;
+        margin: 10% auto;
+    }
 }
