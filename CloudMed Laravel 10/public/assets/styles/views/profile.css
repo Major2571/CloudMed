@@ -1,0 +1,95 @@
+.profile {
+    width: 100%;
+    margin: 3% 0;
+}
+
+.profile .form {
+    width: 60%;
+    margin: auto;
+}
+
+.info-usuarios-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: 2em auto;
+}
+
+.medico-select-cidade .input-box:first-child {
+    margin-right: 1em;
+}
+
+.medico-select-cidade .input-box.select {
+    margin-right: -1.2em;
+}
+
+.info-usuarios-grid .input-box {
+    width: 90% !important;
+}
+
+.profile .input-box-sel {
+    margin: 0.6em 0 !important;
+}
+
+.info-clinicas-flex,
+.autenticar-cart-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin: 1.5em 0;
+}
+
+.medico-select-cidade {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: nowrap row;
+    width: 90%;
+}
+
+.cad-new-title {
+    border-bottom: 3px solid;
+    border-image: linear-gradient(225deg, rgba(90, 124, 145, 0), #8de6e6c0, rgba(60, 74, 83, 0))1;
+}
+
+.title-profile {
+    color: var(--titulos);
+    text-shadow: rgb(0, 0, 0, 0.25) -2px 2px 2px;
+    font-size: 1.6em;
+    font-weight: 600;
+    line-height: 2em;
+
+    padding-bottom: 0.5em;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(170deg, rgba(90, 124, 145, 0), var(--azulClaro), rgba(60, 74, 83, 0))1;
+}
+
+
+
+@media (max-width: 1250px) {
+    .info-usuarios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .medico-select-cidade,
+    .autenticar-cart-flex {
+        flex-wrap: wrap;
+    }
+
+    .main {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding: 0em;
+        width: 100%;
+        margin: 10% auto;
+    }
+}

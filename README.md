@@ -71,5 +71,10 @@ body::-webkit-scrollbar-thumb {
 ```
 
 
+```
+<button onclick="goBack()">Go Back</button>
 
-
+  function goBack() {
+    window.history.go(-1);
+  }
+```
