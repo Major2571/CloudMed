@@ -1,0 +1,98 @@
+
+.filter {
+    padding: 1em;
+    width: 100%;
+    margin: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-weight: 600;
+
+}
+
+.filter h3 {
+    padding: 1em 0;
+    width: 100%;
+}
+
+.pag-exames-vacinas {
+    margin: auto;
+    width: 70%;
+    height: 100%;
+    padding-top: 5em;
+}
+
+.title-filters {
+    font-size: 1.05em;
+}
+
+.table {
+    max-width: 100%;
+    margin: 2% auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, .15);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+    align-items: center;
+    font-size: clamp(1em, 1vw, 1.5em);
+    color: grey;
+    text-align: left;
+}
+
+thead {
+    font-size: 1em;
+    color: #ffffff;
+    font-style: normal;
+    line-height: 1em;
+    letter-spacing: 0.05em;
+    mix-blend-mode: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+thead tr th {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.4;
+    background-color: var(--vermelho);
+    padding: 1em;
+}
+
+tr td {
+    max-height: 200px;
+    flex-flow: row wrap;
+    padding: 0 20px;
+    padding: 1em;
+}
+
+tr {
+    background-color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #fff1f1;
+}
+
+
+
+
+.cad-new div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: wrap row;
+    width: 20em;
+    padding-top: 1em;
+}
+
+.cad-new a {
+    background-color: var(--azulClaro);
+    padding: 0 1em;
+}
