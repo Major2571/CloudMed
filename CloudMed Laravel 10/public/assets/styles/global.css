@@ -29,6 +29,15 @@
     font-family: 'Open Sans';
 }
 
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--fundoBranco);
+}
+
 body::-webkit-scrollbar,
 select::-webkit-scrollbar {
     width: 0.2em;
@@ -55,12 +64,13 @@ select::-webkit-scrollbar-thumb {
     background-image: url('../img/background/bgLogin.png');
     background-repeat: repeat;
     background-size: contain;
-    height: 100%;
 }
 
-body {
-    background-color: var(--fundoBranco);
+.login .session-allow {
+    height: auto;
 }
+
+
 
 p {
     font-size: var(--fontSizeText);
@@ -95,6 +105,10 @@ footer ul {
     list-style: none;
     color: #f5f5f5;
     line-height: 2em;
+}
+
+footer img {
+    max-width: 10em;
 }
 
 :where(.main-top, div.shape-divider, .join-us) img {

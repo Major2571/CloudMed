@@ -1,4 +1,4 @@
-<header class="menu-main">
+<header class="menu-main menu-main-index">
     <nav>
         <div class="menuHamburger">
             <div class="hamburger">
