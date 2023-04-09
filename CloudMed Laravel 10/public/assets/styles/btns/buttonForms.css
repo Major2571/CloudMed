@@ -42,11 +42,11 @@ input[type="submit"]:where(.btnCadastrar, .btnSalvar):hover {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    flex-flow: row wrap;
 }
 
 .button input {
-    margin: 0 0.5em;
+    margin: .5em;
 }
 
 

@@ -30,10 +30,12 @@
 
 
 <section class="section-cards">
-    <h1>All In One Place!</h1>
+    <div class="cards-title-main">
+        <h1>All In One Place!</h1>
+    </div>
 
     <div class="container-cards">
-        <div class="card">
+        <div class="card first-cards card-1">
             <div class="img-title">
                 <img src="{{url('assets/img/icon/exame.png')}}" alt="">
                 <h2>Lorem</h2>
@@ -44,7 +46,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card first-cards card-2">
             <div class="img-title">
                 <img src="{{url('assets/img/icon/vacinas.png')}}" alt="">
                 <h2>Lorem</h2>
@@ -55,7 +57,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card first-cards card-3">
             <div class="img-title">
                 <img src="{{url('assets/img/icon/doutora.png')}}">
                 <h2>Lorem</h2>
@@ -66,7 +68,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card first-cards card-4">
             <div class="img-title">
                 <img src="{{url('assets/img/icon/receita.png')}}" alt="">
                 <h2>Lorem</h2>

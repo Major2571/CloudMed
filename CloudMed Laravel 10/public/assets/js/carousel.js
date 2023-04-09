@@ -7,7 +7,7 @@ $(document).ready(function () {
         margin: 0,
         nav: false, //botão pra ficar passando < >
         autoplay: true,
-        autoplayTimeout: 3000, //tempo para passar as imagens
+        autoplayTimeout: 2000, //tempo para passar as imagens
         autoplayHoverPause: true, //passar o mouse na imagem faz parar o autoplay
         slideBy: 2, //qts imagens passam por vez
         slideTransition: 'ease-in-out',
@@ -35,4 +35,3 @@ $(document).ready(function () {
     });
 
 });
-

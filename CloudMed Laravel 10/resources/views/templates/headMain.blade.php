@@ -21,13 +21,16 @@
 
 <body>
 
+
+
     @include('templates.menuMain')
 
 
+
     <footer>
-        <h3>
-            LOGO
-        </h3>
+
+        <img src="{{url('assets/img/logo.png')}}" alt="logo">
+
         <ul>
             <li>
                 <h4>Links Rápidos</h4>
@@ -37,6 +40,9 @@
             <li>Politica de Privacidade</li>
         </ul>
     </footer>
+
+
+
 </body>
 
 @include('templates.script')

@@ -5,8 +5,6 @@
 .perfil-paciente-menu .nav-menu {
     background-color: #c9e4e5;
     margin: auto;
-    /* border-bottom: 3px solid;
-    border-image: linear-gradient(120deg, rgba(90, 124, 145, 0), var(--azulClaro), rgba(60, 74, 83, 0)) 1; */
 }
 
 .perfil-paciente-menu ul {
@@ -48,12 +46,13 @@
 .perfil-paciente-menu li a:hover {
     border-image: linear-gradient(80deg, rgba(133, 164, 184, 0), #64cee0, rgba(59, 135, 182, 0))1;
     transform-origin: left;
-        transition-duration: .3s;
-        transition-timing-function: ease-in;
+    transition-duration: .3s;
+    transition-timing-function: ease-in;
 }
 
 .perfil-paciente-menu li a img,
 .cad-new a img {
     max-width: 2em;
     margin: 1em 0.8em 1em 0;
+    transition: all .3s ease-in;
 }

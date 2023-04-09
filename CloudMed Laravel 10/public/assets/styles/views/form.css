@@ -8,14 +8,11 @@
     align-items: center;
 }
 
-.cadastros, .form-cad-new-exam {
-    margin: 2% auto;
-    height: 100%;
-}
 
 
 .form {
     width: 32em;
+    margin: 2% auto;
     padding: 2em;
     background: var(--fundoBranco);
 

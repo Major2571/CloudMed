@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="{{url('assets/styles/global.css')}}">
 <link rel="stylesheet" href="{{url('assets/styles/dividers.css')}}">
 <link rel="stylesheet" href="{{url('assets/styles/tables.css')}}">
+<link rel="stylesheet" href="{{url('assets/styles/loader.css')}}">
 
 <link rel="stylesheet" href="{{url('assets/styles/btns/buttonForms.css')}}">
 <link rel="stylesheet" href="{{url('assets/styles/btns/buttons.css')}}">
