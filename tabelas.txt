@@ -1,0 +1,96 @@
+database name: dbCloudMed
+
+Tables -> Migations Laravel
+
+-> Usuario
+idPaciente ( fk )
+idExame ( fk )
+idVacina  ( fk )
+login: varchar
+senha: varchar
+
+-> Vacina
+idPaciente ( fk )
+idVacina ( pk )
+nome: varchar
+tipoDose: varchar
+data: date
+fabricante: string
+cidade: varchar
+estado: varchar
+
+-> Exame
+idPaciente ( fk )
+idExame ( pk )
+idEspecialidade ( fk )
+nome: varchar
+data: date
+instituicao: varchar
+cidade: varchar
+estado: varchar
+arquivo: varchar
+
+-> Especialidade
+idEspecialidade ( pk )
+nome
+
+-> userPaciente
+idPaciente ( pk )
+idInformaçoesClinica ( fk )
+nome: varchar
+sobrenome: varchar
+data_nascimento: date
+rg: vachar 
+cpf: varchar
+cidade: varchar
+estado: varchar
+email: varchar
+telefone: varchar
+idCartaoSUS ( fk )
+idCartaoConvenio ( fk )
+
+-> pacienteInformaçoesClinicas
+idPaciente  ( fk )
+idInformaçoesClinica ( pk )
+altura: decimal
+peso: decimal
+tipoSanguinio: varchar
+alergias: varchar
+medicamentosUsoContinuo: varchar
+
+-> cartaoSUS
+idCartaoSUS ( pk )
+idPaciente ( fk )
+numero: int
+
+-> cartaoConvenio
+idCartaoConvenio ( pk )
+idPaciente ( fk )
+numero: varchar
+nomeConvenio: varchar
+validade: date
+
+
+
+php artisan make:migration create_usuario_table --create=usuarios
+php artisan make:migration create_vacina_table --create=vacinas
+php artisan make:migration create_exame_table --create=exames
+php artisan make:migration create_especialidade_table --create=especialidades
+php artisan make:migration create_user_paciente_table --create=userPacientes
+php artisan make:migration create_paciente_informacoes_clinicas_table --create=pacienteInformacoesClinicas
+php artisan make:migration create_cartao_sus_table --create=cartoesSus
+php artisan make:migration create_cartao_convenio_table --create=cartoesConvenio
+
+
+php artisan make:controller VacinasController --model=Vacinas --resource
+php artisan make:controller ExamesController --model=Exames --resource
+php artisan make:controller EspecialidadesController --model=Especialidades --resource
+php artisan make:controller UserPacientesController --model=UserPacientes --resource
+php artisan make:controller PacienteInformacoesClinicas --model=PacienteInformacoesClinicas --resource
+php artisan make:controller CartaoSusController --model=CartaoSus --resource
+php artisan make:controller CartaoConvenioController --model=CartaoConvenio --resource
+
+
+
+
+
