@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('nome');
             $table->string('tipoDose');
             $table->date('data');
-
             $table->string('fabricante');
             $table->string('cidade');
             $table->string('estado');
+
             $table->foreign('idPaciente')->references('id')->on('userPaciente')->onDelete('cascade');
 
             $table->timestamps();
