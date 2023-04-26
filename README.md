@@ -7,7 +7,7 @@
 [<img src='https://img.shields.io/badge/figma-0D1117.svg?style=for-the-badge&logo=figma&logoColor=white' align="center">](https://www.figma.com/file/BDAuXVC40VFH11sySz9PUy/WebApp-TCC?node-id=480%3A2&t=bA80zUyv2VS2Tb31-1) [<img src='https://img.shields.io/badge/Google%20Drive-0D1117?style=for-the-badge&logo=googledrive&logoColor=ffffff' align="center">](https://drive.google.com/drive/folders/17wzfiOiRnJDzztO0I-U_HDelMwIw9FkZ?usp=sharing) 
 
 ### Techs
-<div align="center">
+<div>
     <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=e34f26&color=0d1117"/>
     <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=1572b6&color=0d1117"/>
     <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=f7df1e&color=0d1117"/>
