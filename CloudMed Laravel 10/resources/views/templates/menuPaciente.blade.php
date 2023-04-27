@@ -1,4 +1,4 @@
-<header class="perfil-paciente-menu">
+<!-- <header class="perfil-paciente-menu">
     <nav>
         <div class="menuHamburger">
             <div class="hamburger">
@@ -37,6 +37,6 @@
 
         </div>
     </nav>
-</header>
+</header> -->
 
 @yield('contentPaciente')

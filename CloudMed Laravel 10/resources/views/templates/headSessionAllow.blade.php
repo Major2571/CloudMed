@@ -23,9 +23,10 @@
 
 <body>
 
+<x-app-layout>
     @include('templates.menuPaciente')
 
 
     @include('templates.script')
-
+</x-app-layout>
 </html>

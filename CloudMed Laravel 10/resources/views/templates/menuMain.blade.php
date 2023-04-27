@@ -1,5 +1,5 @@
 <header class="menu-main menu-main-index">
-    <nav>
+    <nav class="nav-main">
         <div class="menuHamburger">
             <div class="hamburger">
                 <span class="bar"></span>

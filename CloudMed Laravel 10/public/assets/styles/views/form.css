@@ -1,6 +1,5 @@
 .cadastros,
-.form-cad-new-exam,
-.login {
+.form-cad-new-exam {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -9,7 +8,7 @@
     align-items: center;
 }
 
-.card-cad-choice {
+.card-cad-choice, .login {
     width: 100%;
     display: flex;
     flex-flow: wrap row;
