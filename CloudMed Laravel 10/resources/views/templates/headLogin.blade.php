@@ -21,6 +21,8 @@
     @include('templates.styles')
 
 
+
+
 <body>
     <button onclick="goBack()" class="goBack">
         <img src="https://blog.social.mg.gov.br/wp-content/plugins/photo-gallery/css/bwg-fonts/fonts/bwg-fonts-svg/angle-up-sm.svg" alt="">
@@ -30,5 +32,7 @@
     @yield('contentLogin')
 
     @include('templates.script')
+
+    <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
 
 </html>

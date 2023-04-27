@@ -1,14 +1,21 @@
 .cadastros,
 .form-cad-new-exam,
-.login, .card-cad-choice {
+.login {
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-flow: wrap row;
     justify-content: center;
     align-items: center;
 }
 
-
+.card-cad-choice {
+    width: 100%;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+}
 
 .form {
     width: 32em;

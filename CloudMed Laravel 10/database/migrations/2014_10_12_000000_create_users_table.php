@@ -15,6 +15,25 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email', 100)->unique();
+
+            $table->unsignedBigInteger('idInformacoesClinicas');
+            $table->unsignedBigInteger('idCartaoSUS');
+            $table->unsignedBigInteger('idCartaoConvenio');
+
+            $table->string('sobrenome');
+            $table->date('dataNascimento');
+            $table->string('rg');
+            $table->string('cpf');
+            $table->string('cidade');
+            $table->string('estado');
+            $table->string('telefone');
+
+            $table->foreign('idInformacoesClinicas')->references('id')->on('pacienteInformacoesClinicas')->onDelete('cascade');
+            $table->foreign('idCartaoSUS')->references('id')->on('cartaoSus')->onDelete('cascade');
+            $table->foreign('idCartaoConvenio')->references('id')->on('cartoesConvenio')->onDelete('cascade');
+
+
+
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

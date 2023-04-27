@@ -29,7 +29,7 @@
                 </li>
 
                 <li>
-                    <a href="/perfil"> <img src="{{url('assets/img/iconMenu/perfil.png')}}" alt="">
+                    <a href="/profile"> <img src="{{url('assets/img/iconMenu/perfil.png')}}" alt="">
                         Perfil
                     </a>
                 </li>
