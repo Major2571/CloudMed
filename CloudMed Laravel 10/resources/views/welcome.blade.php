@@ -4,6 +4,6 @@
 
 @section('contentPaciente')
 
-    <h1>In Progress....</h1>
+    <h1>Bem-Vindo(a) {{ Auth::user()->name }}!</h1>
 
 @endsection

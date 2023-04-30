@@ -10,12 +10,12 @@ ScrollReveal().reveal(".blob-maker", {
 });
 
 // Menu do Main
-ScrollReveal().reveal(".menu-main-index", {
-    duration: 1500,
-    origin: "top",
-    distance: "50px",
-    easing: "ease"
-});
+// ScrollReveal().reveal(".menu-main-index", {
+//     duration: 1500,
+//     origin: "top",
+//     distance: "50px",
+//     easing: "ease"
+// });
 
 // Sessão 1
 ScrollReveal().reveal(".section-one", {
