@@ -16,14 +16,17 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="shortcut icon" href="{{url('assets/img/icon-logo.png')}}" type="image/x-icon">
+
     @include('templates.styles')
 
 
 <body>
 
+<x-app-layout>
     @include('templates.menuPaciente')
 
 
     @include('templates.script')
-
+</x-app-layout>
 </html>

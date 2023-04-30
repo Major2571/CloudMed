@@ -1,4 +1,4 @@
-<header class="perfil-paciente-menu">
+<!-- <header class="perfil-paciente-menu">
     <nav>
         <div class="menuHamburger">
             <div class="hamburger">
@@ -29,7 +29,7 @@
                 </li>
 
                 <li>
-                    <a href="/perfil"> <img src="{{url('assets/img/iconMenu/perfil.png')}}" alt="">
+                    <a href="/profile"> <img src="{{url('assets/img/iconMenu/perfil.png')}}" alt="">
                         Perfil
                     </a>
                 </li>
@@ -37,6 +37,6 @@
 
         </div>
     </nav>
-</header>
+</header> -->
 
 @yield('contentPaciente')

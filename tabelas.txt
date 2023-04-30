@@ -86,7 +86,7 @@ php artisan make:controller VacinasController --model=Vacinas --resource
 php artisan make:controller ExamesController --model=Exames --resource
 php artisan make:controller EspecialidadesController --model=Especialidades --resource
 php artisan make:controller UserPacientesController --model=UserPacientes --resource
-php artisan make:controller PacienteInformacoesClinicas --model=PacienteInformacoesClinicas --resource
+php artisan make:controller PacienteInformacoesClinicasController --model=PacienteInformacoesClinicas --resource
 php artisan make:controller CartaoSusController --model=CartaoSus --resource
 php artisan make:controller CartaoConvenioController --model=CartaoConvenio --resource
 

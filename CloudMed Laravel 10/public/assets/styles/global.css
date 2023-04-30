@@ -118,3 +118,10 @@ footer img {
 :where(.card div, .join-us) p {
     color: var(--textos);
 }
+
+.error-innput {
+    color: rgb(214, 79, 79);
+    list-style: none;
+    text-align: center;
+    padding: 3px;
+}
