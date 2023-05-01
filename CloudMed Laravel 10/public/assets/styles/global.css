@@ -80,8 +80,8 @@ p {
 h1 {
     color: #272626;
     text-shadow: var(--shadowTitle);
-    font-size: 2em;
-    font-weight: 700;
+    font-size: 2em !important;
+    font-weight: 700 !important;
     line-height: 2em;
 }
 
