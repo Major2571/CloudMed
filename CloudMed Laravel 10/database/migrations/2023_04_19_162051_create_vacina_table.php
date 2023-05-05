@@ -13,17 +13,17 @@ return new class extends Migration
     {
         Schema::create('vacinas', function (Blueprint $table) {
 
-            $table->id('idVacina');
-            $table->unsignedBigInteger('idPaciente');
-            
-            $table->string('nome');
-            $table->string('tipoDose');
-            $table->date('data');
-            $table->string('fabricante');
-            $table->string('cidade');
-            $table->string('estado');
+            // $table->id('idVacina');
+            // $table->unsignedBigInteger('idPaciente');
+            $table->id();
+            $table->string('titulo')->nullable();
+            $table->string('tipoDose')->nullable();
+            $table->date('data')->nullable();
+            $table->string('fabricante')->nullable();
+            $table->string('cidade')->nullable();
+            $table->string('uf')->nullable();
 
-            $table->foreign('idPaciente')->references('id')->on('userPaciente')->onDelete('cascade');
+            //$table->foreign('idPaciente')->references('id')->on('userPaciente')->onDelete('cascade');
 
             $table->timestamps();
 

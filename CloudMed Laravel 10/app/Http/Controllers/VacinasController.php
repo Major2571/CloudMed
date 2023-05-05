@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vacinas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VacinasController extends Controller
 {
@@ -12,7 +13,9 @@ class VacinasController extends Controller
      */
     public function index()
     {
-        //
+        $vacinas = Vacinas::all();
+
+        return view('vacinas.index')-> with('vacinas', $vacinas);
     }
 
     /**
@@ -20,7 +23,7 @@ class VacinasController extends Controller
      */
     public function create()
     {
-        //
+        return view('vacinas.create');
     }
 
     /**
@@ -28,7 +31,20 @@ class VacinasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $vacina = new Vacinas;
+
+            $vacina->titulo = $request->input('titulo');
+            $vacina->tipoDose = $request->input('tipoDose');
+            $vacina->data = $request->input('data');
+            $vacina->fabricante = $request->input('fabricante');
+            $vacina->cidade = $request->input('cidade');
+            $vacina->UF = $request->input('UF');
+        
+
+              $vacina->save();
+
+              return redirect('/minhas-vacinas');
+
     }
 
     /**
@@ -42,7 +58,7 @@ class VacinasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Vacinas $vacinas)
+    public function edit(Vacinas $vacinas, )
     {
         //
     }
@@ -52,13 +68,13 @@ class VacinasController extends Controller
      */
     public function update(Request $request, Vacinas $vacinas)
     {
-        //
+        //;
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Vacinas $vacinas)
+    public function destroy(Vacinas $vacinas, $id)
     {
         //
     }

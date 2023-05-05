@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Exames;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ExamesController extends Controller
 {
@@ -12,29 +13,43 @@ class ExamesController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $exames = Exames::all();
+        //dd($exames);
 
+        return view('exames.index')-> with('exames', $exames);
+    
+    }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('exames.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request )
     {
-        //
+            $exames = new Exames();
+
+            $exames->titulo = $request->input('Titulo');
+            $exames->especialidade = $request->input('Especialidade');
+            $exames->data = $request->input('Data') ;
+            $exames->instituicao = $request->input('Instituicao');
+            $exames->cidade = $request->input('Cidade');
+            $exames->uf = $request->input('UF');
+        
+            $exames->save();
+
+            return redirect('/meus-exames');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Exames $exames)
+    public function show(Exames $exames, $id)
     {
         //
     }

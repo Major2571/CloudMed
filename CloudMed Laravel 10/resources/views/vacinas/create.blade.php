@@ -1,20 +1,20 @@
-@extends('templates.headSessionAllow')
+<x-layout>
 
-<title> Novo Exame </title>
+    <h1> Cadastrar Vacina </h1>
 
-@section('contentPaciente')
+    <form action="/cad-novo-vacina" method="POST">
+        @csrf
+        <section class="login session-allow">
 
-<section class="login session-allow">
+            <section class="form-cad-new-vacina">
 
-    <section class="form-cad-new-exam">
+                <div class="form">
+                    <form class="cad-new-vacina" method="POST" action="/cad-novo-vacina">
+                        <div class="title">
+                            <h1 class="cad-new-title">Cadastrar Nova Vacina</h1>
+                        </div>
 
-        <div class="form">
-            <form class="cad-new-exam" method="post" action="">
-                <div class="title">
-                    <h1 class="cad-new-title">Cadastrar Novo Exame</h1>
-                </div>
-
-                <div class="continer-input-box">
+                        <div class="continer-input-box">
                     <div class="input-box cad-exame-vacina">
                         <label for="name"> Titulo </label>
                         <input type="text" name="name" id="name" required>
@@ -22,35 +22,29 @@
 
                     <div class="select-data">
                         <div class="input-box select">
-                            <label for="especialidade"> Especialidade</label>
+                            <label for="dose">Tipo de Dose</label>
                             <div class="input-box-sel cad-exame-vacina">
                                 <select>
                                     <option value="">Selecionar</option>
-                                    <option value="Cardiologia">Cardiologia</option>
-                                    <option value="Cirurgia Plástica">Cirurgia Plástica</option>
-                                    <option value="Clinico Geral">Clinico Geral</option>
-                                    <option value="Dermatologia">Dermatologia</option>
-                                    <option value="Endocrinologia">Endocrinologia</option>
-                                    <option value="Ginecologia e Obstetrícia">Ginecologia e Obstetrícia</option>
-                                    <option value="Hematologia">Hematologia</option>
-                                    <option value="Neurologia">Neurologia/option>
-                                    <option value="Oftalmologia">Oftalmologia</option>
-                                    <option value="Ortopedia">Ortopedia</option>
-                                    <option value="Oncologia">Oncologia</option>
-                                    <option value="Pediatria">Pediatria</option>
-                                    <option value="Urologia">Urologia</option>
+                                    <option value="unicaDose">Dose Única</option>
+                                    <option value="primeiraDose">Primeira Dose</option>
+                                    <option value="segundaDose">Segunda Dose</option>
+                                    <option value="terciraDose">Tercira Dose</option>
+                                    <option value="quartaDose">Quarta Dose</option>
                                 </select>
                             </div>
                         </div>
-
+    
                         <div class="input-box cad-exame">
                             <label for="date"> Data que foi realizada </label>
                             <input type="date" name="date" id="date" placeholder=" 00 / 00 / 0000 " required>
                         </div>
                     </div>
 
+
+
                     <div class="input-box cad-exame">
-                        <label for="local"> Instituição </label>
+                        <label for="local"> Fabricante </label>
                         <input type="text" name="local" id="local" required>
                     </div>
 
@@ -61,9 +55,10 @@
                         </div>
 
                         <div class="select">
+                        <label for="uf"> UF</label>
                             <div class="input-box-sel">
                                 <select class="UF">
-                                    <option value=""> UF </option>
+                                    <option value=""> Selecionar </option>
                                     <option value="AC"> Acre </option>
                                     <option value="AL"> Alagoas </option>
                                     <option value="AP"> Amapá </option>
@@ -95,20 +90,25 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!--<div class="input-box cad-exame">
-                        <label for="exame-arquivo"> Arquivo do Exame </label>
-                        <input type="file" name="exame-arquivo" id="exame-arquivo" required>
-                    </div> -->
+                            <!--<div class="input-box cad-exame">
+                                <label for="exame-arquivo"> Arquivo do Exame </label>
+                                <input type="file" name="exame-arquivo" id="exame-arquivo" required>
+                            </div> -->
 
                 </div>
 
-                <div class="button">
-                    <button type="submit" class="text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-cyan-50 font-medium rounded-lg px-7 py-2 text-center mr-2 mb-2" value="Salvar">Salvar</button>
+                        <div class="button">
+                            <button type="submit" class="text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-cyan-50 font-medium rounded-lg px-7 py-2 text-center mr-2 mb-2" value="Salvar">Salvar</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
 
-    </section>
+            </section>
+        </section>
+    </form>
 
-    @endsection
+
+
+</x-layout>

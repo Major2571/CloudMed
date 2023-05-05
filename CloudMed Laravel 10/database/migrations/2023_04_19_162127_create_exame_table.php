@@ -13,22 +13,23 @@ return new class extends Migration
     {
         Schema::create('exames', function (Blueprint $table) {
 
-            $table->id('idExame');
-            $table->unsignedBigInteger('idPaciente');
-            $table->unsignedBigInteger('idEspecialidade');
+           //$table->id('idExame');
+            //$table->unsignedBigInteger('idPaciente');
+            //$table->unsignedBigInteger('idEspecialidade');
+            $table->id();
+            $table->string('titulo', 220)->nullable();
+            $table->string('especialidade', 50)->nullable();
+            $table->date('data')->nullable();
+            $table->string('instituicao', 50)->nullable();
+            $table->string('cidade',50)->nullable();
+            $table->string('uf')->nullable();
+            // //$table->string('nomeArquivo');
 
-            $table->string('nome');
-            $table->date('data');
-            $table->string('instituicao');
-            $table->string('cidade');
-            $table->string('estado');
-            $table->string('nomeArquivo');
-
-            $table->foreign('idPaciente')->references('id')->on('userPaciente')->onDelete('cascade');
-            $table->foreign('idEspecialidade')->references('id')->on('especialidades')->onDelete('cascade');
+           // $table->foreign('idPaciente')->references('id')->on('userPaciente')->onDelete('cascade');
+           //$table->foreign('idEspecialidade')->references('id')->on('especialidades')->onDelete('cascade');
 
             $table->timestamps();
-            
+                
         });
     }
 
