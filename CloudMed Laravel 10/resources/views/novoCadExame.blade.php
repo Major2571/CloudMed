@@ -10,7 +10,9 @@
 
         <div class="form">
             <form class="cad-new-exam" method="post" action="/cad-novo-exame">
+
                 @csrf
+                
                 <div class="title">
                     <h1 class="cad-new-title">Cadastrar Novo Exame</h1>
                 </div>

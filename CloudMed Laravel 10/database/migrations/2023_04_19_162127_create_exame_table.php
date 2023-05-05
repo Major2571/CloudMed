@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('exames', function (Blueprint $table) {
 
-           //$table->id('idExame');
-            //$table->unsignedBigInteger('idPaciente');
-            //$table->unsignedBigInteger('idEspecialidade');
             $table->id();
+
+            $table->integer('id_user')->unsigned()->nullable();
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+
             $table->string('titulo', 220)->nullable();
             $table->string('especialidade', 50)->nullable();
             $table->date('data')->nullable();
@@ -24,9 +25,6 @@ return new class extends Migration
             $table->string('cidade',50)->nullable();
             $table->string('uf')->nullable();
             // //$table->string('nomeArquivo');
-
-           // $table->foreign('idPaciente')->references('id')->on('userPaciente')->onDelete('cascade');
-           //$table->foreign('idEspecialidade')->references('id')->on('especialidades')->onDelete('cascade');
 
             $table->timestamps();
                 

@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('vacinas', function (Blueprint $table) {
 
-            // $table->id('idVacina');
-            // $table->unsignedBigInteger('idPaciente');
             $table->id();
+
+            $table->integer('id_user')->unsigned()->nullable();
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+
             $table->string('titulo')->nullable();
             $table->string('tipoDose')->nullable();
             $table->date('data')->nullable();
@@ -23,7 +25,6 @@ return new class extends Migration
             $table->string('cidade')->nullable();
             $table->string('uf')->nullable();
 
-            //$table->foreign('idPaciente')->references('id')->on('userPaciente')->onDelete('cascade');
 
             $table->timestamps();
 

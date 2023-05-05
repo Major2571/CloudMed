@@ -62,51 +62,6 @@
             </div>
         </div>
 
-
-        <!-- <div class="table">
-            <table>
-
-                <thead>
-                    <tr>
-                        
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>teste</td>
-                        <td>teste</td>
-                        <td>teste</td>
-                        <td>teste</td>
-                        <td>teste</td>
-                    </tr>
-                    <tr>
-                        <td>teste</td>
-                        <td>teste</td>
-                        <td>teste</td>
-                        <td>teste</td>
-                        <td>teste</td>
-                    </tr>
-                    <tr>
-                        <td>teste</td>
-                        <td>teste</td>
-                        <td>teste</td>
-                        <td>teste</td>
-                        <td>teste</td>
-                    </tr>
-                    <tr>
-                        <td>teste</td>
-                        <td>teste</td>
-                        <td>teste</td>
-                        <td>teste</td>
-                        <td>teste</td>
-                    </tr>
-                </tbody>
-
-            </table>
-        </div> -->
-
-
         <div class="tabela relative overflow-x-auto shadow-md sm:rounded-lg m-auto w-auto">
             <table class="w-full text-base text-left text-black dark:text-black">
                 <thead class="text-lg text-white dark:bg-cyan-600 dark:text-white">

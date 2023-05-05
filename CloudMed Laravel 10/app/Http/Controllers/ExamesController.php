@@ -17,7 +17,6 @@ class ExamesController extends Controller
         //dd($exames);
 
         return view('meusExames', compact('exames'));
-    
     }
     /**
      * Show the form for creating a new resource.
@@ -36,7 +35,7 @@ class ExamesController extends Controller
 
             $exames->titulo = $request->input('name');
             $exames->especialidade = $request->input('especialidade');
-            $exames->data = $request->input('date') ;
+            $exames->data = $request->input('date');
             $exames->instituicao = $request->input('local');
             $exames->cidade = $request->input('cidade');
             $exames->uf = $request->input('uf');
