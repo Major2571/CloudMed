@@ -166,47 +166,41 @@
                 </div>
 
 
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-4 button">
                     <x-primary-button>{{ __('Save') }}</x-primary-button>
 
                     @if (session('status') === 'profile-updated')
                     <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)" class="text-sm text-gray-600 dark:text-gray-400">{{ __('Saved.') }}</p>
                     @endif
                 </div>
-
-                <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                    <div class="max-w-xl">
-                        @include('profile.partials.delete-user-form')
-                    </div>
-
-                </div>
-                <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                    <div class="max-w-xl">
-                        @include('profile.partials.update-password-form')
-                    </div>
-                </div>
-
             </form>
+
         </div>
+
+        <div class="form mt-4">
+            <div class="p-4 sm:p-8 sm:rounded-lg">
+                <div class="max-w-xl">
+                    @include('profile.partials.update-password-form')
+                </div>
+            </div>
+        
+            <div class="p-4 sm:p-8 sm:rounded-lg">
+                <div class="max-w-xl">
+                    @include('profile.partials.delete-user-form')
+                </div>
+            </div>
+        </div>
+
     </section>
+
 
     <div class="button">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <button type="submit">Sair</button>
+            <button type="submit" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-2 focus:outline-none focus:ring-red-50 font-medium rounded-lg px-7 py-2 text-center mr-2 mb-2"> Sair </button>
         </form>
     </div>
 
-
-
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-
-
-
-        </div>
-    </div>
 
 </section>
 
