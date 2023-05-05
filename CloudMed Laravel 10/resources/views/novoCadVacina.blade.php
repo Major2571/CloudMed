@@ -9,7 +9,8 @@
     <section class="form-cad-new-exam">
 
         <div class="form">
-            <form class="cad-new-exam" method="post" action="{{ route('dashboard') }}">
+            <form class="cad-new-exam" method="post" action="/cad-novo-vacina">
+            @csrf
                 <div class="title">
                     <h1 class="cad-new-title">Cadastrar Nova Vacina</h1>
                 </div>
@@ -24,7 +25,7 @@
                         <div class="input-box select">
                             <label for="dose">Tipo de Dose</label>
                             <div class="input-box-sel cad-exame-vacina">
-                                <select>
+                                <select name="tipoDose">
                                     <option value="">Selecionar</option>
                                     <option value="unicaDose">Dose Única</option>
                                     <option value="primeiraDose">Primeira Dose</option>
@@ -56,7 +57,7 @@
 
                         <div class="select">
                             <div class="input-box-sel">
-                                <select class="UF">
+                                <select name="uf">
                                     <option value=""> UF </option>
                                     <option value="AC"> Acre </option>
                                     <option value="AL"> Alagoas </option>

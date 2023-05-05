@@ -76,9 +76,9 @@ Route::get('/minhas-vacinas', function () {
 })->middleware(['auth', 'verified'])->name('minhasVacinas');
 
 
-Route::get('/meus-exames', function () {
-    return view('meusExames');
-})->middleware(['auth', 'verified'])->name('meusExames');
+// Route::get('/meus-exames', function () {
+//     return view('meusExames');
+// })->middleware(['auth', 'verified'])->name('meusExames');
 
 Route::get('/novo-cad-exame', function () {
     return view('novoCadExame');
@@ -103,12 +103,12 @@ Route::middleware('auth')->group(function () {
 Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
 ->name('logout');
 
-Route::get('/meus-exames', [ExamesController::class, 'index'])->name('exame.index');
+Route::get('/meus-exames', [ExamesController::class, 'index'])->name('meusExames');
 Route::get('/cad-novo-exame', [ExamesController::class, 'create'])->name('exame.create');
-Route::post('/cad-novo-exame', [ExamesController::class, 'store'])->name('exame.store');
+Route::post('/cad-novo-exame', [ExamesController::class, 'store']);
 
 
-Route::get('/minhas-vacinas', [VacinasController::class, 'index']);
+Route::get('/minhas-vacinas', [VacinasController::class, 'index'])->name('minhasVacinas');
 Route::get('/cad-novo-vacina', [VacinasController::class, 'create']);
 Route::post('/cad-novo-vacina', [VacinasController::class, 'store']);
 

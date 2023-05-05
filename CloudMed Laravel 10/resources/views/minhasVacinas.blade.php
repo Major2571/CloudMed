@@ -97,23 +97,33 @@
                         <th scope="col" class="px-6 py-3">Tipo de Dose</th>
                         <th scope="col" class="px-6 py-3">Data de Aplicação</th>
                         <th scope="col" class="px-6 py-3">Fabricante</th>
+                        <th scope="col" class="px-6 py-3">Cidade</th>
+                        <th scope="col" class="px-6 py-3">UF</th>
                         <th scope="col" class="px-6 py-3 text-center">Editar</th>
                         <th scope="col" class="px-6 py-3 text-center">Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($vacinas as $vacinas)
+
                     <tr class="bg-white border-b dark:bg-gray-50 dark:border-gray-00 hover:bg-gray-100 dark:hover:bg-gray-200">
                         <td scope="row" class="px-6 py-4 font-medium text-black whitespace-wrap dark:text-black">
-                            Covid
+                            {{$vacinas->titulo}}
                         </td>
                         <td class="px-6 py-4">
-                            Unica
+                            {{$vacinas->tipoDose}}
                         </td>
                         <td class="px-6 py-4">
-                            20/09/2021
+                            {{$vacinas->date}}
                         </td>
                         <td class="px-6 py-4">
-                            Johnson
+                            {{$vacinas->fabricante}}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{$vacinas->cidade}}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{$vacinas->uf}}
                         </td>
 
                         <!-- Editar -->
@@ -135,6 +145,7 @@
                                 <span class="sr-only">Icon description</span>
                             </button>
                         </td>
+                        @endforeach
                 </tbody>
             </table>
         </div>

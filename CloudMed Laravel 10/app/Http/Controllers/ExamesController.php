@@ -16,7 +16,7 @@ class ExamesController extends Controller
         $exames = Exames::all();
         //dd($exames);
 
-        return view('exames.index')-> with('exames', $exames);
+        return view('meusExames', compact('exames'));
     
     }
     /**
@@ -24,7 +24,7 @@ class ExamesController extends Controller
      */
     public function create()
     {
-        return view('exames.create');
+        return view('meusExames');
     }
 
     /**
@@ -34,12 +34,12 @@ class ExamesController extends Controller
     {
             $exames = new Exames();
 
-            $exames->titulo = $request->input('Titulo');
-            $exames->especialidade = $request->input('Especialidade');
-            $exames->data = $request->input('Data') ;
-            $exames->instituicao = $request->input('Instituicao');
-            $exames->cidade = $request->input('Cidade');
-            $exames->uf = $request->input('UF');
+            $exames->titulo = $request->input('name');
+            $exames->especialidade = $request->input('especialidade');
+            $exames->data = $request->input('date') ;
+            $exames->instituicao = $request->input('local');
+            $exames->cidade = $request->input('cidade');
+            $exames->uf = $request->input('uf');
         
             $exames->save();
 

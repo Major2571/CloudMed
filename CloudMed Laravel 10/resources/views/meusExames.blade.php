@@ -115,24 +115,33 @@
                         <th scope="col" class="px-6 py-3">Especialidade</th>
                         <th scope="col" class="px-6 py-3">Data</th>
                         <th scope="col" class="px-6 py-3">Instituição</th>
+                        <th scope="col" class="px-6 py-3">Cidade</th>
+                        <th scope="col" class="px-6 py-3">UF</th>
                         <th scope="col" class="px-6 py-3 text-center">Visualizar</th>
                         <th scope="col" class="px-6 py-3 text-center">Editar</th>
                         <th scope="col" class="px-6 py-3 text-center">Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
+                @foreach ($exames as $exames)
                     <tr class="bg-white border-b dark:bg-gray-50 dark:border-gray-00 hover:bg-gray-100 dark:hover:bg-gray-200">
                         <td scope="row" class="px-6 py-4 font-medium text-black whitespace-wrap dark:text-black">
-                            Holter
+                            {{$exames->titulo}}
                         </td>
                         <td class="px-6 py-4">
-                            Cardiologia
+                            {{$exames->especialidade}}
                         </td>
                         <td class="px-6 py-4">
-                            20/03/2019
+                            {{$exames->date}}
                         </td>
                         <td class="px-6 py-4">
-                            SUS
+                            {{$exames->instituicao}}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{$exames->cidade}}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{$exames->uf}}
                         </td>
 
                         <!-- Visualizar -->
@@ -164,6 +173,7 @@
                                 <span class="sr-only">Icon description</span>
                             </button>
                         </td>
+                    @endforeach
                 </tbody>
             </table>
         </div>

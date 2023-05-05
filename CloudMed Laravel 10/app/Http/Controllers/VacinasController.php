@@ -15,7 +15,7 @@ class VacinasController extends Controller
     {
         $vacinas = Vacinas::all();
 
-        return view('vacinas.index')-> with('vacinas', $vacinas);
+        return view('minhasVacinas', compact('vacinas'));
     }
 
     /**
@@ -33,12 +33,12 @@ class VacinasController extends Controller
     {
             $vacina = new Vacinas;
 
-            $vacina->titulo = $request->input('titulo');
+            $vacina->titulo = $request->input('name');
             $vacina->tipoDose = $request->input('tipoDose');
-            $vacina->data = $request->input('data');
-            $vacina->fabricante = $request->input('fabricante');
+            $vacina->data = $request->input('date');
+            $vacina->fabricante = $request->input('local');
             $vacina->cidade = $request->input('cidade');
-            $vacina->UF = $request->input('UF');
+            $vacina->UF = $request->input('uf');
         
 
               $vacina->save();
