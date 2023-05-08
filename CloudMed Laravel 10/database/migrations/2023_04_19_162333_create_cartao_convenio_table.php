@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('cartoesConvenio', function (Blueprint $table) {
 
             $table->id('idCartaoConvenio');
-            $table->unsignedBigInteger('idPaciente');
+
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             
             $table->string('numero');
             $table->string('nomeConvenio');
             $table->date('validade');
-
-            $table->foreign('idPaciente')->references('id')->on('userPacientes')->onDelete('cascade');
 
             $table->timestamps();
 

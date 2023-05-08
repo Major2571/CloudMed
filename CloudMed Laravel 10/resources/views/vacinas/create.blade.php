@@ -1,21 +1,20 @@
-@extends('templates.headSessionAllow')
+<x-layout>
 
-<title> Nova Vacina </title>
+    <h1> Cadastrar Vacina </h1>
 
-@section('contentPaciente')
+    <form action="/cad-novo-vacina" method="POST">
+        @csrf
+        <section class="login session-allow">
 
-<section class="login session-allow">
+            <section class="form-cad-new-vacina">
 
-    <section class="form-cad-new-exam">
+                <div class="form">
+                    <form class="cad-new-vacina" method="POST" action="/cad-novo-vacina">
+                        <div class="title">
+                            <h1 class="cad-new-title">Cadastrar Nova Vacina</h1>
+                        </div>
 
-        <div class="form">
-            <form class="cad-new-exam" method="post" action="/cad-novo-vacina">
-            @csrf
-                <div class="title">
-                    <h1 class="cad-new-title">Cadastrar Nova Vacina</h1>
-                </div>
-
-                <div class="continer-input-box">
+                        <div class="continer-input-box">
                     <div class="input-box cad-exame-vacina">
                         <label for="name"> Titulo </label>
                         <input type="text" name="name" id="name" required>
@@ -25,7 +24,7 @@
                         <div class="input-box select">
                             <label for="dose">Tipo de Dose</label>
                             <div class="input-box-sel cad-exame-vacina">
-                                <select name="tipoDose">
+                                <select>
                                     <option value="">Selecionar</option>
                                     <option value="unicaDose">Dose Única</option>
                                     <option value="primeiraDose">Primeira Dose</option>
@@ -56,9 +55,10 @@
                         </div>
 
                         <div class="select">
+                        <label for="uf"> UF</label>
                             <div class="input-box-sel">
-                                <select name="uf">
-                                    <option value=""> UF </option>
+                                <select class="UF">
+                                    <option value=""> Selecionar </option>
                                     <option value="AC"> Acre </option>
                                     <option value="AL"> Alagoas </option>
                                     <option value="AP"> Amapá </option>
@@ -92,12 +92,23 @@
                     </div>
                 </div>
 
-                <div class="button">
-                    <button type="submit" class="text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-cyan-50 font-medium rounded-lg px-7 py-2 text-center mr-2 mb-2" value="Salvar">Salvar</button>
-                </div>
-            </form>
-        </div>
+                            <!--<div class="input-box cad-exame">
+                                <label for="exame-arquivo"> Arquivo do Exame </label>
+                                <input type="file" name="exame-arquivo" id="exame-arquivo" required>
+                            </div> -->
 
-    </section>
-    
-@endsection
+                </div>
+
+                        <div class="button">
+                            <button type="submit" class="text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-cyan-50 font-medium rounded-lg px-7 py-2 text-center mr-2 mb-2" value="Salvar">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </section>
+        </section>
+    </form>
+
+
+
+</x-layout>

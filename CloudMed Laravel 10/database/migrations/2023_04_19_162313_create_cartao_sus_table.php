@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('cartaoSus', function (Blueprint $table) {
 
             $table->id('idCartaoSUS');
-            $table->unsignedBigInteger('idPaciente');
+            
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
 
             $table->string('numero');
-
-            $table->foreign('idPaciente')->references('id')->on('userPacientes')->onDelete('cascade');
             
             $table->timestamps();
         });

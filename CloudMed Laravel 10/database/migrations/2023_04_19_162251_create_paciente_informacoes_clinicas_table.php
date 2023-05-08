@@ -14,15 +14,15 @@ return new class extends Migration
         Schema::create('pacienteInformacoesClinicas', function (Blueprint $table) {
 
             $table->id('idInformacoesClinicas');
-            $table->unsignedBigInteger('idPaciente');
+
+            // $table->integer('id_user')->unsigned();
+            // $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
 
             $table->string('altura');
             $table->string('peso');
             $table->string('tipoSanguinio');
             $table->string('alergias');
             $table->string('medicamentosUsoContinuo');
-
-            $table->foreign('idPaciente')->references('id')->on('userPacientes')->onDelete('cascade');
             
             $table->timestamps();
 

@@ -100,7 +100,7 @@
                     <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptatem officia distinctio
                         vitae."
                     </p>
-                    <i> Doctor Lorem</i>
+                    <i>Lorem</i>
                 </div>
                 <img src="{{url('assets/img/quotationMark.svg')}}" alt="">
             </div>
