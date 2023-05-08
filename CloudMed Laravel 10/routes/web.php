@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ExamesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VacinasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,17 +71,14 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/minhas-vacinas', function () {
-    return view('minhasVacinas');
-})->middleware(['auth', 'verified'])->name('minhasVacinas');
+// Route::get('/minhas-vacinas', function () {
+//     return view('minhasVacinas');
+// })->middleware(['auth', 'verified'])->name('minhasVacinas');
 
-Route::get('/meus-exames', function () {
-    return view('meusExames');
-})->middleware(['auth', 'verified'])->name('meusExames');
 
-Route::get('/meus-exames', function () {
-    return view('meusExames');
-})->middleware(['auth', 'verified'])->name('meusExames');
+// Route::get('/meus-exames', function () {
+//     return view('meusExames');
+// })->middleware(['auth', 'verified'])->name('meusExames');
 
 Route::get('/novo-cad-exame', function () {
     return view('novoCadExame');
@@ -96,8 +95,21 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
 ->name('logout');
+
+Route::get('/meus-exames', [ExamesController::class, 'index'])->name('meusExames');
+Route::get('/cad-novo-exame', [ExamesController::class, 'create'])->name('exame.create');
+Route::post('/cad-novo-exame', [ExamesController::class, 'store']);
+
+
+Route::get('/minhas-vacinas', [VacinasController::class, 'index'])->name('minhasVacinas');
+Route::get('/cad-novo-vacina', [VacinasController::class, 'create']);
+Route::post('/cad-novo-vacina', [VacinasController::class, 'store']);
+
+
+
 
 
 require __DIR__.'/auth.php';

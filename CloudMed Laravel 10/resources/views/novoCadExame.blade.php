@@ -9,7 +9,10 @@
     <section class="form-cad-new-exam">
 
         <div class="form">
-            <form class="cad-new-exam" method="post" action="">
+            <form class="cad-new-exam" method="post" action="/cad-novo-exame">
+
+                @csrf
+                
                 <div class="title">
                     <h1 class="cad-new-title">Cadastrar Novo Exame</h1>
                 </div>
@@ -24,7 +27,7 @@
                         <div class="input-box select">
                             <label for="especialidade"> Especialidade</label>
                             <div class="input-box-sel cad-exame-vacina">
-                                <select>
+                                <select name="especialidade">
                                     <option value="">Selecionar</option>
                                     <option value="Cardiologia">Cardiologia</option>
                                     <option value="Cirurgia Plástica">Cirurgia Plástica</option>
@@ -62,7 +65,7 @@
 
                         <div class="select">
                             <div class="input-box-sel">
-                                <select class="UF">
+                                <select name="uf">
                                     <option value=""> UF </option>
                                     <option value="AC"> Acre </option>
                                     <option value="AL"> Alagoas </option>
@@ -96,14 +99,15 @@
                         </div>
                     </div>
 
-                    <div class="input-box cad-exame">
+                    <!--<div class="input-box cad-exame">
                         <label for="exame-arquivo"> Arquivo do Exame </label>
                         <input type="file" name="exame-arquivo" id="exame-arquivo" required>
-                    </div>
+                    </div> -->
+
                 </div>
 
                 <div class="button">
-                    <button type="button" class="text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-cyan-50 font-medium rounded-lg px-7 py-2 text-center mr-2 mb-2">Salvar</button>
+                    <button type="submit" class="text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-cyan-50 font-medium rounded-lg px-7 py-2 text-center mr-2 mb-2" value="Salvar">Salvar</button>
                 </div>
             </form>
         </div>
