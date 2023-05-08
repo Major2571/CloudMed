@@ -1,0 +1,17 @@
+
+.join-us div:first-child {
+    padding-top: 5em;
+    margin: auto;
+    text-align: center;
+    line-height: 3vh;
+}
+
+.join-us img {
+    width: clamp( 30%, 50%, 70% );
+}
+
+.join-us p {
+    text-align: center;
+    margin: 1em;
+}
+
