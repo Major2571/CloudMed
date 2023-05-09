@@ -33,6 +33,7 @@ class VacinasController extends Controller
     {
             $vacina = new Vacinas;
 
+            $vacina->id_user = $request->id_user;
             $vacina->titulo = $request->input('name');
             $vacina->tipoDose = $request->input('tipoDose');
             $vacina->data = $request->input('date');

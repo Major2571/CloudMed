@@ -10,6 +10,8 @@ class Vacinas extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
+        'id_user',
         'titulo', 
         'tipoDose', 
         'data', 

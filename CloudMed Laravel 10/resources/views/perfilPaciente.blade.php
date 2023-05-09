@@ -8,7 +8,7 @@
 
     <section class="profile">
         <div class="form">
-            <form method="post" action="">
+            <form method="post" action="/profile" >
                 <div class="continer-input-box">
 
                     <h2 class="title-profile"> Informações do Usuário </h2>
@@ -53,7 +53,7 @@
                         <div class="input-box select">
                             <label for="estado"> Estado </label><br>
                             <div class="input-box-sel">
-                                <select>
+                                <select name="uf">
                                     <option value=""> Selecione </option>
                                     <option value="AC"> Acre </option>
                                     <option value="AL"> Alagoas </option>

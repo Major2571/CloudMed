@@ -2,17 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CartaoSus;
+use App\Models\Exames;
+use App\Models\Vacinas;
+
+use App\Models\Welcome;
 use Illuminate\Http\Request;
 
-class CartaoSusController extends Controller
+class WelcomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $exames = Exames::all();
+        $vacinas = Vacinas::all();
+
+        return view('welcome', compact('exames', 'vacinas'));
     }
 
     /**
@@ -28,18 +34,13 @@ class CartaoSusController extends Controller
      */
     public function store(Request $request)
     {
-            $cartaoSus = new CartaoSus();
-                   
-            $cartaoSus->idCartaoSus = $request->idCartaoSus;
-            $cartaoSus->id_user = $request->id_user;
-            $cartaoSus->numero = $request->input('sus');
- 
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(CartaoSus $cartaoSus)
+    public function show(Welcome $welcome)
     {
         //
     }
@@ -47,7 +48,7 @@ class CartaoSusController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CartaoSus $cartaoSus)
+    public function edit(Welcome $welcome)
     {
         //
     }
@@ -55,7 +56,7 @@ class CartaoSusController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CartaoSus $cartaoSus)
+    public function update(Request $request, Welcome $welcome)
     {
         //
     }
@@ -63,7 +64,7 @@ class CartaoSusController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CartaoSus $cartaoSus)
+    public function destroy(Welcome $welcome)
     {
         //
     }

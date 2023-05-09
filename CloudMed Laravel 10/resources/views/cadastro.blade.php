@@ -10,7 +10,7 @@
 
         <div class="title">
             <h1>Cadastre-se</h1>
-            <p> Let's Craete you account! </p>
+            <p> Let's Create you account! </p>
         </div>
 
         <form method="POST" action="{{ route('register') }}">

@@ -114,7 +114,7 @@
                             {{$vacinas->tipoDose}}
                         </td>
                         <td class="px-6 py-4">
-                            {{$vacinas->date}}
+                            {{date('d/m/y', strtotime($vacinas->date))}}
                         </td>
                         <td class="px-6 py-4">
                             {{$vacinas->fabricante}}
