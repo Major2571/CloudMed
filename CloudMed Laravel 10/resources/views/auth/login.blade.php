@@ -15,16 +15,12 @@
                 @csrf
                 <div class="form-box">
                     <div class="input-box">
-                        <!-- <label for="usuario">CPF/CRN</label>
-                        <input type="text" name="usuario" placeholder="Digite sem pontos"> -->
                         <x-input-label for="email" :value="__('Email')" />
                         <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
                         <x-input-error :messages="$errors->get('email')"/>
                     </div>
 
                     <div class="input-box">
-                        <!-- <label for="senha">Senha</label>
-                        <input type="password" name="senha" placeholder="Senha"> -->
                         <x-input-label for="password" :value="__('Senha')" />
                         <x-text-input id="password" type="password" name="password" required autocomplete="current-password" />
                         <x-input-error :messages="$errors->get('password')"/>

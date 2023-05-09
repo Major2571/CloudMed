@@ -18,10 +18,9 @@
 
     <link rel="shortcut icon" href="{{url('assets/img/icon-logo.png')}}" type="image/x-icon">
 
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     @include('templates.styles')
-
-
-
 
 <body>
     <button onclick="goBack()" class="goBack">
@@ -33,6 +32,5 @@
 
     @include('templates.script')
 
-    <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
 
 </html>

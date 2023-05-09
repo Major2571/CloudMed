@@ -24,7 +24,7 @@
 <body>
 
 <x-app-layout>
-    @include('templates.menuPaciente')
+    @yield('contentPaciente')
 
 
     @include('templates.script')
