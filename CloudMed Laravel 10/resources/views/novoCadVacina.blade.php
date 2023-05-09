@@ -9,54 +9,62 @@
     <section class="form-cad-new-exam">
 
         <div class="form">
-            <form class="cad-new-exam" method="post" action="/cad-novo-vacina">
-            @csrf
-                <div class="title">
-                    <h1 class="cad-new-title">Cadastrar Nova Vacina</h1>
+            <form method="post" action="/cad-novo-vacina">
+
+                @csrf
+
+                <div class="text-center pb-2 cad-new-title">
+                    <h1>Cadastrar uma nova Vacina</h1>
                 </div>
 
-                <div class="continer-input-box">
-                    <div class="input-box cad-exame-vacina">
-                        <label for="name"> Titulo </label>
-                        <input type="text" name="name" id="name" required>
+                <div class="py-4 px-10">
+
+                    <div class="mb-6">
+                        <label for="name" class="block mb-2 font-medium text-gray-900"> Nome da Vacina: </label>
+                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
                     </div>
 
-                    <div class="select-data">
-                        <div class="input-box select">
-                            <label for="dose">Tipo de Dose</label>
-                            <div class="input-box-sel cad-exame-vacina">
-                                <select name="tipoDose">
-                                    <option value="">Selecionar</option>
-                                    <option value="Dose Única">Dose Única</option>
-                                    <option value="Primeira Dose">Primeira Dose</option>
-                                    <option value="Segunda Dose">Segunda Dose</option>
-                                    <option value="Tercira Dose">Tercira Dose</option>
-                                    <option value="Quarta Dose">Quarta Dose</option>
-                                </select>
+                    <div class="grid md:grid-cols-2 md:gap-4">
+                        <div>
+                            <div class="mb-6">
+
+                                <label for="dose" class="block mb-2 font-medium text-gray-900"> Dose: </label>
+                                <div class="relative w-full">
+                                    <select name="tipoDose" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
+                                        <option value="">Selecionar</option>
+                                        <option value="Dose Única">Dose Única</option>
+                                        <option value="Primeira Dose">Primeira Dose</option>
+                                        <option value="Segunda Dose">Segunda Dose</option>
+                                        <option value="Tercira Dose">Tercira Dose</option>
+                                        <option value="Quarta Dose">Quarta Dose</option>
+                                    </select>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="input-box cad-exame">
-                        <label for="date"> Data que foi realizada </label>
-                        <input type="date" name="date" id="date" required>
+
+                        <div class="input-box cad-exame">
+                            <label for="date" class="block mb-2 font-medium text-gray-900"> Data de aplicação: </label>
+                            <input type="date" name="date" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
+                        </div>
                     </div>
 
-                    <div class="input-box cad-exame">
-                        <label for="local"> Fabricante </label>
-                        <input type="text" name="local" id="local" required>
+                    <div class="mb-6">
+                        <label for="local" class="block mb-2 font-medium text-gray-900"> Fabricante: </label>
+                        <input type="text" name="local" id="local" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
                     </div>
 
-                    <div class="crm">
-                        <div class="input-box">
-                            <label for="cidade"> Cidade </label><br>
-                            <input type="text" name="cidade" id="cidade" placeholder=" " required>
+                     <div class="grid md:grid-cols-2 md:gap-4">
+                        <div class="mb-6">
+                            <label for="cidade" class="block mb-2 font-medium text-gray-900"> Cidade: </label>
+                            <input type="text" name="cidade" id="cidade" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
                         </div>
 
-                        <div class="select">
-                            <div class="input-box-sel">
-                                <select name="uf">
-                                    <option value=""> UF </option>
+                        <div class="mb-6">
+                            <div class="relative w-full">
+                                <label for="especialidade" class="block mb-2 font-medium text-gray-900"> UF </label>
+                                <select name="uf" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
+                                    <option value=""> Selecionar </option>
                                     <option value="AC"> AC </option>
                                     <option value="AL"> AL </option>
                                     <option value="AP"> AP </option>
@@ -97,5 +105,5 @@
         </div>
 
     </section>
-    
-@endsection
+
+    @endsection

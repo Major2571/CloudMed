@@ -18,7 +18,24 @@ class WelcomeController extends Controller
         $exames = Exames::all();
         $vacinas = Vacinas::all();
 
-        return view('welcome', compact('exames', 'vacinas'));
+        $ultimoExame = Exames::latest()->first();
+        $totalExames = Exames::count();
+
+        $ultimaVacina = Vacinas::latest()->first();
+        $totalVacinas = Vacinas::count();
+        
+        $isInstituicao = !!$ultimoExame->instituicao;
+        $isFabricante = !!$ultimaVacina->fabricante;
+
+        return view('welcome', compact( 'exames', 
+                                        'vacinas', 
+                                        'ultimoExame', 
+                                        'totalExames',
+                                        'isInstituicao',
+                                        'isFabricante',
+                                        'ultimaVacina',
+                                        'totalVacinas',
+                                    ));
     }
 
     /**

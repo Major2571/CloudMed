@@ -6,19 +6,20 @@
 
 <section class="session-allow">
 
-    <section class="pag-exames-vacinas">
+    <div class="pag-exames-vacinas min-h-screen">
         <div class="title-filters">
-            <div class="title">
+            <div class="mb-10 title">
                 <h1> Meus Exames </h1>
                 <p> Aqui você encontra seus Exames Salvos no no nosso sistema.</p>
             </div>
 
-            <div class="filter">
+            <!-- 
+                <div class="filter">
                 <h3>Filtrar por:</h3>
 
                 <div class="select-data mr-4">
                     <div class="input-box select">
-                        <!-- <label for="especialidades" class="block mb-2 text-sm font-medium text-black dark:text-black">Especialidade</label> -->
+                        <!- <label for="especialidades" class="block mb-2 text-sm font-medium text-black dark:text-black">Especialidade</label> ->
                         <select id="especialidades" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-700 focus:border-cyan-500 block w-full p-2.5">
                             <option value="">Especialidade</option>
                             <option value="Cardiologia">Cardiologia</option>
@@ -38,7 +39,7 @@
                     </div>
                 </div>
 
-                <!-- Input da Data -->
+                <!- Input da Data ->
                 <div class="relative max-w-sm">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -59,12 +60,12 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
         </div>
 
         <div class="tabela relative overflow-x-auto shadow-md sm:rounded-lg m-auto w-auto">
             <table class="w-full text-base text-left text-black dark:text-black">
-                <thead class="text-lg text-white dark:bg-cyan-600 dark:text-white">
+                <thead class="text-md text-white dark:bg-cyan-600 dark:text-white">
                     <tr>
                         <!-- <th scope="col" class="px-6 py-3">ID</th> -->
                         <th scope="col" class="px-6 py-3">Nome</th>
@@ -73,8 +74,8 @@
                         <th scope="col" class="px-6 py-3">Instituição</th>
                         <th scope="col" class="px-6 py-3">Cidade</th>
                         <th scope="col" class="px-6 py-3">UF</th>
-                        <th scope="col" class="px-6 py-3 text-center">Visualizar</th>
-                        <th scope="col" class="px-6 py-3 text-center">Editar</th>
+                        <!-- <th scope="col" class="px-6 py-3 text-center">Visualizar</th>
+                        <th scope="col" class="px-6 py-3 text-center">Editar</th> -->
                         <th scope="col" class="px-6 py-3 text-center">Excluir</th>
                     </tr>
                 </thead>
@@ -104,7 +105,7 @@
                             {{$exames->uf}}
                         </td>
 
-                        <!-- Visualizar -->
+                        <!-- Visualizar
                         <td class="px-6 py-4 text-center">
                             <button type="submit" class="text-gray-500 border border-gray-500 hover:bg-gray-500 hover:text-white focus:ring-2 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2">
                                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
@@ -114,7 +115,7 @@
                             </button>
                         </td>
 
-                        <!-- Editar -->
+                        <-- Editar ->
                         <td class="px-6 py-4 text-center">
                             <button type="button" class="text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white focus:ring-2 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2">
                                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -122,7 +123,7 @@
                                 </svg>
                                 <span class="sr-only">Icon description</span>
                             </button>
-                        </td>
+                        </td> -->
 
                         <!-- Excluir -->
                         <td class="px-6 py-4 text-center">
@@ -140,11 +141,13 @@
             </table>
         </div>
 
-        <div class="cad-new">
-            <p> Gostaria de fazer um novo cadastro de Exame?
+        <div class="py-20">
+            <p class="mr-2 text-lg font-bold mb-5">
+                Gostaria de fazer um novo cadastro de Exame?
             </p>
-            <div>
-                <h3> Clique Aqui: </h3>
+
+            <div class="flex items-center w-1/4">
+                <h3 class="mr-2 text-lg font-semibold"> Clique Aqui: </h3>
                 <a href="/novo-cad-exame">
                     <button type="button" class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-cyan-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
                         Novo Exame
@@ -155,7 +158,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </div>
 
 </section>
 

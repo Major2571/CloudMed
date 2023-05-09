@@ -18,9 +18,9 @@
 
 .card {
     background-color: #EAF5F4;
-    max-width: 20vh;
+    max-width: 35vh;
     max-height: auto;
-    padding: 3.5em 3em;
+    padding: 3em 2.5em;
     margin: 2.2em;
     font-size: 1em;
     box-shadow: var(--shadowCards);
@@ -35,7 +35,6 @@
 .card div p {
     line-height: 1.5em;
     margin-top: 1em;
-    font-size: 1.2em;
 }
 
 .img-title {
@@ -47,8 +46,12 @@
     padding: 10px 0;
 }
 
+.card-2 {
+    height: 222px;
+}
+
 .img-title img {
-    max-width: 5em;
+    max-width: 4em;
     margin-right: 1.5em;
     filter: drop-shadow(0px 2px 3px rgb(0, 0, 0, 0.45));
 }

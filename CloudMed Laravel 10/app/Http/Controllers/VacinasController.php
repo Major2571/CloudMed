@@ -23,7 +23,7 @@ class VacinasController extends Controller
      */
     public function create()
     {
-        return view('vacinas.create');
+        return view('novoCadVacina');
     }
 
     /**
@@ -77,6 +77,8 @@ class VacinasController extends Controller
      */
     public function destroy(Vacinas $vacinas, $id)
     {
-        //
+        $vacinas = new Vacinas();
+        $vacinas->where( 'id', $id )->delete();
+        return redirect('/minhas-vacinas');
     }
 }

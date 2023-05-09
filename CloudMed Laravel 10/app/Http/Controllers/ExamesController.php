@@ -24,7 +24,7 @@ class ExamesController extends Controller
      */
     public function create()
     {
-        return view('meusExames');
+        return view('novoCadExame');
     }
 
     /**

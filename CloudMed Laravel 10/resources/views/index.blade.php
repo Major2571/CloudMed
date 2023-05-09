@@ -32,51 +32,41 @@
     <div class="cards-title-main">
         <h1>All In One Place!</h1>
     </div>
-
+    
     <div class="container-cards">
         <div class="card first-cards card-1">
             <div class="img-title">
-                <img src="{{url('assets/img/icon/exame.png')}}" alt="">
-                <h2>Lorem</h2>
+                <img src="{{url('assets/img/icon/receita.png')}}" alt="">
+                <h2>Perfil</h2>
             </div>
             <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptatem officia distinctio vitae.
+                <p>Na área do perfil do usuário, você pode adicionar e atualizar suas informações clínicas, incluindo histórico médico, medicamentos de uso contínuo, doenças crônicas e alergias.
                 </p>
             </div>
         </div>
 
         <div class="card first-cards card-2">
             <div class="img-title">
-                <img src="{{url('assets/img/icon/vacinas.png')}}" alt="">
-                <h2>Lorem</h2>
+                <img src="{{url('assets/img/icon/exame.png')}}" alt="">
+                <h2>Vacinas</h2>
             </div>
             <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptatem officia distinctio vitae.
+                <p>Adicione e mantenha atualizado seu registro de vacinação, incluindo data da aplicação, dose, tipo de vacina e datas de retorno para reforço.
                 </p>
             </div>
         </div>
 
         <div class="card first-cards card-3">
             <div class="img-title">
-                <img src="{{url('assets/img/icon/doutora.png')}}">
-                <h2>Lorem</h2>
+                <img src="{{url('assets/img/icon/vacinas.png')}}" alt="">
+                <h2>Exames</h2>
             </div>
             <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptatem officia distinctio vitae.
+                <p>Na área de exames, você pode cadastrar o registro de todos os seus exames médicos. Adicione informações como data, tipo de exame, instituição e os resultados, além de anexar uma cópia digital do exame.
                 </p>
             </div>
         </div>
 
-        <div class="card first-cards card-4">
-            <div class="img-title">
-                <img src="{{url('assets/img/icon/receita.png')}}" alt="">
-                <h2>Lorem</h2>
-            </div>
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptatem officia distinctio vitae.
-                </p>
-            </div>
-        </div>
     </div>
 
 </section>
@@ -87,7 +77,7 @@
     </div>
 
     <section class="section-cards-opnion">
-        <h1>Opinions</h1>
+        <h1>Opiniões</h1>
 
         <div class="owl-carousel owl-theme container-cards ">
             <div class="card">
@@ -113,11 +103,11 @@
 <section class="join-us">
     <div>
         <h1>Junte-se a nós!</h1>
-        <p>
+        <p class="w-1/4">
             Imagine poder acessar todas as informações relevantes sobre sua saúde com apenas alguns cliques!  Não perca mais tempo procurando por exames antigos ou informações médicas espalhadas em diferentes lugares. Garantimos a segurança e privacidade das suas informações.  Escolha nossa plataforma e tenha mais controle e organização sobre sua saúde!
 
         </p>
-        <a href="/cadastro">
+        <a href="/register">
             <button class="btnLogin"> Cadastre-se </button>
         </a>
         <div><img src="{{url('assets/img/svg/imgLastSecJoinUs.svg')}}" alt=""></div>
