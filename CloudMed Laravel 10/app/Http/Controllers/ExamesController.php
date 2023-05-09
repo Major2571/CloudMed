@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Exames;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use Illuminate\Console\Scheduling\Event;
 
 class ExamesController extends Controller
 {
@@ -23,7 +24,7 @@ class ExamesController extends Controller
      */
     public function create()
     {
-        return view('meusExames');
+        return view('novoCadExame');
     }
 
     /**
@@ -33,16 +34,22 @@ class ExamesController extends Controller
     {
             $exames = new Exames();
 
+            $exames->id_user = $request->id_user;
             $exames->titulo = $request->input('name');
             $exames->especialidade = $request->input('especialidade');
             $exames->data = $request->input('date');
+            
             $exames->instituicao = $request->input('local');
             $exames->cidade = $request->input('cidade');
             $exames->uf = $request->input('uf');
         
+            $user = auth()->user();
+            $exames->id_user = $user->id;
+
             $exames->save();
 
             return redirect('/meus-exames');
+
     }
 
     /**
@@ -50,7 +57,12 @@ class ExamesController extends Controller
      */
     public function show(Exames $exames, $id)
     {
-        //
+        $exames = Exames::findOrFail($id);
+        
+        // $examesOwner = User::where('id, $exames->id_user')->first()->toArray(); 
+
+        return view('meusExames', compact('exames'));
+
     }
 
     /**
@@ -72,8 +84,18 @@ class ExamesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Exames $exames)
+    public function destroy($id)
     {
-        //
+        $exames = new Exames();
+        $exames->where( 'id', $id )->delete();
+        return redirect('/meus-exames');
+    }
+
+    public function dashboard( ) {
+        $user = auth()->user();
+        
+        $exames = $user->exames;
+
+        return view('welcome', compact('exames'));
     }
 }

@@ -28,7 +28,14 @@ class CartaoConvenioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $cartaoConvenio = new CartaoConvenio();
+                   
+            $cartaoConvenio->idCartaoConvenio = $request->idCartaoConvenio;
+            $cartaoConvenio->id_user = $request->id_user;
+            $cartaoConvenio->numero = $request->input('numConvenio');
+            $cartaoConvenio->nomeConvenio = $request->input('nomeConvenio');
+            $cartaoConvenio->validade = $request->validade;
+        ;
     }
 
     /**

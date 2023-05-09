@@ -9,132 +9,165 @@
     <section class="profile">
         <div class="form">
             <form method="post" action="{{ route('profile.update') }}">
+
                 @csrf
                 @method('patch')
 
-                <div class="continer-input-box">
+                <div class="">
 
-                    <h2 class="title-profile"> Informações do Usuário </h2>
+                    <div class="px-10 py-5">
 
-                    <div class="info-usuarios-grid">
-
-                        <div class="input-box">
-                            <label for="name"> Nome Completo</label><br>
-                            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" autofocus autocomplete="name" />
-                            <x-input-error class="mt-2" :messages="$errors->get('name')" />
+                        <div class="mb-5 title-profile">
+                            <h2> Perfil </h2>
                         </div>
 
-                        <div class="input-box">
-                            <label for="date"> Data de Nascimento </label><br>
-                            <input type="text" name="date" id="date" placeholder="   00 / 00 / 0000 ">
-                        </div>
+                        <div class="grid md:grid-cols-2 md:gap-6">
 
-                        <div class="input-box">
-                            <label for="cpf"> CPF </label><br>
-                            <input type="text" name="cpf" id="cpf" placeholder="   xxx.xxx.xxx-xx  ">
-                        </div>
+                            <div class="">
+                                <x-input-label for="name" :value="__('Nome:')" />
+                                <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" autofocus autocomplete="name" />
+                            </div>
 
-                        <div class="input-box">
-                            <label for="rg"> RG </label><br>
-                            <input type="text" name="rg" id="rg" placeholder="   xx.xxx.xxx-x  ">
-                        </div>
+                            <div class="">
+                                <x-input-label for="date" :value="__('Data de Nascimento:')" />
+                                <x-text-input type="date" name="date" id="date" required />
+                            </div>
 
-                        <div class="input-box">
-                            <label for="emai"> Email </label><br>
-                            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" autocomplete="username" />
-                            <x-input-error class="mt-2" :messages="$errors->get('email')" />
-                        </div>
+                            <div class="">
+                                <x-input-label for="cpf" :value="__('CPF:')" />
+                                <x-text-input type="text" name="cpf" id="cpf" placeholder="   xxx.xxx.xxx-xx  " required />
+                            </div>
 
-                        <div class="input-box">
-                            <label for="number"> Celular </label><br>
-                            <input type="tel" name="number" id="number" placeholder="   (00) 00000-0000  ">
-                        </div>
+                            <div class="">
+                                <x-input-label for="rg" :value="__('RG:')" />
+                                <x-text-input type="text" name="rg" id="rg" placeholder="   xx.xxx.xxx-x  " required />
+                            </div>
 
-                        <div class="input-box">
-                            <label for="city"> Cidade </label><br>
-                            <input type="text" name="text" id="text" placeholder=" Selecione ">
-                        </div>
+                            <div class="">
+                                <x-input-label for="emai" :value="__('Email:')" />
+                                <x-text-input id="email" name="email" type="email" :value="old('email', $user->email)" autocomplete="username" />
+                            </div>
 
-                        <div class="input-box select">
-                            <label for="estado"> Estado </label><br>
-                            <div class="input-box-sel">
-                                <select>
-                                    <option value=""> Selecione </option>
-                                    <option value="AC"> Acre </option>
-                                    <option value="AL"> Alagoas </option>
-                                    <option value="AP"> Amapá </option>
-                                    <option value="AM"> Amazonas </option>
-                                    <option value="BA"> Bahia </option>
-                                    <option value="CE"> Ceará </option>
-                                    <option value="DF"> Distrito Federal </option>
-                                    <option value="ES"> Espirito Santo </option>
-                                    <option value="GO"> Goiás </option>
-                                    <option value="MA"> Maranhão </option>
-                                    <option value="MS"> Mato Grosso do Sul </option>
-                                    <option value="MT"> Mato Grosso </option>
-                                    <option value="MG"> Minas Gerais </option>
-                                    <option value="PA"> Pará </option>
-                                    <option value="PB"> Paraíba </option>
-                                    <option value="PR"> Paraná </option>
-                                    <option value="PE"> Pernambuco </option>
-                                    <option value="PI"> Piauí </option>
-                                    <option value="RJ"> Rio de Janeiro </option>
-                                    <option value="RN"> Rio Grande do Norte </option>
-                                    <option value="RS"> Rio Grande do Sul </option>
-                                    <option value="RO"> Rondônia </option>
-                                    <option value="RR"> Roraima </option>
-                                    <option value="SC"> Santa Catarina </option>
-                                    <option value="SP"> São Paulo </option>
-                                    <option value="SE"> Sergipe </option>
-                                    <option value="TO"> Tocantins </option>
-                                </select>
+                            <div class="">
+                                <x-input-label for="number" :value="__('Celular:')" />
+                                <x-text-input type="tel" name="number" id="number" placeholder="   (00) 00000-0000  " required />
+                            </div>
+
+
+                            <div class="">
+                                <x-input-label for="cidade" :value="__('Cidade:')" />
+                                <x-text-input type="text" name="cidade" id="cidade" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required />
+                            </div>
+
+                            <div class="">
+                                <div class="relative w-full">
+                                    <label for="especialidade" class="block mb-2 font-medium text-gray-900"> UF </label>
+                                    <select name="uf" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
+                                        <option value=""> Selecionar </option>
+                                        <option value="AC"> AC </option>
+                                        <option value="AL"> AL </option>
+                                        <option value="AP"> AP </option>
+                                        <option value="AM"> AM </option>
+                                        <option value="BA"> BA </option>
+                                        <option value="CE"> CE </option>
+                                        <option value="DF"> DF </option>
+                                        <option value="ES"> ES </option>
+                                        <option value="GO"> GO </option>
+                                        <option value="MA"> MA </option>
+                                        <option value="MS"> MS </option>
+                                        <option value="MT"> MT </option>
+                                        <option value="MG"> MG </option>
+                                        <option value="PA"> PA </option>
+                                        <option value="PB"> PB </option>
+                                        <option value="PR"> PR </option>
+                                        <option value="PE"> PE </option>
+                                        <option value="PI"> PI </option>
+                                        <option value="RJ"> RJ </option>
+                                        <option value="RN"> RN </option>
+                                        <option value="RS"> RS </option>
+                                        <option value="RO"> RO </option>
+                                        <option value="RR"> RR </option>
+                                        <option value="SC"> SC </option>
+                                        <option value="SP"> SP </option>
+                                        <option value="SE"> SE </option>
+                                        <option value="TO"> TO </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <x-input-label for="num-convenio" :value="__('Cartão do Convênio:')" />
+                                <x-text-input type="text" name="numConvenio" id="numConvenio" required />
+                            </div>
+
+                            <div class="">
+                                <x-input-label for="nome-convenio" :value="__('Nome do Convênio:')" />
+                                <x-text-input type="text" name="nomeConvenio" id="nomeConvenio" required />
+                            </div>
+
+                            <div class="">
+                                <x-input-label for="num-sus" :value="__('Cartão do Sus:')" />
+                                <x-text-input type="text" name="sus" id="sus" required />
                             </div>
                         </div>
 
-                        <div class="input-box">
-                            <label for="convenio"> Cartão do Convênio </label><br>
-                            <input type="text" name="numConvenio" id="numConvenio">
-                        </div>
-
-                        <div class="input-box">
-                            <label for="convenio"> Nome do Convênio </label><br>
-                            <input type="text" name="nomeConvenio" id="nomeConvenio">
-                        </div>
-
-                        <div class="input-box">
-                            <label for="sus"> Cartão do Sus </label><br>
-                            <input type="text" name="sus" id="sus">
-                        </div>
                     </div>
 
 
-                    <div class="autenticar-carteirinhas">
-                        <h3> Para completar a autenticação, envie a foto da carteirinha: </h3>
-                        <div class="autenticar-cart-flex">
-                            <label for="sus-image" class="drop-container">
+                    <div class="px-10 py-5">
+                        <h3> Para completar a autenticação, envie a foto da sua carteirinha: </h3>
+
+                        <div class="grid md:grid-cols-2 md:gap-6">
+
+                            <div class="mt-5">
                                 <h3> Cartão do SUS:</h3><br>
-                                <span class="drop-title">Escolha seu Arquivo</span>
-                                <input type="file" name="sus_image" id="sus-image" accept="image/*">
-                            </label>
+                                <div class="flex items-center justify-center w-full">
+                                    <label for="sus-image" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
+                                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                            <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                            </svg>
+                                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                        </div>
+                                        <input type="file" id="sus-image" accept="image/*" required class="hidden" />
+                                    </label>
+                                </div>
+                            </div>
 
-                            <label for="conv-image" class="drop-container">
+                            <div class="mt-5">
                                 <h3> Cartão do Convênio:</h3><br>
-                                <span class="drop-title">Escolha seu Arquivo</span>
-                                <input type="file" name="conv-image" id="convenio_image" accept="image/*">
-                            </label>
+                                <div class="flex items-center justify-center w-full">
+                                    <label for="conv-image" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
+                                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                            <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                            </svg>
+                                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                        </div>
+                                        <input type="file" id="conv-image" accept="image/*" required class="hidden" />
+                                    </label>
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
 
 
-                    <div class="info-clinicas">
-                        <h2 class="title-profile"> Informações Clínicas </h2>
+                    <div class="px-10 py-5">
 
-                        <div class="info-clinicas-flex">
-                            <div class="input-box select">
-                                <label for="tipo-sanguinio"> Tipo Sanguínio </label>
-                                <div class="input-box-sel">
-                                    <select>
+                    <div class="mb-5 title-profile">
+                            <h2> Informacões Clínicas </h2>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 md:gap-10">
+
+                            <div class="mb-6">
+                                <div class="relative w-full">
+                                    <label for="tipo-sanguinio" class="block mb-2 font-medium text-gray-900"> Tipo Sanguínio </label>
+                                    <select name="tipo-sanguinio" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
                                         <option value="">Selecione</option>
                                         <option value="O+">O+</option>
                                         <option value="O-">O-</option>
@@ -148,10 +181,10 @@
                                 </div>
                             </div>
 
-                            <div class="input-box">
-                                <label for="tipo"> É doador de orgãos? </label>
-                                <div class="input-box-sel">
-                                    <select>
+                            <div class="mb-6">
+                                <div class="relative w-full">
+                                    <label for="doador" class="block mb-2 font-medium text-gray-900"> É doador de orgãos? </label>
+                                    <select name="doador" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
                                         <option value="">Selecione</option>
                                         <option value="Sim">Sim</option>
                                         <option value="Não">Não</option>
@@ -183,7 +216,7 @@
                     @include('profile.partials.update-password-form')
                 </div>
             </div>
-        
+
             <div class="p-4 sm:p-8 sm:rounded-lg">
                 <div class="max-w-xl">
                     @include('profile.partials.delete-user-form')

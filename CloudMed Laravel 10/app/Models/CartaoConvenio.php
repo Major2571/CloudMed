@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class CartaoConvenio extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+
+        'idCartaoConvenio',
+        'id_user',
+        'numero',
+        'nomeConvenio', 
+        'validade'
+        
+    ];
+
 }

@@ -28,7 +28,12 @@ class CartaoSusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $cartaoSus = new CartaoSus();
+                   
+            $cartaoSus->idCartaoSus = $request->idCartaoSus;
+            $cartaoSus->id_user = $request->id_user;
+            $cartaoSus->numero = $request->input('sus');
+ 
     }
 
     /**

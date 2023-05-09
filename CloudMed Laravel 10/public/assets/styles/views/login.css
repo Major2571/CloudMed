@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,500;1,300;1,400&display=swap');
 
-.main-login,
 .main {
     display: flex;
     justify-content: space-evenly;
@@ -9,10 +8,9 @@
     flex-direction: row;
     padding: 2em;
     width: 60%;
-    margin: 8% 2%;
 }
 
-.form-login {
+/* .form-login {
     width: clamp(35%, 100%, 20em);
     padding: 2em;
 }
@@ -20,9 +18,9 @@
 .form-login .title h1 {
     text-align: center;
     padding: 0.75em;
-}
+} */
 
-.form-box .input-box label {
+/* .form-box .input-box label {
     text-align: left !important;
     font-size: 1em;
     display: block;
@@ -31,7 +29,7 @@
 .form-box .input-box {
     text-align: center;
     padding: 0.5em 0;
-}
+} */
 
 .img-login img {
     width: clamp(15em, 100%, 30em);

@@ -20,7 +20,7 @@ return new class extends Migration
 
             $table->string('altura');
             $table->string('peso');
-            $table->string('tipoSanguinio');
+            $table->string('tipoSanguineo');
             $table->string('alergias');
             $table->string('medicamentosUsoContinuo');
             

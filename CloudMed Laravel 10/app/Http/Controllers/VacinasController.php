@@ -23,7 +23,7 @@ class VacinasController extends Controller
      */
     public function create()
     {
-        return view('vacinas.create');
+        return view('novoCadVacina');
     }
 
     /**
@@ -33,6 +33,7 @@ class VacinasController extends Controller
     {
             $vacina = new Vacinas;
 
+            $vacina->id_user = $request->id_user;
             $vacina->titulo = $request->input('name');
             $vacina->tipoDose = $request->input('tipoDose');
             $vacina->data = $request->input('date');
@@ -76,6 +77,8 @@ class VacinasController extends Controller
      */
     public function destroy(Vacinas $vacinas, $id)
     {
-        //
+        $vacinas = new Vacinas();
+        $vacinas->where( 'id', $id )->delete();
+        return redirect('/minhas-vacinas');
     }
 }

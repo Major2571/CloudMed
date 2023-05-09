@@ -28,7 +28,15 @@ class PacienteInformacoesClinicasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pacienteInformacoesClinicas = new PacienteInformacoesClinicas();
+                   
+        $pacienteInformacoesClinicas->idInformacoesClinicas = $request->idInformacoesClinicas;
+        $pacienteInformacoesClinicas->altura = $request->altura;
+        $pacienteInformacoesClinicas->peso = $request->peso; 
+        $pacienteInformacoesClinicas->tipoSanguineo = $request->tipo;
+        $pacienteInformacoesClinicas->alergias = $request->alergias;
+        $pacienteInformacoesClinicas->medicamentosUsoContinuo = $request->medicamentosUsoContinuo;
+
     }
 
     /**

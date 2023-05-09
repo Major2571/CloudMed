@@ -9,83 +9,89 @@
     <section class="form-cad-new-exam">
 
         <div class="form">
-            <form class="cad-new-exam" method="post" action="/cad-novo-vacina">
-            @csrf
-                <div class="title">
-                    <h1 class="cad-new-title">Cadastrar Nova Vacina</h1>
+            <form method="post" action="/cad-novo-vacina">
+
+                @csrf
+
+                <div class="text-center pb-2 cad-new-title">
+                    <h1>Cadastrar uma nova Vacina</h1>
                 </div>
 
-                <div class="continer-input-box">
-                    <div class="input-box cad-exame-vacina">
-                        <label for="name"> Titulo </label>
-                        <input type="text" name="name" id="name" required>
+                <div class="py-4 px-10">
+
+                    <div class="mb-6">
+                        <label for="name" class="block mb-2 font-medium text-gray-900"> Nome da Vacina: </label>
+                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
                     </div>
 
-                    <div class="select-data">
-                        <div class="input-box select">
-                            <label for="dose">Tipo de Dose</label>
-                            <div class="input-box-sel cad-exame-vacina">
-                                <select name="tipoDose">
-                                    <option value="">Selecionar</option>
-                                    <option value="unicaDose">Dose Única</option>
-                                    <option value="primeiraDose">Primeira Dose</option>
-                                    <option value="segundaDose">Segunda Dose</option>
-                                    <option value="terciraDose">Tercira Dose</option>
-                                    <option value="quartaDose">Quarta Dose</option>
-                                </select>
+                    <div class="grid md:grid-cols-2 md:gap-4">
+                        <div>
+                            <div class="mb-6">
+
+                                <label for="dose" class="block mb-2 font-medium text-gray-900"> Dose: </label>
+                                <div class="relative w-full">
+                                    <select name="tipoDose" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
+                                        <option value="">Selecionar</option>
+                                        <option value="Dose Única">Dose Única</option>
+                                        <option value="Primeira Dose">Primeira Dose</option>
+                                        <option value="Segunda Dose">Segunda Dose</option>
+                                        <option value="Tercira Dose">Tercira Dose</option>
+                                        <option value="Quarta Dose">Quarta Dose</option>
+                                    </select>
+                                </div>
+
                             </div>
                         </div>
-    
+
                         <div class="input-box cad-exame">
-                            <label for="date"> Data que foi realizada </label>
-                            <input type="date" name="date" id="date" placeholder=" 00 / 00 / 0000 " required>
+                            <label for="date" class="block mb-2 font-medium text-gray-900"> Data de aplicação: </label>
+                            <input type="date" name="date" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
                         </div>
                     </div>
 
-
-
-                    <div class="input-box cad-exame">
-                        <label for="local"> Fabricante </label>
-                        <input type="text" name="local" id="local" required>
+                    <div class="mb-6">
+                        <label for="local" class="block mb-2 font-medium text-gray-900"> Fabricante: </label>
+                        <input type="text" name="local" id="local" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
                     </div>
 
-                    <div class="crm">
-                        <div class="input-box">
-                            <label for="cidade"> Cidade </label><br>
-                            <input type="text" name="cidade" id="cidade" placeholder=" " required>
+                     <div class="grid md:grid-cols-2 md:gap-4">
+                        <div class="mb-6">
+                            <label for="cidade" class="block mb-2 font-medium text-gray-900"> Cidade: </label>
+                            <input type="text" name="cidade" id="cidade" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
                         </div>
 
-                        <div class="select">
-                            <div class="input-box-sel">
-                                <select name="uf">
-                                    <option value=""> UF </option>
-                                    <option value="AC"> Acre </option>
-                                    <option value="AL"> Alagoas </option>
-                                    <option value="AP"> Amapá </option>
-                                    <option value="AM"> Amazonas </option>
-                                    <option value="BA"> Bahia </option>
-                                    <option value="CE"> Ceará </option>
-                                    <option value="DF"> Distrito Federal </option>
-                                    <option value="ES"> Espirito Santo </option>
-                                    <option value="GO"> Goiás </option>
-                                    <option value="MA"> Maranhão </option>
-                                    <option value="MS"> Mato Grosso do Sul </option>
-                                    <option value="MT"> Mato Grosso </option>
-                                    <option value="MG"> Minas Gerais </option>
-                                    <option value="PA"> Pará </option>
-                                    <option value="PB"> Paraíba </option>
-                                    <option value="PR"> Paraná </option>
-                                    <option value="PE"> Pernambuco </option>
-                                    <option value="PI"> Piauí </option>
-                                    <option value="RJ"> Rio de Janeiro </option>
-                                    <option value="RN"> Rio Grande do Norte </option>
-                                    <option value="RS"> Rio Grande do Sul </option>
-                                    <option value="RO"> Rondônia </option>
-                                    <option value="RR"> Roraima </option>
-                                    <option value="SC"> Santa Catarina </option>
-                                    <option value="SP"> São Paulo </option>
-                                    <option value="SE"> Sergipe </option>
-                                    <option value="TO"> Tocantins </option>
+                        <div class="mb-6">
+                            <div class="relative w-full">
+                                <label for="especialidade" class="block mb-2 font-medium text-gray-900"> UF </label>
+                                <select name="uf" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
+                                    <option value=""> Selecionar </option>
+                                    <option value="AC"> AC </option>
+                                    <option value="AL"> AL </option>
+                                    <option value="AP"> AP </option>
+                                    <option value="AM"> AM </option>
+                                    <option value="BA"> BA </option>
+                                    <option value="CE"> CE </option>
+                                    <option value="DF"> DF </option>
+                                    <option value="ES"> ES </option>
+                                    <option value="GO"> GO </option>
+                                    <option value="MA"> MA </option>
+                                    <option value="MS"> MS </option>
+                                    <option value="MT"> MT </option>
+                                    <option value="MG"> MG </option>
+                                    <option value="PA"> PA </option>
+                                    <option value="PB"> PB </option>
+                                    <option value="PR"> PR </option>
+                                    <option value="PE"> PE </option>
+                                    <option value="PI"> PI </option>
+                                    <option value="RJ"> RJ </option>
+                                    <option value="RN"> RN </option>
+                                    <option value="RS"> RS </option>
+                                    <option value="RO"> RO </option>
+                                    <option value="RR"> RR </option>
+                                    <option value="SC"> SC </option>
+                                    <option value="SP"> SP </option>
+                                    <option value="SE"> SE </option>
+                                    <option value="TO"> TO </option>
                                 </select>
                             </div>
                         </div>
@@ -99,5 +105,5 @@
         </div>
 
     </section>
-    
-@endsection
+
+    @endsection

@@ -28,7 +28,23 @@ class UserPacientesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $userPacientes = new UserPacientes();
+
+            $userPacientes->id_user = $request->id_user;
+            $userPacientes->tidInformacoesClinicas = $request->idInformacoesClinicas;
+            $userPacientes->idCartaoSus = $request->idCartaoSus;
+            $userPacientes->sobrenome = $request->input('name');
+            $userPacientes->dataNascimento = $request->input('date');
+            $userPacientes->rg = $request->input('rg');
+            $userPacientes->cpf = $request->input('cpf');
+            $userPacientes->cidade = $request->input('cidade');
+            $userPacientes->uf = $request->input('uf');
+            $userPacientes->email = $request->input('email');
+            $userPacientes->telefone = $request->input('number');
+        
+            $userPacientes->save();
+
+            return redirect('/welcome');
     }
 
     /**
