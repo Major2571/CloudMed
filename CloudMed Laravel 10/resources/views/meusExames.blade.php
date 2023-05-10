@@ -8,18 +8,17 @@
 
     <div class="pag-exames-vacinas min-h-screen">
         <div class="title-filters">
-            <div class="mb-10 title">
+            <div class="title">
                 <h1> Meus Exames </h1>
                 <p> Aqui você encontra seus Exames Salvos no no nosso sistema.</p>
             </div>
 
-            <!-- 
                 <div class="filter">
                 <h3>Filtrar por:</h3>
 
                 <div class="select-data mr-4">
                     <div class="input-box select">
-                        <!- <label for="especialidades" class="block mb-2 text-sm font-medium text-black dark:text-black">Especialidade</label> ->
+                        <!-- <label for="especialidades" class="block mb-2 text-sm font-medium text-black dark:text-black">Especialidade</label> -->
                         <select id="especialidades" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-700 focus:border-cyan-500 block w-full p-2.5">
                             <option value="">Especialidade</option>
                             <option value="Cardiologia">Cardiologia</option>
@@ -39,7 +38,7 @@
                     </div>
                 </div>
 
-                <!- Input da Data ->
+                <!-- Input da Data -->
                 <div class="relative max-w-sm">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -60,12 +59,12 @@
                     </div>
                 </div>
 
-            </div> -->
+            </div>
         </div>
 
         <div class="tabela relative overflow-x-auto shadow-md sm:rounded-lg m-auto w-auto">
-            <table class="w-full text-base text-left text-black dark:text-black">
-                <thead class="text-md text-white dark:bg-cyan-600 dark:text-white">
+            <table class="w-full text-base text-left text-black ">
+                <thead class="text-md text-white bg-cyan-600 ">
                     <tr>
                         <!-- <th scope="col" class="px-6 py-3">ID</th> -->
                         <th scope="col" class="px-6 py-3">Nome</th>
@@ -81,12 +80,12 @@
                 </thead>
                 <tbody>
                     @foreach ($exames as $exames)
-                    <tr class="bg-white border-b dark:bg-gray-50 dark:border-gray-00 hover:bg-gray-100 dark:hover:bg-gray-200">
+                    <tr class="bg-gray-50 border-gray-00 hover:bg-gray-100">
                         </td>
                         <!-- <td class="px-6 py-4">
                             {{$exames->id}}
                         </td> -->
-                        <td scope="row" class="px-6 py-4 font-medium text-black whitespace-wrap dark:text-black">
+                        <td scope="row" class="px-6 py-4 font-medium text-black whitespace-wrap ">
                             {{$exames->titulo}}
                         </td>
                         <td class="px-6 py-4">

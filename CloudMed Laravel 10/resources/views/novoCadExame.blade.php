@@ -23,7 +23,9 @@
                         <label for="name" class="block mb-2 font-medium text-gray-900">
                             Título:
                         </label>
-                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
+                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required
+                        placeholder="Ex: Hemograma Completo"
+                        >
                     </div>
 
                     <div class="grid md:grid-cols-2 md:gap-4">
@@ -77,7 +79,9 @@
 
                     <div class="mb-6">
                         <label for="local" class="block mb-2 font-medium text-gray-900"> Instituição: </label>
-                        <input type="text" name="local" id="local" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
+                        <input type="text" name="local" id="local" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required
+                        placeholder="Ex: Santa Casa"
+                        >
                     </div>
 
                     <div class="grid md:grid-cols-2 md:gap-4">

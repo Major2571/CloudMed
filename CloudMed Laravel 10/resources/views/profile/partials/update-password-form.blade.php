@@ -1,11 +1,11 @@
 <section>
     <header>
         <h2 class="text-lg font-medium text-cyan-700">
-            {{ __('Update Password') }}
+            {{ __('Alterar Senha') }}
         </h2>
 
         <p class="mt-1 text-gray-600">
-            {{ __('Ensure your account is using a long, random password to stay secure.') }}
+            {{ __('Atualize sua senha para manter sua conta segura. Certifique-se de usar uma senha longa e aleatória para aumentar a proteção da sua conta.') }}
         </p>
     </header>
 
@@ -32,7 +32,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <x-primary-button>{{ __('Salvar') }}</x-primary-button>
 
             @if (session('status') === 'password-updated')
                 <p
@@ -41,7 +41,7 @@
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
                     class="text-sm text-gray-600 dark:text-gray-400"
-                >{{ __('Saved.') }}</p>
+                >{{ __('Senha alterada com sucesso!') }}</p>
             @endif
         </div>
     </form>

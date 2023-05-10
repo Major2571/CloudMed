@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vacinas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class VacinasController extends Controller
@@ -13,7 +14,8 @@ class VacinasController extends Controller
      */
     public function index()
     {
-        $vacinas = Vacinas::all();
+
+        $vacinas = Vacinas::where('id_user', Auth::user()->id)->get();
 
         return view('minhasVacinas', compact('vacinas'));
     }
@@ -31,21 +33,22 @@ class VacinasController extends Controller
      */
     public function store(Request $request)
     {
-            $vacina = new Vacinas;
+        $vacina = new Vacinas;
 
-            $vacina->id_user = $request->id_user;
-            $vacina->titulo = $request->input('name');
-            $vacina->tipoDose = $request->input('tipoDose');
-            $vacina->data = $request->input('date');
-            $vacina->fabricante = $request->input('local');
-            $vacina->cidade = $request->input('cidade');
-            $vacina->UF = $request->input('uf');
-        
+        $vacina->id_user = $request->id_user;
+        $vacina->titulo = $request->input('name');
+        $vacina->tipoDose = $request->input('tipoDose');
+        $vacina->data = $request->input('date');
+        $vacina->fabricante = $request->input('local');
+        $vacina->cidade = $request->input('cidade');
+        $vacina->UF = $request->input('uf');
 
-              $vacina->save();
+        $user = auth()->user();
+        $vacina->id_user = $user->id;
 
-              return redirect('/minhas-vacinas');
+        $vacina->save();
 
+        return redirect('/minhas-vacinas');
     }
 
     /**
@@ -59,7 +62,7 @@ class VacinasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Vacinas $vacinas, )
+    public function edit(Vacinas $vacinas,)
     {
         //
     }
@@ -78,7 +81,7 @@ class VacinasController extends Controller
     public function destroy(Vacinas $vacinas, $id)
     {
         $vacinas = new Vacinas();
-        $vacinas->where( 'id', $id )->delete();
+        $vacinas->where('id', $id)->delete();
         return redirect('/minhas-vacinas');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Exames;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Console\Scheduling\Event;
 
 class ExamesController extends Controller
@@ -14,8 +15,7 @@ class ExamesController extends Controller
      */
     public function index()
     {
-        $exames = Exames::all();
-        //dd($exames);
+        $exames = Exames::where('id_user', Auth::user()->id)->get();
 
         return view('meusExames', compact('exames'));
     }
