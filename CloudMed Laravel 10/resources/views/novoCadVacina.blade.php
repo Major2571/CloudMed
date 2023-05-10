@@ -21,7 +21,9 @@
 
                     <div class="mb-6">
                         <label for="name" class="block mb-2 font-medium text-gray-900"> Nome da Vacina: </label>
-                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
+                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required
+                        placeholder="Ex: Febre Amarela"
+                        >
                     </div>
 
                     <div class="grid md:grid-cols-2 md:gap-4">
@@ -35,7 +37,7 @@
                                         <option value="Dose Única">Dose Única</option>
                                         <option value="Primeira Dose">Primeira Dose</option>
                                         <option value="Segunda Dose">Segunda Dose</option>
-                                        <option value="Tercira Dose">Tercira Dose</option>
+                                        <option value="Tercira Dose">Terceira Dose</option>
                                         <option value="Quarta Dose">Quarta Dose</option>
                                     </select>
                                 </div>
@@ -51,7 +53,9 @@
 
                     <div class="mb-6">
                         <label for="local" class="block mb-2 font-medium text-gray-900"> Fabricante: </label>
-                        <input type="text" name="local" id="local" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
+                        <input type="text" name="local" id="local" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required
+                        placeholder="Ex: Fiocruz"
+                        >
                     </div>
 
                      <div class="grid md:grid-cols-2 md:gap-4">

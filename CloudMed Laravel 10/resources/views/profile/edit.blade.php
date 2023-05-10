@@ -35,12 +35,12 @@
 
                             <div class="">
                                 <x-input-label for="cpf" :value="__('CPF:')" />
-                                <x-text-input type="text" name="cpf" id="cpf" placeholder="   xxx.xxx.xxx-xx  " required />
+                                <x-text-input type="text" name="cpf" id="cpf" placeholder="000 000 000 00" required />
                             </div>
 
                             <div class="">
                                 <x-input-label for="rg" :value="__('RG:')" />
-                                <x-text-input type="text" name="rg" id="rg" placeholder="   xx.xxx.xxx-x  " required />
+                                <x-text-input type="text" name="rg" id="rg" placeholder="00 000 000 0" required />
                             </div>
 
                             <div class="">
@@ -97,7 +97,8 @@
 
                             <div class="">
                                 <x-input-label for="num-convenio" :value="__('Cartão do Convênio:')" />
-                                <x-text-input type="text" name="numConvenio" id="numConvenio" required />
+                                <x-text-input type="text" name="numConvenio" id="numConvenio" 
+                                required />
                             </div>
 
                             <div class="">
@@ -107,7 +108,9 @@
 
                             <div class="">
                                 <x-input-label for="num-sus" :value="__('Cartão do Sus:')" />
-                                <x-text-input type="text" name="sus" id="sus" required />
+                                <x-text-input type="text" name="sus" id="sus" required 
+                                placeholder="00000000000 0000 0" 
+                                />
                             </div>
                         </div>
 
@@ -200,10 +203,10 @@
 
 
                 <div class="flex items-center gap-4 button">
-                    <x-primary-button>{{ __('Save') }}</x-primary-button>
+                    <x-primary-button>{{ __('Salvar') }}</x-primary-button>
 
                     @if (session('status') === 'profile-updated')
-                    <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)" class="text-sm text-gray-600 dark:text-gray-400">{{ __('Saved.') }}</p>
+                    <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)" class="text-sm text-gray-600 dark:text-gray-400">{{ __('Salvo.') }}</p>
                     @endif
                 </div>
             </form>
