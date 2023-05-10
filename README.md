@@ -13,10 +13,67 @@
     <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=f7df1e&color=0d1117"/>
     <img src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=777bb4&color=0d1117"/>
     <img src="https://img.shields.io/badge/laravel-0D1117.svg?style=for-the-badge&logo=laravel&logoColor=23FF2D20&labelColor=0D1117"/>
+    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=38bcf6&color=0D1117"/>
     <img src="https://img.shields.io/badge/mysql-0D1117.svg?style=for-the-badge&logo=mysql&logoColor=white&labelColor=0D1117"/>
 </div>
 
-### Version
-- PHP 8.1.x 
-- [Composer](https://getcomposer.org/download/) 2.5.x
-- [Laravel](https://laravel.com/docs/10.x/configuration) 10.4.x
+## Requisitos e Versões:
+
+|                |  Version                       |
+|----------------|-------------------------------|
+|PHP |    8.1.x         |
+|[Composer](https://getcomposer.org/download/) |     2.5.x    |
+|[Laravel](https://laravel.com/docs/10.x/configuration)|     10.4.x     |
+|[Node](https://nodejs.org/en) |     18.x     |
+|WampServer| |
+
+
+</br>
+
+## Rodando localmente
+
+Clone o projeto
+
+```bash
+  git clone https://github.com/Major2571/WebApp-TCC.git
+```
+
+Entre no diretório do projeto
+
+```bash
+  cd WebApp-TCC/CloudMed\ Laravel\ 10/
+
+```
+
+Instale as dependências
+
+```bash
+  composer install
+```
+```bash
+  npm install
+```
+
+#### Antes de seguir para o próximo passo:
+- Crie um banco de dados chamado ` dbCloudMed `
+- Copie e cole o arquivo  `.env.exemple `
+- Renomeie a cópia para  `.env `
+
+Gere uma chave
+```bash
+    php artisan key:generate
+```
+
+Rode as Migrations
+```bash
+    php artisan migrate
+```
+
+E por fim, inicie o servidor
+```bash
+  php artisan serve
+```
+```bash
+  npm run dev
+```
+
