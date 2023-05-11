@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NomeVacinas;
+use App\Models\UFs;
 use App\Models\Vacinas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,29 +16,38 @@ class VacinasController extends Controller
      */
     public function index(Request $request)
     {
+        $nomeVacinas = NomeVacinas::all();
+
         $filtroNome = $request->input('filtroNome');
         $filtroTipoDose = $request->input('filtroTipoDose');
-    
+
         $query = Vacinas::where('id_user', Auth::user()->id);
-    
+
         if ($filtroNome) {
-            $query->where('titulo', 'LIKE', '%' . $filtroNome . '%');
+            $query->where('id_vacina', $filtroNome);
         }
-    
+
         if ($filtroTipoDose) {
             $query->where('tipoDose', $filtroTipoDose);
         }
-    
+
         $vacinas = $query->get();
-    
-        return view('minhasVacinas', compact('vacinas', 'filtroNome', 'filtroTipoDose'));
+
+        return view('minhasVacinas', compact('vacinas',
+                                             'filtroNome',
+                                             'filtroTipoDose',
+                                             'nomeVacinas'
+                                            ));
     }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('novoCadVacina');
+        $nomeVacinas = NomeVacinas::all();
+        $uf = UFs::all();
+
+        return view('novoCadVacina', compact('uf', 'nomeVacinas'));
     }
 
     /**
@@ -47,12 +58,13 @@ class VacinasController extends Controller
         $vacina = new Vacinas;
 
         $vacina->id_user = $request->id_user;
-        $vacina->titulo = $request->input('name');
+        $vacina->id_vacina = $request->input('name');
+        $vacina->id_uf = $request->input('uf');
+        $vacina->titulo = $request->input('newNomeVacina');
         $vacina->tipoDose = $request->input('tipoDose');
         $vacina->data = $request->input('date');
         $vacina->fabricante = $request->input('local');
         $vacina->cidade = $request->input('cidade');
-        $vacina->UF = $request->input('uf');
 
         $user = auth()->user();
         $vacina->id_user = $user->id;

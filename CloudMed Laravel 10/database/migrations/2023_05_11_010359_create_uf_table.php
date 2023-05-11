@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('uf', function (Blueprint $table) {
             $table->id();
+            $table->string('estado');
             $table->string('uf');
             $table->timestamps();
         });

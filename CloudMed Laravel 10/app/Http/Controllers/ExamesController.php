@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exames;
+use App\Models\Especialidade;
+use App\Models\UFs;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -15,6 +17,8 @@ class ExamesController extends Controller
      */
     public function index(Request $request)
     {
+        $especialidades = Especialidade::all();
+
         $userId = Auth::user()->id;
         $exames = Exames::where('id_user', $userId);
 
@@ -25,44 +29,44 @@ class ExamesController extends Controller
 
         $filtroEspecialidade = $request->input('filtroEspecialidade');
         if ($filtroEspecialidade) {
-            $exames->where('especialidade', $filtroEspecialidade);
+            $exames->where('id', $filtroEspecialidade);
         }
 
         $exames = $exames->get();
 
-        return view('meusExames', compact('exames', 'filtroData', 'filtroEspecialidade'));
+        return view('meusExames', compact('exames', 'filtroData', 'filtroEspecialidade', 'especialidades'));
     }
-    /**
-     * Show the form for creating a new resource.
-     */
+
+
     public function create()
     {
-        return view('novoCadExame');
+        $especialidades = Especialidade::all();
+        $uf = UFs::all();
+
+        return view('novoCadExame', compact('especialidades', 'uf'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request )
+    public function store(Request $request)
     {
-            $exames = new Exames();
+        $exames = new Exames();
 
-            $exames->id_user = $request->id_user;
-            $exames->titulo = $request->input('name');
-            $exames->especialidade = $request->input('especialidade');
-            $exames->data = $request->input('date');
-            
-            $exames->instituicao = $request->input('local');
-            $exames->cidade = $request->input('cidade');
-            $exames->uf = $request->input('uf');
-        
-            $user = auth()->user();
-            $exames->id_user = $user->id;
+        $exames->id_user = $request->id_user;
+        $exames->id_especialidade = $request->input('especialidade');
+        $exames->id_uf = $request->input('uf');
+        $exames->titulo = $request->input('name');
+        $exames->data = $request->input('date');
+        $exames->instituicao = $request->input('local');
+        $exames->cidade = $request->input('cidade');
 
-            $exames->save();
+        $user = auth()->user();
+        $exames->id_user = $user->id;
 
-            return redirect('/meus-exames');
+        $exames->save();
 
+        return redirect('/meus-exames');
     }
 
     /**
@@ -70,12 +74,9 @@ class ExamesController extends Controller
      */
     public function show(Exames $exames, $id)
     {
-        $exames = Exames::findOrFail($id);
-        
-        // $examesOwner = User::where('id, $exames->id_user')->first()->toArray(); 
+        $exame = Exames::find($id);
 
-        return view('meusExames', compact('exames'));
-
+        return view('/meus-exames', compact('exame'));
     }
 
     /**
@@ -100,13 +101,14 @@ class ExamesController extends Controller
     public function destroy($id)
     {
         $exames = new Exames();
-        $exames->where( 'id', $id )->delete();
+        $exames->where('id', $id)->delete();
         return redirect('/meus-exames');
     }
 
-    public function dashboard( ) {
+    public function dashboard()
+    {
         $user = auth()->user();
-        
+
         $exames = $user->exames;
 
         return view('welcome', compact('exames'));

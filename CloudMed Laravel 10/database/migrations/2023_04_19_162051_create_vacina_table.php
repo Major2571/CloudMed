@@ -21,13 +21,14 @@ return new class extends Migration
             $table->integer('id_vacina')->unsigned()->nullable();
             $table->foreign('id_vacina')->references('id')->on('tipos-vacinas')->onDelete('cascade');
 
+            $table->integer('id_uf')->unsigned()->nullable();
+            $table->foreign('id_uf')->references('id')->on('uf')->onDelete('cascade');
+
             $table->string('titulo')->nullable();
             $table->string('tipoDose')->nullable();
             $table->date('data')->nullable();
             $table->string('fabricante')->nullable();
             $table->string('cidade')->nullable();
-            $table->string('uf')->nullable();
-
 
             $table->timestamps();
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Especialidade;
+use App\Models\Exames;
 use Illuminate\Http\Request;
 
 class EspecialidadeController extends Controller

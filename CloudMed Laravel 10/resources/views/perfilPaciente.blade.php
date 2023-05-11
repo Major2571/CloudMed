@@ -50,47 +50,47 @@
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">
-                        <div class="mb-6">
-                            <label for="cidade" class="block mb-2 font-medium text-gray-900"> Cidade: </label>
-                            <input type="text" name="cidade" id="cidade" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
-                        </div>
+                            <div class="mb-6">
+                                <label for="cidade" class="block mb-2 font-medium text-gray-900"> Cidade: </label>
+                                <input type="text" name="cidade" id="cidade" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
+                            </div>
 
-                        <div class="mb-6">
-                            <div class="relative w-full">
-                                <label for="especialidade" class="block mb-2 font-medium text-gray-900"> UF </label>
-                                <select name="uf" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
-                                    <option value=""> Selecionar </option>
-                                    <option value="AC"> AC </option>
-                                    <option value="AL"> AL </option>
-                                    <option value="AP"> AP </option>
-                                    <option value="AM"> AM </option>
-                                    <option value="BA"> BA </option>
-                                    <option value="CE"> CE </option>
-                                    <option value="DF"> DF </option>
-                                    <option value="ES"> ES </option>
-                                    <option value="GO"> GO </option>
-                                    <option value="MA"> MA </option>
-                                    <option value="MS"> MS </option>
-                                    <option value="MT"> MT </option>
-                                    <option value="MG"> MG </option>
-                                    <option value="PA"> PA </option>
-                                    <option value="PB"> PB </option>
-                                    <option value="PR"> PR </option>
-                                    <option value="PE"> PE </option>
-                                    <option value="PI"> PI </option>
-                                    <option value="RJ"> RJ </option>
-                                    <option value="RN"> RN </option>
-                                    <option value="RS"> RS </option>
-                                    <option value="RO"> RO </option>
-                                    <option value="RR"> RR </option>
-                                    <option value="SC"> SC </option>
-                                    <option value="SP"> SP </option>
-                                    <option value="SE"> SE </option>
-                                    <option value="TO"> TO </option>
-                                </select>
+                            <div class="mb-6">
+                                <div class="relative w-full">
+                                    <label for="especialidade" class="block mb-2 font-medium text-gray-900"> UF </label>
+                                    <select name="uf" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
+                                        <option value=""> Selecionar </option>
+                                        <option value="AC"> AC </option>
+                                        <option value="AL"> AL </option>
+                                        <option value="AP"> AP </option>
+                                        <option value="AM"> AM </option>
+                                        <option value="BA"> BA </option>
+                                        <option value="CE"> CE </option>
+                                        <option value="DF"> DF </option>
+                                        <option value="ES"> ES </option>
+                                        <option value="GO"> GO </option>
+                                        <option value="MA"> MA </option>
+                                        <option value="MS"> MS </option>
+                                        <option value="MT"> MT </option>
+                                        <option value="MG"> MG </option>
+                                        <option value="PA"> PA </option>
+                                        <option value="PB"> PB </option>
+                                        <option value="PR"> PR </option>
+                                        <option value="PE"> PE </option>
+                                        <option value="PI"> PI </option>
+                                        <option value="RJ"> RJ </option>
+                                        <option value="RN"> RN </option>
+                                        <option value="RS"> RS </option>
+                                        <option value="RO"> RO </option>
+                                        <option value="RR"> RR </option>
+                                        <option value="SC"> SC </option>
+                                        <option value="SP"> SP </option>
+                                        <option value="SE"> SE </option>
+                                        <option value="TO"> TO </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
                         <div class="input-box">
                             <label for="convenio"> Cartão do Convênio </label><br>

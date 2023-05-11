@@ -69,11 +69,16 @@ Rode as Migrations
     php artisan migrate
 ```
 
+Rode os Seeders
+```bash
+    php artisan db:seed
+```
+
 E por fim, inicie o servidor
 ```bash
-  php artisan serve
+    php artisan serve
 ```
 ```bash
-  npm run dev
+    npm run dev
 ```
 
