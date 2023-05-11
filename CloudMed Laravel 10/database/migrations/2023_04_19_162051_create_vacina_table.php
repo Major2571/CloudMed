@@ -18,6 +18,9 @@ return new class extends Migration
             $table->integer('id_user')->unsigned()->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
 
+            $table->integer('id_vacina')->unsigned()->nullable();
+            $table->foreign('id_vacina')->references('id')->on('tipos-vacinas')->onDelete('cascade');
+
             $table->string('titulo')->nullable();
             $table->string('tipoDose')->nullable();
             $table->date('data')->nullable();
