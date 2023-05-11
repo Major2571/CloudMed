@@ -116,7 +116,11 @@
                                     {{ $exames->cidade }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $exames->uf->uf }}
+                                    @if ( empty($exames->uf->uf))
+                                        UF indisponível
+                                    @else
+                                        {{ $exames->uf->uf }} 
+                                    @endif
                                 </td>
 
                                 {{-- Visualizar --}}
