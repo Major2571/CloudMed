@@ -13,11 +13,24 @@ class ExamesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $exames = Exames::where('id_user', Auth::user()->id)->get();
+        $userId = Auth::user()->id;
+        $exames = Exames::where('id_user', $userId);
 
-        return view('meusExames', compact('exames'));
+        $filtroData = $request->input('filtroData');
+        if ($filtroData) {
+            $exames->whereDate('data', $filtroData);
+        }
+
+        $filtroEspecialidade = $request->input('filtroEspecialidade');
+        if ($filtroEspecialidade) {
+            $exames->where('especialidade', $filtroEspecialidade);
+        }
+
+        $exames = $exames->get();
+
+        return view('meusExames', compact('exames', 'filtroData', 'filtroEspecialidade'));
     }
     /**
      * Show the form for creating a new resource.

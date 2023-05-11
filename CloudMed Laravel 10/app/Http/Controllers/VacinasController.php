@@ -12,14 +12,25 @@ class VacinasController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-
-        $vacinas = Vacinas::where('id_user', Auth::user()->id)->get();
-
-        return view('minhasVacinas', compact('vacinas'));
+        $filtroNome = $request->input('filtroNome');
+        $filtroTipoDose = $request->input('filtroTipoDose');
+    
+        $query = Vacinas::where('id_user', Auth::user()->id);
+    
+        if ($filtroNome) {
+            $query->where('titulo', 'LIKE', '%' . $filtroNome . '%');
+        }
+    
+        if ($filtroTipoDose) {
+            $query->where('tipoDose', $filtroTipoDose);
+        }
+    
+        $vacinas = $query->get();
+    
+        return view('minhasVacinas', compact('vacinas', 'filtroNome', 'filtroTipoDose'));
     }
-
     /**
      * Show the form for creating a new resource.
      */
