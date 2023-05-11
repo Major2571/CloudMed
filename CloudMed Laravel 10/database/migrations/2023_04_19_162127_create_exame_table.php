@@ -18,12 +18,19 @@ return new class extends Migration
             $table->integer('id_user')->unsigned()->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
 
+            $table->integer('id_uf')->unsigned()->nullable();
+            $table->foreign('id_uf')->references('id')->on('uf')->onDelete('cascade');
+
+            $table->integer('id_especialidade')->unsigned()->nullable();
+            $table->foreign('id_especialidade')->references('id')->on('especialidade')->onDelete('cascade');
+
             $table->string('titulo', 220)->nullable();
-            $table->string('especialidade', 50)->nullable();
             $table->date('data')->nullable();
             $table->string('instituicao', 50)->nullable();
             $table->string('cidade',50)->nullable();
-            $table->string('uf')->nullable();
+            // $table->string('especialidade', 50)->nullable();
+            // $table->string('uf')->nullable();
+
             // //$table->string('nomeArquivo');
 
             $table->timestamps();

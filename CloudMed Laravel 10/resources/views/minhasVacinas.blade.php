@@ -21,14 +21,20 @@
                         <div class="flex items-end justufy-center">
 
 
-                            <div class="mr-2 w-3/4">
-                                <label for="filtroNome" class="block mb-2 text-sm font-medium text-black">Nome da
-                                    vacina</label>
-                                <input type="text"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-700 focus:border-cyan-500 block w-full p-2.5"
-                                    name="filtroNome" id="filtroNome" placeholder="Ex: Febre Amarela"
-                                    value="{{ $filtroNome ?? '' }}"
-                                    >
+                            <div class="mr-4 w-3/4">
+                                <label for="filtroNome"
+                                    class="block mb-2 text-sm font-medium text-black dark:text-black">Nome da Vacina</label>
+                                <select name="filtroNome" id="filtroNome"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-700 focus:border-cyan-500 block w-full p-2.5">
+                                    <option value="">Todas</option>
+                                    @foreach ($nomeVacinas as $nome)
+                                        <option value="{{ $nome->id }}"
+                                            {{ $filtroNome == $nome->id ? 'selected' : '' }}>
+                                            {{ $nome->nomeVacina }}
+                                        </option>
+                                    @endforeach
+                                    <option value="0">Outras</option>
+                                </select>
                             </div>
 
                             <div class="mr-1 w-3/5">
@@ -36,18 +42,20 @@
                                     class="block mb-2 text-sm font-medium text-black dark:text-black">Tipo de Dose</label>
                                 <select name="filtroTipoDose" id="filtroTipoDose"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-700 focus:border-cyan-500 block w-full p-2.5">
-                                    
+
                                     <option value="">Todas</option>
                                     <option value="Dose Única" {{ $filtroTipoDose == 'Dose Única' ? 'selected' : '' }}>
                                         Dose Única
                                     </option>
-                                    <option value="Primeira Dose" {{ $filtroTipoDose == 'Primeira Dose' ? 'selected' : '' }}>
+                                    <option value="Primeira Dose"
+                                        {{ $filtroTipoDose == 'Primeira Dose' ? 'selected' : '' }}>
                                         Primeira Dose
                                     </option>
                                     <option value="Segunda Dose" {{ $filtroTipoDose == 'Segunda Dose' ? 'selected' : '' }}>
                                         Segunda Dose
                                     </option>
-                                    <option value="Terceira Dose" {{ $filtroTipoDose == 'Terceira Dose' ? 'selected' : '' }}>
+                                    <option value="Terceira Dose"
+                                        {{ $filtroTipoDose == 'Terceira Dose' ? 'selected' : '' }}>
                                         Terceira Dose
                                     </option>
                                     <option value="Quarta Dose" {{ $filtroTipoDose == 'Quarta Dose' ? 'selected' : '' }}>
@@ -56,7 +64,7 @@
                                     <option value="Reforco" {{ $filtroTipoDose == 'Reforco' ? 'selected' : '' }}>
                                         Reforço
                                     </option>
-                                
+
                                 </select>
                             </div>
 
@@ -76,7 +84,7 @@
             </div>
 
 
-            {{-- @if ( $filtroNome || $filtroTipoDose )
+            {{-- @if ($filtroNome || $filtroTipoDose)
             <div class="flex items-center mb-4">
                 <span class="mr-2 font-medium text-gray-700">Filtrando por:</span>
                 @if ($filtroNome)
@@ -107,13 +115,17 @@
                         @foreach ($vacinas as $vacinas)
                             <tr class="bg-gray-50 border-gray-00 hover:bg-gray-200 ">
                                 <td scope="row" class="px-6 py-4 font-medium text-black whitespace-wrap">
-                                    {{ $vacinas->titulo }}
+                                    @if (empty($vacinas->titulo))
+                                        {{ $vacinas->nomeVacina->nomeVacina }}
+                                    @else
+                                        {{ $vacinas->titulo }}
+                                    @endif
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $vacinas->tipoDose }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ date('d/m/y', strtotime($vacinas->date)) }}
+                                    {{ date('d/m/y', strtotime($vacinas->data)) }}
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $vacinas->fabricante }}
@@ -122,7 +134,7 @@
                                     {{ $vacinas->cidade }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $vacinas->uf }}
+                                    {{ $vacinas->uf->uf }}
                                 </td>
 
                                 <!-- Editar -->

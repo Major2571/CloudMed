@@ -13,6 +13,8 @@ class Exames extends Model
         
         'id',
         'id_user',
+        'id_uf',
+        'id_especialidade',
         'titulo',
         'especialidade', 
         'data',
@@ -25,8 +27,18 @@ class Exames extends Model
 
     protected $dates = ['date'];
 
-    public function user() {
-        return $this->belongsTo('App\Models\User');
+    // public function user() {
+    //     return $this->belongsTo('App\Models\User');
+    // }
+
+    public function especialidade()
+    {
+        return $this->belongsTo(Especialidade::class, 'id_especialidade');
+    }
+
+    public function uf()
+    {
+        return $this->belongsTo(UFs::class, 'id_uf');
     }
     
 }

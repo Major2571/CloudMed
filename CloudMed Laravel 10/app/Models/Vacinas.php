@@ -12,6 +12,8 @@ class Vacinas extends Model
     protected $fillable = [
         'id',
         'id_user',
+        'id_vacina',
+        'id_uf',
         'titulo', 
         'tipoDose', 
         'data', 
@@ -19,4 +21,14 @@ class Vacinas extends Model
         'cidade', 
         'uf'
     ];
+
+    public function nomeVacina()
+    {
+        return $this->belongsTo(NomeVacinas::class, 'id_vacina');
+    }
+
+    public function uf()
+    {
+        return $this->belongsTo(UFs::class, 'id_uf');
+    }
 }

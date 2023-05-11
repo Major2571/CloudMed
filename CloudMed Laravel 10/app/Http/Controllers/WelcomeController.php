@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Especialidade;
 use App\Models\Exames;
+use App\Models\NomeVacinas;
+use App\Models\UFs;
 use App\Models\Vacinas;
 
 use Illuminate\Support\Facades\Auth;
@@ -54,7 +57,11 @@ class WelcomeController extends Controller
      */
     public function create()
     {
-        //
+        $nomeVacinas = NomeVacinas::all();
+        $especialidades = Especialidade::all();
+        $uf = UFs::all();
+
+        return view('novoCadExame', compact('especialidades', 'uf', 'nomeVacinas'));
     }
 
     /**
