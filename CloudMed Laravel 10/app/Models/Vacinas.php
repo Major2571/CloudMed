@@ -18,8 +18,7 @@ class Vacinas extends Model
         'tipoDose', 
         'data', 
         'fabricante', 
-        'cidade', 
-        'uf'
+        'cidade'
     ];
 
     public function nomeVacina()

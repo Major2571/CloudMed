@@ -134,7 +134,11 @@
                                     {{ $vacinas->cidade }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $vacinas->uf->uf }}
+                                    @if ( empty($vacinas->uf->uf))
+                                        UF indisponível
+                                    @else
+                                        {{ $vacinas->uf->uf }} 
+                                    @endif
                                 </td>
 
                                 <!-- Editar -->
