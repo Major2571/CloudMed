@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,500;1,300;1,400&display=swap');
+
+.main-login,
+.main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 2em;
+    width: 60%;
+    margin: 8% 2%;
+}
+
+.form-login {
+    width: clamp(35%, 100%, 20em);
+    padding: 2em;
+}
+
+.form-login .title h1 {
+    text-align: center;
+    padding: 0.75em;
+}
+
+.form-box .input-box label {
+    text-align: left !important;
+    font-size: 1em;
+    display: block;
+}
+
+.form-box .input-box {
+    text-align: center;
+    padding: 0.5em 0;
+}
+
+.img-login img {
+    width: clamp(15em, 100%, 30em);
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0.65em 0;
+}
+
+.login-links {
+    text-align: center;
+    line-height: 2em;
+    font-weight: 700;
+}
+
+.login-links a {
+    text-decoration: none;
+    color: var(--titulos);
+    transition: all .3s ease-in;
+}
+
+.login-links a:hover {
+    border-bottom: 1px solid var(--titulos);
+    transition: all .3s ease-in;
+}
+
+.img-login {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.remember-me {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.remember-me a {
+    text-decoration: none;
+    color: var(--titulos);
+    font-weight: 600;
+}
+
+
+@media (max-width: 1550px) {
+
+    .main-login,
+    .main {
+        width: auto;
+    }
+}
