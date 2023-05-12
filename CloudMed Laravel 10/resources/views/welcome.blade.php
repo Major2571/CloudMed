@@ -44,7 +44,12 @@
                                     não foi informada a instituição,
                                 @endif
 
-                                na cidade de {{ $ultimoExame->cidade }} - {{ $ultimoExame->uf->uf }}.
+                                na cidade de {{ $ultimoExame->cidade }} -
+                                @if (empty($ultimoExame->uf->uf))
+                                    UF indisponível
+                                @else
+                                    {{ $ultimoExame->uf->uf }}.
+                                @endif
                             </p>
                         @else
                             <p class="my-10 font-normal text-gray-900">
@@ -81,14 +86,14 @@
 
                         @if ($ultimaVacina && $totalVacinas)
                             <p class="mb-3 font-normal text-gray-900">Total Cadastrado: {{ $totalVacinas }}</p>
-                            <p class="mb-3 font-normal text-gray-900">Sua última vacina salva foi: 
-                                
+                            <p class="mb-3 font-normal text-gray-900">Sua última vacina salva foi:
+
                                 '@if (empty($ultimaVacina->titulo))
                                     {{ $ultimaVacina->nomeVacina->nomeVacina }}
                                 @else
                                     {{ $ultimaVacina->titulo }}
-                                @endif' 
-                                
+                                @endif'
+
                                 sendo {{ $ultimaVacina->tipoDose }},
                                 aplicada no dia {{ date('d/m/y', strtotime($ultimaVacina->data)) }},
 
