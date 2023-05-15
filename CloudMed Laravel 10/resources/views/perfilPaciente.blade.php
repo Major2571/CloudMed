@@ -6,9 +6,13 @@
 
 <section class="login session-allow">
 
-    <section class="profile">
+    <section class="">
+
         <div class="form">
-            <form method="post" action="/profile" >
+            <form method="post" action="/profile">
+
+                @csrf
+
                 <div class="continer-input-box">
 
                     <h2 class="title-profile"> Informações do Usuário </h2>
@@ -45,44 +49,46 @@
                             <input type="tel" name="number" id="number" placeholder="   (00) 00000-0000  " required>
                         </div>
 
-                        <div class="input-box">
-                            <label for="city"> Cidade </label><br>
-                            <input type="text" name="text" id="text" placeholder=" Selecione " required>
-                        </div>
+                        <div class="grid md:grid-cols-2 md:gap-4">
+                            <div class="mb-6">
+                                <label for="cidade" class="block mb-2 font-medium text-gray-900"> Cidade: </label>
+                                <input type="text" name="cidade" id="cidade" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" required>
+                            </div>
 
-                        <div class="input-box select">
-                            <label for="estado"> Estado </label><br>
-                            <div class="input-box-sel">
-                                <select name="uf">
-                                    <option value=""> Selecione </option>
-                                    <option value="AC"> Acre </option>
-                                    <option value="AL"> Alagoas </option>
-                                    <option value="AP"> Amapá </option>
-                                    <option value="AM"> Amazonas </option>
-                                    <option value="BA"> Bahia </option>
-                                    <option value="CE"> Ceará </option>
-                                    <option value="DF"> Distrito Federal </option>
-                                    <option value="ES"> Espirito Santo </option>
-                                    <option value="GO"> Goiás </option>
-                                    <option value="MA"> Maranhão </option>
-                                    <option value="MS"> Mato Grosso do Sul </option>
-                                    <option value="MT"> Mato Grosso </option>
-                                    <option value="MG"> Minas Gerais </option>
-                                    <option value="PA"> Pará </option>
-                                    <option value="PB"> Paraíba </option>
-                                    <option value="PR"> Paraná </option>
-                                    <option value="PE"> Pernambuco </option>
-                                    <option value="PI"> Piauí </option>
-                                    <option value="RJ"> Rio de Janeiro </option>
-                                    <option value="RN"> Rio Grande do Norte </option>
-                                    <option value="RS"> Rio Grande do Sul </option>
-                                    <option value="RO"> Rondônia </option>
-                                    <option value="RR"> Roraima </option>
-                                    <option value="SC"> Santa Catarina </option>
-                                    <option value="SP"> São Paulo </option>
-                                    <option value="SE"> Sergipe </option>
-                                    <option value="TO"> Tocantins </option>
-                                </select>
+                            <div class="mb-6">
+                                <div class="relative w-full">
+                                    <label for="especialidade" class="block mb-2 font-medium text-gray-900"> UF </label>
+                                    <select name="uf" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
+                                        <option value=""> Selecionar </option>
+                                        <option value="AC"> AC </option>
+                                        <option value="AL"> AL </option>
+                                        <option value="AP"> AP </option>
+                                        <option value="AM"> AM </option>
+                                        <option value="BA"> BA </option>
+                                        <option value="CE"> CE </option>
+                                        <option value="DF"> DF </option>
+                                        <option value="ES"> ES </option>
+                                        <option value="GO"> GO </option>
+                                        <option value="MA"> MA </option>
+                                        <option value="MS"> MS </option>
+                                        <option value="MT"> MT </option>
+                                        <option value="MG"> MG </option>
+                                        <option value="PA"> PA </option>
+                                        <option value="PB"> PB </option>
+                                        <option value="PR"> PR </option>
+                                        <option value="PE"> PE </option>
+                                        <option value="PI"> PI </option>
+                                        <option value="RJ"> RJ </option>
+                                        <option value="RN"> RN </option>
+                                        <option value="RS"> RS </option>
+                                        <option value="RO"> RO </option>
+                                        <option value="RR"> RR </option>
+                                        <option value="SC"> SC </option>
+                                        <option value="SP"> SP </option>
+                                        <option value="SE"> SE </option>
+                                        <option value="TO"> TO </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
@@ -143,10 +149,10 @@
                                 </div>
                             </div>
 
-                            <div class="input-box">
-                                <label for="tipo"> É doador de orgãos? </label>
-                                <div class="input-box-sel">
-                                    <select>
+                            <div class="mb-6">
+                                <div class="relative w-full">
+                                    <label for="doador" class="block mb-2 font-medium text-gray-900"> É doador de orgãos? </label>
+                                    <select name="doador" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
                                         <option value="">Selecione</option>
                                         <option value="Sim">Sim</option>
                                         <option value="Não">Não</option>

@@ -1,11 +1,13 @@
-let time;
+const vacinaSelect = document.getElementById('vacinaSelect');
+const newVacinaInputContainer = document.getElementById('newVacinaInputContainer');
+const nomeVacinaInput = document.getElementById('newNomeVacinaInput');
 
-function functionTime() {
-    time = setTimeout(showPage, 2000);
-}
-
-function showPage() {
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("mainPage").style.display = "block";
-}
-
+vacinaSelect.addEventListener('change', () => {
+    if (vacinaSelect.value === '0') {
+        nomeVacinaInput.disabled = false;
+        newVacinaInputContainer.classList.remove('hidden');
+    } else {
+        nomeVacinaInput.disabled = true;
+        newVacinaInputContainer.classList.add('hidden');
+    }
+});

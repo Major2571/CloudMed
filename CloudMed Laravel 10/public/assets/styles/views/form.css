@@ -17,7 +17,7 @@
 }
 
 .form {
-    width: 32em;
+    width: 40%;
     margin: 2% auto;
     padding: 2em;
     background: var(--fundoBranco);
@@ -29,6 +29,8 @@
 .form form {
     background-color: #f5f5f5;
 }
+
+/* 
 
 .form .title {
     text-align: center;
@@ -43,9 +45,9 @@ form .continer-input-box {
 form .continer-input-box .input-box {
     padding: 0.5em 0em;
     width: 100%;
-}
+} 
 
-.input-box input {
+/* .input-box input {
     padding: 0.5em 5%;
     width: 95%;
     height: 3em;
@@ -55,9 +57,9 @@ form .continer-input-box .input-box {
     box-shadow: var(--shadowTitle);
     border-radius: 5px;
     font-size: var(--fontSizeText);
-}
+} */
 
-.input-box input:focus {
+/* .input-box input:focus {
     outline: none;
 }
 
@@ -73,11 +75,11 @@ form .input-box label {
     align-content: center;
     align-items: flex-end;
     justify-content: center;
-}
+} */
 
 
 
-
+/* 
 .input-box-sel {
     margin: 1em 0em 1em 1em;
     width: 80%;
@@ -134,4 +136,4 @@ select option {
     height: 0.5em;
     background-color: var(--fundoLabelForm);
     clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-}
+} */

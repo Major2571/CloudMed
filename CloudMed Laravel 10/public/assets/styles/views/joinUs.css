@@ -4,6 +4,7 @@
     margin: auto;
     text-align: center;
     line-height: 3vh;
+    max-width: 100%;
 }
 
 .join-us img {
@@ -12,6 +13,7 @@
 
 .join-us p {
     text-align: center;
-    margin: 1em;
+    margin: 2em auto;
+    max-width: 40%;
 }
 

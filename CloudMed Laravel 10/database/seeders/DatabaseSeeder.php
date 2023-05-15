@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Especialidade;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,6 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(VacinasSeeder::class);
+        $this->call(EspecialidadeTableSeeder::class);
+        $this->call(UFsTableSeeder::class);
+        $this->call(VacinasTableSeeder::class);
     }
 }

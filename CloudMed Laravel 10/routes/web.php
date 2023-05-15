@@ -3,6 +3,7 @@
 use App\Http\Controllers\ExamesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacinasController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,50 +46,6 @@ Route::get('/novo', function () {
     return view('novoCadastro');
 });
 
-// Route::get('/novo-cad-exame', function () {
-//     return view('novoCadExame');
-// });
-
-// Route::get('/novo-cad-vacina', function () {
-//     return view('novoCadVacina');
-// });
-
-
-// Route::get('/profile', function () {
-//     return view('perfilPaciente');
-// });
-
-// Route::get('/meus-exames', function () {
-//     return view('meusExames');
-// });
-
-// Route::get('/minhas-vacinas', function () {
-//     return view('minhasVacinas');
-// });
-
-Route::get('/dashboard', function () {
-    return view('welcome');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-
-// Route::get('/minhas-vacinas', function () {
-//     return view('minhasVacinas');
-// })->middleware(['auth', 'verified'])->name('minhasVacinas');
-
-
-// Route::get('/meus-exames', function () {
-//     return view('meusExames');
-// })->middleware(['auth', 'verified'])->name('meusExames');
-
-Route::get('/novo-cad-exame', function () {
-    return view('novoCadExame');
-})->middleware(['auth', 'verified'])->name('novoCadExame');
-
-Route::get('/novo-cad-vacina', function () {
-    return view('novoCadVacina');
-})->middleware(['auth', 'verified'])->name('novoCadVacina');
-
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -96,21 +53,33 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
-->name('logout');
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('logout');
 
-Route::get('/meus-exames', [ExamesController::class, 'index'])->name('meusExames');
-Route::get('/cad-novo-exame', [ExamesController::class, 'create'])->name('exame.create');
-Route::post('/cad-novo-exame', [ExamesController::class, 'store']);
-Route::delete('/meus-exames/{id}',  [ExamesController::class, 'destroy'])->name('meusExames');
+Route::middleware(['auth', 'verified'])->group(function () {
+
+    Route::get('/dashboard', [WelcomeController::class, 'index'])->name('dashboard');
+
+    Route::get('/meus-exames', [ExamesController::class, 'index'])->name('meusExames');
+    Route::get('/novo-cad-exame', [ExamesController::class, 'create'])->name('novoCadExame');
+    Route::post('/novo-cad-exame', [ExamesController::class, 'store']);
+    Route::get('/meus-exames/delete/{id}',  [ExamesController::class, 'destroy']);
+    Route::get('/meus-exames/{exame}/editar', [ExamesController::class, 'edit'])->name('exames.edit');
+    Route::put('/meus-exames/{exame}', [ExamesController::class, 'update'])->name('exames.update');
+   
+    
+    Route::get('/minhas-vacinas', [VacinasController::class, 'index'])->name('minhasVacinas');
+    Route::get('/cad-novo-vacina', [VacinasController::class, 'create'])->name('novoCadVacina');
+    Route::post('/cad-novo-vacina', [VacinasController::class, 'store']);
+    Route::get('/minhas-vacinas/delete/{id}',  [VacinasController::class, 'destroy']);
+    Route::get('/minhas-vacinas/{id}/editar', [VacinasController::class, 'edit'])->name('vacinas.edit');
+    Route::put('/minhas-vacinas/{id}', [VacinasController::class, 'update'])->name('vacinas.update');
 
 
-Route::get('/minhas-vacinas', [VacinasController::class, 'index'])->name('minhasVacinas');
-Route::get('/cad-novo-vacina', [VacinasController::class, 'create']);
-Route::post('/cad-novo-vacina', [VacinasController::class, 'store']);
+    
+});
 
 
 
-
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
