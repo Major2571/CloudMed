@@ -8,7 +8,7 @@
         <section class="form-cad-new-exam">
 
             <div class="form">
-                <form method="post" action="/cad-novo-vacina">
+                <form method="post" action="/cad-novo-vacina" id="cadastroForm">
 
                     @csrf
 

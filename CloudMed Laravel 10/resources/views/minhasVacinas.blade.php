@@ -157,7 +157,7 @@
                                 <!-- Excluir -->
                                 <td class="px-6 py-4 text-center">
                                     <a href="/minhas-vacinas/delete/{{ $vacinas->id }}">
-                                        <button type="button"
+                                        <button type="button" onclick="confirmExclusao(event)"
                                             class="text-red-500 border border-red-600 hover:bg-red-500 hover:text-white focus:ring-2 focus:outline-none focus:ring-red-200 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2">
                                             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor"
                                                 viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">

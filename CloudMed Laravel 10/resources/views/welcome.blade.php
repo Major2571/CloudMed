@@ -15,7 +15,7 @@
                 <div class="max-w-sm bg-white rounded-md shadow mx-6">
 
                     <img class="rounded-t-md"
-                        src="https://www.digimaxdiagnostico.com.br/upload/noticias/principal/exames-de-rotina-para-manter-a-sade-em-dia.jpg"
+                        src="https://www.centromedicopastore.com.br/wp-content/uploads/2022/07/blog-02-Exames-de-Sangue.png"
                         alt="" />
 
                     <div class="p-5">
