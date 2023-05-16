@@ -4,12 +4,14 @@
 
 <script src="{{url('https://unpkg.com/scrollreveal')}}"></script>
 
-<script src="{{url('assets/js/loader.js')}}"></script>
+<script src="{{url('assets/js/input.js')}}"></script>
 <script src="{{url('assets/js/btnBack.js')}}"></script>
 <script src="{{url('assets/js/btnTopAndBack.js')}}"></script>
-<script src="{{url('assets/js/menuHamburger.js')}}"></script>
 <script src="{{url('assets/js/carousel.js')}}"></script>
 <script src="{{url('assets/js/scrollReveal.js')}}"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
 
-
+<script src="{{url('assets/js/deleteModal.js')}}"></script>
+<script src="{{url('assets/js/saveModal.js')}}"></script>

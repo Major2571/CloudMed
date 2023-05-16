@@ -18,6 +18,7 @@
 
     <link rel="shortcut icon" href="{{url('assets/img/icon-logo.png')}}" type="image/x-icon">
 
+
     @include('templates.styles')
 
 

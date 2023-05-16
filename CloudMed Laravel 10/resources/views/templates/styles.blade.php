@@ -18,3 +18,5 @@
 <link rel="stylesheet" href="{{url('assets/styles/views/profile.css')}}">
 <link rel="stylesheet" href="{{url('assets/styles/views/sobre.css')}}">
 <link rel="stylesheet" href="{{url('assets/styles/views/tipoCadastro.css')}}">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
