@@ -82,17 +82,36 @@ class ExamesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Exames $exames)
+    public function edit(Exames $exames, $id)
     {
-        //
+        $exame = Exames::FindOrFail($id);
+        $especialidades = Especialidade::all();
+        $uf = UFs::all();
+
+        return view('editExame', compact('exame', 'especialidades', 'uf'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Exames $exames)
+    public function update(Request $request, $id )
     {
-        //
+        $exame = Exames::FindOrFail($id);
+
+        $exame->id_user = $request->id_user;
+        $exame->id_especialidade = $request->input('especialidade');
+        $exame->id_uf = $request->input('uf');
+        $exame->titulo = $request->input('name');
+        $exame->data = $request->input('date');
+        $exame->instituicao = $request->input('local');
+        $exame->cidade = $request->input('cidade');
+
+        $user = auth()->user();
+        $exame->id_user = $user->id;
+
+        $exame->save();
+
+        return redirect('/meus-exames');
     }
 
     /**
