@@ -15,8 +15,8 @@ class AddUsuarioSeeder extends Seeder
     public function run(): void
     {
         $userData = [
-            'name' => 'Carol',
-            'email' => 'carol@email.com',
+            'name' => 'Adm',
+            'email' => 'adm@email.com',
             'password' => Hash::make('123456789'),
         ];
 

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Console\Scheduling\Event;
+use Illuminate\Support\Facades\Storage;
 
 class ExamesController extends Controller
 {
@@ -61,6 +62,14 @@ class ExamesController extends Controller
         $exames->instituicao = $request->input('local');
         $exames->cidade = $request->input('cidade');
 
+        // Salvar os Arquivos
+        if ( $request->hasFile('arquivo')){
+            $file = $request->file('arquivo');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('public/arquivos_exames', $fileName);
+            $exames->nome_arquivo = $fileName;
+        };
+
         $user = auth()->user();
         $exames->id_user = $user->id;
 
@@ -105,6 +114,21 @@ class ExamesController extends Controller
         $exame->data = $request->input('date');
         $exame->instituicao = $request->input('local');
         $exame->cidade = $request->input('cidade');
+
+        // Substituição do arquivo
+        if ($request->hasFile('arquivo')) {
+            // Varificar se o arquivo existe, e exclui-lo
+            if ( Storage::exists('public/arquivos_exames/' . $exame->nome_arquivo)) {
+                Storage::delete('public/arquivos_exames/' . $exame->nome_arquivo);
+            }
+        
+            // Salvar um novo arquivo
+            $file = $request->file('arquivo');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('public/arquivos_exames', $fileName);
+        
+            $exame->nome_arquivo = $fileName;
+        }
 
         $user = auth()->user();
         $exame->id_user = $user->id;

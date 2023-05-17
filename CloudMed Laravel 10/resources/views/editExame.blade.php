@@ -8,7 +8,11 @@
         <section class="form-cad-new-exam">
 
             <div class="form">
-                <form method="post" action="/meus-exames/update/{{ $exame->id }}">
+                <form 
+                    method="post" 
+                    action="/meus-exames/update/{{ $exame->id }}" 
+                    enctype="multipart/form-data"
+                    >
                     @csrf
                     @method('PUT')
 
@@ -91,10 +95,28 @@
                             </div>
                         </div>
 
-                        <!--<div class="input-box cad-exame">
-                                <label for="exame-arquivo"> Arquivo do Exame </label>
-                                <input type="file" name="exame-arquivo" id="exame-arquivo" required>
-                            </div> -->
+                        @if ($exame->nome_arquivo)
+                            @php
+                                $fileExtension = pathinfo($exame->nome_arquivo, PATHINFO_EXTENSION);
+                                $imageExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+                                $isImage = in_array($fileExtension, $imageExtensions);
+                            @endphp
+
+                            @if ($isImage)
+                                <img src="{{ asset('storage/arquivos_exames/' . $exame->nome_arquivo) }}"
+                                    alt="Preview do Exame">
+                            @else
+                                <a href="{{ asset('storage/arquivos_exames/' . $exame->nome_arquivo) }}"
+                                    target="_blank">Visualizar Exame</a>
+                            @endif
+                        @endif
+
+                        <div class="mb-6">
+                            <label for="arquivo" class="block mb-2 font-medium text-gray-900"> Novo Arquivo do Exame: </label>
+                            <input type="file" name="arquivo" id="arquivo"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
+                                required>
+                        </div>
 
                     </div>
 

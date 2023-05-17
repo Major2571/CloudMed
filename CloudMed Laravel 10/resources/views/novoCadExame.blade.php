@@ -8,7 +8,13 @@
         <section class="form-cad-new-exam">
 
             <div class="form">
-                <form method="post" action="/cad-novo-exame" id="cadastroForm">
+
+                <form 
+                    method="post" 
+                    action="/cad-novo-exame" 
+                    id="cadastroForm"
+                    enctype="multipart/form-data"
+                    >
 
                     @csrf
 
@@ -59,7 +65,7 @@
                             <label for="local" class="block mb-2 font-medium text-gray-900"> Instituição: </label>
                             <input type="text" name="local" id="local"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
-                                required placeholder="Ex: Santa Casa">
+                                placeholder="Ex: Santa Casa">
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">
@@ -85,10 +91,14 @@
                             </div>
                         </div>
 
-                        <!--<div class="input-box cad-exame">
-                            <label for="exame-arquivo"> Arquivo do Exame </label>
-                            <input type="file" name="exame-arquivo" id="exame-arquivo" required>
-                        </div> -->
+                        <div class="mb-6">
+                            <label for="arquivo" class="block mb-2 font-medium text-gray-900"> Arquivo do Exame: </label>
+                            <input type="file" name="arquivo" id="arquivo"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
+                                required>
+                        </div>
+
+                        
 
                     </div>
 

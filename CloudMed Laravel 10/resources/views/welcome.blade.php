@@ -128,5 +128,93 @@
         </div>
     </section>
 
+{{-- 
+    <style>
+        .faixa-etaria {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
 
+        .faixa-etaria>.accordion {
+            flex-grow: 1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background-color: #f5f5f5;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .accordion-header:hover {
+            background-color: #eaeaea;
+        }
+
+        .accordion-content {
+            padding: 10px;
+            display: none;
+        }
+
+        .accordion-content.show {
+            display: block;
+        }
+    </style>
+
+    <div class="faixa-etaria">
+        <div class="accordion" onclick="toggleAccordion('accordion1')">
+            <div class="accordion-header">
+                Faixa Etária 1
+            </div>
+            <div class="accordion-content show" id="accordion1">
+                <h3>Informações Faixa Etária 1</h3>
+                <p>Aqui estão as informações para a Faixa Etária 1.</p>
+            </div>
+        </div>
+
+        <div class="accordion" onclick="toggleAccordion('accordion2')">
+            <div class="accordion-header">
+                Faixa Etária 2
+            </div>
+            <div class="accordion-content" id="accordion2">
+                <h3>Informações Faixa Etária 2</h3>
+                <p>Aqui estão as informações para a Faixa Etária 2.</p>
+            </div>
+        </div>
+        <div class="accordion" onclick="toggleAccordion('accordion3')">
+            <div class="accordion-header">
+                Faixa Etária 2
+            </div>
+            <div class="accordion-content" id="accordion3">
+                <h3>Informações Faixa Etária 2</h3>
+                <p>Aqui estão as informações para a Faixa Etária 2.</p>
+            </div>
+        </div>
+        <div class="accordion" onclick="toggleAccordion('accordion4')">
+            <div class="accordion-header">
+                Faixa Etária 2
+            </div>
+            <div class="accordion-content" id="accordion4">
+                <h3>Informações Faixa Etária 2</h3>
+                <p>Aqui estão as informações para a Faixa Etária 2.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(id) {
+            var accordionContent = document.getElementById(id);
+            var accordions = document.getElementsByClassName('accordion-content');
+
+            // Oculta todos os accordions
+            for (var i = 0; i < accordions.length; i++) {
+                accordions[i].classList.remove('show');
+            }
+
+            // Exibe o accordion clicado
+            accordionContent.classList.toggle('show');
+        }
+    </script> --}}
 @endsection
