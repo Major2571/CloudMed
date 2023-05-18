@@ -16,6 +16,7 @@ class VacinasTableSeeder extends Seeder
         DB::table('tipos-vacinas')->insert([
             ['nomeVacina' => 'BCG'],
             ['nomeVacina' => 'Cólera'],
+            ['nomeVacina' => 'COVID-19'],
             ['nomeVacina' => 'DTP (tríplice bacteriana)'],
             ['nomeVacina' => 'DTP/Tríplice bacteriana (Difteria, tétano e coqueluche)'],
             ['nomeVacina' => 'dT (dupla adulto)'],
