@@ -6,7 +6,7 @@
 
 <section class="cadastros session-cads">
 
-    <div class="form">
+    <div class="form-cad-new-exam w-4/5">
 
         <div class="title">
             <h1>Cadastre-se</h1>
