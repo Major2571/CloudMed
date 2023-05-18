@@ -9,12 +9,7 @@
 
             <div class="form">
 
-                <form 
-                    method="post" 
-                    action="/cad-novo-exame" 
-                    id="cadastroForm"
-                    enctype="multipart/form-data"
-                    >
+                <form method="post" action="/cad-novo-exame" id="cadastroForm" enctype="multipart/form-data">
 
                     @csrf
 
@@ -91,14 +86,19 @@
                             </div>
                         </div>
 
-                        <div class="mb-6">
-                            <label for="arquivo" class="block mb-2 font-medium text-gray-900"> Arquivo do Exame: </label>
-                            <input type="file" name="arquivo" id="arquivo"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
-                                required>
-                        </div>
+                        <div class="container">
+                            <figure class="image-container w-4/5 m-auto">
+                                <img id="chosen-image" class="w-4/5 block relative">
+                                <figcaption id="file-name"></figcaption>
+                            </figure>
 
-                        
+                            <input type="file" name="arquivo" id="arquivo" required>
+                            <label
+                                class="block relative bg-cyan-700 text-white text-md w-1/2 py-2.5 m-auto pointer text-center rounded-md"
+                                for="arquivo">
+                                <i class="fas fa-upload"></i> &nbsp; Escolha um Arquivo
+                            </label>
+                        </div>
 
                     </div>
 

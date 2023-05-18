@@ -5,14 +5,10 @@
 @section('contentPaciente')
     <section class="login session-allow">
 
-        <section class="form-cad-new-exam">
+        <section class="w-full">
 
-            <div class="form">
-                <form 
-                    method="post" 
-                    action="/meus-exames/update/{{ $exame->id }}" 
-                    enctype="multipart/form-data"
-                    >
+            <div class="form xl:w-2/5 sm:w-9/12">
+                <form method="post" action="/meus-exames/update/{{ $exame->id }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -103,20 +99,32 @@
                             @endphp
 
                             @if ($isImage)
-                                <img src="{{ asset('storage/arquivos_exames/' . $exame->nome_arquivo) }}"
-                                    alt="Preview do Exame">
+                                <div class="text-center bg-white py-5 rounded-lg">
+
+                                    <p class="block mb-2 font-medium text-gray-900"> Preview do Exame:</p>
+                                    <div class="mb-5" >
+                                        <img src="{{ asset('storage/arquivos_exames/' . $exame->nome_arquivo) }}"
+                                            alt="Preview do Exame"
+                                            class="img-preview rounded-lg border border-gray-300 shadow-sm w-4/5 m-auto">
+                                        <p>{{$exame->nome_arquivo}}</p>
+                                    </div>
+
+                                    <div class="relative mb-6 w-1/2 m-auto"> 
+                                        <input type="file" name="arquivo" id="arquivo" required>
+                                        <figcaption id="file-name"></figcaption>
+                                        <label
+                                            class="block relative bg-cyan-700 text-white text-md py-2.5 m-auto pointer text-center rounded-md"
+                                            for="arquivo">
+                                            <i class="fas fa-upload"></i> &nbsp; Escolha um novo arquivo
+                                        </label>
+                                    </div>
+                                </div>
                             @else
                                 <a href="{{ asset('storage/arquivos_exames/' . $exame->nome_arquivo) }}"
                                     target="_blank">Visualizar Exame</a>
                             @endif
                         @endif
 
-                        <div class="mb-6">
-                            <label for="arquivo" class="block mb-2 font-medium text-gray-900"> Novo Arquivo do Exame: </label>
-                            <input type="file" name="arquivo" id="arquivo"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
-                                required>
-                        </div>
 
                     </div>
 
