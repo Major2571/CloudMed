@@ -86,16 +86,16 @@
                             </div>
                         </div>
 
-                        <div class="container">
-                            <figure class="image-container w-4/5 m-auto">
-                                <img id="chosen-image" class="w-4/5 block relative">
+                        <div class="text-center">
+                            <div id="preview-container" class="image-container w-4/5 m-auto">
+                                <img id="chosen-image" class="img-preview w-4/5 block relative">
                                 <figcaption id="file-name"></figcaption>
-                            </figure>
-
+                            </div>
+                        
+                            <div id="file-info" class="file-info"></div>
+                        
                             <input type="file" name="arquivo" id="arquivo" required>
-                            <label
-                                class="block relative bg-cyan-700 text-white text-md w-1/2 py-2.5 m-auto pointer text-center rounded-md"
-                                for="arquivo">
+                            <label class="block relative bg-cyan-700 text-white text-md w-1/2 py-2.5 m-auto pointer text-center rounded-md" for="arquivo">
                                 <i class="fas fa-upload"></i> &nbsp; Escolha um Arquivo
                             </label>
                         </div>

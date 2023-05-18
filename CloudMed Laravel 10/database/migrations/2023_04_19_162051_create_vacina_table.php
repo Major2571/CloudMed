@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('tipoDose')->nullable();
             $table->date('data')->nullable();
             $table->string('fabricante')->nullable();
+            $table->string('lote')->nullable();
             $table->string('cidade')->nullable();
 
             $table->timestamps();

@@ -72,6 +72,18 @@
                                             <option value="Quarta Dose"
                                                 {{ $vacina->tipoDose == 'Quarta Dose' ? 'selected' : '' }}>Quarta Dose
                                             </option>
+                                            <option 
+                                                value="Reforco" {{$vacina->tipoDose == 'Reforco' ? 'selected' : '' }}>
+                                                Reforço
+                                            </option>
+                                            <option 
+                                                value="Primeiro Reforço" {{$vacina->tipoDose == 'Primeiro Reforço' ? 'selected' : '' }}>
+                                                Primeiro Reforço
+                                            </option>
+                                            <option 
+                                                value="Segundo Reforço" {{$vacina->tipoDose == 'Segundo Reforço' ? 'selected' : '' }}>
+                                                Segundo Reforço
+                                            </option>
                                         </select>
                                     </div>
 
@@ -88,10 +100,17 @@
                         </div>
 
                         <div class="mb-6">
-                            <label for="local" class="block mb-2 font-medium text-gray-900"> Fabricante: </label>
-                            <input type="text" name="local" id="local" value="{{ $vacina->fabricante }}"
+                            <label for="fabricante" class="block mb-2 font-medium text-gray-900"> Fabricante: </label>
+                            <input type="text" name="fabricante" id="fabricante" value="{{ $vacina->fabricante }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
                                 required placeholder="Ex: Fiocruz">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="lote" class="block mb-2 font-medium text-gray-900"> Lote: </label>
+                            <input type="text" name="lote" id="lote" value="{{ $vacina->lote }}"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
+                                required>
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">

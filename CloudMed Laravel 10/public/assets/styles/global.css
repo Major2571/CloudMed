@@ -125,3 +125,8 @@ footer img {
     text-align: center;
     padding: 3px;
 }
+
+.card-vacina:hover .absolute {
+    opacity: 1;
+    background-color: #272626af;
+}

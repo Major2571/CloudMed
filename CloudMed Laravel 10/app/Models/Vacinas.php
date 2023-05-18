@@ -18,6 +18,7 @@ class Vacinas extends Model
         'tipoDose', 
         'data', 
         'fabricante', 
+        'lote',
         'cidade'
     ];
 

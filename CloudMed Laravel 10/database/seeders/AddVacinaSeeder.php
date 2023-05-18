@@ -22,6 +22,7 @@ class AddVacinaSeeder extends Seeder
                 'tipoDose' => 'Dose Única',
                 'data' => '2022-01-01',
                 'fabricante' => 'Fabricante 1',
+                'lote' => '000001',
                 'cidade' => 'Cidade 1',
             ],
             

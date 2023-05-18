@@ -63,7 +63,8 @@ class VacinasController extends Controller
         $vacina->titulo = $request->input('newNomeVacina');
         $vacina->tipoDose = $request->input('tipoDose');
         $vacina->data = $request->input('date');
-        $vacina->fabricante = $request->input('local');
+        $vacina->fabricante = $request->input('fabricante');
+        $vacina->lote = $request->input('lote');
         $vacina->cidade = $request->input('cidade');
 
         $user = auth()->user();
@@ -107,7 +108,8 @@ class VacinasController extends Controller
         $vacina->titulo = $request->input('newNomeVacina');
         $vacina->tipoDose = $request->input('tipoDose');
         $vacina->data = $request->input('date');
-        $vacina->fabricante = $request->input('local');
+        $vacina->fabricante = $request->input('fabricante');
+        $vacina->lote = $request->input('lote');
         $vacina->cidade = $request->input('cidade');
 
         $user = auth()->user();
