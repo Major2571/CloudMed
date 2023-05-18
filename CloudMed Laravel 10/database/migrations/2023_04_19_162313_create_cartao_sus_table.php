@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
 
             $table->string('numero');
+            $table->string('nome_arquivo');
             
             $table->timestamps();
         });

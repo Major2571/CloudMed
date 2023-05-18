@@ -11,7 +11,7 @@
                 Bem-Vindo(a) {{ Auth::user()->name }}!
             </h1>
 
-            <div class="w-full flex align-center justify-center">
+            <div class="w-full flex flex-wrap align-center justify-center">
                 <div class="max-w-sm bg-white rounded-md shadow mx-6">
 
                     <img class="rounded-t-md"
@@ -25,7 +25,7 @@
                         </a>
 
                         @if ($ultimoExame && $totalExames)
-                            <p class="mb-3 font-normal text-gray-900">
+                            <p class="mb-3 text-gray-900">
                                 <span class="font-bold"> Total Cadastrado: </span>
                                 {{ $totalExames }}
                             </p>
@@ -85,20 +85,38 @@
                         </a>
 
                         @if ($ultimaVacina && $totalVacinas)
-                            <p class="mb-3 font-normal text-gray-900">Total Cadastrado: {{ $totalVacinas }}</p>
+                            <p class="mb-3 font-normal text-gray-900">
+                                <span class="font-bold">
+                                    Total Cadastrada:
+                                </span>
+                                {{ $totalVacinas }}
+                            </p>
                             <p class="mb-3 font-normal text-gray-900">Sua última vacina salva foi:
 
                                 '@if (empty($ultimaVacina->titulo))
-                                    {{ $ultimaVacina->nomeVacina->nomeVacina }}
+                                    <span class="font-bold">
+                                        {{ $ultimaVacina->nomeVacina->nomeVacina }}
+                                    </span>
                                 @else
-                                    {{ $ultimaVacina->titulo }}
+                                    <span class="font-bold">
+                                        {{ $ultimaVacina->titulo }}
+                                    </span>
                                 @endif'
 
-                                sendo {{ $ultimaVacina->tipoDose }},
-                                aplicada no dia {{ date('d/m/y', strtotime($ultimaVacina->data)) }},
+                                sendo
+                                <span class="font-bold">
+                                    {{ $ultimaVacina->tipoDose }}
+                                </span>
+                                ,
+                                aplicada no dia
+                                <span class="font-bold">
+                                    {{ date('d/m/y', strtotime($ultimaVacina->data)) }},
+                                </span>
 
                                 @if ($isFabricante)
-                                    do fabricante {{ $ultimaVacina->fabricante }}
+                                    <span class="font-bold">
+                                        do fabricante {{ $ultimaVacina->fabricante }}
+                                    </span>
                                 @else
                                 @endif
                                 na cidade de {{ $ultimaVacina->cidade }}
@@ -128,7 +146,7 @@
         </div>
     </section>
 
-{{-- 
+    {{-- 
     <style>
         .faixa-etaria {
             display: flex;

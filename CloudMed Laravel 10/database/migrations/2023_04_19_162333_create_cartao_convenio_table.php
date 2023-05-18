@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('numero');
             $table->string('nomeConvenio');
             $table->date('validade');
+            $table->string('nome_arquivo');
 
             $table->timestamps();
 

@@ -121,7 +121,7 @@
                                         <input type="file" name="arquivo" id="arquivo" required>
                                         <figcaption id="file-name"></figcaption>
                                         <label
-                                            class="block relative bg-cyan-700 text-white text-md py-2.5 m-auto pointer text-center rounded-md"
+                                            class="block relative hover:bg-cyan-900 bg-cyan-700 text-white text-md py-2.5 m-auto pointer text-center rounded-md cursor-pointer"
                                             for="arquivo">
                                             <i class="fas fa-upload"></i> &nbsp; Escolha um novo arquivo
                                         </label>
@@ -164,7 +164,7 @@
                                         <input type="file" name="arquivo" id="arquivo" required>
                                         <figcaption id="file-name"></figcaption>
                                         <label
-                                            class="block relative bg-cyan-700 text-white text-md py-2.5 m-auto pointer text-center rounded-md hover:bg-cyan-900"
+                                            class="block relative hover:bg-cyan-900 bg-cyan-700 text-white text-md py-2.5 m-auto pointer text-center rounded-md cursor-pointer"
                                             for="arquivo">
                                             <i class="fas fa-upload"></i> &nbsp; Escolha um novo arquivo
                                         </label>
@@ -184,7 +184,7 @@
 
                                 <input type="file" name="arquivo" id="arquivo" required>
                                 <label
-                                    class="block relative bg-cyan-700 text-white text-md w-1/2 py-2.5 m-auto pointer text-center rounded-md"
+                                    class="block relative hover:bg-cyan-900 bg-cyan-700 text-white text-md w-1/2 py-2.5 m-auto pointer text-center rounded-md"
                                     for="arquivo">
                                     <i class="fas fa-upload"></i> &nbsp; Escolha um Arquivo
                                 </label>
@@ -194,16 +194,16 @@
 
                     </div>
 
-                    <div class="flex justify-evenly items-center w-4/5">
+                    <div class="button flex flex-wrap justify-center items-center m-auto">
                         <a href="{{ route('meusExames') }}">
                             <button type="button" 
-                            class="text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-cyan-50 font-medium rounded-lg px-7 py-2 text-center mr-2 mb-2"
+                            class="text-red-700 hover:text-white border border-red-600 hover:bg-red-700 focus:ring-2 focus:outline-none focus:ring-red-50 font-medium rounded-lg px-7 py-2 text-center mr-4 mb-2"
                             >
                                Cancelar
                             </button>
                         </a>
                         <button type="submit" onclick="confirmEdit(event)"
-                            class="text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-cyan-50 font-medium rounded-lg px-7 py-2 text-center mr-2 mb-2"
+                            class="text-emerald-800 hover:text-white border border-emerald-600 hover:bg-emerald-600 focus:ring-2 focus:outline-none focus:ring-emerald-50 font-medium rounded-lg px-7 py-2 text-center mb-2"
                             value="Salvar">Salvar</button>
                     </div>
                 </form>

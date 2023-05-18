@@ -116,8 +116,8 @@
                 @foreach ($vacinas as $vacinas)
                     <div
                         class="relative card-vacina border border-gray-300 bg-slate-100 flex justify-start items-center p-5 rounded-md hover:bg-gray-200">
-                        <div class="w-1/5 p-2 mr-3">
-                            <img src="https://vacina.araguaina.to.gov.br/images/syringe.svg" alt="">
+                        <div class="w-20 p-3 mr-3 rounded-full border border-gray-300">
+                            <img src="https://img.icons8.com/?size=512&id=WKLEizSQKvzA&format=png" alt="" class="img-vacina">
                         </div>
     
                         <div class="w-full">
