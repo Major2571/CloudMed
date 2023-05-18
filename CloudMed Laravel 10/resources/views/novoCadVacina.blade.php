@@ -7,7 +7,7 @@
 
         <section class="form-cad-new-exam">
 
-            <div class="form">
+            <div class="form xl:w-2/5 lg:w-3/5 md:w-3/5 sm:w-5/6">
                 <form method="post" action="/cad-novo-vacina" id="cadastroForm">
 
                     @csrf
@@ -35,7 +35,7 @@
 
                         <div class="mb-6 hidden" id="newVacinaInputContainer">
                             <p class="mb-2 text-cyan-700 font-semibold">A lista que fornecemos abrange a grande maioria das vacinas importantes e comuns, mas pode haver outras vacinas que são recomendadas em alguns casos específicos. Adicione-a: </p>
-                            <div class="form-group">
+                            <div class="input-box cad-exame form-group">
                                 <label for="newNomeVacina" class="block mb-2 font-medium text-gray-900">Nome da vacina:</label>
                                 <input type="text" name="newNomeVacina" id="newNomeVacinaInput"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
