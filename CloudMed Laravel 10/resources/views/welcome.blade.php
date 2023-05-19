@@ -11,7 +11,7 @@
                 Bem-Vindo(a) {{ Auth::user()->name }}!
             </h1>
 
-            <div class="w-full flex align-center justify-center">
+            <div class="w-full flex flex-wrap align-center justify-center">
                 <div class="max-w-sm bg-white rounded-md shadow mx-6">
 
                     <img class="rounded-t-md"
@@ -25,7 +25,7 @@
                         </a>
 
                         @if ($ultimoExame && $totalExames)
-                            <p class="mb-3 font-normal text-gray-900">
+                            <p class="mb-3 text-gray-900">
                                 <span class="font-bold"> Total Cadastrado: </span>
                                 {{ $totalExames }}
                             </p>
@@ -85,20 +85,38 @@
                         </a>
 
                         @if ($ultimaVacina && $totalVacinas)
-                            <p class="mb-3 font-normal text-gray-900">Total Cadastrado: {{ $totalVacinas }}</p>
+                            <p class="mb-3 font-normal text-gray-900">
+                                <span class="font-bold">
+                                    Total Cadastrada:
+                                </span>
+                                {{ $totalVacinas }}
+                            </p>
                             <p class="mb-3 font-normal text-gray-900">Sua última vacina salva foi:
 
                                 '@if (empty($ultimaVacina->titulo))
-                                    {{ $ultimaVacina->nomeVacina->nomeVacina }}
+                                    <span class="font-bold">
+                                        {{ $ultimaVacina->nomeVacina->nomeVacina }}
+                                    </span>
                                 @else
-                                    {{ $ultimaVacina->titulo }}
+                                    <span class="font-bold">
+                                        {{ $ultimaVacina->titulo }}
+                                    </span>
                                 @endif'
 
-                                sendo {{ $ultimaVacina->tipoDose }},
-                                aplicada no dia {{ date('d/m/y', strtotime($ultimaVacina->data)) }},
+                                sendo
+                                <span class="font-bold">
+                                    {{ $ultimaVacina->tipoDose }}
+                                </span>
+                                ,
+                                aplicada no dia
+                                <span class="font-bold">
+                                    {{ date('d/m/y', strtotime($ultimaVacina->data)) }},
+                                </span>
 
                                 @if ($isFabricante)
-                                    do fabricante {{ $ultimaVacina->fabricante }}
+                                    <span class="font-bold">
+                                        do fabricante {{ $ultimaVacina->fabricante }}
+                                    </span>
                                 @else
                                 @endif
                                 na cidade de {{ $ultimaVacina->cidade }}
@@ -128,5 +146,93 @@
         </div>
     </section>
 
+    {{-- 
+    <style>
+        .faixa-etaria {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
 
+        .faixa-etaria>.accordion {
+            flex-grow: 1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background-color: #f5f5f5;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .accordion-header:hover {
+            background-color: #eaeaea;
+        }
+
+        .accordion-content {
+            padding: 10px;
+            display: none;
+        }
+
+        .accordion-content.show {
+            display: block;
+        }
+    </style>
+
+    <div class="faixa-etaria">
+        <div class="accordion" onclick="toggleAccordion('accordion1')">
+            <div class="accordion-header">
+                Faixa Etária 1
+            </div>
+            <div class="accordion-content show" id="accordion1">
+                <h3>Informações Faixa Etária 1</h3>
+                <p>Aqui estão as informações para a Faixa Etária 1.</p>
+            </div>
+        </div>
+
+        <div class="accordion" onclick="toggleAccordion('accordion2')">
+            <div class="accordion-header">
+                Faixa Etária 2
+            </div>
+            <div class="accordion-content" id="accordion2">
+                <h3>Informações Faixa Etária 2</h3>
+                <p>Aqui estão as informações para a Faixa Etária 2.</p>
+            </div>
+        </div>
+        <div class="accordion" onclick="toggleAccordion('accordion3')">
+            <div class="accordion-header">
+                Faixa Etária 2
+            </div>
+            <div class="accordion-content" id="accordion3">
+                <h3>Informações Faixa Etária 2</h3>
+                <p>Aqui estão as informações para a Faixa Etária 2.</p>
+            </div>
+        </div>
+        <div class="accordion" onclick="toggleAccordion('accordion4')">
+            <div class="accordion-header">
+                Faixa Etária 2
+            </div>
+            <div class="accordion-content" id="accordion4">
+                <h3>Informações Faixa Etária 2</h3>
+                <p>Aqui estão as informações para a Faixa Etária 2.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(id) {
+            var accordionContent = document.getElementById(id);
+            var accordions = document.getElementsByClassName('accordion-content');
+
+            // Oculta todos os accordions
+            for (var i = 0; i < accordions.length; i++) {
+                accordions[i].classList.remove('show');
+            }
+
+            // Exibe o accordion clicado
+            accordionContent.classList.toggle('show');
+        }
+    </script> --}}
 @endsection

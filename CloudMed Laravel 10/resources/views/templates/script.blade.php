@@ -15,3 +15,5 @@
 
 <script src="{{url('assets/js/deleteModal.js')}}"></script>
 <script src="{{url('assets/js/saveModal.js')}}"></script>
+<script src="{{url('assets/js/editModal.js')}}"></script>
+<script src="{{url('assets/js/imgPreview.js')}}"></script>

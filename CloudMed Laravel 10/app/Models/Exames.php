@@ -21,7 +21,7 @@ class Exames extends Model
         'instituicao', 
         'cidade', 
         'uf',
-        //'nomeArquivo', 
+        'nome_arquivo', 
         
     ];
 

@@ -74,6 +74,11 @@ Rode os Seeders
     php artisan db:seed
 ```
 
+Crie um atalho na pasta public para acessarmos as imagens
+```bash
+    php artisan storage:link
+```
+
 E por fim, inicie o servidor
 ```bash
     php artisan serve

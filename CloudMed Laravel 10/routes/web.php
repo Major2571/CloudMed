@@ -65,11 +65,19 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/novo-cad-exame', [ExamesController::class, 'create'])->name('novoCadExame');
     Route::post('/cad-novo-exame', [ExamesController::class, 'store']);
     Route::get('/meus-exames/delete/{id}',  [ExamesController::class, 'destroy']);
+
     
     Route::get('/minhas-vacinas', [VacinasController::class, 'index'])->name('minhasVacinas');
     Route::get('/cad-novo-vacina', [VacinasController::class, 'create'])->name('novoCadVacina');
     Route::post('/cad-novo-vacina', [VacinasController::class, 'store']);
-    Route::get('/minhas-vacinas/delete/{id}',  [VacinasController::class, 'destroy']);
+    Route::get('/minhas-vacinas/delete/{id}',  [VacinasController::class, 'destroy'])->name('deleteVacina');
+    
+    
+    Route::get('/meus-exames/edit/{id}',  [ExamesController::class, 'edit'])->name('editExames');
+    Route::put('/meus-exames/update/{id}',  [ExamesController::class, 'update'])->name('updateExames');
+
+    Route::get('/minhas-vacinas/edit/{id}',  [VacinasController::class, 'edit'])->name('editVacina');
+    Route::put('/minhas-vacinas/update/{id}',  [VacinasController::class, 'update'])->name('updateVacina');
     
 });
 

@@ -63,7 +63,8 @@ class VacinasController extends Controller
         $vacina->titulo = $request->input('newNomeVacina');
         $vacina->tipoDose = $request->input('tipoDose');
         $vacina->data = $request->input('date');
-        $vacina->fabricante = $request->input('local');
+        $vacina->fabricante = $request->input('fabricante');
+        $vacina->lote = $request->input('lote');
         $vacina->cidade = $request->input('cidade');
 
         $user = auth()->user();
@@ -85,17 +86,38 @@ class VacinasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Vacinas $vacinas,)
+    public function edit(Vacinas $vacinas, $id)
     {
-        //
+        $vacina = Vacinas::FindOrFail($id);
+        $nomeVacinas = NomeVacinas::all();
+        $uf = UFs::all();
+
+        return view('editVacina', compact('vacina', 'uf', 'nomeVacinas'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Vacinas $vacinas)
+    public function update(Request $request, $id)
     {
-        //;
+        $vacina = Vacinas::FindOrFail($id);
+
+        $vacina->id_user = $request->id_user;
+        $vacina->id_vacina = $request->input('name');
+        $vacina->id_uf = $request->input('uf');
+        $vacina->titulo = $request->input('newNomeVacina');
+        $vacina->tipoDose = $request->input('tipoDose');
+        $vacina->data = $request->input('date');
+        $vacina->fabricante = $request->input('fabricante');
+        $vacina->lote = $request->input('lote');
+        $vacina->cidade = $request->input('cidade');
+
+        $user = auth()->user();
+        $vacina->id_user = $user->id;
+
+        $vacina->save();
+
+        return redirect('/minhas-vacinas');
     }
 
     /**

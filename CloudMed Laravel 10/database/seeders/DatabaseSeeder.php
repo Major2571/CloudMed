@@ -17,5 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call(EspecialidadeTableSeeder::class);
         $this->call(UFsTableSeeder::class);
         $this->call(VacinasTableSeeder::class);
+
+        $this->call(AddExameSeeder::class);
+        $this->call(AddVacinaSeeder::class);
+        $this->call(AddUsuarioSeeder::class);
     }
 }

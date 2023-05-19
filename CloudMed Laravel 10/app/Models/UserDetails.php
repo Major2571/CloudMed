@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserPacientes extends Model
+class UserDetails extends Model
 {
     use HasFactory;
 
@@ -27,4 +27,20 @@ class UserPacientes extends Model
         
         
     ];
+
+    public function cartaoSus()
+    {
+        return $this->belongsTo(CartaoSus::class, 'idCartaoSus');
+    }
+    
+    public function cartaoConvenio()
+    {
+        return $this->belongsTo(CartaoConvenio::class, 'idCartaoConvenio');
+    }
+
+    public function informacoesClinicas()
+    {
+        return $this->belongsTo(PacienteInformacoesClinicas::class, 'idInformacoesClinicas');
+    }
+    
 }
