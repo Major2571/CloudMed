@@ -9,14 +9,6 @@ ScrollReveal().reveal(".blob-maker", {
     easing: "ease"
 });
 
-// Menu do Main
-// ScrollReveal().reveal(".menu-main-index", {
-//     duration: 1500,
-//     origin: "top",
-//     distance: "50px",
-//     easing: "ease"
-// });
-
 // Sessão 1
 ScrollReveal().reveal(".section-one", {
     duration: 1500,
@@ -51,7 +43,7 @@ ScrollReveal().reveal('.card-4', { delay: 450 });
 
 // Sessão de Opiniões
 ScrollReveal().reveal(".section-opnions", {
-    duration: 2000,
+    duration: 2500,
     origin: "bottom",
     distance: "100px",
     easing: "ease"

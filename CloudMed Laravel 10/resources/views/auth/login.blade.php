@@ -7,7 +7,7 @@
 
     <div class="main-login min-h-screen flex justify-center items-center flex-wrap w-4/5 p-8">
 
-        <div class="form-login w-1/4 mr-5">
+        <div class="form-login lg:w-1/4 md:w-1/2 lg:mr-5">
 
             <div class="title text-center">
                 <h1>Login</h1>
@@ -30,15 +30,15 @@
                     </div>
 
                     <!-- Remember Me -->
-                    <div class="remember-me">
+                    <div class="flex justify-between flex-wrap">
                         <label for="remember_me" class="inline-flex items-center">
-                            <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-cyan-800 shadow-sm focus:ring-cyan-600 " name="remember">
-                            <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                            <input id="remember_me" type="checkbox" class="rounded border-gray-300  text-cyan-800 shadow-sm focus:ring-cyan-600 " name="remember">
+                            <span class="ml-2 text-sm text-gray-600 font-semibold">{{ __('Lembre de mim') }}</span>
                         </label>
                         <div>
                             @if (Route::has('password.request'))
                             <a href="{{ route('password.request') }}">
-                                {{ __('Esqueceu sua Senha?') }}
+                                {{ __('Esqueci a Senha') }}
                             </a>
                             @endif
                         </div>

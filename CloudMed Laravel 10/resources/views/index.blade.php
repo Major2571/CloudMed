@@ -1,6 +1,6 @@
 @extends('templates.headMain')
 
-<title> WebApp </title>
+<title> CloudMed </title>
 
 @section('contentMain')
 

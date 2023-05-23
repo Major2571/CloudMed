@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -30,4 +30,4 @@
 
     @include('templates.script')
 </x-app-layout>
-</html>
+</html> --}}

@@ -1,10 +1,7 @@
-@extends('templates.headSessionAllow')
+@section('title', 'Novo Exame')
 
-<title> Novo Exame </title>
-
-@section('contentPaciente')
+<x-app-layout>
     <section class="login session-allow">
-
         <section class="form-cad-new-exam">
 
             <div class="form">
@@ -31,14 +28,16 @@
                         <div class="grid md:grid-cols-2 md:gap-4">
                             <div>
                                 <div class="mb-6">
-                                    <label for="especialidade" class="block mb-2 font-medium text-gray-900"> Especialidade:
+                                    <label for="especialidade" class="block mb-2 font-medium text-gray-900">
+                                        Especialidade:
                                     </label>
                                     <div class="relative w-full">
                                         <select name="especialidade"
                                             class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
                                             <option value=""> Selecionar </option>
                                             @foreach ($especialidades as $especialidade)
-                                                <option value="{{ $especialidade->id }}">{{ $especialidade->especialidade }}
+                                                <option value="{{ $especialidade->id }}">
+                                                    {{ $especialidade->especialidade }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -47,7 +46,8 @@
 
                             </div>
                             <div class="mb-6">
-                                <label for="date" class="block mb-2 font-medium text-gray-900"> Data que foi realizada:
+                                <label for="date" class="block mb-2 font-medium text-gray-900"> Data que foi
+                                    realizada:
                                 </label>
                                 <input type="date" name="date" id="date"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
@@ -91,11 +91,13 @@
                                 <img id="chosen-image" class="img-preview w-4/5 block relative">
                                 <figcaption id="file-name"></figcaption>
                             </div>
-                        
+
                             <div id="file-info" class="file-info"></div>
-                        
+
                             <input type="file" name="arquivo" id="arquivo" required>
-                            <label class="block relative bg-cyan-700 text-white text-md w-1/2 py-2.5 m-auto pointer text-center rounded-md" for="arquivo">
+                            <label
+                                class="block relative bg-cyan-700 text-white text-md w-1/2 py-2.5 m-auto pointer text-center rounded-md"
+                                for="arquivo">
                                 <i class="fas fa-upload"></i> &nbsp; Escolha um Arquivo
                             </label>
                         </div>
@@ -104,10 +106,9 @@
 
                     <div class="button flex flex-wrap justify-center items-center m-auto">
                         <a href="{{ route('meusExames') }}">
-                            <button type="button" 
-                            class="text-red-700 hover:text-white border border-red-600 hover:bg-red-700 focus:ring-2 focus:outline-none focus:ring-red-50 font-medium rounded-lg px-7 py-2 text-center mr-4 mb-2"
-                            >
-                               Cancelar
+                            <button type="button"
+                                class="text-red-700 hover:text-white border border-red-600 hover:bg-red-700 focus:ring-2 focus:outline-none focus:ring-red-50 font-medium rounded-lg px-7 py-2 text-center mr-4 mb-2">
+                                Cancelar
                             </button>
                         </a>
                         <button type="submit"
@@ -118,4 +119,5 @@
             </div>
 
         </section>
-    @endsection
+    </section>
+</x-app-layout>

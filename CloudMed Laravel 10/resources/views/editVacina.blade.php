@@ -1,10 +1,7 @@
-@extends('templates.headSessionAllow')
+@section('title', 'Editar Vacina')
 
-<title> Editar Vacina </title>
-
-@section('contentPaciente')
+<x-app-layout>
     <section class="login session-allow">
-
         <section class="form-cad-new-exam">
 
             <div class="form xl:w-2/5 lg:w-3/5 md:w-3/5 sm:w-5/6">
@@ -21,7 +18,8 @@
 
                         <div class="mb-6">
                             <div class="relative w-full">
-                                <label for="name" class="block mb-2 font-medium text-gray-900"> Nome da Vacina: </label>
+                                <label for="name" class="block mb-2 font-medium text-gray-900"> Nome da Vacina:
+                                </label>
                                 <select name="name" id="vacinaSelect"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
                                     <option value=""> Selecionar </option>
@@ -37,8 +35,10 @@
                         </div>
 
                         <div class="mb-6 hidden" id="newVacinaInputContainer">
-                            <p class="mb-2 text-cyan-700 font-semibold">A lista que fornecemos abrange a grande maioria das
-                                vacinas importantes e comuns, mas pode haver outras vacinas que são recomendadas em alguns
+                            <p class="mb-2 text-cyan-700 font-semibold">A lista que fornecemos abrange a grande maioria
+                                das
+                                vacinas importantes e comuns, mas pode haver outras vacinas que são recomendadas em
+                                alguns
                                 casos específicos. Adicione-a: </p>
                             <div class="form-group">
                                 <label for="newNomeVacina" class="block mb-2 font-medium text-gray-900">Nome da
@@ -61,27 +61,29 @@
                                                 {{ $vacina->tipoDose == 'Dose Única' ? 'selected' : '' }}>Dose Única
                                             </option>
                                             <option value="Primeira Dose"
-                                                {{ $vacina->tipoDose == 'Primeira Dose' ? 'selected' : '' }}>Primeira Dose
+                                                {{ $vacina->tipoDose == 'Primeira Dose' ? 'selected' : '' }}>Primeira
+                                                Dose
                                             </option>
                                             <option value="Segunda Dose"
                                                 {{ $vacina->tipoDose == 'Segunda Dose' ? 'selected' : '' }}>Segunda Dose
                                             </option>
                                             <option value="Terceira Dose"
-                                                {{ $vacina->tipoDose == 'Terceira Dose' ? 'selected' : '' }}>Terceira Dose
+                                                {{ $vacina->tipoDose == 'Terceira Dose' ? 'selected' : '' }}>Terceira
+                                                Dose
                                             </option>
                                             <option value="Quarta Dose"
                                                 {{ $vacina->tipoDose == 'Quarta Dose' ? 'selected' : '' }}>Quarta Dose
                                             </option>
-                                            <option 
-                                                value="Reforco" {{$vacina->tipoDose == 'Reforco' ? 'selected' : '' }}>
+                                            <option value="Reforco"
+                                                {{ $vacina->tipoDose == 'Reforco' ? 'selected' : '' }}>
                                                 Reforço
                                             </option>
-                                            <option 
-                                                value="Primeiro Reforço" {{$vacina->tipoDose == 'Primeiro Reforço' ? 'selected' : '' }}>
+                                            <option value="Primeiro Reforço"
+                                                {{ $vacina->tipoDose == 'Primeiro Reforço' ? 'selected' : '' }}>
                                                 Primeiro Reforço
                                             </option>
-                                            <option 
-                                                value="Segundo Reforço" {{$vacina->tipoDose == 'Segundo Reforço' ? 'selected' : '' }}>
+                                            <option value="Segundo Reforço"
+                                                {{ $vacina->tipoDose == 'Segundo Reforço' ? 'selected' : '' }}>
                                                 Segundo Reforço
                                             </option>
                                         </select>
@@ -142,10 +144,9 @@
 
                     <div class="button flex flex-wrap justify-center items-center m-auto">
                         <a href="{{ route('minhasVacinas') }}">
-                            <button type="button" 
-                            class="text-red-700 hover:text-white border border-red-600 hover:bg-red-700 focus:ring-2 focus:outline-none focus:ring-red-50 font-medium rounded-lg px-7 py-2 text-center mr-4 mb-2"
-                            >
-                               Cancelar
+                            <button type="button"
+                                class="text-red-700 hover:text-white border border-red-600 hover:bg-red-700 focus:ring-2 focus:outline-none focus:ring-red-50 font-medium rounded-lg px-7 py-2 text-center mr-4 mb-2">
+                                Cancelar
                             </button>
                         </a>
                         <button type="submit" onclick="confirmEdit(event)"
@@ -156,4 +157,5 @@
             </div>
 
         </section>
-    @endsection
+    </section>
+</x-app-layout>

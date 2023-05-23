@@ -1,8 +1,6 @@
-@extends('templates.headSessionAllow')
+@section('title', 'Meus Exames')
 
-<title> Meus Exames </title>
-
-@section('contentPaciente')
+<x-app-layout>
     <section class="session-allow">
 
         <div class="min-h-screen max-h-full m-auto w-full ">
@@ -212,4 +210,4 @@
                 alt="arrowUp">
         </button>
     </div>
-@endsection
+</x-app-layout>

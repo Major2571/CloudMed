@@ -1,10 +1,6 @@
-@extends('templates.headSessionAllow')
+@section('title', 'Início')
 
-
-<title> Bem-Vindo! </title>
-
-@section('contentPaciente')
-
+<x-app-layout>
     <section class="session-allow">
         <div class="min-h-screen">
             <h1 class="text-center py-10">
@@ -235,4 +231,4 @@
             accordionContent.classList.toggle('show');
         }
     </script> --}}
-@endsection
+</x-app-layout>

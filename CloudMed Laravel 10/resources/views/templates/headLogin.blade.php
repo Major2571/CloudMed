@@ -30,7 +30,6 @@
     
     @yield('contentLogin')
 
-    @include('templates.script')
-
+    <script src="assets/js/btnBack.js"></script>
 
 </html>

@@ -70,8 +70,6 @@ select::-webkit-scrollbar-thumb {
     height: auto;
 }
 
-
-
 p {
     font-size: var(--fontSizeText);
     font-weight: 400;

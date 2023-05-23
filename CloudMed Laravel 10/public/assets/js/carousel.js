@@ -5,13 +5,13 @@ $(document).ready(function () {
     owl.owlCarousel({
         loop: true,
         margin: 0,
-        nav: false, //botão pra ficar passando < >
+        nav: false,
         autoplay: true,
-        autoplayTimeout: 2000, //tempo para passar as imagens
-        autoplayHoverPause: true, //passar o mouse na imagem faz parar o autoplay
-        slideBy: 2, //qts imagens passam por vez
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true,
+        slideBy: 2, 
         slideTransition: 'ease-in-out',
-        dots: false,  //bolinha que fica embaixo das imagens (progresso)
+        dots: false,
         responsive: {
             0: {
                 items: 1
