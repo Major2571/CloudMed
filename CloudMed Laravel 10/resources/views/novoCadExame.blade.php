@@ -6,7 +6,7 @@
 
             <div class="form">
 
-                <form method="post" action="/cad-novo-exame" id="cadastroForm" enctype="multipart/form-data">
+                <form method="post" action="{{ route('saveNewExam') }}" id="cadastroForm" enctype="multipart/form-data">
 
                     @csrf
 

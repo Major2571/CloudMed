@@ -161,7 +161,7 @@
 
                                 <!-- Excluir -->
                                 <td class="px-6 py-4 text-center">
-                                    <a href="/meus-exames/delete/{{ $exames->id }}">
+                                    <a href="{{ route( 'deleteExame', $exames->id ) }}">
                                         <button type="button"
                                         onclick="confirmExclusao(event)"
                                             class="text-red-500 border border-red-600 hover:bg-red-500 hover:text-white focus:ring-2 focus:outline-none focus:ring-red-200 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2">
@@ -186,7 +186,7 @@
 
                 <div class="flex items-center w-1/4">
                     <h3 class="mr-2 text-lg font-semibold"> Clique Aqui: </h3>
-                    <a href="/novo-cad-exame">
+                    <a href="{{ route('novoCadExame') }}">
                         <button type="button"
                             class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-cyan-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
                             Novo Exame

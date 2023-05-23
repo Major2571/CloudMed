@@ -5,7 +5,7 @@
         <section class="form-cad-new-exam">
 
             <div class="form xl:w-2/5 sm:w-9/12">
-                <form method="post" action="/meus-exames/update/{{ $exame->id }}" enctype="multipart/form-data">
+                <form method="post" action="{{ route( 'updateExames', $exame->id ) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -149,10 +149,6 @@
                                             </a>
 
                                         </div>
-
-                                        {{-- <figcaption id="file-name" class="block mb-2 font-medium text-gray-900 py-2">
-                                            {{ $exame->nome_arquivo }}
-                                        </figcaption> --}}
 
                                     </div>
 
