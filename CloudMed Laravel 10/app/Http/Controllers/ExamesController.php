@@ -35,7 +35,12 @@ class ExamesController extends Controller
 
         $exames = $exames->get();
 
-        return view('meusExames', compact('exames', 'filtroData', 'filtroEspecialidade', 'especialidades'));
+        return view('meusExames', compact(
+            'exames',
+            'filtroData',
+            'filtroEspecialidade',
+            'especialidades'
+        ));
     }
 
 
@@ -63,7 +68,7 @@ class ExamesController extends Controller
         $exames->cidade = $request->input('cidade');
 
         // Salvar os Arquivos
-        if ( $request->hasFile('arquivo')){
+        if ($request->hasFile('arquivo')) {
             $file = $request->file('arquivo');
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->storeAs('public/arquivos_exames', $fileName);
@@ -75,7 +80,7 @@ class ExamesController extends Controller
 
         $exames->save();
 
-        return redirect('/meus-exames');
+        return redirect()->route('meusExames');
     }
 
     /**
@@ -103,7 +108,7 @@ class ExamesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id )
+    public function update(Request $request, $id)
     {
         $exame = Exames::FindOrFail($id);
 
@@ -117,16 +122,16 @@ class ExamesController extends Controller
 
         // Substituição do arquivo
         if ($request->hasFile('arquivo')) {
-            // Varificar se o arquivo existe, e exclui-lo
-            if ( Storage::exists('public/arquivos_exames/' . $exame->nome_arquivo)) {
+            // Varificar se o arquivo existe, e o exclui
+            if (Storage::exists('public/arquivos_exames/' . $exame->nome_arquivo)) {
                 Storage::delete('public/arquivos_exames/' . $exame->nome_arquivo);
             }
-        
+
             // Salvar um novo arquivo
             $file = $request->file('arquivo');
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->storeAs('public/arquivos_exames', $fileName);
-        
+
             $exame->nome_arquivo = $fileName;
         }
 
@@ -135,7 +140,7 @@ class ExamesController extends Controller
 
         $exame->save();
 
-        return redirect('/meus-exames');
+        return redirect()->route('meusExames');
     }
 
     /**
@@ -145,15 +150,6 @@ class ExamesController extends Controller
     {
         $exames = new Exames();
         $exames->where('id', $id)->delete();
-        return redirect('/meus-exames');
-    }
-
-    public function dashboard()
-    {
-        $user = auth()->user();
-
-        $exames = $user->exames;
-
-        return view('welcome', compact('exames'));
+        return redirect()->route('meusExames');
     }
 }
