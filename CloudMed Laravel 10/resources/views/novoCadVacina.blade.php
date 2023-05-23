@@ -6,7 +6,7 @@
         <section class="form-cad-new-exam">
 
             <div class="form xl:w-2/5 lg:w-3/5 md:w-3/5 sm:w-5/6">
-                <form method="post" action="/cad-novo-vacina" id="cadastroForm">
+                <form method="post" action="{{ route('saveNewVaccine') }}" id="cadastroForm">
 
                     @csrf
 

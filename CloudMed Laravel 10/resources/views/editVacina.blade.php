@@ -5,7 +5,7 @@
         <section class="form-cad-new-exam">
 
             <div class="form xl:w-2/5 lg:w-3/5 md:w-3/5 sm:w-5/6">
-                <form method="post" action="/minhas-vacinas/update/{{ $vacina->id }}">
+                <form method="post" action="{{ route( 'updateVacina', $vacina->id ) }}">
 
                     @csrf
                     @method('PUT')

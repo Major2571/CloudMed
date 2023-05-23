@@ -160,7 +160,7 @@
                                         </button>
                                     </a>
 
-                                    <a href="{{ route('deleteVacina', $vacinas->id) }}">
+                                    <a href="{{ route( 'deleteVacina', $vacinas->id ) }}">
                                         <button type="button" onclick="confirmExclusao(event)"
                                             class="bg-red-500 border border-red-600 hover:bg-red-700 text-white focus:ring-2 focus:outline-none focus:ring-red-200 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2">
                                             <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor"

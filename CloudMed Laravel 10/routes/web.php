@@ -69,7 +69,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     
     Route::get('/minhas-vacinas', [VacinasController::class, 'index'])->name('minhasVacinas');
     Route::get('/cad-novo-vacina', [VacinasController::class, 'create'])->name('novoCadVacina');
-    Route::post('/cad-novo-vacina', [VacinasController::class, 'store']);
+    Route::post('/cad-novo-vacina', [VacinasController::class, 'store'])->name('saveNewVaccine');
     Route::get('/minhas-vacinas/delete/{id}',  [VacinasController::class, 'destroy'])->name('deleteVacina');
     
     
