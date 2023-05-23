@@ -185,7 +185,7 @@
 
                     <div class="flex items-center w-1/4">
                         <h3 class="mr-2 text-lg font-semibold"> Clique Aqui: </h3>
-                        <a href="/cad-novo-vacina">
+                        <a href="{{ route('novoCadVacina') }}">
                             <button type="button"
                                 class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-cyan-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
                                 Nova Vacina
