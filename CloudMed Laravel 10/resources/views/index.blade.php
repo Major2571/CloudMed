@@ -116,11 +116,7 @@
 </section>
 
 
-<div class="toTop">
-    <button onclick="backToTop()" id="toTopButton" type="button">
-        <img src="{{url('https://blog.social.mg.gov.br/wp-content/plugins/photo-gallery/css/bwg-fonts/fonts/bwg-fonts-svg/angle-up-sm.svg')}}" alt="arrowUp">
-    </button>
-</div>
+<x-btn-toTop/>
 
 
 @endsection
