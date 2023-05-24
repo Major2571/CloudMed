@@ -23,6 +23,8 @@ uploadButton.onchange = () => {
 
             fileInfo.textContent = '';
             fileInfo.style.display = 'none';
+
+            console.log('passei aqui 1')
         }
 
         else if (file.type.includes('image/')) {
@@ -34,22 +36,26 @@ uploadButton.onchange = () => {
                 previewContainer.innerHTML = '';
                 previewContainer.appendChild(newImage);
             }
-            fileName.textContent = file.name;
+            fileName.textContent = 'Arquivo: ' + file.name;
             previewContainer.style.display = 'block';
 
-            fileInfo.textContent = '';
+            fileInfo.textContent = file.name;
             fileInfo.style.display = 'none';
 
+            console.log('passei aqui 2')
         }
 
         else {
             previewContainer.style.display = 'none';
             fileInfo.textContent = 'Arquivo selecionado: ' + file.name;
             fileInfo.style.display = 'block';
+
+            console.log('passei aqui 3')
         }
 
 
     } else {
+        console.log('passei aqui 4')
         previewContainer.style.display = 'none';
         fileInfo.textContent = '';
         fileInfo.style.display = 'none';

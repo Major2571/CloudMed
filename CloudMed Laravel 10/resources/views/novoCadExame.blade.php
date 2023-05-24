@@ -89,8 +89,8 @@
                         <div class="text-center">
                             <div id="preview-container" class="image-container w-4/5 m-auto">
                                 <img id="chosen-image" class="img-preview w-4/5 block relative">
-                                <figcaption id="file-name"></figcaption>
                             </div>
+                            <figcaption id="file-name"></figcaption>
 
                             <div id="file-info" class="file-info"></div>
 
