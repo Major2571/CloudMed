@@ -16,8 +16,11 @@
 
                     <div class="p-5">
 
-                        <a href="/meus-exames">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Meus Exames</h5>
+                        <a href="{{ route('meusExames') }}">
+                            <h5 class="mb-2 mr-2 text-2xl font-bold tracking-tight text-gray-900 
+                            hover:text-cyan-800">
+                                Meus Exames
+                            </h5>
                         </a>
 
                         @if ($ultimoExame && $totalExames)
@@ -55,15 +58,13 @@
                             </p>
                         @endif
 
-                        <a href="/novo-cad-exame"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-700 rounded-md hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300">
+                        <a href="{{ route('novoCadExame') }}"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-700 rounded-md  hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-gray-300"
+                        >
                             Cadastrar um novo Exame
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
+                            <div class="ml-2 text-base">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -76,8 +77,8 @@
 
                     <div class="p-5">
 
-                        <a href="/meus-exames">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Minhas Vacinas</h5>
+                        <a href="{{ route('minhasVacinas') }}">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 hover:text-cyan-800">Minhas Vacinas</h5>
                         </a>
 
                         @if ($ultimaVacina && $totalVacinas)
@@ -125,15 +126,13 @@
                             </p>
                         @endif
 
-                        <a href="/cad-novo-vacina"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-700 rounded-md hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300">
+                        <a href="{{ route('novoCadVacina') }}"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-700 rounded-md hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-gray-300"
+                        >
                             Cadastrar uma nova Vacina
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
+                            <div class="ml-2 text-base">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
                         </a>
                     </div>
                 </div>
