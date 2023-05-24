@@ -5,12 +5,15 @@ let fileName = document.getElementById('file-name');
 let fileInfo = document.getElementById('file-info');
 
 uploadButton.onchange = () => {
+
     let file = uploadButton.files[0];
+
     if (file) {
 
-
         if (file.type === 'application/pdf') {
+
             let newEmbed = document.createElement('embed');
+
             newEmbed.setAttribute('src', URL.createObjectURL(file));
             newEmbed.setAttribute('type', file.type);
             newEmbed.setAttribute('width', '100%');
@@ -20,15 +23,15 @@ uploadButton.onchange = () => {
 
             fileName.textContent = file.name;
             previewContainer.style.display = 'block';
-
             fileInfo.textContent = '';
             fileInfo.style.display = 'none';
 
-            console.log('passei aqui 1')
         }
 
         else if (file.type.includes('image/')) {
+
             let reader = new FileReader();
+
             reader.readAsDataURL(file);
             reader.onload = () => {
                 let newImage = document.createElement('img');
@@ -36,28 +39,30 @@ uploadButton.onchange = () => {
                 previewContainer.innerHTML = '';
                 previewContainer.appendChild(newImage);
             }
-            fileName.textContent = 'Arquivo: ' + file.name;
+
+            fileName.textContent = file.name;
             previewContainer.style.display = 'block';
-
-            fileInfo.textContent = file.name;
+            fileInfo.textContent = '';
             fileInfo.style.display = 'none';
-
-            console.log('passei aqui 2')
         }
 
         else {
-            previewContainer.style.display = 'none';
-            fileInfo.textContent = 'Arquivo selecionado: ' + file.name;
-            fileInfo.style.display = 'block';
-
-            console.log('passei aqui 3')
+            resetFileInput();
+            Swal.fire({
+                icon: 'error',
+                title: 'Tipo de arquivo inválido!',
+                text: 'Por favor, selecione uma imagem ( JPG, JPEG, PNG, SVG ) ou arquivo PDF.',
+            });
         }
 
 
     } else {
-        console.log('passei aqui 4')
         previewContainer.style.display = 'none';
         fileInfo.textContent = '';
         fileInfo.style.display = 'none';
     }
+}
+
+function resetFileInput() {
+    uploadButton.value = '';
 }
