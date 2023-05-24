@@ -11,11 +11,12 @@ class CartaoConvenio extends Model
 
     protected $fillable = [
 
-        'idCartaoConvenio',
+        'id',
         'id_user',
         'numero',
-        'nomeConvenio', 
-        'validade'
+        'nomeConvenio',
+        'validade',
+        'nome_arquivo',
         
     ];
 

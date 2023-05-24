@@ -4,6 +4,8 @@ use App\Http\Controllers\ExamesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacinasController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserDetailsController;
+use App\Models\UserDetails;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,17 +40,14 @@ Route::get('/cadastro', function () {
 });
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-    ->middleware('auth')
-    ->name('logout');
-
 Route::middleware(['auth', 'verified'])->group(function () {
+
+    Route::get('/profile', [UserDetailsController::class, 'index'])->name('profile.edit');
+
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile/destroy', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('pacienteInformacoesClinicas', function (Blueprint $table) {
 
-            $table->id('idInformacoesClinicas');
+            $table->id('id');
 
-            // $table->integer('id_user')->unsigned();
-            // $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
 
             $table->string('altura');
             $table->string('peso');
             $table->string('tipoSanguineo');
-            $table->string('alergias');
-            $table->string('medicamentosUsoContinuo');
+            $table->text('alergias');
+            $table->text('medicamentosUsoContinuo');
             
             $table->timestamps();
 

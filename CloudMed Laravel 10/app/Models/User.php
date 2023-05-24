@@ -42,7 +42,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function Exames() {
-        return $this->hasMany('App\Models\Exames');
-    }
 }

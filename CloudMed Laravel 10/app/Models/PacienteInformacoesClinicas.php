@@ -11,14 +11,13 @@ class PacienteInformacoesClinicas extends Model
 
     protected $fillable = [
 
-        'idInformacoesClinicas',
-        // 'id_user',
+        'id',
+        'id_user',
         'altura',
         'peso', 
         'tipoSanguineo',
         'alergias',
         'medicamentosUsoContinuo',
             
-        
     ];
 }

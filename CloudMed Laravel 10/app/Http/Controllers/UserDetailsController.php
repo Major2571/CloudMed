@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UFs;
 use App\Models\UserDetails;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserDetailsController extends Controller
 {
@@ -12,7 +14,18 @@ class UserDetailsController extends Controller
      */
     public function index()
     {
-        //
+        $uf = UFs::all();
+
+        $userName = Auth::user()->name;
+        $userEmail = Auth::user()->email;
+        $userId = Auth::user()->id;
+
+        return view('profile.profile', compact(
+            'uf',
+            'userName',
+            'userId',
+            'userEmail'
+        ));
     }
 
     /**
@@ -28,23 +41,7 @@ class UserDetailsController extends Controller
      */
     public function store(Request $request)
     {
-            $UserDetails = new UserDetails();
-
-            $UserDetails->id_user = $request->id_user;
-            $UserDetails->tidInformacoesClinicas = $request->idInformacoesClinicas;
-            $UserDetails->idCartaoSus = $request->idCartaoSus;
-            $UserDetails->sobrenome = $request->input('name');
-            $UserDetails->dataNascimento = $request->input('date');
-            $UserDetails->rg = $request->input('rg');
-            $UserDetails->cpf = $request->input('cpf');
-            $UserDetails->cidade = $request->input('cidade');
-            $UserDetails->uf = $request->input('uf');
-            $UserDetails->email = $request->input('email');
-            $UserDetails->telefone = $request->input('number');
-        
-            $UserDetails->save();
-
-            return redirect('/welcome');
+            
     }
 
     /**

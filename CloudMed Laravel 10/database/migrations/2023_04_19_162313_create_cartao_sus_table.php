@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('cartaoSus', function (Blueprint $table) {
 
-            $table->id('idCartaoSUS');
+            $table->id('id');
             
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');

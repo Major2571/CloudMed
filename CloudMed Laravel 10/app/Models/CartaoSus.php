@@ -12,7 +12,7 @@ class CartaoSus extends Model
     
     protected $fillable = [
         
-        'idCartaoSus',
+        'id',
         'id_user',
         'numero',
         
