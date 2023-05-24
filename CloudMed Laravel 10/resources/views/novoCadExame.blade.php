@@ -10,30 +10,30 @@
 
                     @csrf
 
-                    <div class="text-center pb-2 cad-new-title">
+                    <div class="cad-new-title pb-2 text-center">
                         <h1>Cadastre um novo Exame</h1>
                     </div>
 
                     <div class="py-4 px-10">
 
                         <div class="mb-6">
-                            <label for="name" class="block mb-2 font-medium text-gray-900">
+                            <label for="name" class="mb-2 block font-medium text-gray-900">
                                 Título:
                             </label>
                             <input type="text" name="name" id="name"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
                                 required placeholder="Ex: Hemograma Completo">
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">
                             <div>
                                 <div class="mb-6">
-                                    <label for="especialidade" class="block mb-2 font-medium text-gray-900">
+                                    <label for="especialidade" class="mb-2 block font-medium text-gray-900">
                                         Especialidade:
                                     </label>
                                     <div class="relative w-full">
                                         <select name="especialidade"
-                                            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
+                                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                                             <option value=""> Selecionar </option>
                                             @foreach ($especialidades as $especialidade)
                                                 <option value="{{ $especialidade->id }}">
@@ -46,36 +46,35 @@
 
                             </div>
                             <div class="mb-6">
-                                <label for="date" class="block mb-2 font-medium text-gray-900"> Data que foi
+                                <label for="date" class="mb-2 block font-medium text-gray-900"> Data que foi
                                     realizada:
                                 </label>
                                 <input type="date" name="date" id="date"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
                                     required>
                             </div>
                         </div>
 
-
                         <div class="mb-6">
-                            <label for="local" class="block mb-2 font-medium text-gray-900"> Instituição: </label>
+                            <label for="local" class="mb-2 block font-medium text-gray-900"> Instituição: </label>
                             <input type="text" name="local" id="local"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
+                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
                                 placeholder="Ex: Santa Casa">
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">
                             <div class="mb-6">
-                                <label for="cidade" class="block mb-2 font-medium text-gray-900"> Cidade: </label>
+                                <label for="cidade" class="mb-2 block font-medium text-gray-900"> Cidade: </label>
                                 <input type="text" name="cidade" id="cidade"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5"
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
                                     required>
                             </div>
 
                             <div class="mb-6">
                                 <div class="relative w-full">
-                                    <label for="especialidade" class="block mb-2 font-medium text-gray-900"> UF </label>
+                                    <label for="especialidade" class="mb-2 block font-medium text-gray-900"> UF </label>
                                     <select name="uf"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5 pr-10">
+                                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                                         <option value=""> Selecionar </option>
                                         @foreach ($uf as $uf)
                                             <option value="{{ $uf->id }}">{{ $uf->uf }}
@@ -87,32 +86,35 @@
                         </div>
 
                         <div class="text-center">
-                            <div id="preview-container" class="image-container w-4/5 m-auto">
-                                <img id="chosen-image" class="img-preview w-4/5 block relative">
+
+                            <div id="preview-container" class="image-container m-auto w-4/5">
+                                <img id="chosen-image" class="img-preview">
                             </div>
+
                             <figcaption id="file-name"></figcaption>
 
                             <div id="file-info" class="file-info"></div>
 
-                            <input type="file" name="arquivo" id="arquivo" required>
+                            <input type="file" name="arquivo" id="arquivo" required accept="image/*, .pdf">
                             <label
-                                class="block relative bg-cyan-700 text-white text-md w-1/2 py-2.5 m-auto pointer text-center rounded-md"
+                                class="text-md pointer relative m-auto block w-1/2 cursor-pointer rounded-md bg-cyan-700 py-2.5 text-center text-white hover:bg-cyan-900"
                                 for="arquivo">
                                 <i class="fas fa-upload"></i> &nbsp; Escolha um Arquivo
                             </label>
+
                         </div>
 
                     </div>
 
-                    <div class="button flex flex-wrap justify-center items-center m-auto">
+                    <div class="button m-auto flex flex-wrap items-center justify-center">
                         <a href="{{ route('meusExames') }}">
                             <button type="button"
-                                class="text-red-700 hover:text-white border border-red-600 hover:bg-red-700 focus:ring-2 focus:outline-none focus:ring-red-50 font-medium rounded-lg px-7 py-2 text-center mr-4 mb-2">
+                                class="mr-4 mb-2 rounded-lg border border-red-600 px-7 py-2 text-center font-medium text-red-700 hover:bg-red-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-red-50">
                                 Cancelar
                             </button>
                         </a>
                         <button type="submit"
-                            class="text-emerald-800 hover:text-white border border-emerald-600 hover:bg-emerald-600 focus:ring-2 focus:outline-none focus:ring-emerald-50 font-medium rounded-lg px-7 py-2 text-center mb-2"
+                            class="mb-2 rounded-lg border border-emerald-600 px-7 py-2 text-center font-medium text-emerald-800 hover:bg-emerald-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-50"
                             value="Salvar">Salvar</button>
                     </div>
                 </form>
