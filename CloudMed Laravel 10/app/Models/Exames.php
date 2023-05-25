@@ -25,9 +25,6 @@ class Exames extends Model
         
     ];
 
-    protected $dates = ['date'];
-
-
     public function especialidade()
     {
         return $this->belongsTo(Especialidade::class, 'id_especialidade');
