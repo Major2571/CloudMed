@@ -9,6 +9,8 @@ class Exames extends Model
 {
     use HasFactory;
 
+    protected $table = 'exames';
+
     protected $fillable = [
         
         'id',

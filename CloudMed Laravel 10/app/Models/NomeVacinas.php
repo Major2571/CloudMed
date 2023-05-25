@@ -10,7 +10,11 @@ class NomeVacinas extends Model
     use HasFactory;
 
     protected $table = 'tipos-vacinas';
-    protected $fillable = ['id', 'nomeVacina'];
+    
+    protected $fillable = [
+        'id', 
+        'nomeVacina'
+    ];
 
     public function cadVacina()
     {

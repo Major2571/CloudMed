@@ -9,8 +9,9 @@ class InformacoesClinicas extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected $table = 'informacoes_clinicas';
 
+    protected $fillable = [
         'id',
         'id_user',
         'altura',
@@ -18,6 +19,5 @@ class InformacoesClinicas extends Model
         'tipoSanguineo',
         'doador',
         'alergias',
-            
     ];
 }

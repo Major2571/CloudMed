@@ -11,7 +11,11 @@ class UFs extends Model
 
     protected $table = 'uf';
 
-    protected $fillable = ['id', 'estado','uf'];
+    protected $fillable = [
+        'id',
+        'estado',
+        'uf'
+    ];
 
     public function exames()
     {

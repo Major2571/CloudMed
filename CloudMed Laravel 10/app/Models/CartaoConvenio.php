@@ -9,13 +9,14 @@ class CartaoConvenio extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected $table = 'cartao_convenios';
 
+    protected $fillable = [
         'id',
         'id_user',
         'numero',
         'nomeConvenio',
-        'validade',
+        'plano',
         'nome_arquivo',
         
     ];
