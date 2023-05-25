@@ -7,63 +7,22 @@ use Illuminate\Http\Request;
 
 class CartaoSusController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-            $cartaoSus = new CartaoSus();
-                   
-            $cartaoSus->idCartaoSus = $request->idCartaoSus;
-            $cartaoSus->id_user = $request->id_user;
-            $cartaoSus->numero = $request->input('sus');
- 
+        $cartaoSus = new CartaoSus();
+
+        $cartaoSus->id_user = $request->id_user;
+
+        $user = auth()->user();
+        $cartaoSus->id_user = $user->id;
+
+        $cartaoSus->save();
+
+        return redirect()->route('userDetailsMedical');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(CartaoSus $cartaoSus)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(CartaoSus $cartaoSus)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, CartaoSus $cartaoSus)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(CartaoSus $cartaoSus)
     {
         //
     }

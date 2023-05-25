@@ -1,6 +1,7 @@
 @foreach ($infoClinica as $infoClinica)
     <form method="POST" action="{{ route('infoClinica.update', $infoClinica->id) }}">
         @csrf
+        @method('PUT')
         <div class="title-profile mb-5">
             <h2> Informações Clínicas </h2>
         </div>

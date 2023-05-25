@@ -10,7 +10,6 @@ use App\Models\Vacinas;
 
 use Illuminate\Support\Facades\Auth;
 
-use App\Models\Dashboard;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -53,9 +52,6 @@ class DashboardController extends Controller
         ));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $nomeVacinas = NomeVacinas::all();
@@ -63,45 +59,5 @@ class DashboardController extends Controller
         $uf = UFs::all();
 
         return view('novoCadExame', compact('especialidades', 'uf', 'nomeVacinas'));
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Dashboard $Dashboard)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Dashboard $Dashboard)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Dashboard $Dashboard)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Dashboard $Dashboard)
-    {
-        //
     }
 }

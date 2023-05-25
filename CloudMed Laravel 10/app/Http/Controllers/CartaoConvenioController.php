@@ -4,69 +4,61 @@ namespace App\Http\Controllers;
 
 use App\Models\CartaoConvenio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CartaoConvenioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
-            $cartaoConvenio = new CartaoConvenio();
-                   
-            $cartaoConvenio->idCartaoConvenio = $request->idCartaoConvenio;
-            $cartaoConvenio->id_user = $request->id_user;
-            $cartaoConvenio->numero = $request->input('numConvenio');
-            $cartaoConvenio->nomeConvenio = $request->input('nomeConvenio');
-            $cartaoConvenio->validade = $request->validade;
-        ;
+        $cartaoConvenio = new CartaoConvenio();
+
+        $cartaoConvenio->id_user = $request->id_user;
+        $cartaoConvenio->numero = $request->input('numConvenio');
+        $cartaoConvenio->nomeConvenio = $request->input('nomeConvenio');
+        $cartaoConvenio->plano = $request->input('plano');
+        
+        if ($request->hasFile('arquivo')) {
+            $file = $request->file('arquivo');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('public/carteirinha_convenio', $fileName);
+            $cartaoConvenio->nome_arquivo = $fileName;
+        };
+        
+        $user = auth()->user();
+        $cartaoConvenio->id_user = $user->id;
+
+        $cartaoConvenio->save();
+
+        return redirect()->route('userDetailsMedical');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(CartaoConvenio $cartaoConvenio)
+    
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $cartaoConvenio = CartaoConvenio::FindOrFail($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(CartaoConvenio $cartaoConvenio)
-    {
-        //
-    }
+        $cartaoConvenio->id_user = $request->id_user;
+        $cartaoConvenio->numero = $request->input('numConvenio');
+        $cartaoConvenio->nomeConvenio = $request->input('nomeConvenio');
+        $cartaoConvenio->plano = $request->input('plano');
+        
+        if ($request->hasFile('arquivo')) {
+            if (Storage::exists('public/carteirinha_convenio/' . $cartaoConvenio->nome_arquivo)) {
+                Storage::delete('public/carteirinha_convenio/' . $cartaoConvenio->nome_arquivo);
+            }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, CartaoConvenio $cartaoConvenio)
-    {
-        //
-    }
+            $file = $request->file('arquivo');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('public/carteirinha_convenio', $fileName);
+            $cartaoConvenio->nome_arquivo = $fileName;
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(CartaoConvenio $cartaoConvenio)
-    {
-        //
+        $user = auth()->user();
+        $cartaoConvenio->id_user = $user->id;
+
+        $cartaoConvenio->save();
+
+        return redirect()->route('userDetailsMedical');
     }
 }

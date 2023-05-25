@@ -51,11 +51,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/editar-sus', [CartaoSusController::class, 'create'])->name('sus.create');
     Route::post('/editar-sus', [CartaoSusController::class, 'store'])->name('sus.store');
 
-    Route::get('/editar-convenio', [CartaoConvenioController::class, 'create'])->name('convenio.create');
     Route::post('/editar-convenio', [CartaoConvenioController::class, 'store'])->name('convenio.store');
+    Route::put('/editar-convenio/update/{id}', [CartaoConvenioController::class, 'update'])->name('convenio.update');
 
     Route::post('/editar-info-clinica', [InformacoesClinicasController::class, 'store'])->name('infoClinica.store');
-    Route::post('/editar-info-clinica/update/{id}', [InformacoesClinicasController::class, 'update'])->name('infoClinica.update');
+    Route::put('/editar-info-clinica/update/{id}', [InformacoesClinicasController::class, 'update'])->name('infoClinica.update');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     

@@ -71,7 +71,6 @@ class UserDetailsController extends Controller
         $userDetail->dataNascimento = $request->input('data_nasc');
         $userDetail->rg = $request->input('rg');
         $userDetail->cpf = $request->input('cpf');
-        $userDetail->email = $request->input('email');
         $userDetail->telefone = $request->input('telefone');
         $userDetail->cidade = $request->input('cidade');
         $userDetail->id_uf = $request->input('uf');
@@ -122,7 +121,6 @@ class UserDetailsController extends Controller
         $userDetail->dataNascimento = $request->input('data_nasc');
         $userDetail->rg = $request->input('rg');
         $userDetail->cpf = $request->input('cpf');
-        $userDetail->email = $request->input('email');
         $userDetail->telefone = $request->input('telefone');
         $userDetail->cidade = $request->input('cidade');
         $userDetail->id_uf = $request->input('uf');
