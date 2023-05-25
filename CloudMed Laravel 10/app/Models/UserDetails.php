@@ -25,9 +25,13 @@ class UserDetails extends Model
         'email',
         'telefone',
         
-        
     ];
 
+    public function userDetail()
+{
+    return $this->hasOne(User::class, 'id_user');
+}
+    
     public function cartaoSus()
     {
         return $this->belongsTo(CartaoSus::class, 'id_informacoes_clinicas');
