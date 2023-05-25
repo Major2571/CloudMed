@@ -7,8 +7,7 @@
         <section class="profile my-5 w-full">
             <div class="form md:w-4/5 lg:w-1/2">
 
-
-                @if ( $userDetail->isEmpty() )
+                @if ($userDetail->isEmpty())
                     <!-- Exibir o btn de cadastro -->
                     <form>
                         @csrf
@@ -18,11 +17,15 @@
 
                         <div class="grid md:grid-cols-2 md:gap-4">
                             <div class="input-box cad-exame">
-                                <label for="nome" class="mb-2 block font-medium text-gray-900"> Nome:
+                                {{-- <label for="nome" class="mb-2 block font-medium text-gray-900"> Nome:
                                 </label>
                                 <input type="text" name="nome" id="nome" value="{{ $user->name }}" disabled
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
-                                    required>
+                                    required> --}}
+
+                                <x-input-label for="nome" :value="__('Nome:')" />
+                                <x-text-input type="text" name="nome" id="nome" :value="old('name', $user->name)" required
+                                    disabled />
                             </div>
                             <div class="input-box cad-exame">
                                 <label for="sobrenome" class="mb-2 block font-medium text-gray-900"> Sobrenome:
@@ -103,27 +106,31 @@
                         </a>
                     </div>
                 @else
-                        <form action="">
-                            @csrf
-                            @foreach ($userDetail as $userDetail)
-                            
+                    <form action="">
+                        @csrf
+                        @foreach ($userDetail as $userDetail)
                             <div class="title-profile mb-5">
                                 <h2> Perfil </h2>
                             </div>
 
                             <div class="grid md:grid-cols-2 md:gap-4">
                                 <div class="input-box cad-exame">
-                                    <label for="nome" class="mb-2 block font-medium text-gray-900"> Nome:
+                                    {{-- <label for="nome" class="mb-2 block font-medium text-gray-900"> Nome:
                                     </label>
                                     <input type="text" name="nome" id="nome" value="{{ $user->name }}"
                                         disabled
                                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
-                                        required>
+                                        required> --}}
+                                    <x-input-label for="nome" :value="__('Nome:')" />
+                                    <x-text-input type="text" name="nome" id="nome" :value="old('name', $user->name)"
+                                        required disabled
+                                        class="disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none" />
                                 </div>
                                 <div class="input-box cad-exame">
                                     <label for="sobrenome" class="mb-2 block font-medium text-gray-900"> Sobrenome:
                                     </label>
-                                    <input type="text" name="sobrenome" id="sobrenome" value="{{ $userDetail->sobrenome }}" disabled
+                                    <input type="text" name="sobrenome" id="sobrenome"
+                                        value="{{ $userDetail->sobrenome }}" disabled
                                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                                         required>
                                 </div>
@@ -131,21 +138,24 @@
                                     <label for="data_nasc" class="mb-2 block font-medium text-gray-900"> Data de
                                         Nascimento:
                                     </label>
-                                    <input type="date" name="data_nasc" id="data_nasc" value="{{ $userDetail->dataNascimento }}" disabled
+                                    <input type="date" name="data_nasc" id="data_nasc"
+                                        value="{{ $userDetail->dataNascimento }}" disabled
                                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                                         required>
                                 </div>
                                 <div class="input-box cad-exame">
                                     <label for="rg" class="mb-2 block font-medium text-gray-900"> RG:
                                     </label>
-                                    <input type="text" name="rg" id="rg" value="{{ $userDetail->rg }}" disabled
+                                    <input type="text" name="rg" id="rg"
+                                        value="{{ $userDetail->rg }}" disabled
                                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                                         required>
                                 </div>
                                 <div class="input-box cad-exame">
                                     <label for="cpf" class="mb-2 block font-medium text-gray-900"> CPF:
                                     </label>
-                                    <input type="text" name="cpf" id="cpf" value="{{ $userDetail->cpf }}" disabled
+                                    <input type="text" name="cpf" id="cpf"
+                                        value="{{ $userDetail->cpf }}" disabled
                                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                                         required>
                                 </div>
@@ -161,7 +171,8 @@
                                 <div class="input-box cad-exame">
                                     <label for="telefone" class="mb-2 block font-medium text-gray-900"> Telefone:
                                     </label>
-                                    <input type="text" name="telefone" id="telefone" value="{{ $userDetail->telefone }}" disabled
+                                    <input type="text" name="telefone" id="telefone"
+                                        value="{{ $userDetail->telefone }}" disabled
                                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                                         required>
                                 </div>
@@ -170,7 +181,8 @@
                                     <div class="col-span-2 mb-6 w-full">
                                         <label for="cidade" class="mb-2 block font-medium text-gray-900"> Cidade:
                                         </label>
-                                        <input type="text" name="cidade" id="cidade" value="{{ $userDetail->cidade }}" disabled
+                                        <input type="text" name="cidade" id="cidade"
+                                            value="{{ $userDetail->cidade }}" disabled
                                             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
                                             required>
                                     </div>
@@ -184,8 +196,7 @@
                                                 <option value=""> Selecionar </option>
                                                 @foreach ($uf as $uf)
                                                     <option value="{{ $uf->id }}"
-                                                        {{ $uf->id == $userDetail->id_uf ? 'selected' : '' }}
-                                                        >
+                                                        {{ $uf->id == $userDetail->id_uf ? 'selected' : '' }}>
                                                         {{ $uf->uf }}
 
                                                     </option>
@@ -195,17 +206,17 @@
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
-                        </form>
-                        <div class="button m-auto flex flex-wrap items-center justify-center">
-                            <a href="{{ route( 'profile.edit', $userDetail->id ) }}">
-                                <button type="button"
-                                    class="mr-4 mb-2 rounded-lg border border-cyan-600 px-7 py-2 text-center font-medium text-cyan-700 hover:bg-cyan-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-50">
-                                    Editar Perfil
-                                </button>
-                            </a>
-                        </div>
-                    
+                        @endforeach
+                    </form>
+                    <div class="button m-auto flex flex-wrap items-center justify-center">
+                        <a href="{{ route('profile.edit', $userDetail->id) }}">
+                            <button type="button"
+                                class="mr-4 mb-2 rounded-lg border border-cyan-600 px-7 py-2 text-center font-medium text-cyan-700 hover:bg-cyan-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-50">
+                                Editar Perfil
+                            </button>
+                        </a>
+                    </div>
+
                 @endif
 
             </div>
