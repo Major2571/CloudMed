@@ -90,7 +90,7 @@ class ExamesController extends Controller
     {
         $exame = Exames::find($id);
 
-        return view('/meus-exames', compact('exame'));
+        return view('meusExames', compact('exame'));
     }
 
     /**
