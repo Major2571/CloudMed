@@ -51,7 +51,7 @@ class UserDetailsController extends Controller
         $uf = UFs::all();
         $user = Auth::user();
 
-        return view('profile.addProfileDetails', compact(
+        return view('profile.profileCad', compact(
             'uf',
             'user',
             'userId',
@@ -100,7 +100,7 @@ class UserDetailsController extends Controller
         $userDetail = $user->userDetails;
         $uf = UFs::all();
 
-        return view('profile.editProfile', compact(
+        return view('profile.profileEdit', compact(
             'user',
             'userDetail',
             'uf',
