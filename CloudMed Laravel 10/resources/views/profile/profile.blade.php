@@ -2,7 +2,7 @@
 
 <x-app-layout>
 
-    <section class="login session-allow h-[80vh]">
+    <section class="login session-allow min-h-screen">
         
         <section class="profile my-5 w-full flex justify-center items-center ">
             <div class="filter drop-shadow-md md:w-4/5 flex justify-center">
@@ -100,15 +100,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="button m-auto flex flex-wrap items-center justify-center">
+                                <a href="{{ route('profile.store') }}">
+                                    <button type="button"
+                                        class="mr-4 mb-2 rounded-lg border border-cyan-600 px-7 py-2 text-center font-medium text-cyan-700 hover:bg-cyan-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-50">
+                                        Editar Perfil
+                                    </button>
+                                </a>
+                            </div>
                         </form>
-                        <div class="button m-auto flex flex-wrap items-center justify-center">
-                            <a href="{{ route('profile.store') }}">
-                                <button type="button"
-                                    class="mr-4 mb-2 rounded-lg border border-cyan-600 px-7 py-2 text-center font-medium text-cyan-700 hover:bg-cyan-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-50">
-                                    Editar Perfil
-                                </button>
-                            </a>
-                        </div>
                     </div>
                 @else
                     <div class="profile-forms">
@@ -215,15 +215,15 @@
                                     </div>
                                 </div>
                             @endforeach
+                            <div class="button m-auto flex flex-wrap items-center justify-center">
+                                <a href="{{ route('profile.edit', $userDetail->id) }}">
+                                    <button type="button"
+                                        class="mr-4 mb-2 rounded-lg border border-cyan-600 px-7 py-2 text-center font-medium text-cyan-700 hover:bg-cyan-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-50">
+                                        Editar Perfil
+                                    </button>
+                                </a>
+                            </div>
                         </form>
-                        <div class="button m-auto flex flex-wrap items-center justify-center">
-                            <a href="{{ route('profile.edit', $userDetail->id) }}">
-                                <button type="button"
-                                    class="mr-4 mb-2 rounded-lg border border-cyan-600 px-7 py-2 text-center font-medium text-cyan-700 hover:bg-cyan-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-50">
-                                    Editar Perfil
-                                </button>
-                            </a>
-                        </div>
                     </div>
 
                 @endif

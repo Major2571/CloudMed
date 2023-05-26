@@ -5,7 +5,7 @@
             <h2> Informações Clínicas </h2>
         </div>
     
-        <div class="grid md:grid-cols-2 md:gap-10">
+        <div class="grid md:grid-cols-2 gap-x-5">
     
             <div class="mb-3">
                 <div class="relative w-full">
@@ -55,16 +55,18 @@
                 </div>
             </div>
     
-            <div class="mb-3">
+            <div class="mb-3 col-span-2">
                 <div class="relative w-full">
                     <x-input-label for="alergias" :value="__('Alergias:')" />
-                    <x-text-input type="text" name="alergias" id="alergias" required />
+                    <textarea id="alergias" name="alergias" rows="4" class="p-2.5 w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" placeholder="Escreva suas principais alergias..."></textarea>
                 </div>
             </div>
     
         </div>
-        <button type="submit"
-            class="mb-2 rounded-lg border border-emerald-600 px-7 py-2 text-center font-medium text-emerald-800 hover:bg-emerald-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-50"
-            value="Salvar">Salvar</button>
+        <div class="btn-profile">
+            <button type="submit"
+                class="mb-2 rounded-lg border border-emerald-600 px-7 py-2 text-center font-medium text-emerald-800 hover:bg-emerald-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-50"
+                value="Salvar">Salvar</button>
+        </div>
     </form>
 </div>

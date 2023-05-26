@@ -2,18 +2,18 @@
 
 <x-app-layout>
 
-    <section class="login session-allow h-[80vh]">
+    <section class="login session-allow min-h-screen">
 
         <section class="profile my-5 flex w-full items-center justify-center">
             <div class="filter drop-shadow-md flex justify-center md:w-4/5">
 
                 <x-sidebar />
                 <div class="profile-forms">
-                    <div class="title-profile mb-5">
-                        <h2> Sua carteirinha do convenio </h2>
-                    </div>
                     @if ($convenio->isEmpty())
                         <form method="post" action="{{ route('convenio.store') }}" enctype="multipart/form-data">
+                            <div class="title-profile mb-5">
+                                <h2> Sua carteirinha do convenio </h2>
+                            </div>
                             @csrf
                             <div class="">
                                 <x-input-label for="num-convenio" :value="__('Cartão do Convênio:')" />
@@ -31,7 +31,7 @@
                             <div class="">
                                 <h3> Cartão do Convênio:</h3><br>
                                 <div class="text-center">
-                                    <div id="preview-container" class="image-container m-auto w-4/5">
+                                    <div id="preview-container" class="image-container m-auto w-3/5">
                                         <img id="chosen-image" class="img-preview">
                                     </div>
 
@@ -49,10 +49,12 @@
                                 </div>
                             </div>
 
-                            <button type="submit"
+                            <div class="btn-profile">
+                                <button type="submit"
                                 class="mr-4 mb-2 rounded-lg border border-cyan-600 px-7 py-2 text-center font-medium text-cyan-700 hover:bg-cyan-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-50">
                                 Salvar Carteirinha
                             </button>
+                        </div>
                         </form>
                     @else
                         @foreach ($convenio as $infoConvenio)
@@ -60,6 +62,10 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
+                                <div class="title-profile mb-5">
+                                    <h2> Sua carteirinha do convenio </h2>
+                                </div>
+
                                 <div class="">
                                     <x-input-label for="num-convenio" :value="__('Cartão do Convênio:')" />
                                     <x-text-input type="text" name="numConvenio" id="numConvenio"
@@ -76,8 +82,8 @@
                                 </div>
 
                                 <div class="">
-                                    <h3> Cartão do Convênio:</h3><br>
                                     <div class="text-center">
+                                        <h3> Cartão do Convênio:</h3><br>
 
                                         <p class="mb-2 block py-2 font-semibold text-gray-900"> Carteirinha:</p>
 
@@ -86,7 +92,7 @@
 
                                                 <img src="{{ asset('storage/carteirinha_convenio/' . $infoConvenio->nome_arquivo) }}"
                                                     alt="Preview da Carteirinha" id="chosen-image"
-                                                    class="img-preview m-auto w-4/5 rounded-lg border border-gray-300 shadow-sm">
+                                                    class="img-preview m-auto w-3/5 rounded-lg border border-gray-300 shadow-sm">
 
                                                 <figcaption id="file-name"
                                                     class="mb-2 block py-2 font-medium text-gray-900">
@@ -112,9 +118,11 @@
                                     </div>
                                 </div>
 
-                                <button type="submit"
+                                <div class="btn-profile">
+                                    <button type="submit"
                                     class="mb-2 rounded-lg border border-emerald-600 px-7 py-2 text-center font-medium text-emerald-800 hover:bg-emerald-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-50"
                                     value="Salvar">Salvar</button>
+                                </div>
                             </form>
                         @endforeach
                     @endif

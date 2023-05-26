@@ -7,7 +7,7 @@
                 <h2> Informações Clínicas </h2>
             </div>
 
-            <div class="grid md:grid-cols-2 md:gap-10">
+            <div class="grid md:grid-cols-2 md:gap-4">
 
                 <div class="mb-3">
                     <div class="relative w-full">
@@ -90,8 +90,10 @@
 
             </div>
     @endforeach
-    <button type="submit"
-        class="mb-2 rounded-lg border border-emerald-600 px-7 py-2 text-center font-medium text-emerald-800 hover:bg-emerald-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-50"
-        value="Salvar">Salvar</button>
+    <div class="btn-profile">
+        <button type="submit"
+            class="mb-2 rounded-lg border border-emerald-600 px-7 py-2 text-center font-medium text-emerald-800 hover:bg-emerald-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-50"
+            value="Salvar">Salvar</button>
+    </div>
     </form>
 </div>

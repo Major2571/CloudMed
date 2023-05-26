@@ -142,10 +142,25 @@ img.img-vacina {
 
 .profile-forms{
     width: 60%;
-    height: 35em;
+    min-height: 40em;
+    max-height: 100%;
     padding: 2em 6em;
     background-color: #e9ebeb;
     border-radius: 0 0.5em 0.5em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-forms form {
+    width: 100%;
+}
+
+.btn-profile {
+    margin: 2% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* SIDEBAR */
