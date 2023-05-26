@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
 
-            $table->string('numero');
-            $table->string('nome_arquivo');
+            $table->string('numero')->nullable();
+            $table->string('nome_arquivo')->nullable();
             
             $table->timestamps();
         });
