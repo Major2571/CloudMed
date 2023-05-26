@@ -16,15 +16,13 @@ class UserDetailsMedicalController extends Controller
         $userId = Auth::user()->id;
 
         $infoClinica = InformacoesClinicas::where('id_user', $userId)->get();
-        $convenio = CartaoConvenio::where('id_user', $userId)->get();
-        $sus = CartaoSus::where('id_user', $userId)->get();
+        // $convenio = CartaoConvenio::where('id_user', $userId)->get();
+        // $sus = CartaoSus::where('id_user', $userId)->get();
 
         // dd($convenio);
 
         return view('profile.infoClinicas', compact(
             'infoClinica',
-            'convenio',
-            'sus'
         ));
     }
 }

@@ -48,9 +48,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/clinical-details', [UserDetailsMedicalController::class, 'index'])->name('userDetailsMedical');
 
+    Route::get('/meu-sus', [CartaoSusController::class, 'index'])->name('meuSus');
     Route::post('/editar-sus', [CartaoSusController::class, 'store'])->name('sus.store');
     Route::put('/editar-sus/update/{id}', [CartaoConvenioController::class, 'update'])->name('sus.update');
 
+    Route::get('/meu-convenio', [CartaoConvenioController::class, 'index'])->name('meuConvenio');
     Route::post('/editar-convenio', [CartaoConvenioController::class, 'store'])->name('convenio.store');
     Route::put('/editar-convenio/update/{id}', [CartaoConvenioController::class, 'update'])->name('convenio.update');
 

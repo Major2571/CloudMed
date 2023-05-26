@@ -5,9 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\CartaoSus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class CartaoSusController extends Controller
 {
+    public function index()
+    {
+        $userId = Auth::user()->id;
+
+        $sus = CartaoSus::where('id_user', $userId)->get();
+
+        // dd($sus);
+
+        return view('profile.cartaoSus', compact(
+            'sus'
+        ));
+    }
 
     public function store(Request $request)
     {
@@ -19,8 +32,8 @@ class CartaoSusController extends Controller
         $cartaoSus->id_user = $user->id;
         $cartaoSus->numero = $request->input('numero');
 
-        if ($request->hasFile('arquivoSus')) {
-            $file = $request->file('arquivoSus');
+        if ($request->hasFile('arquivo')) {
+            $file = $request->file('arquivo');
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->storeAs('public/carteirinha_sus', $fileName);
             $cartaoSus->nome_arquivo = $fileName;
@@ -28,7 +41,7 @@ class CartaoSusController extends Controller
 
         $cartaoSus->save();
 
-        return redirect()->route('userDetailsMedical');
+        return redirect()->route('meuSus');
     }
 
     public function update(Request $request, $id)
@@ -41,7 +54,7 @@ class CartaoSusController extends Controller
         $cartaoSus->id_user = $user->id;
         $cartaoSus->numero = $request->input('numero');
 
-        if ($request->hasFile('arquivoSus')) {
+        if ($request->hasFile('arquivo')) {
             if (Storage::exists('public/carteirinha_convenio/' . $cartaoSus->nome_arquivo)) {
                 Storage::delete('public/carteirinha_convenio/' . $cartaoSus->nome_arquivo);
             }
@@ -54,6 +67,6 @@ class CartaoSusController extends Controller
 
         $cartaoSus->save();
 
-        return redirect()->route('userDetailsMedical');
+        return redirect()->route('meuSus');
     }
 }

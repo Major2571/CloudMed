@@ -5,9 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\CartaoConvenio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class CartaoConvenioController extends Controller
 {
+    public function index()
+    {
+        $userId = Auth::user()->id;
+
+        $convenio = CartaoConvenio::where('id_user', $userId)->get();
+
+        // dd($convenio);
+
+        return view('profile.cartaoConvenio', compact(
+            'convenio'
+        ));
+    }
     
     public function store(Request $request)
     {
@@ -30,7 +43,7 @@ class CartaoConvenioController extends Controller
 
         $cartaoConvenio->save();
 
-        return redirect()->route('userDetailsMedical');
+        return redirect()->route('meuConvenio');
     }
 
     
@@ -59,6 +72,6 @@ class CartaoConvenioController extends Controller
 
         $cartaoConvenio->save();
 
-        return redirect()->route('userDetailsMedical');
+        return redirect()->route('meuConvenio');
     }
 }
