@@ -2,7 +2,16 @@
 
 <x-app-layout>
 
-    <section class="login session-allow">
+    <!-- SIDEBAR -->
+    <x-sidebar />
+
+    <script src="{{ url('scripts/dashboard/dashboard.js') }}"></script>
+
+
+
+
+
+    <section id="content" class="login session-allow">
 
         <section class="profile my-5 w-full">
             <div class="form md:w-4/5 lg:w-1/2">
