@@ -76,4 +76,7 @@
 <script src="{{ url('assets/js/editModal.js') }}"></script>
 <script src="{{ url('assets/js/imgPreview.js') }}"></script>
 
+<script src="{{ url('assets/js/dashboard.js') }}"></script>
+
+
 </html>

@@ -69,10 +69,6 @@
                             {{ __('Perfil') }}
                         </x-dropdown-link>
 
-                        <x-dropdown-link :href="route('userDetailsMedical')">
-                            {{ __('Perfil Clínico') }}
-                        </x-dropdown-link>
-
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

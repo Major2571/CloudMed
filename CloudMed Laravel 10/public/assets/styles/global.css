@@ -140,19 +140,22 @@ img.img-vacina {
 }
 
 
-
+.profile-forms{
+    width: 60%;
+    height: 35em;
+    padding: 2em 6em;
+    background-color: #e9ebeb;
+    border-radius: 0 0.5em 0.5em 0;
+}
 
 /* SIDEBAR */
 #sidebar {
-    position: fixed;
-    z-index: -1;
     left: 0;
-    width: 280px;
-    height: 100%;
+    width: 20%;
     z-index: 2000;
     font-weight: 500;
     overflow-x: hidden;
-    scrollbar-width: none;
+    border-radius: 0.5em 0 0 0.5em;
 }
 
 #sidebar::--webkit-scrollbar {
@@ -167,76 +170,6 @@ img.img-vacina {
     width: 100%;
     margin-top: 90px;
 }
-
-#sidebar .side-menu li {
-    height: 48px;
-    background: transparent;
-    padding: 4px;
-}
-
-#sidebar .side-menu li.active {
-    position: relative;
-    border-left: 3px solid var(--fundoLabelForm);
-    transition: 0.3s ease;
-}
-
-#sidebar .side-menu li.active::before {
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    top: -40px;
-    right: 0;
-    z-index: -1;
-}
-
-#sidebar .side-menu li.active::after {
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    bottom: -40px;
-    right: 0;
-    z-index: -1;
-}
-
-#sidebar .side-menu li a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    border-radius: 48px;
-    font-size: 16px;
-    color: var(--dark);
-    white-space: nowrap;
-    overflow-x: hidden;
-}
-
-#sidebar .side-menu.top li.active a {
-    color: var(--fundoLabelForm);
-}
-
-#sidebar.hide .side-menu li a {
-    width: calc(48px - (4px * 2));
-    transition: width 0.3s ease;
-}
-
-#sidebar .side-menu li a.logout {
-    color: var(--vermelho);
-}
-
-#sidebar .side-menu.top li a:hover {
-    color: var(--fundoLabelForm);
-}
-
-#sidebar .side-menu li a .bx {
-    min-width: calc(60px - ((4px + 6px) * 2));
-    display: flex;
-    justify-content: center;
-}
-/* SIDEBAR */
 
 
 /* CONTENT */
