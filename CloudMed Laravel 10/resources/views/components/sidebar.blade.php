@@ -1,54 +1,48 @@
 <section id="sidebar" class="bg-cyan-700">
     <ul class="side-menu top">
-        <li class="active">
-            <a href="{{ route('profile') }}">
-                <div class="mx-5 text-xlg">
+
+        <div class="hidden sm:flex my-5">
+            <x-sidebar-nav-link :href="route('profile')" :active="request()->routeIs('profile')">
+                <div class="mx-2 text-xlg">
                     <i class="fa-solid fa-user"></i>
                 </div>
-                <span class="text">Meu Perfil</span>
-            </a>
-        </li>
+                {{ __('Meu Perfil') }}
+            </x-sidebar-nav-link>
+        </div>
 
-        <li>
-            <a href="{{ route('userDetailsMedical') }}">
-                <div class="mx-5 text-xlg">
-                    <i class="fa-regular fa-file-lines"></i>
+        <div class="hidden sm:flex">
+            <x-sidebar-nav-link :href="route('userDetailsMedical')" :active="request()->routeIs('userDetailsMedical')">
+                <div class="mx-2 text-xlg">
+                    <i class="fa-solid fa-file-lines"></i>
                 </div>
-                <span class="text">Minhas Infomações</span>
-            </a>
-        </li>
+                {{ __('Minhas Infomações') }}
+            </x-sidebar-nav-link>
+        </div>
 
-        <li>
-            <a href="">
-                <div class="mx-5 text-xlg">
+        <div class="hidden sm:flex">
+            <x-sidebar-nav-link>
+                <div class="mx-2 text-xlg">
                     <i class="fa-regular fa-address-card"></i>
                 </div>
-                <span class="text">Cartão do SUS</span>
-            </a>
-        </li>
+                {{ __('Cartão SUS') }}
+            </x-sidebar-nav-link>
+        </div>
 
-        <li>
-            <a href="/tarefas">
-                <div class="mx-5 text-xlg">
+        <div class="hidden sm:flex">
+            <x-sidebar-nav-link>
+                <div class="mx-2 text-xlg">
                     <i class="fa-solid fa-address-card"></i>
                 </div>
-                <span class="text">Cartão do Convênio</span>
-            </a>
-        </li>
-    </ul>
+                {{ __('Cartão Convênio') }}
+            </x-sidebar-nav-link>
+        </div>
 
-    <ul class="side-menu">
-        <li>
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <a href="route('logout')" class="logout"
-                    onclick="event.preventDefault(); this.closest('form').submit();">
-                    <div class="mx-5 text-xlg">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    </div>
-                    <span class="text">Sair</span>
-                </a>
-            </form>
-        </li>
-    </ul>
+        <div class="hidden sm:flex mt-9 text-red-500">
+            <x-sidebar-nav-link :href="route('logout')">
+                <div class="mx-2 text-xlg">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </div>
+                {{ __('Sair') }}
+            </x-sidebar-nav-link>
+        </div>
 </section>

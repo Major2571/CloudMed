@@ -2,6 +2,8 @@
 
 <x-app-layout>
 
+    <x-sidebar />
+    
     <section class="login session-allow">
         <section class="profile my-5 w-full h-screen">
             <div class="form md:w-4/5 lg:w-1/2">

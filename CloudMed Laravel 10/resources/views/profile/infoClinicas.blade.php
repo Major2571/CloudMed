@@ -1,6 +1,8 @@
 @section('title', 'info')
 
 <x-app-layout>
+    <x-sidebar />
+    
     <section class="login session-allow">
 
         <section class="profile my-5 w-full">

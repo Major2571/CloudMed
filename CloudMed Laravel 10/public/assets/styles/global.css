@@ -150,9 +150,7 @@ img.img-vacina {
     width: 280px;
     height: 100%;
     z-index: 2000;
-    font-family: var(--fundoBranco);
     font-weight: 500;
-    transition: 0.3s ease;
     overflow-x: hidden;
     scrollbar-width: none;
 }
