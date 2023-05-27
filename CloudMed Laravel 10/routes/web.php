@@ -46,6 +46,10 @@ Route::get('/cadastro', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
+    Route::get('/alterar-senha', function () {
+        return view('profile.partials.update-password-form');
+    })->name('alterarSenha');
+
     Route::get('/clinical-details', [UserDetailsMedicalController::class, 'index'])->name('userDetailsMedical');
 
     Route::get('/meu-sus', [CartaoSusController::class, 'index'])->name('meuSus');
@@ -60,21 +64,21 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/editar-info-clinica/update/{id}', [InformacoesClinicasController::class, 'update'])->name('infoClinica.update');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    
+
     Route::get('/meus-exames', [ExamesController::class, 'index'])->name('meusExames');
     Route::get('/cad-novo-exame', [ExamesController::class, 'create'])->name('novoCadExame');
     Route::post('/cad-novo-exame', [ExamesController::class, 'store'])->name('saveNewExam');
-    Route::get('/meus-exames/delete/{id}',  [ExamesController::class, 'destroy'])->name('deleteExame');
-    Route::get('/meus-exames/edit/{id}',  [ExamesController::class, 'edit'])->name('editExames');
-    Route::put('/meus-exames/update/{id}',  [ExamesController::class, 'update'])->name('updateExames');
-    
+    Route::get('/meus-exames/delete/{id}', [ExamesController::class, 'destroy'])->name('deleteExame');
+    Route::get('/meus-exames/edit/{id}', [ExamesController::class, 'edit'])->name('editExames');
+    Route::put('/meus-exames/update/{id}', [ExamesController::class, 'update'])->name('updateExames');
+
     Route::get('/minhas-vacinas', [VacinasController::class, 'index'])->name('minhasVacinas');
     Route::get('/cad-novo-vacina', [VacinasController::class, 'create'])->name('novoCadVacina');
     Route::post('/cad-novo-vacina', [VacinasController::class, 'store'])->name('saveNewVaccine');
-    Route::get('/minhas-vacinas/delete/{id}',  [VacinasController::class, 'destroy'])->name('deleteVacina');
-    Route::get('/minhas-vacinas/edit/{id}',  [VacinasController::class, 'edit'])->name('editVacina');
-    Route::put('/minhas-vacinas/update/{id}',  [VacinasController::class, 'update'])->name('updateVacina');
-    
+    Route::get('/minhas-vacinas/delete/{id}', [VacinasController::class, 'destroy'])->name('deleteVacina');
+    Route::get('/minhas-vacinas/edit/{id}', [VacinasController::class, 'edit'])->name('editVacina');
+    Route::put('/minhas-vacinas/update/{id}', [VacinasController::class, 'update'])->name('updateVacina');
+
     Route::get('/profile', [UserDetailsController::class, 'index'])->name('profile');
     Route::get('/profile-update', [UserDetailsController::class, 'create'])->name('profile.create');
     Route::post('/profile-update', [UserDetailsController::class, 'store'])->name('profile.store');

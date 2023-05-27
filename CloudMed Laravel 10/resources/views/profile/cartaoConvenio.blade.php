@@ -8,6 +8,7 @@
             <div class="filter drop-shadow-md flex justify-center md:w-4/5">
 
                 <x-sidebar />
+                
                 <div class="profile-forms">
                     @if ($convenio->isEmpty())
                         <form method="post" action="{{ route('convenio.store') }}" enctype="multipart/form-data">

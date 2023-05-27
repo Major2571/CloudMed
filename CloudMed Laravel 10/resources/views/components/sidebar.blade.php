@@ -36,15 +36,28 @@
         </x-sidebar-nav-link>
     </div>
 
-    <div class="mt-9 hidden sm:flex">
-        <form method="POST" action="{{ route('logout') }}" class="w-full">
-            @csrf
-            <x-sidebar-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="text-red-400">
-                <div class="mr-3 text-xl transition none">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+    
+        <div class="mt-96 hidden sm:flex">
+            <x-sidebar-nav-link :href="route('alterarSenha')" :active="request()->routeIs('alterarSenha')">
+                <div class="mr-3 text-xl">
+                    <i class="fa-solid fa-key"></i>
                 </div>
-                {{ __('Sair') }}
+                {{ __('Alterar Senha') }}
             </x-sidebar-nav-link>
-        </form>
-    </div>
+        </div>
+
+        <div class="hidden sm:flex">
+            <form method="POST" action="{{ route('logout') }}" class="w-full">
+                @csrf
+                <x-sidebar-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();"
+                    class="text-red-400">
+                    <div class="mr-3 text-xl transition none">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </div>
+                    {{ __('Sair') }}
+                </x-sidebar-nav-link>
+            </form>
+        </div>
+
 </section>
