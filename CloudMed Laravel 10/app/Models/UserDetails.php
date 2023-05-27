@@ -9,38 +9,45 @@ class UserDetails extends Model
 {
     use HasFactory;
 
+    protected $table = 'user_details';
+
     protected $fillable = [
-        
+
         'id',
         'id_user',
-        'idInformacoesClinicas',
-        'idCartaoSus',
-        'idCartaoConvenio',
+        'id_uf',
         'sobrenome',
-        'dataNascimento', 
+        'dataNascimento',
         'rg',
-        'cpf', 
-        'cidade', 
-        'uf',
-        'email',
+        'cpf',
+        'cidade',
         'telefone',
-        
-        
+        'status'
+
     ];
+
+    public function userDetail()
+    {
+        return $this->hasOne(User::class, 'id_user');
+    }
 
     public function cartaoSus()
     {
-        return $this->belongsTo(CartaoSus::class, 'idCartaoSus');
+        return $this->belongsTo(CartaoSus::class, 'id_informacoes_clinicas');
     }
-    
+
     public function cartaoConvenio()
     {
-        return $this->belongsTo(CartaoConvenio::class, 'idCartaoConvenio');
+        return $this->belongsTo(CartaoConvenio::class, 'id_cartao_sus');
     }
 
     public function informacoesClinicas()
     {
-        return $this->belongsTo(PacienteInformacoesClinicas::class, 'idInformacoesClinicas');
+        return $this->belongsTo(PacienteInformacoesClinicas::class, 'id_cartao_convenio');
     }
-    
+
+    public function uf()
+    {
+        return $this->belongsTo(UFs::class, 'id_uf');
+    }
 }

@@ -9,12 +9,14 @@ class CartaoSus extends Model
 {
     use HasFactory;
 
-    
+    protected $table = 'cartao_sus';
+
     protected $fillable = [
         
-        'idCartaoSus',
+        'id',
         'id_user',
         'numero',
+        'nome_arquivo'
         
     ];
 }

@@ -9,6 +9,8 @@ class Vacinas extends Model
 {
     use HasFactory;
 
+    protected $table = 'vacinas';
+    
     protected $fillable = [
         'id',
         'id_user',

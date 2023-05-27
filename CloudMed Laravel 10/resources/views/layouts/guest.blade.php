@@ -7,7 +7,7 @@
 
         @include('templates.styles')
 
-        <title>{{ config('app.name', 'CloudMed') }}</title>
+        <title>CloudMed</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

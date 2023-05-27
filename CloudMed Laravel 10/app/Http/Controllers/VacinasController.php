@@ -33,12 +33,14 @@ class VacinasController extends Controller
 
         $vacinas = $query->get();
 
-        return view('minhasVacinas', compact('vacinas',
-                                             'filtroNome',
-                                             'filtroTipoDose',
-                                             'nomeVacinas'
-                                            ));
+        return view('minhasVacinas', compact(
+            'vacinas',
+            'filtroNome',
+            'filtroTipoDose',
+            'nomeVacinas'
+        ));
     }
+    
     /**
      * Show the form for creating a new resource.
      */
@@ -72,7 +74,7 @@ class VacinasController extends Controller
 
         $vacina->save();
 
-        return redirect('/minhas-vacinas');
+        return redirect()->route('minhasVacinas');
     }
 
     /**
@@ -92,7 +94,11 @@ class VacinasController extends Controller
         $nomeVacinas = NomeVacinas::all();
         $uf = UFs::all();
 
-        return view('editVacina', compact('vacina', 'uf', 'nomeVacinas'));
+        return view('editVacina', compact(
+            'vacina', 
+            'uf',
+            'nomeVacinas'
+        ));
     }
 
     /**
@@ -117,7 +123,7 @@ class VacinasController extends Controller
 
         $vacina->save();
 
-        return redirect('/minhas-vacinas');
+        return redirect()->route('minhasVacinas');
     }
 
     /**
@@ -127,6 +133,6 @@ class VacinasController extends Controller
     {
         $vacinas = new Vacinas();
         $vacinas->where('id', $id)->delete();
-        return redirect('/minhas-vacinas');
+        return redirect()->route('minhasVacinas');
     }
 }

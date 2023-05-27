@@ -9,7 +9,8 @@
     align-items: center;
 }
 
-.card-cad-choice, .login {
+.card-cad-choice,
+.login {
     width: 100%;
     display: flex;
     flex-flow: wrap row;
@@ -18,11 +19,9 @@
 }
 
 .form {
-    
     margin: 2% auto;
     padding: 2em;
     background: var(--fundoBranco);
-
     border-radius: 10px;
     box-shadow: var(--shadowCards);
 }
@@ -31,6 +30,7 @@
     background-color: #f5f5f5;
 }
 
+/* Preview Img */
 .image-container {
     width: 90%;
     margin: 0 auto 30px auto;
@@ -40,7 +40,7 @@
     display: block;
     position: relative;
     max-width: 100%;
-    max-height: 300px;
+    max-height: 600px;
     margin: auto;
     border-radius: 5px;
 }
@@ -48,7 +48,7 @@
 .img-preview {
     object-fit: cover;
     object-position: top;
-    max-height: 300px;
+    max-height: 600px;
 }
 
 figcaption {

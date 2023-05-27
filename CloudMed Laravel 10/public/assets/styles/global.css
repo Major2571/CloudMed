@@ -27,6 +27,12 @@
 * {
     margin: 0;
     font-family: 'Open Sans';
+    transition: all .2s ease-in-out;
+}
+
+button i{
+    transition: none;
+    font-size: 1.2em;
 }
 
 html,
@@ -69,8 +75,6 @@ select::-webkit-scrollbar-thumb {
 .login .session-allow {
     height: auto;
 }
-
-
 
 p {
     font-size: var(--fontSizeText);
@@ -133,4 +137,112 @@ footer img {
 
 img.img-vacina {
     filter: drop-shadow(0px 2px 3px rgba(12, 12, 12, 0.808));
+}
+
+
+.profile-forms{
+    width: 60%;
+    min-height: 40em;
+    max-height: 100%;
+    padding: 2em 6em;
+    background-color: #e9ebeb;
+    border-radius: 0 0.5em 0.5em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-forms form {
+    width: 100%;
+}
+
+.btn-profile {
+    margin: 2% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SIDEBAR */
+#sidebar {
+    left: 0;
+    width: 20%;
+    z-index: 2000;
+    font-weight: 500;
+    overflow-x: hidden;
+    border-radius: 0.5em 0 0 0.5em;
+}
+
+#sidebar::--webkit-scrollbar {
+    display: none;
+}
+
+#sidebar.hide {
+    width: 60px;
+}
+
+#sidebar .side-menu {
+    width: 100%;
+    margin-top: 90px;
+}
+
+
+/* CONTENT */
+#content {
+    position: relative;
+    width: calc(100% - 280px);
+    left: 280px;
+    transition: 0.3s ease;
+}
+
+#sidebar.hide ~ #content {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+
+@media screen and (max-width: 768px) {
+    #sidebar {
+        width: 200px;
+    }
+
+    #content {
+        width: calc(100% - 60px);
+        left: 200px;
+    }
+
+    #content nav .nav-link {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #content nav form .form-input input {
+        display: none;
+    }
+
+    #content nav form .form-input button {
+        width: auto;
+        height: auto;
+        background: transparent;
+        border-radius: none;
+        color: var(--dark);
+    }
+
+    #content nav form.show .form-input input {
+        display: block;
+        width: 100%;
+    }
+    #content nav form.show .form-input button {
+        width: 36px;
+        height: 100%;
+        border-radius: 0 36px 36px 0;
+        color: var(--fundoLabelForm);
+        background: var(--red);
+    }
+
+    #content nav form.show ~ .notification,
+    #content nav form.show ~ .profile {
+        display: none;
+    }
 }

@@ -64,18 +64,14 @@
     z-index: 10;
     outline: none;
     border: 3px solid var(--vermelho);
-    background-color: #f8a2a2;
+    background-color: #f88e8e;
     cursor: pointer;
     border-radius: 100%;
     width: 6vh;
     height: 6vh;
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.45));
-}
-
-#toTopButton img {
-    width: 100%;
-    align-items: center;
-    filter: brightness(10);
+    color: white;
+    font-size: 1.5em;
 }
 
 #toTopButton:hover {

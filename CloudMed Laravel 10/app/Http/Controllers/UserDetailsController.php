@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UFs;
 use App\Models\UserDetails;
+use App\Models\User;
+use Dotenv\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserDetailsController extends Controller
 {
@@ -12,7 +16,24 @@ class UserDetailsController extends Controller
      */
     public function index()
     {
-        //
+        $uf = UFs::all();
+
+        $user = Auth::user();
+        $userId = Auth::id();
+
+        $user = User::with('userDetails')->find(Auth::id());
+        $userDetails = $user->userDetails;
+
+        $userDetail = UserDetails::where('id_user', $userId);
+        $userDetail = $userDetail->get();
+
+        // dd($userDetail);
+
+        return view('profile.profile', compact(
+            'uf',
+            'user',            
+            'userDetail',
+        ));
     }
 
     /**
@@ -20,7 +41,21 @@ class UserDetailsController extends Controller
      */
     public function create()
     {
-        //
+        $userId = Auth::id();
+        $userDetails = UserDetails::where('id_user', $userId)->first();
+    
+        if ($userDetails && $userDetails->status) {
+            return redirect()->route('profile.edit', $userDetails->id);
+        }
+
+        $uf = UFs::all();
+        $user = Auth::user();
+
+        return view('profile.profileCad', compact(
+            'uf',
+            'user',
+            'userId',
+        ));
     }
 
     /**
@@ -28,23 +63,23 @@ class UserDetailsController extends Controller
      */
     public function store(Request $request)
     {
-            $UserDetails = new UserDetails();
-
-            $UserDetails->id_user = $request->id_user;
-            $UserDetails->tidInformacoesClinicas = $request->idInformacoesClinicas;
-            $UserDetails->idCartaoSus = $request->idCartaoSus;
-            $UserDetails->sobrenome = $request->input('name');
-            $UserDetails->dataNascimento = $request->input('date');
-            $UserDetails->rg = $request->input('rg');
-            $UserDetails->cpf = $request->input('cpf');
-            $UserDetails->cidade = $request->input('cidade');
-            $UserDetails->uf = $request->input('uf');
-            $UserDetails->email = $request->input('email');
-            $UserDetails->telefone = $request->input('number');
+        $userDetail = new UserDetails();
+        $user = auth()->user();
         
-            $UserDetails->save();
+        $userDetail->id_user = $user->id;
+        $userDetail->sobrenome = $request->input('sobrenome');
+        $userDetail->dataNascimento = $request->input('data_nasc');
+        $userDetail->rg = $request->input('rg');
+        $userDetail->cpf = $request->input('cpf');
+        $userDetail->telefone = $request->input('telefone');
+        $userDetail->cidade = $request->input('cidade');
+        $userDetail->id_uf = $request->input('uf');
+        
+        $userDetail->status = true;
 
-            return redirect('/welcome');
+        $userDetail->save();
+
+        return redirect()->route('profile');
     }
 
     /**
@@ -58,19 +93,44 @@ class UserDetailsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(UserDetails $UserDetails)
+    public function edit()
     {
-        //
+        $user = Auth::user();
+        $userDetail = $user->userDetails;
+        $uf = UFs::all();
+
+        return view('profile.profileEdit', compact(
+            'user',
+            'userDetail',
+            'uf',
+        ));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, UserDetails $UserDetails)
+    public function update(Request $request, $id)
     {
-        //
-    }
 
+        $userDetail = UserDetails::FindOrFail($id);
+
+        $user = auth()->user();
+        
+        $userDetail->id_user = $user->id;
+        $userDetail->sobrenome = $request->input('sobrenome');
+        $userDetail->dataNascimento = $request->input('data_nasc');
+        $userDetail->rg = $request->input('rg');
+        $userDetail->cpf = $request->input('cpf');
+        $userDetail->telefone = $request->input('telefone');
+        $userDetail->cidade = $request->input('cidade');
+        $userDetail->id_uf = $request->input('uf');
+        
+        $userDetail->status = true;
+
+        $userDetail->save();
+
+        return redirect()->route('profile');
+    }
     /**
      * Remove the specified resource from storage.
      */

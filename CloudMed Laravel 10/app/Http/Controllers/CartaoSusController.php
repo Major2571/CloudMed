@@ -4,67 +4,69 @@ namespace App\Http\Controllers;
 
 use App\Models\CartaoSus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class CartaoSusController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $userId = Auth::user()->id;
+
+        $sus = CartaoSus::where('id_user', $userId)->get();
+
+        // dd($sus);
+
+        return view('profile.cartaoSus', compact(
+            'sus'
+        ));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-            $cartaoSus = new CartaoSus();
-                   
-            $cartaoSus->idCartaoSus = $request->idCartaoSus;
-            $cartaoSus->id_user = $request->id_user;
-            $cartaoSus->numero = $request->input('sus');
- 
+        $cartaoSus = new CartaoSus();
+
+        $cartaoSus->id_user = $request->id_user;
+
+        $user = auth()->user();
+        $cartaoSus->id_user = $user->id;
+        $cartaoSus->numero = $request->input('numero');
+
+        if ($request->hasFile('arquivo')) {
+            $file = $request->file('arquivo');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('public/carteirinha_sus', $fileName);
+            $cartaoSus->nome_arquivo = $fileName;
+        };
+
+        $cartaoSus->save();
+
+        return redirect()->route('meuSus');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(CartaoSus $cartaoSus)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $cartaoSus = CartaoSus::FindOrFail($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(CartaoSus $cartaoSus)
-    {
-        //
-    }
+        $cartaoSus->id_user = $request->id_user;
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, CartaoSus $cartaoSus)
-    {
-        //
-    }
+        $user = auth()->user();
+        $cartaoSus->id_user = $user->id;
+        $cartaoSus->numero = $request->input('numero');
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(CartaoSus $cartaoSus)
-    {
-        //
+        if ($request->hasFile('arquivo')) {
+            if (Storage::exists('public/carteirinha_convenio/' . $cartaoSus->nome_arquivo)) {
+                Storage::delete('public/carteirinha_convenio/' . $cartaoSus->nome_arquivo);
+            }
+
+            $file = $request->file('arquivo');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('public/carteirinha_convenio', $fileName);
+            $cartaoSus->nome_arquivo = $fileName;
+        }
+
+        $cartaoSus->save();
+
+        return redirect()->route('meuSus');
     }
 }

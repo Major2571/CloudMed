@@ -9,6 +9,8 @@ class Exames extends Model
 {
     use HasFactory;
 
+    protected $table = 'exames';
+
     protected $fillable = [
         
         'id',
@@ -24,12 +26,6 @@ class Exames extends Model
         'nome_arquivo', 
         
     ];
-
-    protected $dates = ['date'];
-
-    // public function user() {
-    //     return $this->belongsTo('App\Models\User');
-    // }
 
     public function especialidade()
     {

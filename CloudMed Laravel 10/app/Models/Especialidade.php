@@ -9,11 +9,13 @@ class Especialidade extends Model
 {
     protected $table = 'especialidade';
 
-    protected $fillable = ['id', 'especialidade'];
+    protected $fillable = [
+        'id',
+        'especialidade'
+    ];
 
     public function exames()
     {
         return $this->hasMany(Exames::class, 'id_especialidade');
     }
-
 }

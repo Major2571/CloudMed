@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cartaoSus', function (Blueprint $table) {
+        Schema::create('cartao_sus', function (Blueprint $table) {
 
-            $table->id('idCartaoSUS');
+            $table->id('id');
             
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
 
-            $table->string('numero');
-            $table->string('nome_arquivo');
+            $table->string('numero')->nullable();
+            $table->string('nome_arquivo')->nullable();
             
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cartaoSus');
+        Schema::dropIfExists('cartao_sus');
     }
 };

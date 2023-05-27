@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cartoesConvenio', function (Blueprint $table) {
+        Schema::create('cartao_convenios', function (Blueprint $table) {
 
-            $table->id('idCartaoConvenio');
+            $table->id('id');
 
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             
-            $table->string('numero');
-            $table->string('nomeConvenio');
-            $table->date('validade');
-            $table->string('nome_arquivo');
+            $table->string('numero')->nullable();
+            $table->string('nomeConvenio')->nullable();
+            $table->string('plano')->nullable();
+            $table->string('nome_arquivo')->nullable();
 
             $table->timestamps();
 
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cartoesConvenio');
+        Schema::dropIfExists('cartao_convenios');
     }
 };

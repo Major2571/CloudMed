@@ -1,13 +1,14 @@
-<section class="space-y-6">
-    <header>
-        <h2 class="text-lg font-medium text-cyan-700">
-            {{ __('Exclua sua conta') }}
+<section class="">
+    <div class="title-profile mb-5">
+        
+        <h2>
+            Exclua sua conta
         </h2>
 
-        <p class="mt-1 text-gray-600">
-            {{ __('Se você deseja excluir sua conta, é importante entender as consequências dessa ação. Todos os seus dados, histórico de atividades e informações pessoais serão permanentemente excluídos do sistema. Se você ainda deseja prosseguir com a exclusão de conta, siga as instruções abaixo para iniciar o processo. Lembre-se de que a exclusão de conta é uma ação permanente e irreversível, portanto, certifique-se de ter certeza antes de tomar essa decisão.') }}
-        </p>
-    </header>
+        <span class="text-sm ">
+            Se você deseja excluir sua conta, é importante entender as consequências dessa ação. Todos os seus dados, histórico de atividades e informações pessoais serão permanentemente excluídos do sistema. Se você ainda deseja prosseguir com a exclusão de conta, siga as instruções abaixo para iniciar o processo. Lembre-se de que a exclusão de conta é uma ação permanente e irreversível, portanto, certifique-se de ter certeza antes de tomar essa decisão.
+        </span>
+    </div>
 
     <x-danger-button
         x-data=""
