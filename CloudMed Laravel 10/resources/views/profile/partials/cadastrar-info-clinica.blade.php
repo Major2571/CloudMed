@@ -58,13 +58,13 @@
             <div class="mb-3 col-span-2">
                 <div class="relative w-full">
                     <x-input-label for="alergias" :value="__('Alergias:')" />
-                    <textarea id="alergias" name="alergias" rows="4" class="p-2.5 w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block w-full p-2.5" placeholder="Escreva suas principais alergias..."></textarea>
+                    <textarea id="alergias" name="alergias" rows="4" class="p-2.5 w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-cyan-700 focus:border-cyan-700 block" placeholder="Escreva suas principais alergias..."></textarea>
                 </div>
             </div>
     
         </div>
         <div class="btn-profile">
-            <button type="submit"
+            <button type="submit" onclick="saveProfileInfo()"
                 class="mb-2 rounded-lg border border-emerald-600 px-7 py-2 text-center font-medium text-emerald-800 hover:bg-emerald-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-50"
                 value="Salvar">Salvar</button>
         </div>

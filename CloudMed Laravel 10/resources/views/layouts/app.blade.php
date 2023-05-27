@@ -72,6 +72,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
 
 <script src="{{ url('assets/js/deleteModal.js') }}"></script>
+<script src="{{ url('assets/js/profileSaveModal.js') }}"></script>
 <script src="{{ url('assets/js/saveModal.js') }}"></script>
 <script src="{{ url('assets/js/editModal.js') }}"></script>
 <script src="{{ url('assets/js/imgPreview.js') }}"></script>

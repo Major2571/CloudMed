@@ -1,5 +1,5 @@
+@section('title', 'Alterar Senha')
 <x-app-layout>
-
     <section class="login session-allow min-h-screen">
 
         <section class="profile my-5 w-full flex justify-center items-center ">
