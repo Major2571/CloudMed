@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExamesController;
+use App\Http\Controllers\MedicamentosController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacinasController;
 use App\Http\Controllers\DashboardController;
@@ -46,6 +47,14 @@ Route::get('/cadastro', function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
+    Route::get('/profile', [UserDetailsController::class, 'index'])->name('profile');
+    Route::get('/profile-update', [UserDetailsController::class, 'create'])->name('profile.create');
+    Route::post('/profile-update', [UserDetailsController::class, 'store'])->name('profile.store');
+    Route::get('/profile/edit/{id}', [UserDetailsController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/update/{id}', [UserDetailsController::class, 'update'])->name('profile.update');
+    Route::delete('/profile/destroy', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
     Route::get('/alterar-senha', function () {
         return view('profile.partials.update-password-form');
     })->name('alterarSenha');
@@ -79,14 +88,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/minhas-vacinas/edit/{id}', [VacinasController::class, 'edit'])->name('editVacina');
     Route::put('/minhas-vacinas/update/{id}', [VacinasController::class, 'update'])->name('updateVacina');
 
-    Route::get('/profile', [UserDetailsController::class, 'index'])->name('profile');
-    Route::get('/profile-update', [UserDetailsController::class, 'create'])->name('profile.create');
-    Route::post('/profile-update', [UserDetailsController::class, 'store'])->name('profile.store');
-    Route::get('/profile/edit/{id}', [UserDetailsController::class, 'edit'])->name('profile.edit');
-    Route::put('/profile/update/{id}', [UserDetailsController::class, 'update'])->name('profile.update');
-    Route::delete('/profile/destroy', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
-
+    Route::get('/meus-medicamentos', [MedicamentosController::class, 'index'])->name('meusMedicamentos');
+    Route::post('/cad-novo-medicamentos', [MedicamentosController::class, 'store'])->name('saveNewMedicamentos');
+    Route::get('/meus-medicamentos/delete/{id}', [MedicamentosController::class, 'destroy'])->name('deleteMedicamentos');
+    Route::put('/meus-medicamentos/update/{id}', [MedicamentosController::class, 'update'])->name('updateMedicamentos');
 
 });
 
