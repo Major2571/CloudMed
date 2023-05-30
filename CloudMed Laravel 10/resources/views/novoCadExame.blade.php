@@ -5,7 +5,6 @@
         <section class="form-cad-new-exam">
 
             <div class="form">
-
                 <form method="post" action="{{ route('saveNewExam') }}" id="cadastroForm" enctype="multipart/form-data">
 
                     @csrf
