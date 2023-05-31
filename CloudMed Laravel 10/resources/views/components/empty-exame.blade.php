@@ -1,4 +1,4 @@
-<section>
+<section class="m-auto max-h-full min-h-screen w-full flex">
 
     <div class="mx-auto my-5 flex w-3/5 items-center justify-center">
         <div class="text-md mr-5 w-4/5">

@@ -3,22 +3,21 @@
 <x-app-layout>
     <section class="session-allow">
 
-        <div class="m-auto max-h-full min-h-screen w-full">
+        @if ($vacinas->isEmpty())
+            <x-empty-vacina />
+        @else
+            <div class="m-auto max-h-full min-h-screen w-full">
+                <div class="title-filters m-auto w-full">
 
-            <div class="title-filters m-auto w-full">
-
-                <div class="bg-[#119abb57] py-10">
-                    <div class="title m-auto w-4/5">
-                        <h1> Minhas Vacinas </h1>
-                        <p> Aqui você encontra suas Vacinas salvas no nosso sistema.</p>
+                    <div class="bg-[#119abb57] py-10">
+                        <div class="title m-auto w-4/5">
+                            <h1> Minhas Vacinas </h1>
+                            <p> Aqui você encontra suas Vacinas salvas no nosso sistema.</p>
+                        </div>
                     </div>
+
                 </div>
 
-            </div>
-
-            @if ($vacinas->isEmpty())
-                <x-empty-vacina />
-            @else
                 <div class="py-5">
                     <div class="title m-auto w-4/5">
                         <h3 class="mb-1 font-bold">
@@ -191,12 +190,11 @@
                         </a>
                     </div>
                 </div>
-            @endif
-
-        </div>
+            </div>
+        @endif
 
     </section>
 
-    <x-btn-toTop/>
+    <x-btn-toTop />
 
 </x-app-layout>
