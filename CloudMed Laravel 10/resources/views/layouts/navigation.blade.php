@@ -48,7 +48,7 @@
                             <x-dropdown-link :href="route('novoCadExame')">
                                 {{ __('Exame') }}
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('saveNewMedicamentos')">
+                            <x-dropdown-link :href="route('novoCadMedicamentos')">
                                 {{ __('Medicamentos') }}
                             </x-dropdown-link>
                         </x-slot>

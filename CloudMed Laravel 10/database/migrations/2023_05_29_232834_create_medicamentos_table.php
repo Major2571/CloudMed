@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('laboratorio')->nullable();
             $table->string('frequencia')->nullable();
             $table->string('tratamento')->nullable();
-            $table->time('observacoes')->nullable();
+            $table->text('observacoes')->nullable();
 
             $table->timestamps();
         });

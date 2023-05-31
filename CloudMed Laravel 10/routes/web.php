@@ -89,8 +89,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/minhas-vacinas/update/{id}', [VacinasController::class, 'update'])->name('updateVacina');
 
     Route::get('/meus-medicamentos', [MedicamentosController::class, 'index'])->name('meusMedicamentos');
+    Route::get('/cad-novo-medicamentos', [MedicamentosController::class, 'create'])->name('novoCadMedicamentos');
     Route::post('/cad-novo-medicamentos', [MedicamentosController::class, 'store'])->name('saveNewMedicamentos');
     Route::get('/meus-medicamentos/delete/{id}', [MedicamentosController::class, 'destroy'])->name('deleteMedicamentos');
+    Route::get('/meus-medicamentos/edit/{id}', [MedicamentosController::class, 'edit'])->name('editMedicamentos');
     Route::put('/meus-medicamentos/update/{id}', [MedicamentosController::class, 'update'])->name('updateMedicamentos');
 
 });
