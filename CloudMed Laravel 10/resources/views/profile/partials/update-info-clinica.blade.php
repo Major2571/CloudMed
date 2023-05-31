@@ -70,14 +70,20 @@
                 <div class="mb-3">
                     <div class="relative w-full">
                         <x-input-label for="altura" :value="__('Altura:')" />
-                        <x-text-input type="text" name="altura" id="altura" :value="old('altura', $infoClinica->altura)" required />
+                        <div class="flex items-center">
+                            <x-text-input type="text" name="altura" id="altura" :value="old('altura', $infoClinica->altura)" required />
+                            <span class="ml-2 pb-3"> cm </span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <div class="relative w-full">
                         <x-input-label for="peso" :value="__('Peso:')" />
-                        <x-text-input type="text" name="peso" id="peso" :value="old('peso', $infoClinica->peso)" required />
+                        <div class="flex items-center">
+                            <x-text-input type="text" name="peso" id="peso" :value="old('peso', $infoClinica->peso)" required />
+                            <span class="ml-2 pb-3"> kg </span>
+                        </div>
                     </div>
                 </div>
 
