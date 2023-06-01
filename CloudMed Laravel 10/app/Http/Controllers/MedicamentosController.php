@@ -11,15 +11,26 @@ class MedicamentosController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $userId = Auth::user()->id;
-        $medicamentos = Medicamentos::where('id_user', $userId)->get();
+        // $userId = Auth::user()->id;
+        // $medicamentos = Medicamentos::where('id_user', $userId)->get();
+
+        $filtroMedicamento = $request->input('filtroMedicamento');
+
+        $filtrarNome = Medicamentos::where('id_user', Auth::user()->id);
+
+        if ($filtroMedicamento) {
+            $filtrarNome->where('nome_medicamento', $filtroMedicamento);
+        }
+
+        $medicamentos = $filtrarNome->get();
 
         // dd($medicamentos);
 
         return view('meusMedicamentos', compact(
             'medicamentos',
+            'filtroMedicamento'
         ));
     }
 
