@@ -31,21 +31,6 @@ class UserDetails extends Model
         return $this->hasOne(User::class, 'id_user');
     }
 
-    public function cartaoSus()
-    {
-        return $this->belongsTo(CartaoSus::class, 'id_informacoes_clinicas');
-    }
-
-    public function cartaoConvenio()
-    {
-        return $this->belongsTo(CartaoConvenio::class, 'id_cartao_sus');
-    }
-
-    public function informacoesClinicas()
-    {
-        return $this->belongsTo(PacienteInformacoesClinicas::class, 'id_cartao_convenio');
-    }
-
     public function uf()
     {
         return $this->belongsTo(UFs::class, 'id_uf');

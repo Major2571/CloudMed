@@ -45,8 +45,8 @@ class CartaoSusController extends Controller
     {
         $cartaoSus = CartaoSus::FindOrFail($id);
 
-        $cartaoSus->id_user = $request->id_user;
-
+        // $cartaoSus->id_user = $request->id_user;
+        
         $user = auth()->user();
         $cartaoSus->id_user = $user->id;
         $cartaoSus->numero = $request->input('numero');

@@ -21,7 +21,7 @@ class MedicamentosController extends Controller
         $filtrarNome = Medicamentos::where('id_user', Auth::user()->id);
 
         if ($filtroMedicamento) {
-            $filtrarNome->where('nome_medicamento', $filtroMedicamento);
+            $filtrarNome->where('nome_medicamento', 'like', '%' . $filtroMedicamento . '%');
         }
 
         $medicamentos = $filtrarNome->get();
