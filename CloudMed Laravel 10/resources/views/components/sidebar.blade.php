@@ -10,7 +10,7 @@
     </div>
 
     <div class="hidden sm:flex">
-        <x-sidebar-nav-link :href="route('userDetailsMedical')" :active="request()->routeIs('userDetailsMedical')">
+        <x-sidebar-nav-link :href="route('infoClinicas')" :active="request()->routeIs('infoClinicas')">
             <div class="mr-3 text-xl">
                 <i class="fa-solid fa-file-lines"></i>
             </div>

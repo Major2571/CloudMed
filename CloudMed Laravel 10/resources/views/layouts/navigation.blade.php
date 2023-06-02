@@ -22,6 +22,11 @@
                         {{ __('Meus Exames') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden sm:flex">
+                    <x-nav-link :href="route('meusMedicamentos')" :active="request()->routeIs('meusMedicamentos')">
+                        {{ __('Meus Medicamentos') }}
+                    </x-nav-link>
+                </div>
 
                 <div class="hidden sm:flex sm:items-center border-b-2 border-transparent  hover:border-cyan-700 hover:bg-[#a2cdcf]">
                     <x-dropdown align="right" width="48">
@@ -42,6 +47,9 @@
                             </x-dropdown-link>
                             <x-dropdown-link :href="route('novoCadExame')">
                                 {{ __('Exame') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('novoCadMedicamentos')">
+                                {{ __('Medicamentos') }}
                             </x-dropdown-link>
                         </x-slot>
                     </x-dropdown>
@@ -112,10 +120,6 @@
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile')">
                     {{ __('Perfil') }}
-                </x-responsive-nav-link>
-
-                <x-responsive-nav-link :href="route('userDetailsMedical')">
-                    {{ __('Perfil Clínico') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

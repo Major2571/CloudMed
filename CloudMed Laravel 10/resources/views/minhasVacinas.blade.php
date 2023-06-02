@@ -3,22 +3,21 @@
 <x-app-layout>
     <section class="session-allow">
 
-        <div class="m-auto max-h-full min-h-screen w-full">
+        @if ($vacinas->isEmpty() && empty($filtroNome) && empty($filtroTipoDose))
+            <x-empty-vacina />
+        @else
+            <div class="m-auto max-h-full min-h-screen w-full">
+                <div class="title-filters m-auto w-full">
 
-            <div class="title-filters m-auto w-full">
-
-                <div class="bg-[#119abb57] py-10">
-                    <div class="title m-auto w-4/5">
-                        <h1> Minhas Vacinas </h1>
-                        <p> Aqui você encontra suas Vacinas salvas no nosso sistema.</p>
+                    <div class="bg-[#119abb57] py-10">
+                        <div class="title m-auto w-4/5">
+                            <h1> Minhas Vacinas </h1>
+                            <p> Aqui você encontra suas Vacinas salvas no nosso sistema.</p>
+                        </div>
                     </div>
+
                 </div>
 
-            </div>
-
-            @if ($vacinas->isEmpty())
-                <x-empty-vacina />
-            @else
                 <div class="py-5">
                     <div class="title m-auto w-4/5">
                         <h3 class="mb-1 font-bold">
@@ -103,100 +102,103 @@
                     </div>
                 </div>
 
-                <div class="m-auto grid w-4/5 gap-4 md:grid-cols-2 lg:grid-cols-4">
-                    @foreach ($vacinas as $vacinas)
-                        <div
-                            class="card-vacina relative flex items-center justify-start rounded-md border border-gray-300 bg-slate-100 p-5 hover:bg-gray-200">
-                            <div class="mr-3 w-20 rounded-full border border-gray-300 p-3">
-                                <img src="assets/img/icon/vacinne.png" alt="" class="img-vacina">
-                            </div>
+                @if ($vacinas->isEmpty())
+                    <x-no-results-found />
+                @else
+                    <div class="m-auto grid w-4/5 gap-4 md:grid-cols-2 lg:grid-cols-4">
+                        @foreach ($vacinas as $vacinas)
+                            <div
+                                class="card-vacina relative flex items-center justify-start rounded-md border border-gray-300 bg-slate-100 p-5 hover:bg-gray-200">
+                                <div class="mr-3 w-20 rounded-full border border-gray-300 p-3">
+                                    <img src="assets/img/icon/vacinne.png" alt="" class="img-vacina">
+                                </div>
 
-                            <div class="w-full">
-                                <div
-                                    class="inline-flex w-full flex-wrap items-center justify-between text-sm font-semibold">
-                                    <div class="rounded-full bg-cyan-700 px-3 py-1 uppercase text-white">
-                                        <span>
-                                            {{ $vacinas->tipoDose }}
+                                <div class="w-full">
+                                    <div
+                                        class="inline-flex w-full flex-wrap items-center justify-between text-sm font-semibold">
+                                        <div class="rounded-full bg-cyan-700 px-3 py-1 uppercase text-white">
+                                            <span>
+                                                {{ $vacinas->tipoDose }}
+                                            </span>
+                                        </div>
+                                        <span class="text-gray-500">
+                                            {{ date('d/m/y', strtotime($vacinas->data)) }}
                                         </span>
                                     </div>
-                                    <span class="text-gray-500">
-                                        {{ date('d/m/y', strtotime($vacinas->data)) }}
-                                    </span>
-                                </div>
 
-                                <div class="py-1.5 font-bold text-cyan-900">
-                                    <span>
-                                        @if (empty($vacinas->titulo))
-                                            {{ $vacinas->nomeVacina->nomeVacina }}
-                                        @else
-                                            {{ $vacinas->titulo }}
-                                        @endif
-                                    </span>
-                                </div>
-
-                                <div
-                                    class="inline-flex w-full flex-wrap content-center justify-between text-sm font-semibold">
-                                    <div class="rounded-full uppercase text-gray-700">
+                                    <div class="py-1.5 font-bold text-cyan-900">
                                         <span>
-                                            {{ $vacinas->fabricante }}
+                                            @if (empty($vacinas->titulo))
+                                                {{ $vacinas->nomeVacina->nomeVacina }}
+                                            @else
+                                                {{ $vacinas->titulo }}
+                                            @endif
                                         </span>
                                     </div>
-                                    <div>
-                                        {{ $vacinas->lote }}
+
+                                    <div
+                                        class="inline-flex w-full flex-wrap content-center justify-between text-sm font-semibold">
+                                        <div class="rounded-full uppercase text-gray-700">
+                                            <span>
+                                                {{ $vacinas->fabricante }}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            {{ $vacinas->lote }}
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="absolute inset-0 flex flex-wrap items-center justify-center rounded-md opacity-0 transition-opacity duration-300">
+                                        <a href="{{ route('editVacina', $vacinas->id) }}">
+                                            <button type="button"
+                                                class="mr-2 inline-flex items-center rounded-lg border border-blue-600 bg-blue-600 p-2.5 text-center text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200">
+                                                <div class="mr-2">
+                                                    <i class="fa-solid fa-edit"></i>
+                                                </div>
+                                                Editar
+                                            </button>
+                                        </a>
+
+                                        <a href="{{ route('deleteVacina', $vacinas->id) }}">
+                                            <button type="button" onclick="confirmExclusao(event)"
+                                                class="mr-2 inline-flex items-center rounded-lg border border-red-600 bg-red-500 p-2.5 text-center text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-200">
+                                                <div class="mr-2">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </div>
+                                                Excluir
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
-
-                                <div
-                                    class="absolute inset-0 flex flex-wrap items-center justify-center rounded-md opacity-0 transition-opacity duration-300">
-                                    <a href="{{ route('editVacina', $vacinas->id) }}">
-                                        <button type="button"
-                                            class="mr-2 inline-flex items-center rounded-lg border border-blue-600 bg-blue-600 p-2.5 text-center text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200">
-                                            <div class="mr-2">
-                                                <i class="fa-solid fa-edit"></i>
-                                            </div>
-                                            Editar
-                                        </button>
-                                    </a>
-
-                                    <a href="{{ route('deleteVacina', $vacinas->id) }}">
-                                        <button type="button" onclick="confirmExclusao(event)"
-                                            class="mr-2 inline-flex items-center rounded-lg border border-red-600 bg-red-500 p-2.5 text-center text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-200">
-                                            <div class="mr-2">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </div>
-                                            Excluir
-                                        </button>
-                                    </a>
-                                </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
-
-                <div class="m-auto mt-10 w-4/5">
-                    <p class="mr-2 mb-5 text-lg font-bold">
-                        Gostaria de fazer um novo cadastro de Vacina?
-                    </p>
-
-                    <div class="flex items-center md:w-3/4 lg:w-1/4">
-                        <h3 class="mr-2 text-lg font-semibold"> Clique Aqui: </h3>
-                        <a href="{{ route('novoCadVacina') }}">
-                            <button type="button"
-                                class="inline-flex content-center items-center rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-                                Nova Vacina
-                                <div class="ml-2 flex">
-                                    <i class="fa-solid fa-plus"></i>
-                                </div>
-                            </button>
-                        </a>
+                        @endforeach
                     </div>
-                </div>
-            @endif
 
-        </div>
+                    <div class="m-auto mt-10 w-4/5">
+                        <p class="mr-2 mb-5 text-lg font-bold">
+                            Gostaria de fazer um novo cadastro de Vacina?
+                        </p>
+
+                        <div class="flex items-center md:w-3/4 lg:w-1/4">
+                            <h3 class="mr-2 text-lg font-semibold"> Clique Aqui: </h3>
+                            <a href="{{ route('novoCadVacina') }}">
+                                <button type="button"
+                                    class="inline-flex content-center items-center rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                    Nova Vacina
+                                    <div class="ml-2 flex">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </div>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                @endif
+            </div>
+        @endif
 
     </section>
 
-    <x-btn-toTop/>
+    <x-btn-toTop />
 
 </x-app-layout>

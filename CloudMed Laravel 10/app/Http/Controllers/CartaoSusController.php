@@ -12,10 +12,7 @@ class CartaoSusController extends Controller
     public function index()
     {
         $userId = Auth::user()->id;
-
         $sus = CartaoSus::where('id_user', $userId)->get();
-
-        // dd($sus);
 
         return view('profile.cartaoSus', compact(
             'sus'
@@ -48,8 +45,8 @@ class CartaoSusController extends Controller
     {
         $cartaoSus = CartaoSus::FindOrFail($id);
 
-        $cartaoSus->id_user = $request->id_user;
-
+        // $cartaoSus->id_user = $request->id_user;
+        
         $user = auth()->user();
         $cartaoSus->id_user = $user->id;
         $cartaoSus->numero = $request->input('numero');

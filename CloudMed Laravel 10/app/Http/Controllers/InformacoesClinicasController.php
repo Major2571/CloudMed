@@ -3,10 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\InformacoesClinicas;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class InformacoesClinicasController extends Controller
 {
+    public function index()
+    {
+        $userId = Auth::user()->id;
+        $infoClinica = InformacoesClinicas::where('id_user', $userId)->get();
+
+        return view('profile.infoClinicas', compact(
+            'infoClinica',
+        ));
+    }
 
     public function store(Request $request)
     {
@@ -24,7 +34,7 @@ class InformacoesClinicasController extends Controller
 
         $infoClinica->save();
 
-        return redirect()->route('userDetailsMedical');
+        return redirect()->route('infoClinicas');
 
     }
 
@@ -44,7 +54,7 @@ class InformacoesClinicasController extends Controller
 
         $infoClinica->save();
 
-        return redirect()->route('userDetailsMedical');
+        return redirect()->route('infoClinicas');
     }
 
 }
