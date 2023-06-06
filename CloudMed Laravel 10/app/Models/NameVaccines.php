@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NomeVacinas extends Model
+class NameVaccines extends Model
 {
     use HasFactory;
 
@@ -18,6 +18,6 @@ class NomeVacinas extends Model
 
     public function cadVacina()
     {
-        return $this->hasMany(Vacinas::class, 'id_vacina');
+        return $this->hasMany(Vaccines::class, 'id_vacina');
     }
 }

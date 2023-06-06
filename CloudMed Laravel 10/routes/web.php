@@ -3,7 +3,7 @@
 use App\Http\Controllers\ExamesController;
 use App\Http\Controllers\MedicamentosController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\VacinasController;
+use App\Http\Controllers\VaccinesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserDetailsController;
 use App\Http\Controllers\UserDetailsMedicalController;
@@ -77,12 +77,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/meus-exames/edit/{id}', [ExamesController::class, 'edit'])->name('editExames');
     Route::put('/meus-exames/update/{id}', [ExamesController::class, 'update'])->name('updateExames');
 
-    Route::get('/minhas-vacinas', [VacinasController::class, 'index'])->name('minhasVacinas');
-    Route::get('/cad-novo-vacina', [VacinasController::class, 'create'])->name('novoCadVacina');
-    Route::post('/cad-novo-vacina', [VacinasController::class, 'store'])->name('saveNewVaccine');
-    Route::get('/minhas-vacinas/delete/{id}', [VacinasController::class, 'destroy'])->name('deleteVacina');
-    Route::get('/minhas-vacinas/edit/{id}', [VacinasController::class, 'edit'])->name('editVacina');
-    Route::put('/minhas-vacinas/update/{id}', [VacinasController::class, 'update'])->name('updateVacina');
+    Route::get('/minhas-vacinas', [VaccinesController::class, 'index'])->name('myVaccines');
+    Route::get('/cad-novo-vacina', [VaccinesController::class, 'create'])->name('createNewVaccine');
+    Route::post('/cad-novo-vacina', [VaccinesController::class, 'store'])->name('saveNewVaccine');
+    Route::get('/minhas-vacinas/delete/{id}', [VaccinesController::class, 'destroy'])->name('deleteVaccine');
+    Route::get('/minhas-vacinas/edit/{id}', [VaccinesController::class, 'edit'])->name('editVaccine');
+    Route::put('/minhas-vacinas/update/{id}', [VaccinesController::class, 'update'])->name('updateVaccine');
 
     Route::get('/meus-medicamentos', [MedicamentosController::class, 'index'])->name('meusMedicamentos');
     Route::get('/cad-novo-medicamentos', [MedicamentosController::class, 'create'])->name('novoCadMedicamentos');

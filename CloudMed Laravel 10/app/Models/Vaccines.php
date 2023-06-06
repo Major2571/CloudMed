@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vacinas extends Model
+class Vaccines extends Model
 {
     use HasFactory;
 
@@ -26,7 +26,7 @@ class Vacinas extends Model
 
     public function nomeVacina()
     {
-        return $this->belongsTo(NomeVacinas::class, 'id_vacina');
+        return $this->belongsTo(NameVaccines::class, 'id_vacina');
     }
 
     public function uf()
