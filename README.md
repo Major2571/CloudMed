@@ -13,8 +13,13 @@
     <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=f7df1e&color=0d1117"/>
     <img src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=777bb4&color=0d1117"/>
     <img src="https://img.shields.io/badge/laravel-0D1117.svg?style=for-the-badge&logo=laravel&logoColor=23FF2D20&labelColor=0D1117"/>
-    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=38bcf6&color=0D1117"/>
     <img src="https://img.shields.io/badge/mysql-0D1117.svg?style=for-the-badge&logo=mysql&logoColor=white&labelColor=0D1117"/>
+    <br>
+    <img src="https://img.shields.io/badge/jquery-0D1117.svg?style=for-the-badge&logo=jquery&logoColor=0096c7"/>
+    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=38bcf6&color=0D1117"/>   
+    <img src='https://img.shields.io/badge/OwlCarousel-0D1117?style=for-the-badge&logo=&logoColor=white&labelColor=0D1117&color=0D1117'/>
+    <img src='https://img.shields.io/badge/ScrollReveal-0D1117?style=for-the-badge&logo=&logoColor=white&labelColor=0D1117&color=0D1117'/>
+    <img src='https://img.shields.io/badge/SweetAlert2-0D1117?style=for-the-badge&logo=&logoColor=white&labelColor=0D1117&color=0D1117'/>
 </div>
 
 ## Requisitos e Versões:
