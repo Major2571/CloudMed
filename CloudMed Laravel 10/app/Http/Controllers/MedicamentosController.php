@@ -28,7 +28,7 @@ class MedicamentosController extends Controller
 
         // dd($medicamentos);
 
-        return view('medications.meusMedicamentos', compact(
+        return view('user.medications.meusMedicamentos', compact(
             'medicamentos',
             'filtroMedicamento'
         ));
@@ -39,7 +39,7 @@ class MedicamentosController extends Controller
      */
     public function create()
     {
-        return view('medications.novoCadMedicamentos');
+        return view('user.medications.novoCadMedicamentos');
     }
 
     /**
@@ -79,7 +79,7 @@ class MedicamentosController extends Controller
     {
         $medicamentos = Medicamentos::FindOrFail($id);
 
-        return view('medications.editMedicamentos', compact(
+        return view('user.medications.editMedicamentos', compact(
             'medicamentos'
         ));
     }

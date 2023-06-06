@@ -35,7 +35,7 @@ class ExamesController extends Controller
 
         $exames = $exames->get();
 
-        return view('exams.meusExames', compact(
+        return view('user.exams.meusExames', compact(
             'exames',
             'filtroData',
             'filtroEspecialidade',
@@ -50,7 +50,7 @@ class ExamesController extends Controller
         $especialidades = Especialidade::all();
         $uf = UFs::all();
 
-        return view('exams.novoCadExame', compact(
+        return view('user.exams.novoCadExame', compact(
             'especialidades',
             'uf'
         )
@@ -96,7 +96,7 @@ class ExamesController extends Controller
     {
         $exame = Exames::find($id);
 
-        return view('exams.meusExames', compact(
+        return view('user.exams.meusExames', compact(
             'exame'
         ));
     }
@@ -110,7 +110,7 @@ class ExamesController extends Controller
         $especialidades = Especialidade::all();
         $uf = UFs::all();
 
-        return view('exams.editExame', compact(
+        return view('user.exams.editExame', compact(
             'exame',
             'especialidades',
             'uf'

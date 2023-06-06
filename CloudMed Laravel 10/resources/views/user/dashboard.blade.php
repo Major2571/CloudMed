@@ -77,7 +77,7 @@
 
                     <div class="p-5">
 
-                        <a href="{{ route('minhasVacinas') }}">
+                        <a href="{{ route('myVaccines') }}">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 hover:text-cyan-800">Minhas
                                 Vacinas</h5>
                         </a>
@@ -127,7 +127,7 @@
                             </p>
                         @endif
 
-                        <a href="{{ route('novoCadVacina') }}"
+                        <a href="{{ route('createNewVaccine') }}"
                             class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-700 rounded-md hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-gray-300">
                             Cadastrar uma nova Vacina
                             <div class="ml-2 text-base">

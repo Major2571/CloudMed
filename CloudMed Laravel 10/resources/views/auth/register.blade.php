@@ -53,11 +53,8 @@
                     <div class="button">
                         <input class="btnCadastrar" type="submit" value=" Cadastrar ">
                     </div>
-    
                 </div>
-    
-    
-    
+
             </form>
     
         </div>
