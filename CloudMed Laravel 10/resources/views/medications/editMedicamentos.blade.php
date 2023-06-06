@@ -60,8 +60,7 @@
                             <div class="relative w-full">
                                 <x-input-label for="observacoes" :value="__('Observacoes:')" />
                                 <textarea id="observacoes" name="observacoes" rows="4"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
-                                    value="{{ $medicamentos->observacoes }}"></textarea>
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"> {{ $medicamentos->observacoes }} </textarea>
                             </div>
                         </div>
 

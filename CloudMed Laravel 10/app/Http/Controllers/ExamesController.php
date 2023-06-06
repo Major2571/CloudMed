@@ -35,12 +35,13 @@ class ExamesController extends Controller
 
         $exames = $exames->get();
 
-        return view('meusExames', compact(
+        return view('exams.meusExames', compact(
             'exames',
             'filtroData',
             'filtroEspecialidade',
             'especialidades'
-        ));
+        )
+        );
     }
 
 
@@ -49,7 +50,11 @@ class ExamesController extends Controller
         $especialidades = Especialidade::all();
         $uf = UFs::all();
 
-        return view('novoCadExame', compact('especialidades', 'uf'));
+        return view('exams.novoCadExame', compact(
+            'especialidades',
+            'uf'
+        )
+        );
     }
 
     /**
@@ -73,7 +78,8 @@ class ExamesController extends Controller
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->storeAs('public/arquivos_exames', $fileName);
             $exames->nome_arquivo = $fileName;
-        };
+        }
+        ;
 
         $user = auth()->user();
         $exames->id_user = $user->id;
@@ -90,7 +96,9 @@ class ExamesController extends Controller
     {
         $exame = Exames::find($id);
 
-        return view('meusExames', compact('exame'));
+        return view('exams.meusExames', compact(
+            'exame'
+        ));
     }
 
     /**
@@ -102,7 +110,12 @@ class ExamesController extends Controller
         $especialidades = Especialidade::all();
         $uf = UFs::all();
 
-        return view('editExame', compact('exame', 'especialidades', 'uf'));
+        return view('exams.editExame', compact(
+            'exame',
+            'especialidades',
+            'uf'
+        )
+        );
     }
 
     /**

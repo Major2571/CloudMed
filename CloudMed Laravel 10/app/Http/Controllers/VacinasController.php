@@ -33,14 +33,15 @@ class VacinasController extends Controller
 
         $vacinas = $query->get();
 
-        return view('minhasVacinas', compact(
+        return view('vaccines.minhasVacinas', compact(
             'vacinas',
             'filtroNome',
             'filtroTipoDose',
             'nomeVacinas'
-        ));
+        )
+        );
     }
-    
+
     /**
      * Show the form for creating a new resource.
      */
@@ -49,7 +50,11 @@ class VacinasController extends Controller
         $nomeVacinas = NomeVacinas::all();
         $uf = UFs::all();
 
-        return view('novoCadVacina', compact('uf', 'nomeVacinas'));
+        return view('vaccines.novoCadVacina', compact(
+            'uf',
+            'nomeVacinas'
+        )
+        );
     }
 
     /**
@@ -94,11 +99,12 @@ class VacinasController extends Controller
         $nomeVacinas = NomeVacinas::all();
         $uf = UFs::all();
 
-        return view('editVacina', compact(
-            'vacina', 
+        return view('vaccines.editVacina', compact(
+            'vacina',
             'uf',
             'nomeVacinas'
-        ));
+        )
+        );
     }
 
     /**
