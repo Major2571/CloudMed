@@ -40,11 +40,6 @@ Route::get('/login-userCloud', function () {
     return view('login-userCloud');
 });
 
-Route::get('/cadastro', function () {
-    return view('cadastro');
-});
-
-
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/profile', [UserDetailsController::class, 'index'])->name('profile');

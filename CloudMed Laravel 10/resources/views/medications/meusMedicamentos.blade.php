@@ -127,6 +127,25 @@
                             </div>
                         @endforeach
                     </div>
+
+                    <div class="m-auto mt-10 w-4/5">
+                        <p class="mr-2 mb-5 text-lg font-bold">
+                            Gostaria de fazer um novo cadastro de Medicamento?
+                        </p>
+
+                        <div class="flex items-center md:w-3/4 lg:w-1/4">
+                            <h3 class="mr-2 text-lg font-semibold"> Clique Aqui: </h3>
+                            <a href="{{ route('novoCadMedicamentos') }}">
+                                <button type="button"
+                                    class="inline-flex content-center items-center rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                    Novo Medicamento
+                                    <div class="ml-2 flex">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </div>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
                 @endif
         @endif
 

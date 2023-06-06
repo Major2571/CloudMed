@@ -17,7 +17,8 @@
                     <div class="p-5">
 
                         <a href="{{ route('meusExames') }}">
-                            <h5 class="mb-2 mr-2 text-2xl font-bold tracking-tight text-gray-900 
+                            <h5
+                                class="mb-2 mr-2 text-2xl font-bold tracking-tight text-gray-900 
                             hover:text-cyan-800">
                                 Meus Exames
                             </h5>
@@ -59,8 +60,7 @@
                         @endif
 
                         <a href="{{ route('novoCadExame') }}"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-700 rounded-md  hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-gray-300"
-                        >
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-700 rounded-md  hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-gray-300">
                             Cadastrar um novo Exame
                             <div class="ml-2 text-base">
                                 <i class="fa-solid fa-arrow-right"></i>
@@ -78,7 +78,8 @@
                     <div class="p-5">
 
                         <a href="{{ route('minhasVacinas') }}">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 hover:text-cyan-800">Minhas Vacinas</h5>
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 hover:text-cyan-800">Minhas
+                                Vacinas</h5>
                         </a>
 
                         @if ($ultimaVacina && $totalVacinas)
@@ -127,8 +128,7 @@
                         @endif
 
                         <a href="{{ route('novoCadVacina') }}"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-700 rounded-md hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-gray-300"
-                        >
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-700 rounded-md hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-gray-300">
                             Cadastrar uma nova Vacina
                             <div class="ml-2 text-base">
                                 <i class="fa-solid fa-arrow-right"></i>
