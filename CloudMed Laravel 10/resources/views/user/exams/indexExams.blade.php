@@ -22,7 +22,7 @@
                             Filtrar por:
                         </h3>
 
-                        <form method="GET" action="{{ route('meusExames') }}" class="w-1/2 font-semibold">
+                        <form method="GET" action="{{ route('myExams') }}" class="w-1/2 font-semibold">
 
                             <div class="justufy-center flex items-end">
 
@@ -121,7 +121,7 @@
 
                                         <!-- Editar -->
                                         <td class="px-6 py-4 text-center">
-                                            <a href="{{ route('editExames', $exames->id) }}">
+                                            <a href="{{ route('editExam', $exames->id) }}">
                                                 <button type="button"
                                                     class="mr-2 inline-flex items-center rounded-lg border border-blue-600 p-2.5 text-center font-medium text-blue-600 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-200">
                                                     <i class="fa-solid fa-edit"></i>
@@ -131,7 +131,7 @@
 
                                         <!-- Excluir -->
                                         <td class="px-6 py-4 text-center">
-                                            <a href="{{ route('deleteExame', $exames->id) }}">
+                                            <a href="{{ route('deleteExam', $exames->id) }}">
                                                 <button type="button" onclick="confirmExclusao(event)"
                                                     class="mr-2 inline-flex items-center rounded-lg border border-red-600 p-2.5 text-center font-medium text-red-500 hover:bg-red-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-red-200">
                                                     <i class="fa-solid fa-trash"></i>
@@ -150,7 +150,7 @@
 
                         <div class="flex w-1/4 items-center">
                             <h3 class="mr-2 text-lg font-semibold"> Clique Aqui: </h3>
-                            <a href="{{ route('novoCadExame') }}">
+                            <a href="{{ route('createNewExam') }}">
                                 <button type="button"
                                     class="inline-flex items-center rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-500">
                                     Novo Exame

@@ -3,19 +3,19 @@
 namespace Database\Seeders;
 
 use App\Models\Especialidade;
-use App\Models\Exames;
+use App\Models\Exams;
 use App\Models\UFs;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class AddExameSeeder extends Seeder
+class AddExamSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $exames = [
+        $exams = [
             [
                 'id_user' => 1,
                 'id_uf' => 25,
@@ -37,15 +37,15 @@ class AddExameSeeder extends Seeder
             
         ];
 
-        foreach ($exames as $exameData) {
-            Exames::create([
-                'id_user' => $exameData['id_user'],
-                'id_uf' => $exameData['id_uf'],
-                'id_especialidade' => $exameData['id_especialidade'],
-                'titulo' => $exameData['titulo'],
-                'data' => $exameData['data'],
-                'instituicao' => $exameData['instituicao'],
-                'cidade' => $exameData['cidade'],
+        foreach ($exams as $examData) {
+            Exams::create([
+                'id_user' => $examData['id_user'],
+                'id_uf' => $examData['id_uf'],
+                'id_especialidade' => $examData['id_especialidade'],
+                'titulo' => $examData['titulo'],
+                'data' => $examData['data'],
+                'instituicao' => $examData['instituicao'],
+                'cidade' => $examData['cidade'],
             ]);
         }
     }

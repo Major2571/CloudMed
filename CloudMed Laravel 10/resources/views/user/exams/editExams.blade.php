@@ -5,7 +5,7 @@
         <section class="form-cad-new-exam">
 
             <div class="form sm:w-9/12 xl:w-2/5">
-                <form method="post" action="{{ route('updateExames', $exame->id) }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('updateExam', $exame->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -16,12 +16,9 @@
                     <div class="py-4 px-10">
 
                         <div class="mb-6">
-                            <label for="name" class="mb-2 block font-medium text-gray-900">
-                                Título:
-                            </label>
-                            <input type="text" name="name" id="name" value="{{ $exame->titulo }}"
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
-                                required placeholder="Ex: Hemograma Completo">
+                            <x-input-label for="name" :value="__('Título:')" />
+                            <x-text-input type="text" name="name" id="name" value="{{ $exame->titulo }}"
+                                placeholder="Ex: Hemograma Completo" required />
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">
@@ -46,29 +43,24 @@
                                 </div>
 
                             </div>
-                            <div class="mb-6">
-                                <label for="date" class="mb-2 block font-medium text-gray-900"> Data que foi
-                                    realizada:
-                                </label>
-                                <input type="date" name="date" id="date" value="{{ $exame->data }}"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
-                                    required>
+                            <div>
+                                <x-input-label for="date" :value="__('Data de realização:')" />
+                                <x-text-input type="date" name="date" id="date" value="{{ $exame->data }}"
+                                    required />
                             </div>
                         </div>
 
                         <div class="mb-6">
-                            <label for="local" class="mb-2 block font-medium text-gray-900"> Instituição: </label>
-                            <input type="text" name="local" id="local" value="{{ $exame->instituicao }}"
-                                class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
-                                required placeholder="Ex: Santa Casa">
+                            <x-input-label for="local" :value="__('Instituição:')" />
+                            <x-text-input type="text" name="local" id="local" value="{{ $exame->instituicao }}"
+                                placeholder="Ex: Santa Casa" required />
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">
                             <div class="mb-6">
-                                <label for="cidade" class="mb-2 block font-medium text-gray-900"> Cidade: </label>
-                                <input type="text" name="cidade" id="cidade" value="{{ $exame->cidade }}"
-                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
-                                    required>
+                                <x-input-label for="cidade" :value="__('Cidade:')" />
+                                <x-text-input type="text" name="cidade" id="cidade" value="{{ $exame->cidade }}"
+                                    required />
                             </div>
 
                             <div class="mb-6">
@@ -177,7 +169,7 @@
                     </div>
 
                     <div class="button m-auto flex flex-wrap items-center justify-center">
-                        <a href="{{ route('meusExames') }}">
+                        <a href="{{ route('myExams') }}">
                             <button type="button"
                                 class="mr-4 mb-2 rounded-lg border border-red-600 px-7 py-2 text-center font-medium text-red-700 hover:bg-red-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-red-50">
                                 Cancelar
