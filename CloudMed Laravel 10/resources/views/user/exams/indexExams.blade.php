@@ -3,7 +3,7 @@
 <x-app-layout>
     <section class="session-allow">
 
-        @if ($exames->isEmpty() && empty($filtroEspecialidade) && empty($filtroData))
+        @if ($exam->isEmpty() && empty($filtroEspecialidade) && empty($filtroData))
             <x-empty-exame />
         @else
             <div class="m-auto max-h-full min-h-screen w-full">
@@ -62,7 +62,7 @@
                     </div>
                 </div>
 
-                @if ($exames->isEmpty())
+                @if ($exam->isEmpty())
                     <x-no-results-found/>
                 @else
                     <div class="tabela relative m-auto w-4/5 overflow-x-auto shadow-md sm:rounded-lg">
@@ -81,36 +81,36 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($exames as $exames)
+                                @foreach ($exam as $exam)
                                     <tr class="border-gray-00 bg-gray-50 hover:bg-gray-100">
                                         </td>
 
                                         <td scope="row" class="whitespace-wrap px-6 py-4 font-medium text-black">
-                                            {{ $exames->titulo }}
+                                            {{ $exam->titulo }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ $exames->especialidade->especialidade }}
+                                            {{ $exam->especialidade->especialidade }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ date('d/m/y', strtotime($exames->data)) }}
+                                            {{ date('d/m/y', strtotime($exam->data)) }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ $exames->instituicao }}
+                                            {{ $exam->instituicao }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ $exames->cidade }}
+                                            {{ $exam->cidade }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            @if (empty($exames->uf->uf))
+                                            @if (empty($exam->uf->uf))
                                                 UF indisponível
                                             @else
-                                                {{ $exames->uf->uf }}
+                                                {{ $exam->uf->uf }}
                                             @endif
                                         </td>
 
                                         {{-- Visualizar --}}
                                         <td class="px-6 py-4 text-center">
-                                            <a href="{{ asset('storage/arquivos_exames/' . $exames->nome_arquivo) }}"
+                                            <a href="{{ asset('storage/exam_files/' . $exam->nome_arquivo) }}"
                                                 target="blank">
                                                 <button type="button"
                                                     class="mr-2 inline-flex items-center rounded-lg border border-gray-500 p-2.5 text-center font-medium text-gray-500 hover:bg-gray-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-300">
@@ -121,7 +121,7 @@
 
                                         <!-- Editar -->
                                         <td class="px-6 py-4 text-center">
-                                            <a href="{{ route('editExam', $exames->id) }}">
+                                            <a href="{{ route('editExam', $exam->id) }}">
                                                 <button type="button"
                                                     class="mr-2 inline-flex items-center rounded-lg border border-blue-600 p-2.5 text-center font-medium text-blue-600 hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-200">
                                                     <i class="fa-solid fa-edit"></i>
@@ -131,7 +131,7 @@
 
                                         <!-- Excluir -->
                                         <td class="px-6 py-4 text-center">
-                                            <a href="{{ route('deleteExam', $exames->id) }}">
+                                            <a href="{{ route('deleteExam', $exam->id) }}">
                                                 <button type="button" onclick="confirmExclusao(event)"
                                                     class="mr-2 inline-flex items-center rounded-lg border border-red-600 p-2.5 text-center font-medium text-red-500 hover:bg-red-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-red-200">
                                                     <i class="fa-solid fa-trash"></i>

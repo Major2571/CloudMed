@@ -25,27 +25,27 @@ class ExamsController extends Controller
         $userId = Auth::user()->id;
 
         // Create a base query to retrieve exams for the current user
-        $exames = Exams::where('id_user', $userId);
+        $exam = Exams::where('id_user', $userId);
 
         // Apply filters to the query if provided
         $filtroData = $request->input('filtroData');
         if ($filtroData) {
-            $exames->whereDate('data', $filtroData);
+            $exam->whereDate('data', $filtroData);
         }
 
         $filtroEspecialidade = $request->input('filtroEspecialidade');
         if ($filtroEspecialidade) {
-            $exames->where('id', $filtroEspecialidade);
+            $exam->where('id', $filtroEspecialidade);
         }
 
         // Execute the query and retrieve the filtered exams
-        $exames = $exames->get();
+        $exam = $exam->get();
 
         // Return the 'user.exams.indexExams' view, passing the variables as compact
         return view(
             'user.exams.indexExams',
             compact(
-                'exames',
+                'exam',
                 'filtroData',
                 'filtroEspecialidade',
                 'especialidades'
@@ -90,7 +90,7 @@ class ExamsController extends Controller
         if ($request->hasFile('arquivo')) {
             $file = $request->file('arquivo');
             $fileName = time() . '_' . $file->getClientOriginalName();
-            $file->storeAs('public/arquivos_exames', $fileName);
+            $file->storeAs('public/exam_files', $fileName);
             $exams->nome_arquivo = $fileName;
         }
 
@@ -119,7 +119,7 @@ class ExamsController extends Controller
     public function edit(Exams $exams, $id)
     {
         // Find the Exames model with the specified ID or throw an exception if not found
-        $exame = Exams::findOrFail($id);
+        $exam = Exams::findOrFail($id);
 
         // Retrieve all Especialidade and UFs models
         $especialidades = Especialidade::all();
@@ -129,7 +129,7 @@ class ExamsController extends Controller
         return view(
             'user.exams.editExams',
             compact(
-                'exame',
+                'exam',
                 'especialidades',
                 'uf'
             )
@@ -155,14 +155,14 @@ class ExamsController extends Controller
         // Replace the file if a new file is uploaded
         if ($request->hasFile('arquivo')) {
             // Check if the file exists and delete it
-            if (Storage::exists('public/arquivos_exames/' . $exam->nome_arquivo)) {
-                Storage::delete('public/arquivos_exames/' . $exam->nome_arquivo);
+            if (Storage::exists('public/exam_files/' . $exam->nome_arquivo)) {
+                Storage::delete('public/exam_files/' . $exam->nome_arquivo);
             }
 
             // Save the new file
             $file = $request->file('arquivo');
             $fileName = time() . '_' . $file->getClientOriginalName();
-            $file->storeAs('public/arquivos_exames', $fileName);
+            $file->storeAs('public/exam_files', $fileName);
 
             $exam->nome_arquivo = $fileName;
         }

@@ -5,7 +5,7 @@
         <section class="form-cad-new-exam">
 
             <div class="form sm:w-9/12 xl:w-2/5">
-                <form method="POST" action="{{ route('updateExam', $exame->id) }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('updateExam', $exam->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -17,7 +17,7 @@
 
                         <div class="mb-6">
                             <x-input-label for="name" :value="__('Título:')" />
-                            <x-text-input type="text" name="name" id="name" value="{{ $exame->titulo }}"
+                            <x-text-input type="text" name="name" id="name" value="{{ $exam->titulo }}"
                                 placeholder="Ex: Hemograma Completo" required />
                         </div>
 
@@ -33,7 +33,7 @@
                                             <option value=""> Selecionar </option>
                                             @foreach ($especialidades as $especialidade)
                                                 <option value="{{ $especialidade->id }}"
-                                                    {{ $especialidade->id == $exame->id_especialidade ? 'selected' : '' }}>
+                                                    {{ $especialidade->id == $exam->id_especialidade ? 'selected' : '' }}>
                                                     {{ $especialidade->especialidade }}
                                                 </option>
                                             @endforeach
@@ -45,21 +45,21 @@
                             </div>
                             <div>
                                 <x-input-label for="date" :value="__('Data de realização:')" />
-                                <x-text-input type="date" name="date" id="date" value="{{ $exame->data }}"
+                                <x-text-input type="date" name="date" id="date" value="{{ $exam->data }}"
                                     required />
                             </div>
                         </div>
 
                         <div class="mb-6">
                             <x-input-label for="local" :value="__('Instituição:')" />
-                            <x-text-input type="text" name="local" id="local" value="{{ $exame->instituicao }}"
+                            <x-text-input type="text" name="local" id="local" value="{{ $exam->instituicao }}"
                                 placeholder="Ex: Santa Casa" required />
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">
                             <div class="mb-6">
                                 <x-input-label for="cidade" :value="__('Cidade:')" />
-                                <x-text-input type="text" name="cidade" id="cidade" value="{{ $exame->cidade }}"
+                                <x-text-input type="text" name="cidade" id="cidade" value="{{ $exam->cidade }}"
                                     required />
                             </div>
 
@@ -71,7 +71,7 @@
                                         <option value=""> Selecionar </option>
                                         @foreach ($uf as $uf)
                                             <option value="{{ $uf->id }}"
-                                                {{ $uf->id == $exame->id_uf ? 'selected' : '' }}>
+                                                {{ $uf->id == $exam->id_uf ? 'selected' : '' }}>
                                                 {{ $uf->uf }}
                                             </option>
                                         @endforeach
@@ -80,9 +80,9 @@
                             </div>
                         </div>
 
-                        @if ($exame->nome_arquivo)
+                        @if ($exam->nome_arquivo)
                             @php
-                                $fileExtension = pathinfo($exame->nome_arquivo, PATHINFO_EXTENSION);
+                                $fileExtension = pathinfo($exam->nome_arquivo, PATHINFO_EXTENSION);
                                 $imageExtensions = ['jpg', 'jpeg', 'png', 'svg'];
                                 $isImage = in_array($fileExtension, $imageExtensions);
                             @endphp
@@ -94,12 +94,12 @@
 
                                     <div class="mb-5" id="preview-container">
 
-                                        <img src="{{ asset('storage/arquivos_exames/' . $exame->nome_arquivo) }}"
+                                        <img src="{{ asset('storage/exam_files/' . $exam->nome_arquivo) }}"
                                             alt="Preview do Exame" id="chosen-image"
                                             class="img-preview m-auto w-4/5 rounded-lg border border-gray-300 shadow-sm">
 
                                         <figcaption id="file-name" class="mb-2 block py-2 font-medium text-gray-900">
-                                            {{ $exame->nome_arquivo }}
+                                            {{ $exam->nome_arquivo }}
                                         </figcaption>
 
                                     </div>
@@ -123,12 +123,12 @@
 
                                     <div class="mb-5 m-auto w-4/5" id="preview-container">
 
-                                        <embed src="{{ asset('storage/arquivos_exames/' . $exame->nome_arquivo) }}"
+                                        <embed src="{{ asset('storage/arquivos_exams/' . $exam->nome_arquivo) }}"
                                             alt="Preview do Exame" id="chosen-image"
                                             class="img-preview m-auto w-full h-96 rounded-lg border border-gray-300 shadow-sm">
 
                                         <figcaption id="file-name" class="mb-2 block py-2 font-medium text-gray-900">
-                                            {{ $exame->nome_arquivo }}
+                                            {{ $exam->nome_arquivo }}
                                         </figcaption>
 
                                     </div>
@@ -148,7 +148,7 @@
                             @endif
                         @endif
 
-                        @if ($exame->nome_arquivo === null)
+                        @if ($exam->nome_arquivo === null)
                             <div class="text-center">
                                 <div id="preview-container" class="image-container m-auto w-4/5">
                                     <img id="chosen-image" class="img-preview">

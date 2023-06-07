@@ -14,8 +14,8 @@ class Especialidade extends Model
         'especialidade'
     ];
 
-    public function exames()
+    public function exam()
     {
-        return $this->hasMany(Exames::class, 'id_especialidade');
+        return $this->hasMany(Exams::class, 'id_especialidade');
     }
 }
