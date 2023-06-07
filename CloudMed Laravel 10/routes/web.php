@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ExamesController;
+use App\Http\Controllers\ExamsController;
 use App\Http\Controllers\MedicamentosController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VaccinesController;
@@ -70,12 +70,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::get('/meus-exames', [ExamesController::class, 'index'])->name('meusExames');
-    Route::get('/cad-novo-exame', [ExamesController::class, 'create'])->name('novoCadExame');
-    Route::post('/cad-novo-exame', [ExamesController::class, 'store'])->name('saveNewExam');
-    Route::get('/meus-exames/delete/{id}', [ExamesController::class, 'destroy'])->name('deleteExame');
-    Route::get('/meus-exames/edit/{id}', [ExamesController::class, 'edit'])->name('editExames');
-    Route::put('/meus-exames/update/{id}', [ExamesController::class, 'update'])->name('updateExames');
+    Route::get('/meus-exames', [ExamsController::class, 'index'])->name('myExams');
+    Route::get('/cad-novo-exame', [ExamsController::class, 'create'])->name('createNewExam');
+    Route::post('/cad-novo-exame', [ExamsController::class, 'store'])->name('saveNewExam');
+    Route::get('/meus-exames/delete/{id}', [ExamsController::class, 'destroy'])->name('deleteExam');
+    Route::get('/meus-exames/edit/{id}', [ExamsController::class, 'edit'])->name('editExam');
+    Route::put('/meus-exames/update/{id}', [ExamsController::class, 'update'])->name('updateExam');
 
     Route::get('/minhas-vacinas', [VaccinesController::class, 'index'])->name('myVaccines');
     Route::get('/cad-novo-vacina', [VaccinesController::class, 'create'])->name('createNewVaccine');

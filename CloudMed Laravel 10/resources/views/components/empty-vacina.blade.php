@@ -4,7 +4,7 @@
         <div class="text-lg mr-5 w-1/3">
             <h1 class="leading-tight">Você ainda não tem nenhuma vacina salva.</h1>
             <p class="py-5">Para adicionar uma Vacina clique no botão abaixo, e preencha as informações.</p>
-            <a href="{{ route('novoCadVacina') }}"
+            <a href="{{ route('createNewVaccine') }}"
                 class="inline-flex items-center rounded-full bg-teal-900 px-16 py-2 text-center text-base font-bold text-white hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-gray-300">
                 <div class="mr-3 text-lg">
                     <i class="fa-solid fa-circle-plus"></i>
