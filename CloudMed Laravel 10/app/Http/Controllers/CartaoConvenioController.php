@@ -17,11 +17,14 @@ class CartaoConvenioController extends Controller
 
         // dd($convenio);
 
-        return view('profile.cartaoConvenio', compact(
-            'convenio'
-        ));
+        return view(
+            'profile.cartaoConvenio',
+            compact(
+                'convenio'
+            )
+        );
     }
-    
+
     public function store(Request $request)
     {
         $cartaoConvenio = new CartaoConvenio();
@@ -30,14 +33,15 @@ class CartaoConvenioController extends Controller
         $cartaoConvenio->numero = $request->input('numConvenio');
         $cartaoConvenio->nomeConvenio = $request->input('nomeConvenio');
         $cartaoConvenio->plano = $request->input('plano');
-        
+
         if ($request->hasFile('arquivo')) {
             $file = $request->file('arquivo');
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->storeAs('public/carteirinha_convenio', $fileName);
             $cartaoConvenio->nome_arquivo = $fileName;
-        };
-        
+        }
+
+
         $user = auth()->user();
         $cartaoConvenio->id_user = $user->id;
 
@@ -46,7 +50,7 @@ class CartaoConvenioController extends Controller
         return redirect()->route('meuConvenio');
     }
 
-    
+
     public function update(Request $request, $id)
     {
         $cartaoConvenio = CartaoConvenio::FindOrFail($id);
@@ -55,7 +59,7 @@ class CartaoConvenioController extends Controller
         $cartaoConvenio->numero = $request->input('numConvenio');
         $cartaoConvenio->nomeConvenio = $request->input('nomeConvenio');
         $cartaoConvenio->plano = $request->input('plano');
-        
+
         if ($request->hasFile('arquivo')) {
             if (Storage::exists('public/carteirinha_convenio/' . $cartaoConvenio->nome_arquivo)) {
                 Storage::delete('public/carteirinha_convenio/' . $cartaoConvenio->nome_arquivo);

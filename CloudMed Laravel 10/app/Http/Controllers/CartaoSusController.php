@@ -14,9 +14,12 @@ class CartaoSusController extends Controller
         $userId = Auth::user()->id;
         $sus = CartaoSus::where('id_user', $userId)->get();
 
-        return view('profile.cartaoSus', compact(
-            'sus'
-        ));
+        return view(
+            'profile.cartaoSus',
+            compact(
+                'sus'
+            )
+        );
     }
 
     public function store(Request $request)
@@ -34,7 +37,8 @@ class CartaoSusController extends Controller
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->storeAs('public/carteirinha_sus', $fileName);
             $cartaoSus->nome_arquivo = $fileName;
-        };
+        }
+
 
         $cartaoSus->save();
 
@@ -46,7 +50,7 @@ class CartaoSusController extends Controller
         $cartaoSus = CartaoSus::FindOrFail($id);
 
         // $cartaoSus->id_user = $request->id_user;
-        
+
         $user = auth()->user();
         $cartaoSus->id_user = $user->id;
         $cartaoSus->numero = $request->input('numero');

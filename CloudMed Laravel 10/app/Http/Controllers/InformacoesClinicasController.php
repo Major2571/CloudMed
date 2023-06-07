@@ -13,9 +13,12 @@ class InformacoesClinicasController extends Controller
         $userId = Auth::user()->id;
         $infoClinica = InformacoesClinicas::where('id_user', $userId)->get();
 
-        return view('profile.infoClinicas', compact(
-            'infoClinica',
-        ));
+        return view(
+            'profile.infoClinicas',
+            compact(
+                'infoClinica',
+            )
+        );
     }
 
     public function store(Request $request)

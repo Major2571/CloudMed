@@ -22,18 +22,21 @@ class UserDetailsController extends Controller
         $userId = Auth::id();
 
         $user = User::with('userDetails')->find(Auth::id());
-        $userDetails = $user->userDetails;
 
+        // $userDetails = $user->userDetails;
         $userDetail = UserDetails::where('id_user', $userId);
         $userDetail = $userDetail->get();
 
         // dd($userDetail);
 
-        return view('profile.profile', compact(
-            'uf',
-            'user',            
-            'userDetail',
-        ));
+        return view(
+            'profile.profile',
+            compact(
+                'uf',
+                'user',
+                'userDetail',
+            )
+        );
     }
 
     /**
@@ -43,7 +46,7 @@ class UserDetailsController extends Controller
     {
         $userId = Auth::id();
         $userDetails = UserDetails::where('id_user', $userId)->first();
-    
+
         if ($userDetails && $userDetails->status) {
             return redirect()->route('profile.edit', $userDetails->id);
         }
@@ -51,11 +54,14 @@ class UserDetailsController extends Controller
         $uf = UFs::all();
         $user = Auth::user();
 
-        return view('profile.profileCad', compact(
-            'uf',
-            'user',
-            'userId',
-        ));
+        return view(
+            'profile.profileCad',
+            compact(
+                'uf',
+                'user',
+                'userId',
+            )
+        );
     }
 
     /**
@@ -65,7 +71,7 @@ class UserDetailsController extends Controller
     {
         $userDetail = new UserDetails();
         $user = auth()->user();
-        
+
         $userDetail->id_user = $user->id;
         $userDetail->sobrenome = $request->input('sobrenome');
         $userDetail->dataNascimento = $request->input('data_nasc');
@@ -74,7 +80,7 @@ class UserDetailsController extends Controller
         $userDetail->telefone = $request->input('telefone');
         $userDetail->cidade = $request->input('cidade');
         $userDetail->id_uf = $request->input('uf');
-        
+
         $userDetail->status = true;
 
         $userDetail->save();
@@ -99,11 +105,14 @@ class UserDetailsController extends Controller
         $userDetail = $user->userDetails;
         $uf = UFs::all();
 
-        return view('profile.profileEdit', compact(
-            'user',
-            'userDetail',
-            'uf',
-        ));
+        return view(
+            'profile.profileEdit',
+            compact(
+                'user',
+                'userDetail',
+                'uf',
+            )
+        );
     }
 
     /**
@@ -115,7 +124,7 @@ class UserDetailsController extends Controller
         $userDetail = UserDetails::FindOrFail($id);
 
         $user = auth()->user();
-        
+
         $userDetail->id_user = $user->id;
         $userDetail->sobrenome = $request->input('sobrenome');
         $userDetail->dataNascimento = $request->input('data_nasc');
@@ -124,7 +133,7 @@ class UserDetailsController extends Controller
         $userDetail->telefone = $request->input('telefone');
         $userDetail->cidade = $request->input('cidade');
         $userDetail->id_uf = $request->input('uf');
-        
+
         $userDetail->status = true;
 
         $userDetail->save();
