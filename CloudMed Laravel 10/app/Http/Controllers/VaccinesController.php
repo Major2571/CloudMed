@@ -16,13 +16,17 @@ class VaccinesController extends Controller
      */
     public function index(Request $request)
     {
+        // Retrieve all vaccine names from the database
         $nameVaccines = NameVaccines::all();
 
+        // Retrieve the filter inputs from the request
         $filterName = $request->input('filterName');
         $filterDoseType = $request->input('filterDoseType');
 
+        // Create a base query to retrieve vaccines for the current user
         $query = Vaccines::where('id_user', Auth::user()->id);
 
+        // Apply filters to the query if provided
         if ($filterName) {
             $query->where('id_vacina', $filterName);
         }
@@ -31,10 +35,12 @@ class VaccinesController extends Controller
             $query->where('tipoDose', $filterDoseType);
         }
 
+        // Execute the query and retrieve the filtered vaccines
         $vaccines = $query->get();
 
+        // Return the 'user.vaccines.index' view, passing the variables as compact
         return view(
-            'user.vaccines.index',
+            'user.vaccines.indexVaccines',
             compact(
                 'vaccines',
                 'filterName',
@@ -57,7 +63,7 @@ class VaccinesController extends Controller
 
         // Return the 'user.vaccines.create' view, passing the variables as compact
         return view(
-            'user.vaccines.create',
+            'user.vaccines.createVaccines',
             compact(
                 'uf',
                 'vaccineNames'
@@ -118,7 +124,7 @@ class VaccinesController extends Controller
 
         // Return the 'user.vaccines.create' view, passing the variables as compact
         return view(
-            'user.vaccines.edit',
+            'user.vaccines.editVaccines',
             compact(
                 'vacinne',
                 'uf',
@@ -134,10 +140,6 @@ class VaccinesController extends Controller
     {
         // Find the specific vaccine by its ID
         $vacinne = Vaccines::FindOrFail($id);
-
-        // Set the ID of the user who is updating the vaccine
-        $user = auth()->user();
-        $vacinne->id_user = $user->id;
 
         // Update the vaccine attributes with the input values from the request
         $vacinne->id_vacina = $request->input('vaccine_name');
@@ -161,7 +163,10 @@ class VaccinesController extends Controller
      */
     public function destroy(Vaccines $vaccines, $id)
     {
-        $vaccines->where('id', $id)->delete();
+        // Find the vaccine by its ID or throw an exception if not found and Delete the vaccine from the database
+        Vaccines::FindOrFail($id)->delete();
+
+        // Redirect the user to the "myExams" route
         return redirect()->route('myVaccines');
     }
 }

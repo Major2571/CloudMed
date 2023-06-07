@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Vacinas;
+use App\Models\Vaccines;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class AddVacinaSeeder extends Seeder
+class AddVaccineSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $vacinas = [
+        $vaccines = [
             [
                 'id_user' => 1,
                 'id_vacina' => 1,
@@ -28,8 +28,8 @@ class AddVacinaSeeder extends Seeder
             
         ];
 
-        foreach ($vacinas as $vacinaData) {
-            Vacinas::create($vacinaData);
+        foreach ($vaccines as $vaccineData) {
+            Vaccines::create($vaccineData);
         }
     }
 }

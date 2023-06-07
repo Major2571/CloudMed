@@ -11,7 +11,7 @@
                     @csrf
 
                     <div class="cad-new-title pb-2 text-center">
-                        <h1>Cadastrar uma nova Vacina</h1>
+                        <h1>Cadastre uma nova Vacina</h1>
                     </div>
 
                     <div class="py-4 px-10">
