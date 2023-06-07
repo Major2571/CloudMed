@@ -23,7 +23,7 @@
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                                     <option value=""> Selecionar </option>
                                     @foreach ($vaccineNames as $name)
-                                        <option value="{{ $name->id }}">{{ $name->nomeVacina }}
+                                        <option value="{{ $name->id }}">{{ $name->name_vaccine }}
                                         </option>
                                     @endforeach
                                     <option value="0">Não encontrei minha vacina</option>
@@ -64,8 +64,8 @@
                             </div>
 
                             <div>
-                                <x-input-label for="date" :value="__('Data de aplicação:')" />
-                                <x-text-input type="date" name="date" id="date" required />
+                                <x-input-label for="vaccination_date" :value="__('Data de aplicação:')" />
+                                <x-text-input type="date" name="vaccination_date" id="vaccination_date" required />
                             </div>
                         </div>
 
@@ -75,8 +75,8 @@
                         </div>
 
                         <div class="mb-6">
-                            <x-input-label for="lot" :value="__('Lote:')" />
-                            <x-text-input type="text" name="lot" id="lot"  placeholder="000000" required />
+                            <x-input-label for="lot_number" :value="__('Lote:')" />
+                            <x-text-input type="text" name="lot_number" id="lot_number"  placeholder="000000" required />
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">

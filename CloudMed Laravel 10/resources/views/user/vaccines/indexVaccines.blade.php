@@ -39,7 +39,7 @@
                                         @foreach ($nameVaccines as $name)
                                             <option value="{{ $name->id }}"
                                                 {{ $filterName == $name->id ? 'selected' : '' }}>
-                                                {{ $name->nomeVacina }}
+                                                {{ $name->name_vaccine }}
                                             </option>
                                         @endforeach
                                         <option value="0">Outras</option>
@@ -117,20 +117,20 @@
                                         class="inline-flex w-full flex-wrap items-center justify-between text-sm font-semibold">
                                         <div class="rounded-full bg-cyan-700 px-3 py-1 uppercase text-white">
                                             <span>
-                                                {{ $vaccine->tipoDose }}
+                                                {{ $vaccine->doses }}
                                             </span>
                                         </div>
                                         <span class="text-gray-500">
-                                            {{ date('d/m/y', strtotime($vaccine->data)) }}
+                                            {{ date('d/m/y', strtotime($vaccine->vaccination_date)) }}
                                         </span>
                                     </div>
 
                                     <div class="py-1.5 font-bold text-cyan-900">
                                         <span>
-                                            @if (empty($vaccine->titulo))
-                                                {{ $vaccine->nomeVacina->nomeVacina }}
+                                            @if (empty($vaccine->new_vaccine_name))
+                                                {{ $vaccine->nameVaccine->name_vaccine }}
                                             @else
-                                                {{ $vaccine->titulo }}
+                                                {{ $vaccine->new_vaccine_name }}
                                             @endif
                                         </span>
                                     </div>
@@ -139,11 +139,11 @@
                                         class="inline-flex w-full flex-wrap content-center justify-between text-sm font-semibold">
                                         <div class="rounded-full uppercase text-gray-700">
                                             <span>
-                                                {{ $vaccine->fabricante }}
+                                                {{ $vaccine->manufacturer }}
                                             </span>
                                         </div>
                                         <div>
-                                            {{ $vaccine->lote }}
+                                            {{ $vaccine->lot_number }}
                                         </div>
                                     </div>
 

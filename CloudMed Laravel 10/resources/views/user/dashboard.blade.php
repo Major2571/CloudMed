@@ -3,12 +3,12 @@
 <x-app-layout>
     <section class="session-allow">
         <div class="min-h-screen">
-            <h1 class="text-center py-10">
+            <h1 class="py-10 text-center">
                 Bem-Vindo(a) {{ Auth::user()->name }}!
             </h1>
 
-            <div class="w-full flex flex-wrap align-center justify-center">
-                <div class="max-w-sm bg-white rounded-md shadow mx-6">
+            <div class="align-center flex w-full flex-wrap justify-center">
+                <div class="mx-6 max-w-sm rounded-md bg-white shadow">
 
                     <img class="rounded-t-md"
                         src="https://www.centromedicopastore.com.br/wp-content/uploads/2022/07/blog-02-Exames-de-Sangue.png"
@@ -17,9 +17,7 @@
                     <div class="p-5">
 
                         <a href="{{ route('myExams') }}">
-                            <h5
-                                class="mb-2 mr-2 text-2xl font-bold tracking-tight text-gray-900 
-                            hover:text-cyan-800">
+                            <h5 class="mb-2 mr-2 text-2xl font-bold tracking-tight text-gray-900 hover:text-cyan-800">
                                 Meus Exames
                             </h5>
                         </a>
@@ -60,7 +58,7 @@
                         @endif
 
                         <a href="{{ route('createNewExam') }}"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-700 rounded-md  hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-gray-300">
+                            class="inline-flex items-center rounded-md bg-cyan-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-gray-300">
                             Cadastrar um novo Exame
                             <div class="ml-2 text-base">
                                 <i class="fa-solid fa-arrow-right"></i>
@@ -69,7 +67,7 @@
                     </div>
                 </div>
 
-                <div class="max-w-sm bg-white rounded-md shadow mx-6">
+                <div class="mx-6 max-w-sm rounded-md bg-white shadow">
 
                     <img class="rounded-t-md"
                         src="https://www.paho.org/sites/default/files/styles/max_1500x1500/public/2022-08/generic-vaccine-1500x1000.jpg?itok=IoGkc1TM"
@@ -91,33 +89,34 @@
                             </p>
                             <p class="mb-3 font-normal text-gray-900">Sua última vacina salva foi:
 
-                                '@if (empty($ultimaVacina->titulo))
+                                '@if (empty($ultimaVacina->new_vaccine_name))
                                     <span class="font-bold">
-                                        {{ $ultimaVacina->nomeVacina->nomeVacina }}
+                                        {{ $ultimaVacina->nameVaccine->name_vaccine }}
                                     </span>
                                 @else
                                     <span class="font-bold">
-                                        {{ $ultimaVacina->titulo }}
+                                        {{ $ultimaVacina->new_vaccine_name }}
                                     </span>
                                 @endif'
 
                                 sendo
                                 <span class="font-bold">
-                                    {{ $ultimaVacina->tipoDose }}
+                                    {{ $ultimaVacina->doses }}
                                 </span>
                                 ,
                                 aplicada no dia
                                 <span class="font-bold">
-                                    {{ date('d/m/y', strtotime($ultimaVacina->data)) }},
+                                    {{ date('d/m/y', strtotime($ultimaVacina->vaccination_date)) }},
                                 </span>
 
-                                @if ($isFabricante)
+                                @if ($isManufacturer)
+                                    fabricada por
                                     <span class="font-bold">
-                                        do fabricante {{ $ultimaVacina->fabricante }}
+                                        {{ $ultimaVacina->manufacturer }}
                                     </span>
                                 @else
                                 @endif
-                                na cidade de {{ $ultimaVacina->cidade }}
+                                na cidade de {{ $ultimaVacina->city }}
                             </p>
                         @else
                             <p class="my-10 font-normal text-gray-900">
@@ -128,7 +127,7 @@
                         @endif
 
                         <a href="{{ route('createNewVaccine') }}"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cyan-700 rounded-md hover:bg-cyan-800 focus:ring-2 focus:outline-none focus:ring-gray-300">
+                            class="inline-flex items-center rounded-md bg-cyan-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-gray-300">
                             Cadastrar uma nova Vacina
                             <div class="ml-2 text-base">
                                 <i class="fa-solid fa-arrow-right"></i>

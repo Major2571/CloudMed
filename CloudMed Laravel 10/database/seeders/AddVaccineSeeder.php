@@ -16,14 +16,14 @@ class AddVaccineSeeder extends Seeder
         $vaccines = [
             [
                 'id_user' => 1,
-                'id_vacina' => 1,
+                'id_vaccine' => 1,
                 'id_uf' => 1,
-                'titulo' => '',
-                'tipoDose' => 'Dose Única',
-                'data' => '2022-01-01',
-                'fabricante' => 'Fabricante 1',
-                'lote' => '000001',
-                'cidade' => 'Cidade 1',
+                'new_vaccine_name' => '',
+                'doses' => 'Dose Única',
+                'vaccination_date' => '2022-01-01',
+                'manufacturer' => 'manufacturer 1',
+                'lot_number' => '000001',
+                'city' => 'city 1',
             ],
             
         ];

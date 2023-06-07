@@ -23,7 +23,7 @@ class DashboardController extends Controller
         $userId = Auth::user()->id;
 
         // Para exibir apenas os exames e vacinas que pertencem ao usuário atualmente autenticado, é necessário modificar a consulta do banco de dados. Para isso, o método where() é usado para filtrar as instâncias de Exames que possuem um id_user correspondente ao id do usuário autenticado usando a variável global Auth::user()->id. O resultado é armazenado na variável $exames e passado para a view.
-        $exames = Exams::where('id_user', $userId)->get();
+        $exam = Exams::where('id_user', $userId)->get();
         $vacinas = Vaccines::where('id_user', $userId)->get();
 
         // último exame registrado
@@ -36,17 +36,17 @@ class DashboardController extends Controller
         // número total de vacinas cadastradas
         $totalVacinas = Vaccines::where('id_user', $userId)->count();
 
-        // verifica se o último exame possui um valor para a propriedade 'instituição' e se a última vacina possui um valor para a propriedade 'fabricante' já que são opcionais no formulário.
+        // verifica se o último exame possui um valor para a propriedade 'instituição' e se a última vacina possui um valor para a propriedade 'manufacturer' já que são opcionais no formulário.
         $isInstituicao = $ultimoExame ? !!$ultimoExame->instituicao : false;
-        $isFabricante = $ultimaVacina ? !!$ultimaVacina->fabricante : false;
+        $isManufacturer = $ultimaVacina ? !!$ultimaVacina->manufacturer : false;
 
         return view('user.dashboard', compact(
-            'exames',
+            'exam',
             'vacinas',
             'ultimoExame',
             'totalExames',
             'isInstituicao',
-            'isFabricante',
+            'isManufacturer',
             'ultimaVacina',
             'totalVacinas',
         ));

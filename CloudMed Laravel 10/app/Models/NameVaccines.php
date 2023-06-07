@@ -9,15 +9,15 @@ class NameVaccines extends Model
 {
     use HasFactory;
 
-    protected $table = 'tipos-vacinas';
+    protected $table = 'name_vaccines';
     
     protected $fillable = [
         'id', 
-        'nomeVacina'
+        'name_vaccine'
     ];
 
     public function cadVacina()
     {
-        return $this->hasMany(Vaccines::class, 'id_vacina');
+        return $this->hasMany(Vaccines::class, 'id_vaccine');
     }
 }

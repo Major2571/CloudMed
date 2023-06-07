@@ -9,24 +9,24 @@ class Vaccines extends Model
 {
     use HasFactory;
 
-    protected $table = 'vacinas';
+    protected $table = 'vaccines';
     
     protected $fillable = [
         'id',
         'id_user',
-        'id_vacina',
+        'id_vaccine',
         'id_uf',
-        'titulo', 
-        'tipoDose', 
-        'data', 
-        'fabricante', 
-        'lote',
-        'cidade'
+        'new_vaccine_name', 
+        'doses', 
+        'vaccination_date', 
+        'manufacturer', 
+        'lot_number',
+        'city'
     ];
 
-    public function nomeVacina()
+    public function nameVaccine()
     {
-        return $this->belongsTo(NameVaccines::class, 'id_vacina');
+        return $this->belongsTo(NameVaccines::class, 'id_vaccine');
     }
 
     public function uf()

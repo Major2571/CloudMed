@@ -28,11 +28,11 @@ class VaccinesController extends Controller
 
         // Apply filters to the query if provided
         if ($filterName) {
-            $query->where('id_vacina', $filterName);
+            $query->where('id_vaccine', $filterName);
         }
 
         if ($filterDoseType) {
-            $query->where('tipoDose', $filterDoseType);
+            $query->where('doses', $filterDoseType);
         }
 
         // Execute the query and retrieve the filtered vaccines
@@ -84,14 +84,14 @@ class VaccinesController extends Controller
         $vacinne->id_user = $user->id;
 
         // Assign values from request inputs to the model properties
-        $vacinne->id_vacina = $request->input('vaccine_name');
+        $vacinne->id_vaccine = $request->input('vaccine_name');
         $vacinne->id_uf = $request->input('uf');
-        $vacinne->titulo = $request->input('new_vaccine');
-        $vacinne->tipoDose = $request->input('dose_type');
-        $vacinne->data = $request->input('date');
-        $vacinne->fabricante = $request->input('manufacturer');
-        $vacinne->lote = $request->input('lot');
-        $vacinne->cidade = $request->input('city');
+        $vacinne->new_vaccine_name = $request->input('new_vaccine');
+        $vacinne->doses = $request->input('dose_type');
+        $vacinne->vaccination_date = $request->input('vaccination_date');
+        $vacinne->manufacturer = $request->input('manufacturer');
+        $vacinne->lot_number = $request->input('lot_number');
+        $vacinne->city = $request->input('city');
 
         // Save the vaccine to the database
         $vacinne->save();
@@ -142,14 +142,14 @@ class VaccinesController extends Controller
         $vacinne = Vaccines::FindOrFail($id);
 
         // Update the vaccine attributes with the input values from the request
-        $vacinne->id_vacina = $request->input('vaccine_name');
+        $vacinne->id_vaccine = $request->input('vaccine_name');
         $vacinne->id_uf = $request->input('uf');
-        $vacinne->titulo = $request->input('new_vaccine');
-        $vacinne->tipoDose = $request->input('dose_type');
-        $vacinne->data = $request->input('date');
-        $vacinne->fabricante = $request->input('manufacturer');
-        $vacinne->lote = $request->input('lot');
-        $vacinne->cidade = $request->input('city');
+        $vacinne->new_vaccine_name = $request->input('new_vaccine');
+        $vacinne->doses = $request->input('dose_type');
+        $vacinne->vaccination_date = $request->input('vaccination_date');
+        $vacinne->manufacturer = $request->input('manufacturer');
+        $vacinne->lot_number = $request->input('lot_number');
+        $vacinne->city = $request->input('city');
 
         // Save the updated vaccine to the database
         $vacinne->save();

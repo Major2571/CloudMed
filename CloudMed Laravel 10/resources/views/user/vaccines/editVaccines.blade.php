@@ -25,11 +25,11 @@
                                     <option value=""> Selecionar </option>
                                     @foreach ($vaccineNames as $name)
                                         <option value="{{ $name->id }}"
-                                            {{ $name->id == $vacinne->id_vacina ? 'selected' : '' }}>
-                                            {{ $name->nomeVacina }}
+                                            {{ $name->id == $vacinne->id_vaccine ? 'selected' : '' }}>
+                                            {{ $name->name_vaccine }}
                                         </option>
                                     @endforeach
-                                    <option value="0" {{ '0' == $vacinne->id_vacina ? 'selected' : '' }}>Não
+                                    <option value="0" {{ '0' == $vacinne->id_vaccine ? 'selected' : '' }}>Não
                                         encontrei minha vacina</option>
                                 </select>
                             </div>
@@ -42,7 +42,7 @@
                             <div class="input-box cad-exame form-group">
                                 <x-input-label for="new_vaccine" :value="__('Nome da vacina:')" />
                                 <x-text-input type="text" name="new_vaccine" id="newNomeVacinaInput"
-                                    value="{{ $vacinne->titulo }}" />
+                                    value="{{ $vacinne->new_vaccine_name }}" />
                             </div>
                         </div>
 
@@ -55,33 +55,33 @@
                                             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                                             <option value="">Selecionar</option>
                                             <option value="Dose Única"
-                                                {{ $vacinne->tipoDose == 'Dose Única' ? 'selected' : '' }}>Dose Única
+                                                {{ $vacinne->doses == 'Dose Única' ? 'selected' : '' }}>Dose Única
                                             </option>
                                             <option value="Primeira Dose"
-                                                {{ $vacinne->tipoDose == 'Primeira Dose' ? 'selected' : '' }}>Primeira
+                                                {{ $vacinne->doses == 'Primeira Dose' ? 'selected' : '' }}>Primeira
                                                 Dose
                                             </option>
                                             <option value="Segunda Dose"
-                                                {{ $vacinne->tipoDose == 'Segunda Dose' ? 'selected' : '' }}>Segunda
+                                                {{ $vacinne->doses == 'Segunda Dose' ? 'selected' : '' }}>Segunda
                                                 Dose
                                             </option>
                                             <option value="Terceira Dose"
-                                                {{ $vacinne->tipoDose == 'Terceira Dose' ? 'selected' : '' }}>Terceira
+                                                {{ $vacinne->doses == 'Terceira Dose' ? 'selected' : '' }}>Terceira
                                                 Dose
                                             </option>
                                             <option value="Quarta Dose"
-                                                {{ $vacinne->tipoDose == 'Quarta Dose' ? 'selected' : '' }}>Quarta Dose
+                                                {{ $vacinne->doses == 'Quarta Dose' ? 'selected' : '' }}>Quarta Dose
                                             </option>
                                             <option value="Reforco"
-                                                {{ $vacinne->tipoDose == 'Reforco' ? 'selected' : '' }}>
+                                                {{ $vacinne->doses == 'Reforco' ? 'selected' : '' }}>
                                                 Reforço
                                             </option>
                                             <option value="Primeiro Reforço"
-                                                {{ $vacinne->tipoDose == 'Primeiro Reforço' ? 'selected' : '' }}>
+                                                {{ $vacinne->doses == 'Primeiro Reforço' ? 'selected' : '' }}>
                                                 Primeiro Reforço
                                             </option>
                                             <option value="Segundo Reforço"
-                                                {{ $vacinne->tipoDose == 'Segundo Reforço' ? 'selected' : '' }}>
+                                                {{ $vacinne->doses == 'Segundo Reforço' ? 'selected' : '' }}>
                                                 Segundo Reforço
                                             </option>
                                         </select>
@@ -91,8 +91,8 @@
                             </div>
 
                             <div>
-                                <x-input-label for="date" :value="__('Data de aplicação:')" />
-                                <x-text-input type="date" name="date" id="date" value="{{ $vacinne->data }}"
+                                <x-input-label for="vaccination_date" :value="__('Data de aplicação:')" />
+                                <x-text-input type="date" name="vaccination_date" id="vaccination_date" value="{{ $vacinne->vaccination_date }}"
                                     required />
                             </div>
                         </div>
@@ -100,13 +100,13 @@
                         <div class="mb-6">
                             <x-input-label for="manufacturer" :value="__('Fabricante:')" />
                             <x-text-input type="text" name="manufacturer" id="manufacturer" placeholder="Ex: Fiocruz"
-                                value="{{ $vacinne->fabricante }}" required />
+                                value="{{ $vacinne->manufacturer }}" required />
                         </div>
 
                         <div class="mb-6">
-                            <x-input-label for="lot" :value="__('Lote:')" />
-                            <x-text-input type="text" name="lot" id="lot" placeholder="000000"
-                                value="{{ $vacinne->lote }}" required />
+                            <x-input-label for="lot_number" :value="__('Lote:')" />
+                            <x-text-input type="text" name="lot_number" id="lot_number" placeholder="000000"
+                                value="{{ $vacinne->lot_number }}" required />
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">
@@ -114,7 +114,7 @@
                             <div class="mb-6">
                                 <x-input-label for="city" :value="__('Cidade:')" />
                                 <x-text-input type="text" name="city" id="city"
-                                    value="{{ $vacinne->cidade }}" required />
+                                    value="{{ $vacinne->city }}" required />
                             </div>
 
                             <div class="mb-6">
