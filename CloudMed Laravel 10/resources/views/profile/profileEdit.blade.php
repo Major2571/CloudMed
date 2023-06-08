@@ -18,13 +18,13 @@
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
             </div>
             <div class="input-box cad-exame">
-                <x-input-label for="sobrenome" :value="__('Sobrenome:')" />
-                <input type="text" name="sobrenome" id="sobrenome" value="{{ $userDetail->sobrenome }}"
+                <x-input-label for="last_name" :value="__('Sobrenome:')" />
+                <input type="text" name="last_name" id="last_name" value="{{ $userDetail->last_name }}"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
             </div>
             <div class="input-box cad-exame">
                 <x-input-label for="data_nasc" :value="__('Data de Nascimento:')" />
-                <input type="date" name="data_nasc" id="data_nasc" value="{{ $userDetail->dataNascimento }}"
+                <input type="date" name="data_nasc" id="data_nasc" value="{{ $userDetail->date_of_birth }}"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
             </div>
             <div class="input-box cad-exame">
@@ -47,16 +47,16 @@
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
             </div>
             <div class="input-box cad-exame">
-                <x-input-label for="telefone" :value="__('Telefone:')" />
-                <input type="text" name="telefone" id="telefone"
-                    value="{{ preg_replace('/(\d{2})(\d{5})(\d{4})/', '($1) $2-$3', $userDetail->telefone) }}"
+                <x-input-label for="phone" :value="__('Telefone:')" />
+                <input type="text" name="phone" id="phone"
+                    value="{{ preg_replace('/(\d{2})(\d{5})(\d{4})/', '($1) $2-$3', $userDetail->phone) }}"
                     maxlength="15" onkeyup="this.value = formatarTelefone(this.value)"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
             </div>
             <div class="grid md:grid-cols-3 md:gap-2">
                 <div class="col-span-2 mb-6 w-full">
-                    <x-input-label for="cidade" :value="__('Cidade:')" />
-                    <input type="text" name="cidade" id="cidade" value="{{ $userDetail->cidade }}"
+                    <x-input-label for="city" :value="__('Cidade:')" />
+                    <input type="text" name="city" id="city" value="{{ $userDetail->city }}"
                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
                 </div>
                 <div class="w mb-6">

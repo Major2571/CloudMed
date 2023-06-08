@@ -21,12 +21,12 @@ return new class extends Migration
             $table->integer('id_uf')->unsigned()->nullable();
             $table->foreign('id_uf')->references('id')->on('uf')->onDelete('cascade');
 
-            $table->string('sobrenome')->nullable();
-            $table->date('dataNascimento')->nullable();
+            $table->string('last_name')->nullable();
+            $table->date('date_of_birth')->nullable();
             $table->string('rg')->nullable();
             $table->string('cpf')->nullable();
-            $table->string('cidade')->nullable();
-            $table->string('telefone')->nullable();
+            $table->string('city')->nullable();
+            $table->string('phone')->nullable();
             $table->boolean('status');
 
 

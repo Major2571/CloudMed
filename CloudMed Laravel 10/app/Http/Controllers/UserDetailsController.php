@@ -73,12 +73,12 @@ class UserDetailsController extends Controller
         $user = auth()->user();
 
         $userDetail->id_user = $user->id;
-        $userDetail->sobrenome = $request->input('sobrenome');
-        $userDetail->dataNascimento = $request->input('data_nasc');
+        $userDetail->last_name = $request->input('last_name');
+        $userDetail->date_of_birth = $request->input('data_nasc');
         $userDetail->rg = $request->input('rg');
         $userDetail->cpf = $request->input('cpf');
-        $userDetail->telefone = $request->input('telefone');
-        $userDetail->cidade = $request->input('cidade');
+        $userDetail->phone = $request->input('phone');
+        $userDetail->city = $request->input('city');
         $userDetail->id_uf = $request->input('uf');
 
         $userDetail->status = true;
@@ -126,12 +126,12 @@ class UserDetailsController extends Controller
         $user = auth()->user();
 
         $userDetail->id_user = $user->id;
-        $userDetail->sobrenome = $request->input('sobrenome');
-        $userDetail->dataNascimento = $request->input('data_nasc');
+        $userDetail->last_name = $request->input('last_name');
+        $userDetail->date_of_birth = $request->input('data_nasc');
         $userDetail->rg = $request->input('rg');
         $userDetail->cpf = $request->input('cpf');
-        $userDetail->telefone = $request->input('telefone');
-        $userDetail->cidade = $request->input('cidade');
+        $userDetail->phone = $request->input('phone');
+        $userDetail->city = $request->input('city');
         $userDetail->id_uf = $request->input('uf');
 
         $userDetail->status = true;

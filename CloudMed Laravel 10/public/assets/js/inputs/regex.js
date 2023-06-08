@@ -12,10 +12,10 @@ function formatarRG(rg) {
     return rg;
 }
 
-function formatarTelefone(telefone) {
-    telefone = telefone.replace(/\D/g, '');
-    telefone = telefone.replace(/(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
-    return telefone;
+function formatarTelefone(phone) {
+    phone = phone.replace(/\D/g, '');
+    phone = phone.replace(/(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+    return phone;
 }
 
 
