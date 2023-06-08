@@ -3,7 +3,7 @@
 <x-app-layout>
     <section class="session-allow">
 
-        @if ($vaccines->isEmpty() && empty($filterName) && empty($filterDoseType))
+        @if ($vaccines->isEmpty() && empty($filterNameVaccine) && empty($filterDoseType))
             <x-empty-vacina />
         @else
             <div class="m-auto max-h-full min-h-screen w-full">
@@ -29,16 +29,16 @@
                             <div class="justufy-center flex items-end">
 
                                 <div class="mr-4 w-3/4">
-                                    <label for="filterName"
+                                    <label for="filterNameVaccine"
                                         class="mb-2 block text-sm font-medium text-black dark:text-black">
                                         Nome da Vacina
                                     </label>
-                                    <select name="filterName" id="filterName"
+                                    <select name="filterNameVaccine" id="filterNameVaccine"
                                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-cyan-500 focus:ring-cyan-700">
                                         <option value="">Todas</option>
                                         @foreach ($nameVaccines as $name)
                                             <option value="{{ $name->id }}"
-                                                {{ $filterName == $name->id ? 'selected' : '' }}>
+                                                {{ $filterNameVaccine == $name->id ? 'selected' : '' }}>
                                                 {{ $name->name_vaccine }}
                                             </option>
                                         @endforeach

@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cartao_convenios', function (Blueprint $table) {
+        Schema::create('health_insurance', function (Blueprint $table) {
 
             $table->id('id');
 
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             
-            $table->string('numero')->nullable();
-            $table->string('nomeConvenio')->nullable();
-            $table->string('plano')->nullable();
-            $table->string('nome_arquivo')->nullable();
+            $table->string('insurance_number')->nullable();
+            $table->string('insurance_name')->nullable();
+            $table->string('insurance_plan')->nullable();
+            $table->string('file_insurance_name')->nullable();
 
             $table->timestamps();
 
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cartao_convenios');
+        Schema::dropIfExists('health_insurance');
     }
 };

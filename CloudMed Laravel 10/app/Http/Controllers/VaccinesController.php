@@ -20,15 +20,15 @@ class VaccinesController extends Controller
         $nameVaccines = NameVaccines::all();
 
         // Retrieve the filter inputs from the request
-        $filterName = $request->input('filterName');
+        $filterNameVaccine = $request->input('filterNameVaccine');
         $filterDoseType = $request->input('filterDoseType');
 
         // Create a base query to retrieve vaccines for the current user
         $query = Vaccines::where('id_user', Auth::user()->id);
 
         // Apply filters to the query if provided
-        if ($filterName) {
-            $query->where('id_vaccine', $filterName);
+        if ($filterNameVaccine) {
+            $query->where('id_vaccine', $filterNameVaccine);
         }
 
         if ($filterDoseType) {
@@ -43,7 +43,7 @@ class VaccinesController extends Controller
             'user.vaccines.indexVaccines',
             compact(
                 'vaccines',
-                'filterName',
+                'filterNameVaccine',
                 'filterDoseType',
                 'nameVaccines'
             )
