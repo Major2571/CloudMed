@@ -1,17 +1,22 @@
 function confirmExclusao(event) {
     event.preventDefault();
     Swal.fire({
-        title: 'Confirmação de Exclusão',
-        text: 'Tem certeza que deseja excluir este item?',
+        title: 'Tem certeza?',
+        text: 'Essa ação não pode ser revertida!',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#DE3F4D',
-        cancelButtonColor: '#6B7280',
-        confirmButtonText: 'Sim, excluir!',
-        cancelButtonText: 'Cancelar'
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#DE3F4D',
+        confirmButtonText: 'Sim, excluir!'
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = event.target.closest('a').href;
+            Swal.fire(
+                'Excluido!',
+                'Item excluido com sucesso!',
+                'success'
+            ).then(() => {
+                window.location.href = event.target.closest('a').href;
+            })
         }
-    });
+    })
 }
