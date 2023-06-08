@@ -1,7 +1,7 @@
 @props(['messages'])
 
 @if ($messages)
-    <div {{ $attributes->merge(['class' => 'error-innput']) }}>
+    <div {{ $attributes->merge(['class' => 'text-red-600 text-center font-medium']) }}>
         @foreach ((array) $messages as $message)
             <p>{{ $message }}</p>
         @endforeach
@@ -18,8 +18,7 @@
 
         Toast.fire({
             icon: 'error',
-            title: 'Usuário não cadastrado!' 
+            title: 'Tente novamente!'
         });
     </script>
 @endif
-

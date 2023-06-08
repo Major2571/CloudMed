@@ -3,24 +3,12 @@
 <title> Cadastro </title>
 
 @section('contentLogin')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/datepicker.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
-    
     <section class="cadastros session-cads">
 
-        <div class="min-h-screen w-full flex justify-center items-center">
+        <div class="flex min-h-screen w-full items-center justify-center">
 
-            <div class="lg:w-1/4 md:w-2/5 form">
-                <div class="title text-center mb-6">
+            <div class="form md:w-2/5 lg:w-1/4">
+                <div class="title mb-6 text-center">
                     <h1>Cadastre-se</h1>
                     <p> Crie sua conta agora mesmo! </p>
                 </div>
@@ -31,30 +19,32 @@
                         <div class="cad-info">
 
                             <div class="mb-6">
-                                <x-input-label for="name" :value="__('Name')" />
+                                <x-input-label for="name" :value="__('Primeiro Nome')" /> <span class="text-red-500">*</span>
                                 <x-text-input id="name" type="text" name="name" :value="old('name')" required
-                                    autofocus autocomplete="name" />
+                                    autofocus autocomplete="name" class="{{ $errors->has('name') ? 'border-red-500' : '' }}" />
                                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
+
                             </div>
 
                             <div class="mb-6">
-                                <x-input-label for="email" :value="__('Email')" />
+                                <x-input-label for="email" :value="__('Email')" /> <span class="text-red-500">*</span>
                                 <x-text-input id="email" type="email" name="email" :value="old('email')" required
-                                    autocomplete="username" />
+                                    autocomplete="username" class="{{ $errors->has('email') ? 'border-red-500' : '' }}" />
                                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
                             </div>
 
                             <div class="mb-6">
-                                <x-input-label for="password" :value="__('Senha')" />
+                                <x-input-label for="password" :value="__('Senha')" /><span class="text-red-500">*</span>
                                 <x-text-input id="password" type="password" name="password" required
-                                    autocomplete="new-password" />
+                                    autocomplete="new-password" class="{{ $errors->has('password') ? 'border-red-500' : '' }}"/>
                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
                             </div>
 
                             <div class="mb-6">
-                                <x-input-label for="password_confirmation" :value="__('Confirme sua senha')" />
+                                <x-input-label for="password_confirmation" :value="__('Confirme sua senha')" /> <span
+                                    class="text-red-500">*</span>
                                 <x-text-input id="password_confirmation" type="password" name="password_confirmation"
-                                    required autocomplete="new-password" />
+                                    required autocomplete="new-password" class="{{ $errors->has('password_confirmation') ? 'border-red-500' : '' }}"/>
                                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                             </div>
 
@@ -73,8 +63,6 @@
 
             </div>
         </div>
-
-
 
     </section>
 @endsection
