@@ -7,7 +7,7 @@ use App\Http\Controllers\VaccinesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserDetailsController;
 use App\Http\Controllers\UserDetailsMedicalController;
-use App\Http\Controllers\CartaoSusController;
+use App\Http\Controllers\CardSUSController;
 use App\Http\Controllers\HealthInsuranceController;
 use App\Http\Controllers\InformacoesClinicasController;
 use App\Models\UserDetails;
@@ -55,9 +55,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('alterarSenha');
 
     
-    Route::get('/meu-sus', [CartaoSusController::class, 'index'])->name('meuSus');
-    Route::post('/editar-sus', [CartaoSusController::class, 'store'])->name('sus.store');
-    Route::put('/editar-sus/update/{id}', [CartaoSusController::class, 'update'])->name('sus.update');
+    Route::get('/meu-sus', [CardSUSController::class, 'index'])->name('meuSus');
+    Route::post('/editar-sus', [CardSUSController::class, 'store'])->name('sus.store');
+    Route::put('/editar-sus/update/{id}', [CardSUSController::class, 'update'])->name('sus.update');
     
     Route::get('/meu-convenio', [HealthInsuranceController::class, 'index'])->name('meuConvenio');
     Route::post('/editar-convenio', [HealthInsuranceController::class, 'store'])->name('convenio.store');

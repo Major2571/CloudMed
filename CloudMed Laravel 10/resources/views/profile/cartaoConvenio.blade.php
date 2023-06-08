@@ -80,7 +80,7 @@
                         @if ($infoConvenio->file_insurance_name)
                             <div class="mb-5" id="preview-container">
 
-                                <img src="{{ asset('storage/insurance_file/' . $infoConvenio->file_insurance_name) }}"
+                                <img src="{{ asset('storage/health_card/insurance_file/' . $infoConvenio->file_insurance_name) }}"
                                     alt="Preview da Carteirinha" id="chosen-image"
                                     class="img-preview m-auto w-3/5 rounded-lg border border-gray-300 shadow-sm">
 
