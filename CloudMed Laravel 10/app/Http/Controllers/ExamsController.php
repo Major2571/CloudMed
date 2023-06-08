@@ -30,12 +30,12 @@ class ExamsController extends Controller
         // Apply filters to the query if provided
         $filterExamDate = $request->input('filterExamDate');
         if ($filterExamDate) {
-            $exam->whereDate('data', $filterExamDate);
+            $exam->whereDate('exam_date', $filterExamDate);
         }
 
         $filterMedicalSpecialty = $request->input('filterMedicalSpecialty');
         if ($filterMedicalSpecialty) {
-            $exam->where('id', $filterMedicalSpecialty);
+            $exam->where('id_medical_specialty', $filterMedicalSpecialty);
         }
 
         // Execute the query and retrieve the filtered exams
