@@ -9,7 +9,7 @@ use App\Http\Controllers\UserDetailsController;
 use App\Http\Controllers\UserDetailsMedicalController;
 use App\Http\Controllers\CardSUSController;
 use App\Http\Controllers\HealthInsuranceController;
-use App\Http\Controllers\InformacoesClinicasController;
+use App\Http\Controllers\ClinicalInformationController;
 use App\Models\UserDetails;
 use Illuminate\Support\Facades\Route;
 
@@ -63,9 +63,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/editar-convenio', [HealthInsuranceController::class, 'store'])->name('convenio.store');
     Route::put('/editar-convenio/update/{id}', [HealthInsuranceController::class, 'update'])->name('convenio.update');
     
-    Route::get('/clinical-details', [InformacoesClinicasController::class, 'index'])->name('infoClinicas');
-    Route::post('/editar-info-clinica', [InformacoesClinicasController::class, 'store'])->name('infoClinica.store');
-    Route::put('/editar-info-clinica/update/{id}', [InformacoesClinicasController::class, 'update'])->name('infoClinica.update');
+    Route::get('/clinical-details', [ClinicalInformationController::class, 'index'])->name('infoClinicas');
+    Route::post('/editar-info-clinica', [ClinicalInformationController::class, 'store'])->name('infoClinica.store');
+    Route::put('/editar-info-clinica/update/{id}', [ClinicalInformationController::class, 'update'])->name('infoClinica.update');
 
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

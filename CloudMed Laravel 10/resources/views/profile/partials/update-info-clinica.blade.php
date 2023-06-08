@@ -1,4 +1,4 @@
-@foreach ($infoClinica as $info)
+@foreach ($clinicalInfo as $info)
     <form method="post" action="{{ route('infoClinica.update', $info->id) }}">
         @csrf
                 @method('PUT')
@@ -10,36 +10,36 @@
 
             <div class="mb-3">
                 <div class="relative w-full">
-                    <label for="tipoSanguineo" class="mb-2 block font-medium text-gray-900"> Tipo
+                    <label for="blood_type" class="mb-2 block font-medium text-gray-900"> Tipo
                         Sanguínio
                     </label>
-                    <select name="tipoSanguineo"
+                    <select name="blood_type"
                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
-                        <option value="Não Informado" {{ $info->tipoSanguineo == 'Não Informado' ? 'selected' : '' }}>
+                        <option value="Não Informado" {{ $info->blood_type == 'Não Informado' ? 'selected' : '' }}>
                             Selecione
                         </option>
-                        <option value="O+" {{ $info->tipoSanguineo == 'O+' ? 'selected' : '' }}>
+                        <option value="O+" {{ $info->blood_type == 'O+' ? 'selected' : '' }}>
                             O+
                         </option>
-                        <option value="O-" {{ $info->tipoSanguineo == 'O-' ? 'selected' : '' }}>
+                        <option value="O-" {{ $info->blood_type == 'O-' ? 'selected' : '' }}>
                             O-
                         </option>
-                        <option value="A+" {{ $info->tipoSanguineo == 'A+' ? 'selected' : '' }}>
+                        <option value="A+" {{ $info->blood_type == 'A+' ? 'selected' : '' }}>
                             A+
                         </option>
-                        <option value="A-" {{ $info->tipoSanguineo == 'A-' ? 'selected' : '' }}>
+                        <option value="A-" {{ $info->blood_type == 'A-' ? 'selected' : '' }}>
                             A-
                         </option>
-                        <option value="B+" {{ $info->tipoSanguineo == 'B+' ? 'selected' : '' }}>
+                        <option value="B+" {{ $info->blood_type == 'B+' ? 'selected' : '' }}>
                             B+
                         </option>
-                        <option value="B-" {{ $info->tipoSanguineo == 'B-' ? 'selected' : '' }}>
+                        <option value="B-" {{ $info->blood_type == 'B-' ? 'selected' : '' }}>
                             B-
                         </option>
-                        <option value="AB+" {{ $info->tipoSanguineo == 'AB+' ? 'selected' : '' }}>
+                        <option value="AB+" {{ $info->blood_type == 'AB+' ? 'selected' : '' }}>
                             AB+
                         </option>
-                        <option value="AB-" {{ $info->tipoSanguineo == 'AB-' ? 'selected' : '' }}>
+                        <option value="AB-" {{ $info->blood_type == 'AB-' ? 'selected' : '' }}>
                             AB-
                         </option>
                     </select>
@@ -48,18 +48,18 @@
 
             <div class="mb-3">
                 <div class="relative w-full">
-                    <label for="doador" class="mb-2 block font-medium text-gray-900"> É doador de
+                    <label for="is_donor" class="mb-2 block font-medium text-gray-900"> É is_donor de
                         orgãos?
                     </label>
-                    <select name="doador"
+                    <select name="is_donor"
                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                         <option value="" value="Não Informado"
-                            {{ $info->tipoSanguineo == 'Não Informado' ? 'selected' : '' }}>Selecione
+                            {{ $info->blood_type == 'Não Informado' ? 'selected' : '' }}>Selecione
                         </option>
-                        <option value="Sim" {{ $info->doador == 'Sim' ? 'selected' : '' }}>
+                        <option value="Sim" {{ $info->is_donor == 'Sim' ? 'selected' : '' }}>
                             Sim
                         </option>
-                        <option value="Não" {{ $info->doador == 'Não' ? 'selected' : '' }}>
+                        <option value="Não" {{ $info->is_donor == 'Não' ? 'selected' : '' }}>
                             Não
                         </option>
                     </select>
@@ -68,9 +68,9 @@
 
             <div class="mb-3">
                 <div class="relative w-full">
-                    <x-input-label for="altura" :value="__('Altura:')" />
+                    <x-input-label for="height" :value="__('Altura:')" />
                     <div class="flex items-center">
-                        <x-text-input type="text" name="altura" id="altura" :value="old('altura', preg_replace('/(\d)(\d{2})$/', '$1,$2', $info->altura))" max="300"
+                        <x-text-input type="text" name="height" id="height" :value="old('height', preg_replace('/(\d)(\d{2})$/', '$1,$2', $info->height))" max="300"
                             onkeyup="formatarAltura(this)" required />
                         <span class="ml-2 pb-3"> m </span>
                     </div>
@@ -79,9 +79,9 @@
 
             <div class="mb-3">
                 <div class="relative w-full">
-                    <x-input-label for="peso" :value="__('Peso:')" />
+                    <x-input-label for="weight" :value="__('Peso:')" />
                     <div class="flex items-center">
-                        <x-text-input type="text" name="peso" id="peso" :value="old('peso', preg_replace('/(\d+)(\d{2})$/', '$1.$2', $info->peso))" max="300"
+                        <x-text-input type="text" name="weight" id="weight" :value="old('weight', preg_replace('/(\d+)(\d{2})$/', '$1.$2', $info->weight))" max="300"
                             onkeyup="formatarPeso(this)" required />
                         <span class="ml-2 pb-3"> kg </span>
                     </div>
@@ -90,9 +90,9 @@
 
             <div class="col-span-2 mb-3">
                 <div class="relative w-full">
-                    <x-input-label for="alergias" :value="__('Alergias:')" />
-                    <textarea id="alergias" name="alergias" rows="4"
-                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"> {{ $info->alergias }}</textarea>
+                    <x-input-label for="allergies" :value="__('Alergias:')" />
+                    <textarea id="allergies" name="allergies" rows="4"
+                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"> {{ $info->allergies }}</textarea>
                 </div>
                 <div class="btn-profile">
                     <button type="submit"  onclick="confirmEdit(event)"

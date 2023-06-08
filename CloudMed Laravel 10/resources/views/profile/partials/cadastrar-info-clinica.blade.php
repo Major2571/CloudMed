@@ -8,10 +8,10 @@
 
         <div class="mb-3">
             <div class="relative w-full">
-                <label for="tipoSanguineo" class="mb-2 block font-medium text-gray-900"> Tipo
+                <label for="blood_type" class="mb-2 block font-medium text-gray-900"> Tipo
                     Sanguínio
                 </label>
-                <select name="tipoSanguineo"
+                <select name="blood_type"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                     <option value="">Selecione</option>
                     <option value="O+">O+</option>
@@ -28,10 +28,10 @@
 
         <div class="mb-3">
             <div class="relative w-full">
-                <label for="doador" class="mb-2 block font-medium text-gray-900"> É doador de
+                <label for="is_donor" class="mb-2 block font-medium text-gray-900"> É is_donor de
                     orgãos?
                 </label>
-                <select name="doador"
+                <select name="is_donor"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                     <option value="">Selecione</option>
                     <option value="Sim">Sim</option>
@@ -42,9 +42,9 @@
 
         <div class="mb-3">
             <div class="relative">
-                <x-input-label for="altura" :value="__('Altura:')" />
+                <x-input-label for="height" :value="__('Altura:')" />
                 <div class="flex items-center">
-                    <x-text-input type="text" name="altura" placeholder="Ex: 170" id="altura" max="300"
+                    <x-text-input type="text" name="height" placeholder="Ex: 170" id="height" max="300"
                         onkeyup="formatarAltura(this)" required />
                     <span class="ml-2 pb-3"> cm </span>
                 </div>
@@ -53,9 +53,9 @@
 
         <div class="mb-3">
             <div class="relative w-full">
-                <x-input-label for="peso" :value="__('Peso:')" />
+                <x-input-label for="weight" :value="__('Peso:')" />
                 <div class="flex items-center">
-                    <x-text-input type="text" name="peso" placeholder="Ex: 65,4" id="peso" max="300"
+                    <x-text-input type="text" name="weight" placeholder="Ex: 65,4" id="weight" max="300"
                         onkeyup="formatarPeso(this)" required />
                     <span class="ml-2 pb-3"> kg </span>
                 </div>
@@ -64,10 +64,10 @@
 
         <div class="col-span-2 mb-3">
             <div class="relative w-full">
-                <x-input-label for="alergias" :value="__('Alergias:')" />
-                <textarea id="alergias" name="alergias" rows="4"
+                <x-input-label for="allergies" :value="__('Alergias:')" />
+                <textarea id="allergies" name="allergies" rows="4"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
-                    placeholder="Escreva suas principais alergias..."></textarea>
+                    placeholder="Escreva suas principais allergies..."></textarea>
             </div>
         </div>
 

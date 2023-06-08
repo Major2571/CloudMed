@@ -11,18 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('informacoes_clinicas', function (Blueprint $table) {
+        Schema::create('clinical_information', function (Blueprint $table) {
 
             $table->id('id');
 
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
 
-            $table->string('altura')->nullable();
-            $table->string('doador')->nullable();
-            $table->string('peso')->nullable();
-            $table->string('tipoSanguineo')->nullable();
-            $table->text('alergias')->nullable();
+            $table->string('height')->nullable();
+            $table->string('weight')->nullable();
+            $table->string('is_donor')->nullable();
+            $table->string('blood_type')->nullable();
+            $table->text('allergies')->nullable();
             
             $table->timestamps();
 
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('informacoes_clinicas');
+        Schema::dropIfExists('clinical_information');
     }
 };

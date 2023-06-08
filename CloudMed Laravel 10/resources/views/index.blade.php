@@ -42,7 +42,7 @@
                 </div>
                 <div>
                     <p>Na área do perfil do usuário, você pode adicionar e atualizar suas informações clínicas, incluindo
-                        histórico médico, medicamentos de uso contínuo, doenças crônicas e alergias.
+                        histórico médico, medicamentos de uso contínuo, doenças crônicas e allergies.
                     </p>
                 </div>
             </div>
