@@ -23,7 +23,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden sm:flex">
-                    <x-nav-link :href="route('meusMedicamentos')" :active="request()->routeIs('meusMedicamentos')">
+                    <x-nav-link :href="route('myMedications')" :active="request()->routeIs('myMedications')">
                         {{ __('Meus Medicamentos') }}
                     </x-nav-link>
                 </div>
@@ -53,7 +53,7 @@
                             <x-dropdown-link :href="route('createNewExam')">
                                 {{ __('Exame') }}
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('novoCadMedicamentos')">
+                            <x-dropdown-link :href="route('createNewMedications')">
                                 {{ __('Medicamentos') }}
                             </x-dropdown-link>
                         </x-slot>

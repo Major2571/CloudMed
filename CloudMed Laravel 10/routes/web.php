@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExamsController;
-use App\Http\Controllers\MedicamentosController;
+use App\Http\Controllers\MedicationsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VaccinesController;
 use App\Http\Controllers\DashboardController;
@@ -84,12 +84,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/minhas-vacinas/edit/{id}', [VaccinesController::class, 'edit'])->name('editVaccine');
     Route::put('/minhas-vacinas/update/{id}', [VaccinesController::class, 'update'])->name('updateVaccine');
 
-    Route::get('/meus-medicamentos', [MedicamentosController::class, 'index'])->name('meusMedicamentos');
-    Route::get('/cad-novo-medicamentos', [MedicamentosController::class, 'create'])->name('novoCadMedicamentos');
-    Route::post('/cad-novo-medicamentos', [MedicamentosController::class, 'store'])->name('saveNewMedicamentos');
-    Route::get('/meus-medicamentos/delete/{id}', [MedicamentosController::class, 'destroy'])->name('deleteMedicamentos');
-    Route::get('/meus-medicamentos/edit/{id}', [MedicamentosController::class, 'edit'])->name('editMedicamentos');
-    Route::put('/meus-medicamentos/update/{id}', [MedicamentosController::class, 'update'])->name('updateMedicamentos');
+    Route::get('/meus-medicamentos', [MedicationsController::class, 'index'])->name('myMedications');
+    Route::get('/cad-novo-medicamentos', [MedicationsController::class, 'create'])->name('createNewMedications');
+    Route::post('/cad-novo-medicamentos', [MedicationsController::class, 'store'])->name('saveNewMedications');
+    Route::get('/meus-medicamentos/delete/{id}', [MedicationsController::class, 'destroy'])->name('deleteMedications');
+    Route::get('/meus-medicamentos/edit/{id}', [MedicationsController::class, 'edit'])->name('editMedications');
+    Route::put('/meus-medicamentos/update/{id}', [MedicationsController::class, 'update'])->name('updateMedications');
 
 });
 

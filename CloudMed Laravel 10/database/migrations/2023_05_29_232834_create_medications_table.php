@@ -11,18 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('medicamentos', function (Blueprint $table) {
+        Schema::create('medications', function (Blueprint $table) {
             $table->id();
 
             $table->integer('id_user')->unsigned()->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
 
-            $table->string('nome_medicamento')->nullable();
-            $table->string('dosagem')->nullable();
-            $table->string('laboratorio')->nullable();
-            $table->string('frequencia')->nullable();
-            $table->string('tratamento')->nullable();
-            $table->text('observacoes')->nullable();
+            $table->string('medication_name')->nullable();
+            $table->string('dosage')->nullable();
+            $table->string('laboratory')->nullable();
+            $table->string('frequency')->nullable();
+            $table->string('treatment')->nullable();
+            $table->text('observations')->nullable();
 
             $table->timestamps();
         });
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('medicamentos');
+        Schema::dropIfExists('medications');
     }
 };
