@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -21,18 +20,18 @@ return new class extends Migration
             $table->integer('id_uf')->unsigned()->nullable();
             $table->foreign('id_uf')->references('id')->on('uf')->onDelete('cascade');
 
-            $table->integer('id_especialidade')->unsigned()->nullable();
-            $table->foreign('id_especialidade')->references('id')->on('especialidade')->onDelete('cascade');
+            $table->integer('id_medical_specialty')->unsigned()->nullable();
+            $table->foreign('id_medical_specialty')->references('id')->on('medical_specialty')->onDelete('cascade');
 
-            $table->string('titulo', 220)->nullable();
-            $table->date('data')->nullable();
-            $table->string('instituicao', 100)->nullable();
-            $table->string('cidade', 100)->nullable();
+            $table->string('exam_title')->nullable();
+            $table->date('exam_date')->nullable();
+            $table->string('institution')->nullable();
+            $table->string('city')->nullable();
 
-           $table->string('nome_arquivo')->nullable();
+            $table->string('file_exam_name')->nullable();
 
             $table->timestamps();
-                
+
         });
     }
 

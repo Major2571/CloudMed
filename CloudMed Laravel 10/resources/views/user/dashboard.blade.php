@@ -29,20 +29,20 @@
                             </p>
                             <p class="mb-3 font-normal text-gray-900">
                                 Seu último exame salvo foi:
-                                <span class="font-bold">'{{ $ultimoExame->titulo }}'</span>
-                                da especialidade de
-                                <span class="font-bold"> {{ $ultimoExame->especialidade->especialidade }} </span>,
+                                <span class="font-bold">'{{ $ultimoExame->exam_title }}'</span>
+                                da medical_specialty de
+                                <span class="font-bold"> {{ $ultimoExame->medical_specialty->medical_specialty }} </span>,
                                 realizado no dia
                                 <span class="font-bold"> {{ date('d/m/y', strtotime($ultimoExame->data)) }} </span>,
 
-                                @if ($isInstituicao)
+                                @if ($isinstitution)
                                     pela instituição
-                                    <span class="font-bold"> {{ $ultimoExame->instituicao }} </span>,
+                                    <span class="font-bold"> {{ $ultimoExame->institution }} </span>,
                                 @else
                                     não foi informada a instituição,
                                 @endif
 
-                                na cidade de {{ $ultimoExame->cidade }} -
+                                na cidade de {{ $ultimoExame->city }} -
                                 @if (empty($ultimoExame->uf->uf))
                                     UF indisponível
                                 @else

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Especialidade;
+use App\Models\MedicalSpecialty;
 use App\Models\Exams;
 use App\Models\NameVaccines;
 use App\Models\UFs;
@@ -37,7 +37,7 @@ class DashboardController extends Controller
         $totalVacinas = Vaccines::where('id_user', $userId)->count();
 
         // verifica se o último exame possui um valor para a propriedade 'instituição' e se a última vacina possui um valor para a propriedade 'manufacturer' já que são opcionais no formulário.
-        $isInstituicao = $ultimoExame ? !!$ultimoExame->instituicao : false;
+        $isinstitution = $ultimoExame ? !!$ultimoExame->institution : false;
         $isManufacturer = $ultimaVacina ? !!$ultimaVacina->manufacturer : false;
 
         return view('user.dashboard', compact(
@@ -45,7 +45,7 @@ class DashboardController extends Controller
             'vacinas',
             'ultimoExame',
             'totalExames',
-            'isInstituicao',
+            'isinstitution',
             'isManufacturer',
             'ultimaVacina',
             'totalVacinas',

@@ -24,16 +24,16 @@
                         <div class="grid md:grid-cols-2 md:gap-4">
                             <div>
                                 <div class="mb-6">
-                                    <label for="especialidade" class="mb-2 block font-medium text-gray-900">
+                                    <label for="medical_specialty" class="mb-2 block font-medium text-gray-900">
                                         Especialidade:
                                     </label>
                                     <div class="relative w-full">
-                                        <select name="especialidade"
+                                        <select name="medical_specialty"
                                             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                                             <option value=""> Selecionar </option>
-                                            @foreach ($especialidades as $especialidade)
-                                                <option value="{{ $especialidade->id }}">
-                                                    {{ $especialidade->especialidade }}
+                                            @foreach ($medical_specialtys as $medical_specialty)
+                                                <option value="{{ $medical_specialty->id }}">
+                                                    {{ $medical_specialty->medical_specialty }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -42,8 +42,8 @@
 
                             </div>
                             <div>
-                                <x-input-label for="date" :value="__('Data de realização:')" />
-                                <x-text-input type="date" name="date" id="date" required />
+                                <x-input-label for="exam_date" :value="__('Data de realização:')" />
+                                <x-text-input type="date" name="exam_date" id="exam_date" required />
                             </div>
                         </div>
 
@@ -55,13 +55,13 @@
 
                         <div class="grid md:grid-cols-2 md:gap-4">
                             <div class="mb-6">
-                                <x-input-label for="cidade" :value="__('Cidade:')" />
-                                <x-text-input type="text" name="cidade" id="cidade" required />
+                                <x-input-label for="city" :value="__('Cidade:')" />
+                                <x-text-input type="text" name="city" id="city" required />
                             </div>
 
                             <div class="mb-6">
                                 <div class="relative w-full">
-                                    <label for="especialidade" class="mb-2 block font-medium text-gray-900"> UF </label>
+                                    <label for="medical_specialty" class="mb-2 block font-medium text-gray-900"> UF </label>
                                     <select name="uf"
                                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                                         <option value=""> Selecionar </option>
@@ -75,22 +75,19 @@
                         </div>
 
                         <div class="text-center">
-
                             <div id="preview-container" class="image-container m-auto w-4/5">
                                 <img id="chosen-image" class="img-preview">
                             </div>
-
+                        
                             <figcaption id="file-name"></figcaption>
-
+                        
                             <div id="file-info" class="file-info"></div>
-
-                            <input type="file" name="arquivo" id="arquivo" required accept="image/*, .pdf">
-                            <label
-                                class="text-md pointer relative m-auto block w-1/2 cursor-pointer rounded-md bg-cyan-700 py-2.5 text-center text-white hover:bg-cyan-900"
-                                for="arquivo">
+                        
+                            <input type="file" name="arquivo" id="arquivo" data-validation="required" accept="image/*, .pdf">
+                        
+                            <label class="text-md pointer relative m-auto block w-1/2 cursor-pointer rounded-md bg-cyan-700 py-2.5 text-center text-white hover:bg-cyan-900" for="arquivo">
                                 <i class="fas fa-upload"></i> &nbsp; Escolha um Arquivo
                             </label>
-
                         </div>
 
                     </div>

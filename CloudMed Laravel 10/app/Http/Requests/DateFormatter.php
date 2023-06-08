@@ -24,6 +24,7 @@ class DateFormatter extends FormRequest
         return [
             'data' => 'required|date_format:d/m/Y',
             'vaccination_date' => 'required|date_format:d/m/Y',
+            'exam_date' => 'required|date_format:d/m/Y',
         ];
     }
 }

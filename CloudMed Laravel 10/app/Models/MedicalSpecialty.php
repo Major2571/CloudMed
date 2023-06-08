@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Especialidade extends Model
+class MedicalSpecialty extends Model
 {
-    protected $table = 'especialidade';
+    protected $table = 'medical_specialty';
 
     protected $fillable = [
         'id',
-        'especialidade'
+        'medical_specialty'
     ];
 
     public function exam()
     {
-        return $this->hasMany(Exams::class, 'id_especialidade');
+        return $this->hasMany(Exams::class, 'id_medical_specialty');
     }
 }

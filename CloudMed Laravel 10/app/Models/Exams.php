@@ -16,20 +16,20 @@ class Exams extends Model
         'id',
         'id_user',
         'id_uf',
-        'id_especialidade',
-        'titulo',
-        'especialidade', 
-        'data',
-        'instituicao', 
-        'cidade', 
+        'id_medical_specialty',
+        'exam_title',
+        'medical_specialty', 
+        'exam_date',
+        'institution', 
+        'city', 
         'uf',
-        'nome_arquivo', 
+        'file_exam_name', 
         
     ];
 
-    public function especialidade()
+    public function medical_specialty()
     {
-        return $this->belongsTo(Especialidade::class, 'id_especialidade');
+        return $this->belongsTo(MedicalSpecialty::class, 'id_medical_specialty');
     }
 
     public function uf()

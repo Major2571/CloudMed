@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exams;
-use App\Models\Especialidade;
+use App\Models\MedicalSpecialty;
 use App\Models\UFs;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -19,7 +19,7 @@ class ExamsController extends Controller
     public function index(Request $request)
     {
         // Retrieve all specialties
-        $especialidades = Especialidade::all();
+        $medical_specialtys = MedicalSpecialty::all();
 
         // Get the current user's ID
         $userId = Auth::user()->id;
@@ -28,14 +28,14 @@ class ExamsController extends Controller
         $exam = Exams::where('id_user', $userId);
 
         // Apply filters to the query if provided
-        $filtroData = $request->input('filtroData');
-        if ($filtroData) {
-            $exam->whereDate('data', $filtroData);
+        $filterExamDate = $request->input('filterExamDate');
+        if ($filterExamDate) {
+            $exam->whereDate('data', $filterExamDate);
         }
 
-        $filtroEspecialidade = $request->input('filtroEspecialidade');
-        if ($filtroEspecialidade) {
-            $exam->where('id', $filtroEspecialidade);
+        $filterMedicalSpecialty = $request->input('filterMedicalSpecialty');
+        if ($filterMedicalSpecialty) {
+            $exam->where('id', $filterMedicalSpecialty);
         }
 
         // Execute the query and retrieve the filtered exams
@@ -46,9 +46,9 @@ class ExamsController extends Controller
             'user.exams.indexExams',
             compact(
                 'exam',
-                'filtroData',
-                'filtroEspecialidade',
-                'especialidades'
+                'filterExamDate',
+                'filterMedicalSpecialty',
+                'medical_specialtys'
             )
         );
     }
@@ -57,14 +57,14 @@ class ExamsController extends Controller
     public function create()
     {
         // Retrieve all specialties and UFs from the database
-        $especialidades = Especialidade::all();
+        $medical_specialtys = MedicalSpecialty::all();
         $uf = UFs::all();
 
         // Return the 'user.exams.createExams' view, passing the variables as compact
         return view(
             'user.exams.createExams',
             compact(
-                'especialidades',
+                'medical_specialtys',
                 'uf'
             )
         );
@@ -79,19 +79,19 @@ class ExamsController extends Controller
         $exams = new Exams();
 
         // Assign values from the request inputs to the model attributes
-        $exams->id_especialidade = $request->input('especialidade');
+        $exams->id_medical_specialty = $request->input('medical_specialty');
         $exams->id_uf = $request->input('uf');
-        $exams->titulo = $request->input('name');
-        $exams->data = $request->input('date');
-        $exams->instituicao = $request->input('local');
-        $exams->cidade = $request->input('cidade');
+        $exams->exam_title = $request->input('name');
+        $exams->exam_date = $request->input('exam_date');
+        $exams->institution = $request->input('local');
+        $exams->city = $request->input('city');
 
         // Save the Files
         if ($request->hasFile('arquivo')) {
             $file = $request->file('arquivo');
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->storeAs('public/exam_files', $fileName);
-            $exams->nome_arquivo = $fileName;
+            $exams->file_exam_name = $fileName;
         }
 
         // Assign the current user's ID to the model
@@ -121,8 +121,8 @@ class ExamsController extends Controller
         // Find the Exames model with the specified ID or throw an exception if not found
         $exam = Exams::findOrFail($id);
 
-        // Retrieve all Especialidade and UFs models
-        $especialidades = Especialidade::all();
+        // Retrieve all MedicalSpecialty and UFs models
+        $medical_specialtys = MedicalSpecialty::all();
         $uf = UFs::all();
 
         // Return the 'edit' view, passing the necessary data as compact variables
@@ -130,7 +130,7 @@ class ExamsController extends Controller
             'user.exams.editExams',
             compact(
                 'exam',
-                'especialidades',
+                'medical_specialtys',
                 'uf'
             )
         );
@@ -145,18 +145,18 @@ class ExamsController extends Controller
         $exam = Exams::FindOrFail($id);
 
         // Update the Exames model with the input values
-        $exam->id_especialidade = $request->input('especialidade');
+        $exam->id_medical_specialty = $request->input('medical_specialty');
         $exam->id_uf = $request->input('uf');
-        $exam->titulo = $request->input('name');
-        $exam->data = $request->input('date');
-        $exam->instituicao = $request->input('local');
-        $exam->cidade = $request->input('cidade');
+        $exam->exam_title = $request->input('name');
+        $exam->exam_date = $request->input('exam_date');
+        $exam->institution = $request->input('local');
+        $exam->city = $request->input('city');
 
         // Replace the file if a new file is uploaded
         if ($request->hasFile('arquivo')) {
             // Check if the file exists and delete it
-            if (Storage::exists('public/exam_files/' . $exam->nome_arquivo)) {
-                Storage::delete('public/exam_files/' . $exam->nome_arquivo);
+            if (Storage::exists('public/exam_files/' . $exam->file_exam_name)) {
+                Storage::delete('public/exam_files/' . $exam->file_exam_name);
             }
 
             // Save the new file
@@ -164,7 +164,7 @@ class ExamsController extends Controller
             $fileName = time() . '_' . $file->getClientOriginalName();
             $file->storeAs('public/exam_files', $fileName);
 
-            $exam->nome_arquivo = $fileName;
+            $exam->file_exam_name = $fileName;
         }
 
         // Save the updated Exames model

@@ -71,7 +71,7 @@
                     </div>
                     <div class="w mb-6">
                         <div class="relative w-full">
-                            <label for="especialidade" class="mb-2 block font-medium text-gray-900"> UF
+                            <label for="medical_specialty" class="mb-2 block font-medium text-gray-900"> UF
                             </label>
                             <select name="uf" disabled
                                 class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
