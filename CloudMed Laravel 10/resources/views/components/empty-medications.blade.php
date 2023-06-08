@@ -4,7 +4,7 @@
         <div class="text-lg mr-5 w-1/3">
             <h1 class="leading-tight">Você ainda não tem nenhum medicamento salvo            </h1>
             <p class="py-5"> Para adicionar um medicamento clique no botão abaixo, e preencha as informações. </p>
-            <a href="{{ route('novoCadMedicamentos') }}"
+            <a href="{{ route('createNewMedications') }}"
                 class="inline-flex items-center rounded-full bg-teal-900 px-16 py-2 text-center text-base font-bold text-white hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-gray-300">
                 <div class="mr-3 text-lg">
                     <i class="fa-solid fa-circle-plus"></i>

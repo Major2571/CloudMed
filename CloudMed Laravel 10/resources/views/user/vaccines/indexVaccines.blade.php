@@ -4,7 +4,7 @@
     <section class="session-allow">
 
         @if ($vaccines->isEmpty() && empty($filterNameVaccine) && empty($filterDoseType))
-            <x-empty-vacina />
+            <x-empty-vaccine />
         @else
             <div class="m-auto max-h-full min-h-screen w-full">
                 <div class="title-filters m-auto w-full">

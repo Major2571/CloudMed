@@ -4,7 +4,7 @@
     <section class="session-allow">
 
         @if ($exam->isEmpty() && empty($filterMedicalSpecialty) && empty($filterExamDate))
-            <x-empty-exame />
+            <x-empty-exam />
         @else
             <div class="m-auto max-h-full min-h-screen w-full">
                 <div class="title-filters m-auto w-full">
