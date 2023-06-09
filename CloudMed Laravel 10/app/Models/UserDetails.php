@@ -12,18 +12,16 @@ class UserDetails extends Model
     protected $table = 'user_details';
 
     protected $fillable = [
-
         'id',
         'id_user',
         'id_uf',
-        'sobrenome',
-        'dataNascimento',
+        'last_name',
+        'date_of_birth',
         'rg',
         'cpf',
-        'cidade',
-        'telefone',
+        'city',
+        'phone',
         'status'
-
     ];
 
     public function userDetail()

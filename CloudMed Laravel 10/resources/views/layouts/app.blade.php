@@ -27,11 +27,10 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="shortcut icon" href="assets/img/icon-logo.png" type="image/x-icon">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
 
     @include('templates.styles')
+    <link rel="shortcut icon" href="assets/img/icon-logo.png" type="image/x-icon">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -66,20 +65,20 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/datepicker.min.js"></script>
-<script src="{{ url('assets/js/inputHiddenVaccine.js') }}"></script>
-<script src="{{ url('assets/js/btnToTop.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
 
-<script src="{{ url('assets/js/profileSaveModal.js') }}"></script>
-<script src="{{ url('assets/js/saveModal.js') }}"></script>
-<script src="{{ url('assets/js/editModal.js') }}"></script>
-<script src="{{ url('assets/js/deleteModal.js') }}"></script>
-<script src="{{ url('assets/js/imgPreview.js') }}"></script>
+<script src="{{ url('assets/js/modal/deleteModal.js') }}"></script>
+<script src="{{ url('assets/js/modal/editModal.js') }}"></script>
+<script src="{{ url('assets/js/modal/profileSaveModal.js') }}"></script>
+<script src="{{ url('assets/js/modal/saveModal.js') }}"></script>
 
-<script src="{{ url('assets/js/regex.js') }}"></script>
+<script src="{{ url('assets/js/inputs/inputHiddenVaccine.js') }}"></script>
+<script src="{{ url('assets/js/inputs/imgPreview.js') }}"></script>
+<script src="{{ url('assets/js/inputs/regex.js') }}"></script>
 
 <script src="{{ url('assets/js/dashboard.js') }}"></script>
+<script src="{{ url('assets/js/btnToTop.js') }}"></script>
 
 
 </html>

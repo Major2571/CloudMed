@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Especialidade;
-use App\Models\Exames;
-use App\Models\NomeVacinas;
+use App\Models\MedicalSpecialty;
+use App\Models\Exams;
+use App\Models\NameVaccines;
 use App\Models\UFs;
-use App\Models\Vacinas;
+use App\Models\Vaccines;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -23,41 +23,32 @@ class DashboardController extends Controller
         $userId = Auth::user()->id;
 
         // Para exibir apenas os exames e vacinas que pertencem ao usuário atualmente autenticado, é necessário modificar a consulta do banco de dados. Para isso, o método where() é usado para filtrar as instâncias de Exames que possuem um id_user correspondente ao id do usuário autenticado usando a variável global Auth::user()->id. O resultado é armazenado na variável $exames e passado para a view.
-        $exames = Exames::where('id_user', $userId)->get();
-        $vacinas = Vacinas::where('id_user', $userId)->get();
+        $exam = Exams::where('id_user', $userId)->get();
+        $vacinas = Vaccines::where('id_user', $userId)->get();
 
         // último exame registrado
-        $ultimoExame = Exames::where('id_user', $userId)->latest()->first();
+        $ultimoExame = Exams::where('id_user', $userId)->latest()->first();
         // número total de exames cadastrados
-        $totalExames = Exames::where('id_user', $userId)->count();
+        $totalExames = Exams::where('id_user', $userId)->count();
 
         // última vacina registrada
-        $ultimaVacina = Vacinas::where('id_user', $userId)->latest()->first();
+        $ultimaVacina = Vaccines::where('id_user', $userId)->latest()->first();
         // número total de vacinas cadastradas
-        $totalVacinas = Vacinas::where('id_user', $userId)->count();
+        $totalVacinas = Vaccines::where('id_user', $userId)->count();
 
-        // verifica se o último exame possui um valor para a propriedade 'instituição' e se a última vacina possui um valor para a propriedade 'fabricante' já que são opcionais no formulário.
-        $isInstituicao = $ultimoExame ? !!$ultimoExame->instituição : false;
-        $isFabricante = $ultimaVacina ? !!$ultimaVacina->fabricante : false;
+        // verifica se o último exame possui um valor para a propriedade 'instituição' e se a última vacina possui um valor para a propriedade 'manufacturer' já que são opcionais no formulário.
+        $isinstitution = $ultimoExame ? !!$ultimoExame->institution : false;
+        $isManufacturer = $ultimaVacina ? !!$ultimaVacina->manufacturer : false;
 
-        return view('dashboard', compact(
-            'exames',
+        return view('user.dashboard', compact(
+            'exam',
             'vacinas',
             'ultimoExame',
             'totalExames',
-            'isInstituicao',
-            'isFabricante',
+            'isinstitution',
+            'isManufacturer',
             'ultimaVacina',
             'totalVacinas',
         ));
-    }
-
-    public function create()
-    {
-        $nomeVacinas = NomeVacinas::all();
-        $especialidades = Especialidade::all();
-        $uf = UFs::all();
-
-        return view('novoCadExame', compact('especialidades', 'uf', 'nomeVacinas'));
     }
 }

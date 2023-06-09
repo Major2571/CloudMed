@@ -4,7 +4,7 @@
 
 @section('conteudo')
 
-    @if ($infoClinica->isEmpty())
+    @if ($clinicalInfo->isEmpty())
         @include('profile.partials.cadastrar-info-clinica')
     @else
         @include('profile.partials.update-info-clinica')

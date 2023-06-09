@@ -17,9 +17,9 @@ class UFs extends Model
         'uf'
     ];
 
-    public function exames()
+    public function exam()
     {
-        return $this->hasMany(Exames::class, 'id_uf');
+        return $this->hasMany(Exams::class, 'id_uf');
     }
 
     public function vacinas()

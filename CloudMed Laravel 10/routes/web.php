@@ -1,15 +1,15 @@
 <?php
 
-use App\Http\Controllers\ExamesController;
-use App\Http\Controllers\MedicamentosController;
+use App\Http\Controllers\ExamsController;
+use App\Http\Controllers\MedicationsController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\VacinasController;
+use App\Http\Controllers\VaccinesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserDetailsController;
 use App\Http\Controllers\UserDetailsMedicalController;
-use App\Http\Controllers\CartaoSusController;
-use App\Http\Controllers\CartaoConvenioController;
-use App\Http\Controllers\InformacoesClinicasController;
+use App\Http\Controllers\CardSUSController;
+use App\Http\Controllers\HealthInsuranceController;
+use App\Http\Controllers\ClinicalInformationController;
 use App\Models\UserDetails;
 use Illuminate\Support\Facades\Route;
 
@@ -40,11 +40,6 @@ Route::get('/login-userCloud', function () {
     return view('login-userCloud');
 });
 
-Route::get('/cadastro', function () {
-    return view('cadastro');
-});
-
-
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/profile', [UserDetailsController::class, 'index'])->name('profile');
@@ -60,41 +55,41 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('alterarSenha');
 
     
-    Route::get('/meu-sus', [CartaoSusController::class, 'index'])->name('meuSus');
-    Route::post('/editar-sus', [CartaoSusController::class, 'store'])->name('sus.store');
-    Route::put('/editar-sus/update/{id}', [CartaoSusController::class, 'update'])->name('sus.update');
+    Route::get('/meu-sus', [CardSUSController::class, 'index'])->name('meuSus');
+    Route::post('/editar-sus', [CardSUSController::class, 'store'])->name('sus.store');
+    Route::put('/editar-sus/update/{id}', [CardSUSController::class, 'update'])->name('sus.update');
     
-    Route::get('/meu-convenio', [CartaoConvenioController::class, 'index'])->name('meuConvenio');
-    Route::post('/editar-convenio', [CartaoConvenioController::class, 'store'])->name('convenio.store');
-    Route::put('/editar-convenio/update/{id}', [CartaoConvenioController::class, 'update'])->name('convenio.update');
+    Route::get('/meu-convenio', [HealthInsuranceController::class, 'index'])->name('meuConvenio');
+    Route::post('/editar-convenio', [HealthInsuranceController::class, 'store'])->name('convenio.store');
+    Route::put('/editar-convenio/update/{id}', [HealthInsuranceController::class, 'update'])->name('convenio.update');
     
-    Route::get('/clinical-details', [InformacoesClinicasController::class, 'index'])->name('infoClinicas');
-    Route::post('/editar-info-clinica', [InformacoesClinicasController::class, 'store'])->name('infoClinica.store');
-    Route::put('/editar-info-clinica/update/{id}', [InformacoesClinicasController::class, 'update'])->name('infoClinica.update');
+    Route::get('/clinical-details', [ClinicalInformationController::class, 'index'])->name('infoClinicas');
+    Route::post('/editar-info-clinica', [ClinicalInformationController::class, 'store'])->name('infoClinica.store');
+    Route::put('/editar-info-clinica/update/{id}', [ClinicalInformationController::class, 'update'])->name('infoClinica.update');
 
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::get('/meus-exames', [ExamesController::class, 'index'])->name('meusExames');
-    Route::get('/cad-novo-exame', [ExamesController::class, 'create'])->name('novoCadExame');
-    Route::post('/cad-novo-exame', [ExamesController::class, 'store'])->name('saveNewExam');
-    Route::get('/meus-exames/delete/{id}', [ExamesController::class, 'destroy'])->name('deleteExame');
-    Route::get('/meus-exames/edit/{id}', [ExamesController::class, 'edit'])->name('editExames');
-    Route::put('/meus-exames/update/{id}', [ExamesController::class, 'update'])->name('updateExames');
+    Route::get('/meus-exames', [ExamsController::class, 'index'])->name('myExams');
+    Route::get('/cad-novo-exame', [ExamsController::class, 'create'])->name('createNewExam');
+    Route::post('/cad-novo-exame', [ExamsController::class, 'store'])->name('saveNewExam');
+    Route::get('/meus-exames/delete/{id}', [ExamsController::class, 'destroy'])->name('deleteExam');
+    Route::get('/meus-exames/edit/{id}', [ExamsController::class, 'edit'])->name('editExam');
+    Route::put('/meus-exames/update/{id}', [ExamsController::class, 'update'])->name('updateExam');
 
-    Route::get('/minhas-vacinas', [VacinasController::class, 'index'])->name('minhasVacinas');
-    Route::get('/cad-novo-vacina', [VacinasController::class, 'create'])->name('novoCadVacina');
-    Route::post('/cad-novo-vacina', [VacinasController::class, 'store'])->name('saveNewVaccine');
-    Route::get('/minhas-vacinas/delete/{id}', [VacinasController::class, 'destroy'])->name('deleteVacina');
-    Route::get('/minhas-vacinas/edit/{id}', [VacinasController::class, 'edit'])->name('editVacina');
-    Route::put('/minhas-vacinas/update/{id}', [VacinasController::class, 'update'])->name('updateVacina');
+    Route::get('/minhas-vacinas', [VaccinesController::class, 'index'])->name('myVaccines');
+    Route::get('/cad-novo-vacina', [VaccinesController::class, 'create'])->name('createNewVaccine');
+    Route::post('/cad-novo-vacina', [VaccinesController::class, 'store'])->name('saveNewVaccine');
+    Route::get('/minhas-vacinas/delete/{id}', [VaccinesController::class, 'destroy'])->name('deleteVaccine');
+    Route::get('/minhas-vacinas/edit/{id}', [VaccinesController::class, 'edit'])->name('editVaccine');
+    Route::put('/minhas-vacinas/update/{id}', [VaccinesController::class, 'update'])->name('updateVaccine');
 
-    Route::get('/meus-medicamentos', [MedicamentosController::class, 'index'])->name('meusMedicamentos');
-    Route::get('/cad-novo-medicamentos', [MedicamentosController::class, 'create'])->name('novoCadMedicamentos');
-    Route::post('/cad-novo-medicamentos', [MedicamentosController::class, 'store'])->name('saveNewMedicamentos');
-    Route::get('/meus-medicamentos/delete/{id}', [MedicamentosController::class, 'destroy'])->name('deleteMedicamentos');
-    Route::get('/meus-medicamentos/edit/{id}', [MedicamentosController::class, 'edit'])->name('editMedicamentos');
-    Route::put('/meus-medicamentos/update/{id}', [MedicamentosController::class, 'update'])->name('updateMedicamentos');
+    Route::get('/meus-medicamentos', [MedicationsController::class, 'index'])->name('myMedications');
+    Route::get('/cad-novo-medicamentos', [MedicationsController::class, 'create'])->name('createNewMedications');
+    Route::post('/cad-novo-medicamentos', [MedicationsController::class, 'store'])->name('saveNewMedications');
+    Route::get('/meus-medicamentos/delete/{id}', [MedicationsController::class, 'destroy'])->name('deleteMedications');
+    Route::get('/meus-medicamentos/edit/{id}', [MedicationsController::class, 'edit'])->name('editMedications');
+    Route::put('/meus-medicamentos/update/{id}', [MedicationsController::class, 'update'])->name('updateMedications');
 
 });
 

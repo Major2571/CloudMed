@@ -123,13 +123,6 @@ footer img {
     color: var(--textos);
 }
 
-.error-innput {
-    color: rgb(214, 79, 79);
-    list-style: none;
-    text-align: center;
-    padding: 3px;
-}
-
 .card-vacina:hover .absolute {
     opacity: 1;
     background-color: #272626af;

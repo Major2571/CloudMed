@@ -16,8 +16,8 @@
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
             </div>
             <div class="input-box cad-exame">
-                <x-input-label for="sobrenome" :value="__('Sobrenome:')" />
-                <input type="text" name="sobrenome" id="sobrenome" value=""
+                <x-input-label for="last_name" :value="__('Sobrenome:')" />
+                <input type="text" name="last_name" id="last_name" value=""
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
             </div>
             <div class="input-box cad-exame">
@@ -43,15 +43,15 @@
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
             </div>
             <div class="input-box cad-exame">
-                <x-input-label for="telefone" :value="__('Telefone:')" />
-                <input type="text" name="telefone" id="telefone" value="" maxlength="15"
+                <x-input-label for="phone" :value="__('Telefone:')" />
+                <input type="text" name="phone" id="phone" value="" maxlength="15"
                     onkeyup="this.value = formatarTelefone(this.value)"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
             </div>
             <div class="grid md:grid-cols-3 md:gap-2">
                 <div class="col-span-2 mb-6 w-full">
-                    <x-input-label for="cidade" :value="__('Cidade:')" />
-                    <input type="text" name="cidade" id="cidade" value=""
+                    <x-input-label for="city" :value="__('Cidade:')" />
+                    <input type="text" name="city" id="city" value=""
                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
                 </div>
                 <div class="w mb-6">

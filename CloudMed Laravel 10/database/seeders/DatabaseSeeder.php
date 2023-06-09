@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Especialidade;
+use App\Models\MedicalSpecialty;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,12 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(EspecialidadeTableSeeder::class);
+        $this->call(MedicalSpecialtyTableSeeder::class);
         $this->call(UFsTableSeeder::class);
-        $this->call(VacinasTableSeeder::class);
+        $this->call(NameVaccinesTableSeeder::class);
 
-        $this->call(AddExameSeeder::class);
-        $this->call(AddVacinaSeeder::class);
-        $this->call(AddUsuarioSeeder::class);
+        $this->call(AddExamSeeder::class);
+        $this->call(AddVaccineSeeder::class);
+        $this->call(AddUserSeeder::class);
     }
 }

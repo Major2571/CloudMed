@@ -3,23 +3,23 @@
 @extends('layouts.profile')
 
 @section('conteudo')
-    @if ($convenio->isEmpty())
+    @if ($healthInsurance->isEmpty())
         <form method="post" action="{{ route('convenio.store') }}" enctype="multipart/form-data">
             <div class="title-profile mb-5">
                 <h2> Sua carteirinha do convenio </h2>
             </div>
             @csrf
             <div class="">
-                <x-input-label for="num-convenio" :value="__('Cartão do Convênio:')" />
-                <x-text-input type="text" name="numConvenio" id="numConvenio" :value="old('')" required />
+                <x-input-label for="num-healthInsurance" :value="__('Cartão do Convênio:')" />
+                <x-text-input type="text" name="insurance_number" id="insurance_number" :value="old('')" required />
             </div>
             <div class="">
-                <x-input-label for="nomeConvenio" :value="__('Nome do Convenio:')" />
-                <x-text-input type="text" name="nomeConvenio" id="nomeConvenio" required />
+                <x-input-label for="insurance_name" :value="__('Nome do Convenio:')" />
+                <x-text-input type="text" name="insurance_name" id="insurance_name" required />
             </div>
             <div class="">
-                <x-input-label for="plano" :value="__('Plano:')" />
-                <x-text-input type="text" name="plano" id="plano" required />
+                <x-input-label for="insurance_plan" :value="__('Plano:')" />
+                <x-text-input type="text" name="insurance_plan" id="insurance_plan" required />
             </div>
             <div class="">
                 <h3> Cartão do Convênio:</h3><br>
@@ -50,7 +50,7 @@
             </div>
         </form>
     @else
-        @foreach ($convenio as $infoConvenio)
+        @foreach ($healthInsurance as $infoConvenio)
             <form method="post" action="{{ route('convenio.update', $infoConvenio->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -59,16 +59,16 @@
                 </div>
 
                 <div class="">
-                    <x-input-label for="num-convenio" :value="__('Cartão do Convênio:')" />
-                    <x-text-input type="text" name="numConvenio" id="numConvenio" :value="old('numero', $infoConvenio->numero)" />
+                    <x-input-label for="num-healthInsurance" :value="__('Cartão do Convênio:')" />
+                    <x-text-input type="text" name="insurance_number" id="insurance_number" :value="old('insurance_number', $infoConvenio->insurance_number)" />
                 </div>
                 <div class="">
-                    <x-input-label for="nomeConvenio" :value="__('Nome do Convenio:')" />
-                    <x-text-input type="text" name="nomeConvenio" id="nomeConvenio" :value="old('nomeConvenio', $infoConvenio->nomeConvenio)" />
+                    <x-input-label for="insurance_name" :value="__('Nome do Convenio:')" />
+                    <x-text-input type="text" name="insurance_name" id="insurance_name" :value="old('insurance_name', $infoConvenio->insurance_name)" />
                 </div>
                 <div class="">
-                    <x-input-label for="plano" :value="__('Plano:')" />
-                    <x-text-input type="text" name="plano" id="plano" :value="old('plano', $infoConvenio->plano)" />
+                    <x-input-label for="insurance_plan" :value="__('Plano:')" />
+                    <x-text-input type="text" name="insurance_plan" id="insurance_plan" :value="old('insurance_plan', $infoConvenio->insurance_plan)" />
                 </div>
 
                 <div class="">
@@ -77,15 +77,15 @@
 
                         <p class="mb-2 block py-2 font-semibold text-gray-900"> Carteirinha:</p>
 
-                        @if ($infoConvenio->nome_arquivo)
+                        @if ($infoConvenio->file_insurance_name)
                             <div class="mb-5" id="preview-container">
 
-                                <img src="{{ asset('storage/carteirinha_convenio/' . $infoConvenio->nome_arquivo) }}"
+                                <img src="{{ asset('storage/health_card/insurance_file/' . $infoConvenio->file_insurance_name) }}"
                                     alt="Preview da Carteirinha" id="chosen-image"
                                     class="img-preview m-auto w-3/5 rounded-lg border border-gray-300 shadow-sm">
 
                                 <figcaption id="file-name" class="mb-2 block py-2 font-medium text-gray-900">
-                                    {{ $infoConvenio->nome_arquivo }}
+                                    {{ $infoConvenio->file_insurance_name }}
                                 </figcaption>
 
                             </div>
