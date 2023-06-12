@@ -33,7 +33,7 @@
                                 da medical_specialty de
                                 <span class="font-bold"> {{ $ultimoExame->medical_specialty->medical_specialty }} </span>,
                                 realizado no dia
-                                <span class="font-bold"> {{ date('d/m/y', strtotime($ultimoExame->data)) }} </span>,
+                                <span class="font-bold"> {{ date('d/m/y', strtotime($ultimoExame->exam_date)) }} </span>,
 
                                 @if ($isinstitution)
                                     pela instituição
