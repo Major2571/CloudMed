@@ -1,15 +1,19 @@
+<div class="title-profile mb-5 absolute top-0 w-3/5 py-8 px-16">
+    <h2> Informações Clínicas </h2>
+    <p class="text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima vel nesciunt eum fugit
+        exercitationem dolorem sunt aut libero maiores, soluta, dicta saepe! Quae maiores ab, eligendi vitae quo
+        libero cumque!</p>
+</div>
+
 <form method="POST" action="{{ route('infoClinica.store') }}">
     @csrf
-    <div class="title-profile mb-5">
-        <h2> Informações Clínicas </h2>
-    </div>
 
     <div class="grid gap-x-5 md:grid-cols-2">
 
         <div class="mb-3">
             <div class="relative w-full">
                 <label for="blood_type" class="mb-2 block font-medium text-gray-900"> Tipo
-                    Sanguínio
+                    Sanguíneo
                 </label>
                 <select name="blood_type"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
@@ -28,7 +32,7 @@
 
         <div class="mb-3">
             <div class="relative w-full">
-                <label for="is_donor" class="mb-2 block font-medium text-gray-900"> É is_donor de
+                <label for="is_donor" class="mb-2 block font-medium text-gray-900"> É doador de
                     orgãos?
                 </label>
                 <select name="is_donor"

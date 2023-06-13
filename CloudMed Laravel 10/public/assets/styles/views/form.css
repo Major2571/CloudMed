@@ -45,6 +45,11 @@
     border-radius: 5px;
 }
 
+.profile-forms #preview-container img {
+    max-width: 60%;
+    margin: auto;
+}
+
 .img-preview {
     object-fit: cover;
     object-position: top;

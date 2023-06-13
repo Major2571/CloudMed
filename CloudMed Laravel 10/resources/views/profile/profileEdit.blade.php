@@ -3,13 +3,16 @@
 @extends('layouts.profile')
 
 @section('conteudo')
+    <div class="title-profile mb-5 absolute top-0 w-3/5 py-8 px-16">
+        <h2> Perfil </h2>
+        <p class="text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima vel nesciunt eum fugit
+            exercitationem dolorem sunt aut libero maiores, soluta, dicta saepe! Quae maiores ab, eligendi vitae quo
+            libero cumque!</p>
+    </div>
 
     <form method="post" action="{{ route('profile.update', $userDetail->id) }}">
         @csrf
         @method('PUT')
-        <div class="title-profile mb-5">
-            <h2> Perfil </h2>
-        </div>
 
         <div class="grid md:grid-cols-2 md:gap-4">
             <div class="input-box cad-exame">
@@ -49,8 +52,8 @@
             <div class="input-box cad-exame">
                 <x-input-label for="phone" :value="__('Telefone:')" />
                 <input type="text" name="phone" id="phone"
-                    value="{{ preg_replace('/(\d{2})(\d{5})(\d{4})/', '($1) $2-$3', $userDetail->phone) }}"
-                    maxlength="15" onkeyup="this.value = formatarTelefone(this.value)"
+                    value="{{ preg_replace('/(\d{2})(\d{5})(\d{4})/', '($1) $2-$3', $userDetail->phone) }}" maxlength="15"
+                    onkeyup="this.value = formatarTelefone(this.value)"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none">
             </div>
             <div class="grid md:grid-cols-3 md:gap-2">

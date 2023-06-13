@@ -3,12 +3,14 @@
 @extends('layouts.profile')
 
 @section('conteudo')
+    <div class="title-profile mb-5 absolute top-0 w-3/5 py-8 px-16">
+        <h2> Perfil </h2>
+        <p class="text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima vel nesciunt eum fugit
+            exercitationem dolorem sunt aut libero maiores, soluta, dicta saepe! Quae maiores ab, eligendi vitae quo
+            libero cumque!</p>
+    </div>
     <form method="post" action="{{ route('profile.store') }}">
         @csrf
-        <div class="title-profile mb-5">
-            <h2>Perfil</h2>
-        </div>
-
         <div class="grid md:grid-cols-2 md:gap-4">
             <div class="input-box cad-exame">
                 <x-input-label for="nome" :value="__('Nome:')" />

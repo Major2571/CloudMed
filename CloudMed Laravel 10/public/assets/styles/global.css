@@ -137,12 +137,14 @@ img.img-vacina {
     width: 60%;
     min-height: 40em;
     max-height: 100%;
-    padding: 2em 6em;
+    padding: 4em 6em 2em 6em;
     background-color: #e9ebeb;
     border-radius: 0 0.5em 0.5em 0;
     display: flex;
+    align-content: center;
     justify-content: center;
     align-items: center;
+    flex-flow: row wrap;
 }
 
 .profile-forms form {
