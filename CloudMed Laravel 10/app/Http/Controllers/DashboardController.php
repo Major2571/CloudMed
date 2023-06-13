@@ -31,6 +31,8 @@ class DashboardController extends Controller
         // número total de exames cadastrados
         $totalExames = Exams::where('id_user', $userId)->count();
 
+        $liDescVaccines = Vaccines::where('id_user', $userId)->orderBy('created_at', 'desc')->paginate(5);
+
         // última vacina registrada
         $ultimaVacina = Vaccines::where('id_user', $userId)->latest()->first();
         // número total de vacinas cadastradas
@@ -49,6 +51,7 @@ class DashboardController extends Controller
             'isManufacturer',
             'ultimaVacina',
             'totalVacinas',
+            'liDescVaccines'
         ));
     }
 }

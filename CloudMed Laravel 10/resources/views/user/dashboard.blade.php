@@ -139,6 +139,12 @@
 
         </div>
     </section>
+
+    @foreach ($liDescVaccines as $li)
+    <li>
+        {{$li->nameVaccine->name_vaccine}}
+    </li>
+    @endforeach
     
     <section>
 
