@@ -7,58 +7,87 @@
                 Bem-Vindo(a) {{ Auth::user()->name }}!
             </h1>
 
-            <div class="align-center flex w-full flex-wrap justify-center">
-                <div class="mx-6 max-w-sm rounded-md bg-white shadow">
+            <div class="m-auto pb-52 grid w-3/5 gap-6 md:grid-cols-2 xl:grid-cols-3">
+                <div class="relative shadow-lg bg-slate-100  rounded-md border-l-4 border-[#039FDD] p-5">
+                    <div class="flex justify-between items-center border-b-2 border-[#039FDD] w-5/6 m-auto pb-5">
+                        <div>
+                            <h2 class="text-5xl leading-normal font-semibold"> {{ $totalVacinas }} </h2>
+                            <h4 class="font-bold drop-shadow-sm"> Vacinas Salvas</h4>
+                        </div>
+                        <div class="w-20 p-3">
+                            <img src="assets/img/icon/vacinne.png" alt="">
+                        </div>
+                    </div>
 
-                    <img class="rounded-t-md"
-                        src="https://www.centromedicopastore.com.br/wp-content/uploads/2022/07/blog-02-Exames-de-Sangue.png"
-                        alt="" />
-
-                    <div class="p-5">
-
-                        <a href="{{ route('myExams') }}">
-                            <h5 class="mb-2 mr-2 text-2xl font-bold tracking-tight text-gray-900 hover:text-cyan-800">
-                                Meus Exames
-                            </h5>
+                    <div class="m-2 pt-5 pb-14">
+                        @if ($liDescVaccines->isEmpty())
+                            Você ainda não possui vacinas salvas! Não perca tempo!
+                        @else
+                            <h3 class="font-semibold drop-shadow-sm "> Últimas vacinas salvas: </h3>
+                            <ul class="list-disc list-inside py-2">
+                                @foreach ($liDescVaccines as $li)
+                                    <li>
+                                        {{ $li->nameVaccine->name_vaccine }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                            @if ($totalVacinas > 5)
+                                <a href="{{ route('myVaccines') }}"
+                                    class=" font-semibold text-[#0369dd] hover:text-[#1b5ca5] ">
+                                    Mais +
+                                </a>
+                            @endif
+                        @endif
+                    </div>
+                    <div class="m-auto w-full absolute bottom-3">
+                        <a href="{{ route('createNewVaccine') }}"
+                            class="inline-flex items-center rounded-md bg-[#039FDD] px-3 py-2 text-center text-sm font-medium text-white hover:bg-[#0074a1] focus:outline-none focus:ring-2 focus:ring-gray-300">
+                            Cadastrar uma nova Vacina
+                            <div class="ml-2 text-base">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
                         </a>
+                    </div>
+                </div>
 
-                        @if ($ultimoExame && $totalExames)
-                            <p class="mb-3 text-gray-900">
-                                <span class="font-bold"> Total Cadastrado: </span>
-                                {{ $totalExames }}
-                            </p>
-                            <p class="mb-3 font-normal text-gray-900">
-                                Seu último exame salvo foi:
-                                <span class="font-bold">'{{ $ultimoExame->exam_title }}'</span>
-                                da medical_specialty de
-                                <span class="font-bold"> {{ $ultimoExame->medical_specialty->medical_specialty }} </span>,
-                                realizado no dia
-                                <span class="font-bold"> {{ date('d/m/y', strtotime($ultimoExame->exam_date)) }} </span>,
+                <div class="relative shadow-lg bg-slate-100 rounded-md border-l-4 border-[#d83a49] p-5">
+                    <div class="flex justify-between items-center border-b-2 border-[#d83a49] w-5/6 m-auto pb-5">
+                        <div>
+                            <h2 class="text-5xl leading-normal font-semibold"> {{ $totalExames }} </h2>
+                            <h4 class="font-bold drop-shadow-sm"> Exames Salvos</h4>
+                        </div>
+                        <div class="w-20 p-3">
+                            <img src="assets/img/icon/exam.png" alt="">
+                        </div>
+                    </div>
 
-                                @if ($isinstitution)
-                                    pela instituição
-                                    <span class="font-bold"> {{ $ultimoExame->institution }} </span>,
-                                @else
-                                    não foi informada a instituição,
-                                @endif
-
-                                na cidade de {{ $ultimoExame->city }} -
-                                @if (empty($ultimoExame->uf->uf))
-                                    UF indisponível
-                                @else
-                                    {{ $ultimoExame->uf->uf }}.
-                                @endif
+                    <div class="m-2 pt-5 pb-14">
+                        @if ($liDescExams->isEmpty())
+                            <p>
+                                Você ainda não possui exames salvos! Não perca tempo!
                             </p>
                         @else
-                            <p class="my-10 font-normal text-gray-900">
-                                Você ainda não salvou nenhum Exame.
-                                </br>
-                                Não perca tempo:
-                            </p>
+                            <h3 class="font-semibold drop-shadow-sm "> Últimos exames salvos: </h3>
+                            <ul class="list-disc list-inside py-2">
+                                @foreach ($liDescExams as $li)
+                                    <li>
+                                        {{ $li->exam_title }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                            @if ($totalExames > 5)
+                                <a href="{{ route('myExams') }}"
+                                    class=" font-semibold text-[#0369dd] hover:text-[#1b5ca5] ">
+                                    Mais +
+                                </a>
+                            @endif
                         @endif
 
+                    </div>
+
+                    <div class="m-auto absolute bottom-3">
                         <a href="{{ route('createNewExam') }}"
-                            class="inline-flex items-center rounded-md bg-cyan-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-gray-300">
+                            class="inline-flex items-center rounded-md bg-[#d83a49] px-3 py-2 text-center text-sm font-medium text-white hover:bg-[#C52233] focus:outline-none focus:ring-2 focus:ring-gray-300">
                             Cadastrar um novo Exame
                             <div class="ml-2 text-base">
                                 <i class="fa-solid fa-arrow-right"></i>
@@ -67,68 +96,41 @@
                     </div>
                 </div>
 
-                <div class="mx-6 max-w-sm rounded-md bg-white shadow">
+                <div class="relative shadow-lg bg-slate-100  rounded-md border-l-4 border-[#f5890f] p-5">
+                    <div class="flex justify-between items-center border-b-2 border-[#f5890f] w-5/6 m-auto pb-5">
+                        <div>
+                            <h2 class="text-5xl leading-normal font-semibold"> {{ $totalMedication }} </h2>
+                            <h4 class="font-bold drop-shadow-sm"> Medicamentos Salvos </h4>
+                        </div>
+                        <div class="w-20 p-3">
+                            <img src="assets/img/icon/pill.png" alt="">
+                        </div>
+                    </div>
 
-                    <img class="rounded-t-md"
-                        src="https://www.paho.org/sites/default/files/styles/max_1500x1500/public/2022-08/generic-vaccine-1500x1000.jpg?itok=IoGkc1TM"
-                        alt="" />
-
-                    <div class="p-5">
-
-                        <a href="{{ route('myVaccines') }}">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 hover:text-cyan-800">Minhas
-                                Vacinas</h5>
-                        </a>
-
-                        @if ($ultimaVacina && $totalVacinas)
-                            <p class="mb-3 font-normal text-gray-900">
-                                <span class="font-bold">
-                                    Total Cadastrada:
-                                </span>
-                                {{ $totalVacinas }}
-                            </p>
-                            <p class="mb-3 font-normal text-gray-900">Sua última vacina salva foi:
-
-                                '@if (empty($ultimaVacina->new_vaccine_name))
-                                    <span class="font-bold">
-                                        {{ $ultimaVacina->nameVaccine->name_vaccine }}
-                                    </span>
-                                @else
-                                    <span class="font-bold">
-                                        {{ $ultimaVacina->new_vaccine_name }}
-                                    </span>
-                                @endif'
-
-                                sendo
-                                <span class="font-bold">
-                                    {{ $ultimaVacina->doses }}
-                                </span>
-                                ,
-                                aplicada no dia
-                                <span class="font-bold">
-                                    {{ date('d/m/y', strtotime($ultimaVacina->vaccination_date)) }},
-                                </span>
-
-                                @if ($isManufacturer)
-                                    fabricada por
-                                    <span class="font-bold">
-                                        {{ $ultimaVacina->manufacturer }}
-                                    </span>
-                                @else
-                                @endif
-                                na cidade de {{ $ultimaVacina->city }}
-                            </p>
+                    <div class="m-2 pt-5 pb-14">
+                        @if ($liDescMedication->isEmpty())
+                            Você ainda não possui medicamentos salvos! Não perca tempo!
                         @else
-                            <p class="my-10 font-normal text-gray-900">
-                                Você ainda não salvou nenhuma Vacina.
-                                </br>
-                                Não perca tempo:
-                            </p>
+                            <h3 class="font-semibold drop-shadow-sm "> Últimos medicamentos salvos: </h3>
+                            <ul class="list-disc list-inside pt-2 pb-5">
+                                @foreach ($liDescMedication as $li)
+                                    <li>
+                                        {{ $li->medication_name }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                            @if ($totalMedication > 5)
+                                <a href="{{ route('myMedications') }}"
+                                    class=" font-semibold text-[#0369dd] hover:text-[#1b5ca5] ">
+                                    Mais +
+                                </a>
+                            @endif
                         @endif
-
-                        <a href="{{ route('createNewVaccine') }}"
-                            class="inline-flex items-center rounded-md bg-cyan-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-gray-300">
-                            Cadastrar uma nova Vacina
+                    </div>
+                    <div class="m-auto w-full absolute bottom-3">
+                        <a href="{{ route('createNewMedications') }}"
+                            class="inline-flex items-center rounded-md bg-[#f5890f] px-3 py-2 text-center text-sm font-medium text-white hover:bg-[#c76d06] focus:outline-none focus:ring-2 focus:ring-gray-300">
+                            Cadastre um novo Medicamento
                             <div class="ml-2 text-base">
                                 <i class="fa-solid fa-arrow-right"></i>
                             </div>
@@ -140,27 +142,6 @@
         </div>
     </section>
 
-    @foreach ($liDescVaccines as $li)
-    <li>
-        {{$li->nameVaccine->name_vaccine}}
-    </li>
-    @endforeach
-    
-    <section>
-
-        <div class="m-auto grid w-3/5 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <div class="flex bg-slate-100 justify-between rounded-sm border-l-4 border-gray-500 p-5">
-                <div>
-                    <h1> 9 </h1>
-                    <h4> Vacinas Cadastradas</h4>
-                </div>
-                <div class="w-20 p-3">
-                    <img src="assets/img/icon/vacinne.png" alt="" class="img-vacina">
-                </div>
-            </div>
-        </div>
-
-    </section>
 
     {{-- 
     <style>

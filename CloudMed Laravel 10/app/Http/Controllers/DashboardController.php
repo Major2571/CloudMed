@@ -7,6 +7,7 @@ use App\Models\Exams;
 use App\Models\NameVaccines;
 use App\Models\UFs;
 use App\Models\Vaccines;
+use App\Models\Medications;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -32,6 +33,10 @@ class DashboardController extends Controller
         $totalExames = Exams::where('id_user', $userId)->count();
 
         $liDescVaccines = Vaccines::where('id_user', $userId)->orderBy('created_at', 'desc')->paginate(5);
+        $liDescExams = Exams::where('id_user', $userId)->orderBy('created_at', 'desc')->paginate(5);
+        $liDescMedication = Medications::where('id_user', $userId)->orderBy('created_at', 'desc')->paginate(5);
+
+        $totalMedication = Medications::where('id_user', $userId)->count();
 
         // última vacina registrada
         $ultimaVacina = Vaccines::where('id_user', $userId)->latest()->first();
@@ -51,7 +56,10 @@ class DashboardController extends Controller
             'isManufacturer',
             'ultimaVacina',
             'totalVacinas',
-            'liDescVaccines'
+            'liDescVaccines',
+            'liDescExams',
+            'liDescMedication',
+            'totalMedication',
         ));
     }
 }
