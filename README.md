@@ -47,7 +47,6 @@ Entre no diretório do projeto
 
 ```bash
   cd WebApp-TCC/CloudMed\ Laravel\ 10/
-
 ```
 
 Instale as dependências
@@ -60,7 +59,6 @@ Instale as dependências
 ```
 
 #### Antes de seguir para o próximo passo:
-- Crie um banco de dados chamado ` dbCloudMed `
 - Copie e cole o arquivo  `.env.exemple `
 - Renomeie a cópia para  `.env `
 
@@ -73,6 +71,8 @@ Rode as Migrations
 ```bash
     php artisan migrate
 ```
+
+- Ao rodar as Migrations, irá ser solicitado a criação de um banco de dados chamado ` dbCloudMed `, confirme sua criação
 
 Rode os Seeders
 ```bash
