@@ -139,6 +139,22 @@
 
         </div>
     </section>
+    
+    <section>
+
+        <div class="m-auto flex w-4/5">
+            <div class="flex bg-slate-100 w-1/5 justify-between rounded-sm border-l-4 border-gray-500 p-10">
+                <div>
+                    <h1> 9 </h1>
+                    <h4> Vacinas Cadastradas</h4>
+                </div>
+                <div class="w-20">
+                    <img src="assets/img/icon/vacinne.png" alt="" class="img-vacina">
+                </div>
+            </div>
+        </div>
+
+    </section>
 
     {{-- 
     <style>
