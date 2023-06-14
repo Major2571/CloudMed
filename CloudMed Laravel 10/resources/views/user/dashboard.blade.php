@@ -11,7 +11,7 @@
                 <div class="relative shadow-lg bg-slate-100  rounded-md border-l-4 border-[#039FDD] p-5">
                     <div class="flex justify-between items-center border-b-2 border-[#039FDD] w-5/6 m-auto pb-5">
                         <div>
-                            <h2 class="text-5xl leading-normal font-semibold"> {{ $totalVacinas }} </h2>
+                            <h2 class="text-5xl leading-normal font-semibold"> {{ $totalVaccines }} </h2>
                             <h4 class="font-bold drop-shadow-sm"> Vacinas Salvas</h4>
                         </div>
                         <div class="w-20 p-3">
@@ -31,7 +31,7 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            @if ($totalVacinas > 5)
+                            @if ($totalVaccines > 5)
                                 <a href="{{ route('myVaccines') }}"
                                     class=" font-semibold text-[#0369dd] hover:text-[#1b5ca5] ">
                                     Mais +
@@ -53,7 +53,7 @@
                 <div class="relative shadow-lg bg-slate-100 rounded-md border-l-4 border-[#d83a49] p-5">
                     <div class="flex justify-between items-center border-b-2 border-[#d83a49] w-5/6 m-auto pb-5">
                         <div>
-                            <h2 class="text-5xl leading-normal font-semibold"> {{ $totalExames }} </h2>
+                            <h2 class="text-5xl leading-normal font-semibold"> {{ $totalExams }} </h2>
                             <h4 class="font-bold drop-shadow-sm"> Exames Salvos</h4>
                         </div>
                         <div class="w-20 p-3">
@@ -75,7 +75,7 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            @if ($totalExames > 5)
+                            @if ($totalExams > 5)
                                 <a href="{{ route('myExams') }}"
                                     class=" font-semibold text-[#0369dd] hover:text-[#1b5ca5] ">
                                     Mais +
@@ -99,7 +99,7 @@
                 <div class="relative shadow-lg bg-slate-100  rounded-md border-l-4 border-[#f5890f] p-5">
                     <div class="flex justify-between items-center border-b-2 border-[#f5890f] w-5/6 m-auto pb-5">
                         <div>
-                            <h2 class="text-5xl leading-normal font-semibold"> {{ $totalMedication }} </h2>
+                            <h2 class="text-5xl leading-normal font-semibold"> {{ $totalMedications }} </h2>
                             <h4 class="font-bold drop-shadow-sm"> Medicamentos Salvos </h4>
                         </div>
                         <div class="w-20 p-3">
@@ -119,7 +119,7 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            @if ($totalMedication > 5)
+                            @if ($totalMedications > 5)
                                 <a href="{{ route('myMedications') }}"
                                     class=" font-semibold text-[#0369dd] hover:text-[#1b5ca5] ">
                                     Mais +
