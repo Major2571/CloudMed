@@ -84,7 +84,7 @@ p {
 h1 {
     color: #272626;
     text-shadow: var(--shadowTitle);
-    font-size: 2em !important;
+    font-size: 2em;
     font-weight: 700 !important;
     line-height: 2em;
 }
@@ -156,6 +156,14 @@ img.img-vacina {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.polygon-services {
+    transform: translate(0, 50%);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
 }
 
 /* SIDEBAR */
