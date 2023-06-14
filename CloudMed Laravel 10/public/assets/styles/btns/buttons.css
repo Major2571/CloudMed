@@ -1,13 +1,13 @@
 .nav-menu button.btnLogin {
-    background-color: #f0f8ff33;
+    background-color: #117c7c;
     letter-spacing: 2px;
-    border: 2px solid #f5f5f5;
+    border: 2px solid #117c7c;
+    color: white;
 }
 
 .nav-menu button.btnLogin:hover {
     transition: all .3s ease-in-out;
-    background-color: var(--azulClaro);
-    border: 2px solid var(--azulClaro);
+    background-color: #024d4d;
 }
 
 .section-one .main-top button {
@@ -34,7 +34,7 @@
 }
 
 .login .btnLogin:hover {
-    background-color: #117c7c;
+    background-color: #085050;
     transition: all .3s ease-in-out;
 }
 
