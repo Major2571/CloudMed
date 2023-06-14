@@ -11,8 +11,8 @@
 
                     <div class="bg-[#119abb57] py-10">
                         <div class="title m-auto w-4/5">
-                            <h1> Meus Medicamentos </h1>
-                            <p> Aqui você encontra ...</p>
+                            <h1 class="text-3xl mb-2"> Meus Medicamentos </h1>
+                            <p> Mantenha um registro completo e atualizado de sua terapia medicamentosa. Nesta seção, você pode visualizar, adicionar ou remover medicamentos conforme necessário. Tenha controle sobre os medicamentos que está tomando e garanta uma gestão eficiente do seu tratamento.</p>
                         </div>
                     </div>
 

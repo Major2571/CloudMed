@@ -6,9 +6,9 @@
 
     <div class="title-profile mb-5 absolute top-0 w-3/5 py-8 px-16">
         <h2> Carteirinha do Convênio </h2>
-        <p class="text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima vel nesciunt eum fugit
-            exercitationem dolorem sunt aut libero maiores, soluta, dicta saepe! Quae maiores ab, eligendi vitae quo
-            libero cumque!</p>
+        <p class="text-base">
+            Tenha seus dados do convênio sempre à disposição. Aqui você pode cadastrar e atualizar as informações da sua carteirinha do convênio médico. Insira o número da carteirinha, o nome do convênio, o tipo de plano e faça o upload da sua carteirinha para facilitar o acesso aos benefícios e serviços oferecidos pelo seu convênio.
+        </p>
     </div>
 
     <div class="pt-24 w-full">

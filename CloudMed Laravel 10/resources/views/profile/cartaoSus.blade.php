@@ -6,9 +6,9 @@
 
     <div class="title-profile mb-5 absolute top-0 w-3/5 py-8 px-16">
         <h2> Carteirinha do SUS </h2>
-        <p class="text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima vel nesciunt eum fugit
-            exercitationem dolorem sunt aut libero maiores, soluta, dicta saepe! Quae maiores ab, eligendi vitae quo
-            libero cumque!</p>
+        <p class="text-base">
+            Facilite o acesso aos serviços de saúde com o Cadastro do Cartão do SUS. Nesta seção, você pode cadastrar e atualizar as informações do seu Cartão do SUS de forma rápida e segura. Insira o número do cartão e faça o upload do seu cartão SUS para ter sempre à mão quando necessário.
+        </p>
     </div>
     <div class="w-full pt-24">
         @if ($sus->isEmpty())

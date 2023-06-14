@@ -3,7 +3,7 @@
 <x-app-layout>
     <section class="session-allow">
         <div class="min-h-screen">
-            <h1 class="py-10 text-center">
+            <h1 class="py-10 text-center text-3xl">
                 Bem-Vindo(a) {{ Auth::user()->name }}!
             </h1>
 

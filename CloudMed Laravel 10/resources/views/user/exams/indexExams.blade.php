@@ -10,8 +10,8 @@
                 <div class="title-filters m-auto w-full">
                     <div class="bg-[#119abb57] py-10">
                         <div class="title m-auto w-4/5">
-                            <h1> Meus Exames </h1>
-                            <p> Aqui você encontra seus Exames salvos no nosso sistema.</p>
+                            <h1 class="text-3xl mb-2"> Meus Exames </h1>
+                            <p> Organize e gerencie seus arquivos de saúde de forma segura. Nesta seção, você pode visualizar os resultados de seus exames médicos, incluindo análises laboratoriais, radiografias e outros documentos relevantes. Mantenha seus resultados de exames sempre disponíveis, facilite o compartilhamento com profissionais de saúde e tenha um histórico completo de sua saúde.</p>
                         </div>
                     </div>
                 </div>
