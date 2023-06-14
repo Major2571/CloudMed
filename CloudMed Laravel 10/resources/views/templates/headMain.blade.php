@@ -47,8 +47,8 @@
 
                 <ul class="menu manu-main">
                     <li>
-                        <a href="/funcionalidades" target="_blank">
-                            Funcionalidades
+                        <a href="/servicos" target="_blank">
+                            Serviços
                         </a>
                     </li>
                     <li>
@@ -79,8 +79,8 @@
                 <h4>Links Rápidos</h4>
             </li>
             <li>
-                <a href="/funcionalidades" target="_blank">
-                    Funcionalidades
+                <a href="/servicos" target="_blank">
+                    Serviços
                 </a>
             </li>
             <li>

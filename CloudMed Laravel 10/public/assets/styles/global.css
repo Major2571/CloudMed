@@ -195,6 +195,9 @@ img.img-vacina {
     left: 60px;
 }
 
+.servicos img{
+    filter: drop-shadow( 0 3px 3px rgba(126, 125, 126, 0.541));
+}
 
 @media screen and (max-width: 768px) {
     #sidebar {

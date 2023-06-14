@@ -28,8 +28,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/funcionalidades', function () {
-    return view('funcionalidades');
+Route::get('/servicos', function () {
+    return view('servicos');
 });
 
 Route::get('/sobre', function () {
