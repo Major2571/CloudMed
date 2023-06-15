@@ -7,11 +7,11 @@
                 Bem-Vindo(a) {{ Auth::user()->name }}!
             </h1>
 
-            <div class="m-auto pb-52 grid w-3/5 gap-6 md:grid-cols-2 xl:grid-cols-3">
-                <div class="relative shadow-lg bg-slate-100  rounded-md border-l-4 border-[#039FDD] p-5">
-                    <div class="flex justify-between items-center border-b-2 border-[#039FDD] w-5/6 m-auto pb-5">
+            <div class="m-auto grid w-3/5 gap-6 pb-52 md:grid-cols-2 xl:grid-cols-3">
+                <div class="relative rounded-md border-l-4 border-[#039FDD] bg-slate-100 p-5 shadow-lg">
+                    <div class="m-auto flex w-5/6 items-center justify-between border-b-2 border-[#039FDD] pb-5">
                         <div>
-                            <h2 class="text-5xl leading-normal font-semibold"> {{ $totalVaccines }} </h2>
+                            <h2 class="text-5xl font-semibold leading-normal"> {{ $totalVaccines }} </h2>
                             <h4 class="font-bold drop-shadow-sm"> Vacinas Salvas</h4>
                         </div>
                         <div class="w-20 p-3">
@@ -23,23 +23,31 @@
                         @if ($liDescVaccines->isEmpty())
                             Você ainda não possui vacinas salvas! Não perca tempo!
                         @else
-                            <h3 class="font-semibold drop-shadow-sm "> Últimas vacinas salvas: </h3>
-                            <ul class="list-disc list-inside py-2">
+                            <h3 class="font-semibold drop-shadow-sm"> Últimas vacinas salvas: </h3>
+                            <ul class="list-inside list-disc py-2">
                                 @foreach ($liDescVaccines as $li)
-                                    <li>
-                                        {{ $li->nameVaccine->name_vaccine }}
-                                    </li>
+
+                                    @if ($li->new_vaccine_name === null)
+                                        <li>
+                                            {{ $li->nameVaccine->name_vaccine }}
+                                        </li>
+                                    @else
+                                        <li>
+                                            {{ $li->new_vaccine_name }}
+                                        </li>
+                                    @endif
+                                    
                                 @endforeach
                             </ul>
                             @if ($totalVaccines > 5)
                                 <a href="{{ route('myVaccines') }}"
-                                    class=" font-semibold text-[#0369dd] hover:text-[#1b5ca5] ">
+                                    class="font-semibold text-[#0369dd] hover:text-[#1b5ca5]">
                                     Mais +
                                 </a>
                             @endif
                         @endif
                     </div>
-                    <div class="m-auto w-full absolute bottom-3">
+                    <div class="absolute bottom-3 m-auto w-full">
                         <a href="{{ route('createNewVaccine') }}"
                             class="inline-flex items-center rounded-md bg-[#039FDD] px-3 py-2 text-center text-sm font-medium text-white hover:bg-[#0074a1] focus:outline-none focus:ring-2 focus:ring-gray-300">
                             Cadastrar uma nova Vacina
@@ -50,10 +58,10 @@
                     </div>
                 </div>
 
-                <div class="relative shadow-lg bg-slate-100 rounded-md border-l-4 border-[#d83a49] p-5">
-                    <div class="flex justify-between items-center border-b-2 border-[#d83a49] w-5/6 m-auto pb-5">
+                <div class="relative rounded-md border-l-4 border-[#d83a49] bg-slate-100 p-5 shadow-lg">
+                    <div class="m-auto flex w-5/6 items-center justify-between border-b-2 border-[#d83a49] pb-5">
                         <div>
-                            <h2 class="text-5xl leading-normal font-semibold"> {{ $totalExams }} </h2>
+                            <h2 class="text-5xl font-semibold leading-normal"> {{ $totalExams }} </h2>
                             <h4 class="font-bold drop-shadow-sm"> Exames Salvos</h4>
                         </div>
                         <div class="w-20 p-3">
@@ -67,8 +75,8 @@
                                 Você ainda não possui exames salvos! Não perca tempo!
                             </p>
                         @else
-                            <h3 class="font-semibold drop-shadow-sm "> Últimos exames salvos: </h3>
-                            <ul class="list-disc list-inside py-2">
+                            <h3 class="font-semibold drop-shadow-sm"> Últimos exames salvos: </h3>
+                            <ul class="list-inside list-disc py-2">
                                 @foreach ($liDescExams as $li)
                                     <li>
                                         {{ $li->exam_title }}
@@ -77,7 +85,7 @@
                             </ul>
                             @if ($totalExams > 5)
                                 <a href="{{ route('myExams') }}"
-                                    class=" font-semibold text-[#0369dd] hover:text-[#1b5ca5] ">
+                                    class="font-semibold text-[#0369dd] hover:text-[#1b5ca5]">
                                     Mais +
                                 </a>
                             @endif
@@ -85,7 +93,7 @@
 
                     </div>
 
-                    <div class="m-auto absolute bottom-3">
+                    <div class="absolute bottom-3 m-auto">
                         <a href="{{ route('createNewExam') }}"
                             class="inline-flex items-center rounded-md bg-[#d83a49] px-3 py-2 text-center text-sm font-medium text-white hover:bg-[#C52233] focus:outline-none focus:ring-2 focus:ring-gray-300">
                             Cadastrar um novo Exame
@@ -96,10 +104,10 @@
                     </div>
                 </div>
 
-                <div class="relative shadow-lg bg-slate-100  rounded-md border-l-4 border-[#f5890f] p-5">
-                    <div class="flex justify-between items-center border-b-2 border-[#f5890f] w-5/6 m-auto pb-5">
+                <div class="relative rounded-md border-l-4 border-[#f5890f] bg-slate-100 p-5 shadow-lg">
+                    <div class="m-auto flex w-5/6 items-center justify-between border-b-2 border-[#f5890f] pb-5">
                         <div>
-                            <h2 class="text-5xl leading-normal font-semibold"> {{ $totalMedications }} </h2>
+                            <h2 class="text-5xl font-semibold leading-normal"> {{ $totalMedications }} </h2>
                             <h4 class="font-bold drop-shadow-sm"> Medicamentos Salvos </h4>
                         </div>
                         <div class="w-20 p-3">
@@ -111,8 +119,8 @@
                         @if ($liDescMedication->isEmpty())
                             Você ainda não possui medicamentos salvos! Não perca tempo!
                         @else
-                            <h3 class="font-semibold drop-shadow-sm "> Últimos medicamentos salvos: </h3>
-                            <ul class="list-disc list-inside pt-2 pb-5">
+                            <h3 class="font-semibold drop-shadow-sm"> Últimos medicamentos salvos: </h3>
+                            <ul class="list-inside list-disc pt-2 pb-5">
                                 @foreach ($liDescMedication as $li)
                                     <li>
                                         {{ $li->medication_name }}
@@ -121,13 +129,13 @@
                             </ul>
                             @if ($totalMedications > 5)
                                 <a href="{{ route('myMedications') }}"
-                                    class=" font-semibold text-[#0369dd] hover:text-[#1b5ca5] ">
+                                    class="font-semibold text-[#0369dd] hover:text-[#1b5ca5]">
                                     Mais +
                                 </a>
                             @endif
                         @endif
                     </div>
-                    <div class="m-auto w-full absolute bottom-3">
+                    <div class="absolute bottom-3 m-auto w-full">
                         <a href="{{ route('createNewMedications') }}"
                             class="inline-flex items-center rounded-md bg-[#f5890f] px-3 py-2 text-center text-sm font-medium text-white hover:bg-[#c76d06] focus:outline-none focus:ring-2 focus:ring-gray-300">
                             Cadastre um novo Medicamento
@@ -141,7 +149,6 @@
 
         </div>
     </section>
-
 
     {{-- 
     <style>
