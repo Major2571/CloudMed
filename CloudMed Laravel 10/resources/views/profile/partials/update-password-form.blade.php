@@ -3,13 +3,16 @@
 @extends('layouts.profile')
 
 @section('conteudo')
-    <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
+    <div class="title-profile absolute top-3 w-3/5 py-10 px-16">
+        <h2> Mudar ou redefinir sua senha </h2>
+        <p class="text-base">
+            Você pode mudar ou redefinir sua senha por motivos de segurança ou quando não se lembrar dela.
+        </p>
+    </div>
+
+    <form method="post" action="{{ route('password.update') }}" class="mt-0 space-y-6">
         @csrf
         @method('put')
-
-        <div class="title-profile mb-5">
-            <h2> Alterar senha atual </h2>
-        </div>
 
         <div>
             <x-input-label for="current_password" :value="__('Senha atual:')" />
@@ -19,7 +22,7 @@
         </div>
 
         <div>
-            <x-input-label for="password" :value="__('Nova senha')" />
+            <x-input-label for="password" :value="__('Nova senha: ')" />
             <x-text-input id="password" name="password" type="password" class="mt-1 block w-full"
                 autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />

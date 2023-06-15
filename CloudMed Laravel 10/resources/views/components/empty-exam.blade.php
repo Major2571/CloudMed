@@ -2,7 +2,7 @@
 
     <div class="mx-auto my-5 flex w-4/5 items-center justify-center flex-wrap">
         <div class="text-lg mr-5 w-1/3">
-            <h1 class="leading-tight text-3xl">Você ainda não tem nenhum exame salvo. </h1>
+            <h1 class="leading-tight text-3xl">Você ainda não possui exames salvos. </h1>
             <p class="py-5">
                 Para adicionar um Exame clique no botão abaixo, e preencha as informações.
             </p>

@@ -18,7 +18,7 @@
             <form method="post" action="{{ route('convenio.store') }}" enctype="multipart/form-data" class="mt-10" id="cadastroForm">
                 @csrf
                 <div class="mb-4">
-                    <x-input-label for="num-healthInsurance" :value="__('Numero da carteirinha convênio:')" />
+                    <x-input-label for="num-healthInsurance" :value="__('Número da carteirinha convênio:')" />
                     <x-text-input type="text" name="insurance_number" id="insurance_number" :value="old('')" required />
                 </div>
 

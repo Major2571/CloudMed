@@ -14,7 +14,7 @@
             <div class="mr-3 text-xl">
                 <i class="fa-solid fa-file-lines"></i>
             </div>
-            {{ __('Minhas Infomações') }}
+            {{ __('Infomações Clínicas') }}
         </x-sidebar-nav-link>
     </div>
 
@@ -23,7 +23,7 @@
             <div class="mr-3 text-xl">
                 <i class="fa-regular fa-address-card"></i>
             </div>
-            {{ __('Cartão SUS') }}
+            {{ __('CNS') }}
         </x-sidebar-nav-link>
     </div>
 
@@ -32,7 +32,7 @@
             <div class="mr-3 text-xl">
                 <i class="fa-solid fa-address-card"></i>
             </div>
-            {{ __('Cartão Convênio') }}
+            {{ __('Carteirinha Convênio') }}
         </x-sidebar-nav-link>
     </div>
 
