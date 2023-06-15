@@ -7,17 +7,17 @@
     <div>
         <div class="relative -z-10 mt-[-6em] bg-[#c9e4e5] pt-52 pb-40">
             <div class="mx-auto flex w-4/5 content-center items-center justify-center">
-                <div class="content-l inline-flex w-2/5 pr-20">
-                    <div>
-                        <div class="items-top inline-flex">
-                            <div class="pl-5">
-                                <h1
-                                    class="text-grey-900 m-auto mb-5 block border-b-4 border-[#FE6767] pb-5 text-5xl font-bold leading-tight drop-shadow-lg">
-                                    CloudMed </h1>
-                                <p class="text-lg">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla vel explicabo quisquam? Facilis blanditiis suscipit accusantium velit ducimus fuga laudantium quae repellendus! Architecto, non? Consequuntur a delectus sed eum quos?
-                                </p>
-                            </div>
+                <div class="inline-flex w-2/5 pr-20">
+                    <div class="items-top inline-flex">
+                        <div class="pl-5">
+                            <h1
+                                class="text-grey-900 m-auto mb-5 block border-b-4 border-[#FE6767] pb-5 text-5xl font-bold leading-tight drop-shadow-lg">
+                                CloudMed </h1>
+                            <p class="text-lg">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla vel explicabo quisquam?
+                                Facilis blanditiis suscipit accusantium velit ducimus fuga laudantium quae repellendus!
+                                Architecto, non? Consequuntur a delectus sed eum quos?
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -92,8 +92,8 @@
                 </div>
                 <div class="w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow">
                     <div class="flex flex-col items-center pb-10">
-                        <img class="h-30 my-5 w-28 rounded-full shadow-lg"
-                            src="https://avatars.githubusercontent.com/u/" alt="Bonnie image" />
+                        <img class="h-30 my-5 w-28 rounded-full shadow-lg" src="https://avatars.githubusercontent.com/u/"
+                            alt="Bonnie image" />
                         <h5 class="mb-1 text-2xl font-bold text-gray-900">Kethllyn Gabrielle</h5>
                         <span class="text-gray-500 dark:text-gray-400">Lorem</span>
                         <div class="mt-4 flex space-x-3 md:mt-6">
@@ -109,16 +109,17 @@
                         </div>
                     </div>
                 </div>
-                </div>
-
             </div>
+
         </div>
+    </div>
     </div>
 
     <div class="mt-32 w-full">
         <div class="m-auto w-2/3 text-center">
             <h1>Thanks!</h1>
-            <div><img src="https://i.gifer.com/origin/3f/3f1d28bba304699e058d3e3230ce87ad.gif" alt="" class="m-auto w-1/4"></div>
+            <div><img src="https://i.gifer.com/origin/3f/3f1d28bba304699e058d3e3230ce87ad.gif" alt=""
+                    class="m-auto w-1/4"></div>
         </div>
     </div>
 @endsection

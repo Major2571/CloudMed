@@ -47,12 +47,12 @@
 
                 <ul class="menu manu-main">
                     <li>
-                        <a href="/servicos" target="_blank">
+                        <a href="/servicos">
                             Serviços
                         </a>
                     </li>
                     <li>
-                        <a href="/sobre" target="_blank">
+                        <a href="/sobre">
                             Sobre
                         </a>
                     </li>
@@ -79,17 +79,17 @@
                 <h4>Links Rápidos</h4>
             </li>
             <li>
-                <a href="/servicos" target="_blank">
+                <a href="/servicos">
                     Serviços
                 </a>
             </li>
             <li>
-                <a href="/sobre" target="_blank">
+                <a href="/sobre">
                     Sobre
                 </a>
             </li>
             <li>
-                <a href="#" target="_blank">
+                <a href="#">
                     Politica de Privacidade
                 </a>
             </li>
