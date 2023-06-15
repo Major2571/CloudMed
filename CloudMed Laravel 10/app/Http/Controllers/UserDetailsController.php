@@ -120,7 +120,6 @@ class UserDetailsController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $userDetail = UserDetails::FindOrFail($id);
 
         $user = auth()->user();

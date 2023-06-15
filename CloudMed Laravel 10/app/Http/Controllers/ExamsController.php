@@ -19,13 +19,13 @@ class ExamsController extends Controller
     public function index(Request $request)
     {
         // Retrieve all specialties
-        $medical_specialtys = MedicalSpecialty::all();
+        $medical_specialtys = MedicalSpecialty::orderBy('medical_specialty', 'asc')->get();
 
         // Get the current user's ID
         $userId = Auth::user()->id;
 
         // Create a base query to retrieve exams for the current user
-        $exam = Exams::where('id_user', $userId);
+        $exam = Exams::where('id_user', $userId)->orderBy('created_at', 'desc');
 
         // Apply filters to the query if provided
         $filterExamDate = $request->input('filterExamDate');
