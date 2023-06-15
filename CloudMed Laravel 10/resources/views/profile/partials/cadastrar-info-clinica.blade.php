@@ -1,5 +1,3 @@
-
-
 <form method="POST" action="{{ route('infoClinica.store') }}" id="cadastroForm">
     @csrf
 
@@ -43,9 +41,9 @@
             <div class="relative">
                 <x-input-label for="height" :value="__('Altura:')" />
                 <div class="flex items-center">
-                    <x-text-input type="text" name="height" placeholder="Ex: 170" id="height" max="300"
-                        onkeyup="formatarAltura(this)" required />
-                    <span class="ml-2 pb-3"> cm </span>
+                    <x-text-input type="text" name="height" placeholder="Ex: 1.70" id="height" maxlength="4"
+                        onkeyup="this.value = formatHeight(this.value)" />
+                    <span class="ml-2 pb-3"> m </span>
                 </div>
             </div>
         </div>
@@ -54,8 +52,8 @@
             <div class="relative w-full">
                 <x-input-label for="weight" :value="__('Peso:')" />
                 <div class="flex items-center">
-                    <x-text-input type="text" name="weight" placeholder="Ex: 65,4" id="weight" max="300"
-                        onkeyup="formatarPeso(this)" required />
+                    <x-text-input type="text" name="weight" placeholder="Ex: 65.4" id="weight" maxlength="6"
+                        onkeyup="formatWeight(this)" />
                     <span class="ml-2 pb-3"> kg </span>
                 </div>
             </div>

@@ -53,7 +53,7 @@
                 @if ($medications->isEmpty())
                     <x-no-results-found />
                 @else
-                    <div class="mx-auto my-2 grid w-4/6 gap-4 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="mx-auto my-2 grid w-4/6 gap-4 md:grid-cols-2 lg:grid-cols-4 content-stretch ">
                         @foreach ($medications as $medication)
                             <div
                                 class="card-vacina relative rounded-md border border-gray-300 bg-slate-100 hover:bg-gray-200">

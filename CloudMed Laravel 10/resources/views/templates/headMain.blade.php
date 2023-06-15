@@ -70,7 +70,7 @@
     @yield('contentMain')
 
 
-    <footer>
+    <footer class="index">
 
         <img src="{{ url('assets/img/logo.png') }}" alt="logo">
 

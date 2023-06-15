@@ -1,5 +1,4 @@
 @foreach ($clinicalInfo as $info)
-
     <form method="post" action="{{ route('infoClinica.update', $info->id) }}" class="mt-10">
         @csrf
         @method('PUT')
@@ -67,8 +66,8 @@
                 <div class="relative w-full">
                     <x-input-label for="height" :value="__('Altura:')" />
                     <div class="flex items-center">
-                        <x-text-input type="text" name="height" id="height" :value="old('height', preg_replace('/(\d)(\d{2})$/', '$1,$2', $info->height))" max="300"
-                            onkeyup="formatarAltura(this)" required />
+                        <x-text-input type="text" name="height" id="height" :value="old('height', preg_replace('/(\d)(\d{2})$/', '$1,$2', $info->height))" placeholder="Ex: 1.70"
+                            maxlength="4" onkeyup="this.value = formatHeight(this.value)" />
                         <span class="ml-2 pb-3"> m </span>
                     </div>
                 </div>
@@ -78,8 +77,8 @@
                 <div class="relative w-full">
                     <x-input-label for="weight" :value="__('Peso:')" />
                     <div class="flex items-center">
-                        <x-text-input type="text" name="weight" id="weight" :value="old('weight', preg_replace('/(\d+)(\d{2})$/', '$1.$2', $info->weight))" max="300"
-                            onkeyup="formatarPeso(this)" required />
+                        <x-text-input type="text" name="weight" id="weight" :value="old('weight', preg_replace('/(\d+)(\d{2})$/', '$1.$2', $info->weight))" maxlength="6" placeholder="Ex: 65.4"
+                            onkeyup="formatWeight(this)" />
                         <span class="ml-2 pb-3"> kg </span>
                     </div>
                 </div>

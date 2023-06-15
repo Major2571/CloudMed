@@ -4,12 +4,13 @@
 
 @section('conteudo')
 
-    <div class="title-profile mb-5 absolute top-0 w-3/5 py-8 px-16">
-        <h2> Carteirinha do SUS </h2>
+    <div class="title-profile mb-7 absolute top-0 w-3/5 py-8 px-16">
+        <h2> Cartão Nacional de Saúde - CNS </h2>
+        <span class="text-base text-gray-500 font-normal italic"> O Cartão Nacional de Saúde - CNS, é o documento de identificação do usuário do SUS. </span>
         <p class="text-base">
-            Facilite o acesso aos serviços de saúde com o Cadastro do Cartão do SUS. Nesta seção, você pode cadastrar e
-            atualizar as informações do seu Cartão do SUS de forma rápida e segura. Insira o número do cartão e faça o
-            upload do seu cartão SUS para ter sempre à mão quando necessário.
+            Facilite o acesso aos serviços de saúde com o cadastro do seu CNS. Nesta seção, você pode cadastrar e
+            atualizar as informações do seu Cartão do SUS de forma rápida e segura. Insira o número do cartão e faça o seu
+            upload para ter sempre à mão quando necessário.
         </p>
     </div>
     <div class="w-full pt-24">
@@ -17,11 +18,14 @@
             <form method="post" action="{{ route('sus.store') }}" enctype="multipart/form-data" class="mt-10" id="cadastroForm">
                 @csrf
                 <div class="mb-4">
-                    <x-input-label for="number_cardSUS" :value="__('Cartão do SUS:')" />
-                    <x-text-input type="text" name="number_cardSUS" id="number_cardSUS" :value="old('')" required />
+                    <x-input-label for="number_cardSUS" :value="__('Número CNS:')" />
+                    <x-text-input type="text" name="number_cardSUS" id="number_cardSUS" :value="old('')" required
+                        maxlength="16"
+                        onkeyup="this.value = formatSusCardNumber(this.value)"
+                    />
                 </div>
                 <div class="">
-                    <h3> Cartão do SUS:</h3><br>
+                    <h3> Foto do CNS:</h3><br>
                     <div class="text-center">
                         <div id="preview-container" class="image-container m-auto w-3/5">
                             <img id="chosen-image" class="img-preview">
@@ -51,21 +55,21 @@
         @else
             @foreach ($sus as $infoSus)
                 <form method="post" action="{{ route('sus.update', $infoSus->id) }}" enctype="multipart/form-data"
-                    class="mt-10">
+                    class="mt-16">
                     @csrf
                     @method('PUT')
                     <div class="mb-4">
-                        <x-input-label for="number_cardSUS" :value="__('Cartão do SUS:')" />
+                        <x-input-label for="number_cardSUS" :value="__('Número CNS:')" />
                         <x-text-input type="text" name="number_cardSUS" id="number_cardSUS" 
                         value="{{ preg_replace('/(\d{10})(\d{4})/', '$1 $4', $infoSus->number_cardSUS) }}"  
                         maxlength="15"
                         onkeyup="this.value = formatSusCardNumber(this.value)"
                         required />
                     </div>
-                    <div class="">
-                        <h3> Cartão do SUS:</h3><br>
+                    <div>
+                        <h3> Foto do CNS:</h3><br>
                         @if ($infoSus->file_cardSUS_name)
-                            <div class="mb-5" id="preview-container">
+                            <div id="preview-container">
                                 <div class="card-vacina relative">
                                     <img src="{{ asset('storage/health_card/card_sus_file/' . $infoSus->file_cardSUS_name) }}"
                                         alt="Preview da Carteirinha" id="chosen-image"

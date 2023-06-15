@@ -11,15 +11,15 @@
                     @method('PUT')
 
                     <div class="cad-new-title pb-2 text-center">
-                        <h1 class="text-3xl py-5">Edite sua vacina </h1>
+                        <h1 class="py-5 text-3xl">Edite sua vacina </h1>
                     </div>
 
                     <div class="py-4 px-10">
 
                         <div class="mb-6">
                             <div class="relative w-full">
-                                <label for="vaccine_name" class="mb-2 block font-medium text-gray-900"> Nome da Vacina:
-                                </label>
+                                <label for="vaccine_name" class="mb-2 block font-medium text-gray-900"> Nome da Vacina
+                                    <span class="text-red-500">*</span>:</label>
                                 <select name="vaccine_name" id="vacinaSelect"
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                                     <option value=""> Selecionar </option>
@@ -40,16 +40,16 @@
                                 importantes e comuns. No entanto, pode haver outras vacinas recomendadas em casos
                                 específicos. Caso não encontre a vacina desejada, você pode adicioná-la abaixo: </p>
                             <div class="input-box cad-exame form-group">
-                                <x-input-label for="new_vaccine" :value="__('Nome da vacina:')" />
+                                <x-input-label for="new_vaccine" :value="__('Nome da vacina')" /> <span class="text-red-500">*</span>:
                                 <x-text-input type="text" name="new_vaccine" id="newNomeVacinaInput"
-                                    value="{{ $vacinne->new_vaccine_name }}" />
+                                    value="{{ $vacinne->new_vaccine_name }}" required />
                             </div>
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">
                             <div>
                                 <div class="mb-6">
-                                    <label for="dose_type" class="mb-2 block font-medium text-gray-900"> Dose: </label>
+                                    <label for="dose_type" class="mb-2 block font-medium text-gray-900"> Dose<span class="text-red-500">*</span>:  </label>
                                     <div class="relative w-full">
                                         <select name="dose_type"
                                             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
@@ -91,20 +91,20 @@
                             </div>
 
                             <div>
-                                <x-input-label for="vaccination_date" :value="__('Data de aplicação:')" />
-                                <x-text-input type="date" name="vaccination_date" id="vaccination_date" value="{{ $vacinne->vaccination_date }}"
-                                    required />
+                                <x-input-label for="vaccination_date" :value="__('Data de aplicação')" /> <span class="text-red-500">*</span>:
+                                <x-text-input type="date" name="vaccination_date" id="vaccination_date"
+                                    value="{{ $vacinne->vaccination_date }}" required />
                             </div>
                         </div>
 
                         <div class="mb-6">
                             <x-input-label for="manufacturer" :value="__('Fabricante:')" />
                             <x-text-input type="text" name="manufacturer" id="manufacturer" placeholder="Ex: Fiocruz"
-                                value="{{ $vacinne->manufacturer }}" required />
+                                value="{{ $vacinne->manufacturer }}" />
                         </div>
 
                         <div class="mb-6">
-                            <x-input-label for="lot_number" :value="__('Lote:')" />
+                            <x-input-label for="lot_number" :value="__('Lote')" /><span class="text-red-500">*</span>:
                             <x-text-input type="text" name="lot_number" id="lot_number" placeholder="000000"
                                 value="{{ $vacinne->lot_number }}" required />
                         </div>
@@ -112,14 +112,15 @@
                         <div class="grid md:grid-cols-2 md:gap-4">
 
                             <div class="mb-6">
-                                <x-input-label for="city" :value="__('Cidade:')" />
-                                <x-text-input type="text" name="city" id="city"
-                                    value="{{ $vacinne->city }}" required />
+                                <x-input-label for="city" :value="__('Cidade')" /><span class="text-red-500">*</span>:
+                                <x-text-input type="text" name="city" id="city" value="{{ $vacinne->city }}"
+                                    required />
                             </div>
 
                             <div class="mb-6">
                                 <div class="relative w-full">
-                                    <label for="medical_specialty" class="mb-2 block font-medium text-gray-900"> UF </label>
+                                    <label for="medical_specialty" class="mb-2 block font-medium text-gray-900"> UF
+                                    </label>
                                     <select name="uf"
                                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                                         <option value=""> Selecionar </option>

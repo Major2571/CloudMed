@@ -16,7 +16,7 @@
                     <div class="py-4 px-10">
 
                         <div class="mb-6">
-                            <x-input-label for="name" :value="__('Título:')" />
+                            <x-input-label for="name" :value="__('Título')" /> <span class="text-red-500">*</span>:
                             <x-text-input type="text" name="name" id="name"
                                 placeholder="Ex: Hemograma Completo" required />
                         </div>
@@ -25,10 +25,10 @@
                             <div>
                                 <div class="mb-6">
                                     <label for="medical_specialty" class="mb-2 block font-medium text-gray-900">
-                                        Especialidade:
+                                        Especialidade<span class="text-red-500">*</span>:
                                     </label>
                                     <div class="relative w-full">
-                                        <select name="medical_specialty"
+                                        <select name="medical_specialty" required
                                             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                                             <option value=""> Selecionar </option>
                                             @foreach ($medical_specialtys as $medical_specialty)
@@ -42,20 +42,20 @@
 
                             </div>
                             <div>
-                                <x-input-label for="exam_date" :value="__('Data de realização:')" />
-                                <x-text-input type="date" name="exam_date" id="exam_date" required />
+                                <x-input-label for="exam_date" :value="__('Data de realização')" /><span class="text-red-500">*</span>:
+                                <x-text-input type="date" name="exam_date" id="exam_date" max="{{date('Y-m-d')}}" required />
                             </div>
                         </div>
 
                         <div class="mb-6">
-                            <x-input-label for="local" :value="__('Instituição:')" />
+                            <x-input-label for="local" :value="__('Instituição')" /><span class="text-red-500">*</span>:
                             <x-text-input type="text" name="local" id="local" placeholder="Ex: Santa Casa"
                                 required />
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">
                             <div class="mb-6">
-                                <x-input-label for="city" :value="__('Cidade:')" />
+                                <x-input-label for="city" :value="__('Cidade')" /><span class="text-red-500">*</span>:
                                 <x-text-input type="text" name="city" id="city" required />
                             </div>
 
