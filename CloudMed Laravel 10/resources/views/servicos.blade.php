@@ -143,7 +143,7 @@
 
         <div class="service mx-auto flex w-4/5 content-center items-center justify-center py-20">
             <div class="img-r w-1/3">
-                <img src="{{ url('assets/img/svg/emptyExame.svg') }}" alt="">
+                <img src="{{ url('assets/img/svg/sus_insurance.svg') }}" alt="">
             </div>
             <div class="content-l inline-flex w-2/5 pl-20">
                 <div>
