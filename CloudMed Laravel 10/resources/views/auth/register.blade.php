@@ -35,6 +35,9 @@
 
                             <div class="mb-6">
                                 <x-input-label for="password" :value="__('Senha')" /><span class="text-red-500">*</span>
+                                <ul class=" text-sm text-gray-500 pl-2 pb-3 italic">
+                                    <li>A senha deve ter pelo menos 8 caracteres.</li>
+                                </ul>
                                 <x-text-input id="password" type="password" name="password" required
                                     autocomplete="new-password" class="{{ $errors->has('password') ? 'border-red-500' : '' }}"/>
                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
