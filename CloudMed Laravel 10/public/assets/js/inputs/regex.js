@@ -30,3 +30,10 @@ function formatarAltura(input) {
     valor = (valor / 100).toFixed(2);
     input.value = valor;
 }
+
+
+function formatSusCardNumber(susCardNumber) {
+    susCardNumber = susCardNumber.replace(/\D/g, '');
+    susCardNumber = susCardNumber.replace(/(\d{10})(\d{4})/, '$1 $2');
+    return susCardNumber;
+}

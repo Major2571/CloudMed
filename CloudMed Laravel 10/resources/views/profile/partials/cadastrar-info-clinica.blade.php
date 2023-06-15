@@ -1,6 +1,6 @@
 
 
-<form method="POST" action="{{ route('infoClinica.store') }}">
+<form method="POST" action="{{ route('infoClinica.store') }}" id="cadastroForm">
     @csrf
 
     <div class="grid gap-x-5 md:grid-cols-2">

@@ -3,14 +3,13 @@
 <x-app-layout>
     <section class="login session-allow">
         <section class="form-cad-new-exam">
-
             <div class="form sm:w-9/12 xl:w-2/5">
                 <form method="POST" action="{{ route('updateExam', $exam->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
                     <div class="cad-new-title pb-2 text-center">
-                        <h1>Edite seu Exame cadastrado</h1>
+                        <h1 class="text-3xl py-5">Edite seu Exame cadastrado</h1>
                     </div>
 
                     <div class="py-4 px-10">

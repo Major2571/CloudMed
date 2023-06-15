@@ -10,7 +10,7 @@
                     @csrf
 
                     <div class="cad-new-title pb-2 text-center">
-                        <h1>Cadastre um novo Exame</h1>
+                        <h1 class="text-3xl py-5">Cadastre um novo Exame</h1>
                     </div>
 
                     <div class="py-4 px-10">

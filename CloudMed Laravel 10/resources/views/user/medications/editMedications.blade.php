@@ -11,7 +11,7 @@
                     @method('PUT')
 
                     <div class="cad-new-title pb-2 text-center">
-                        <h1>Editar Medicamento</h1>
+                        <h1 class="text-3xl py-5">Editar Medicamento</h1>
                     </div>
 
                     <div class="py-4 px-10">
