@@ -1,4 +1,4 @@
-<section class="">
+<section>
     <div class="title-profile mb-5">
         
         <h2>

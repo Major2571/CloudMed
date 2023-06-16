@@ -1,6 +1,8 @@
 @extends('templates.headMain')
 
 <title> CloudMed </title>
+{{-- 
+@vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
 @section('contentMain')
     <div class="blob-maker">
@@ -31,25 +33,27 @@
 
     <section class="section-cards">
         <div class="cards-title-main">
-            <h1>All In One Place!</h1>
+            <h1>Seu Hub de Saúde Personalizado!</h1>
         </div>
 
         <div class="container-cards">
+
             <div class="card first-cards card-1">
                 <div class="img-title">
-                    <img src="{{ url('assets/img/icon/receita.png') }}" alt="">
-                    <h2>Perfil</h2>
+                    <img src="{{ url('assets/img/icon/main/exam.png') }}" alt="">
+                    <h2>Exames</h2>
                 </div>
                 <div>
-                    <p>Na área do perfil do usuário, você pode adicionar e atualizar suas informações clínicas, incluindo
-                        histórico médico, medicamentos de uso contínuo, doenças crônicas e allergies.
+                    <p>Na área de exames, você pode cadastrar o registro de todos os seus exames médicos. Adicione
+                        informações como data, tipo de exame, instituição e os resultados, além de anexar uma cópia digital
+                        do exame.
                     </p>
                 </div>
             </div>
 
             <div class="card first-cards card-2">
                 <div class="img-title">
-                    <img src="{{ url('assets/img/icon/vacinas.png') }}" alt="">
+                    <img src="{{ url('assets/img/icon/main/vaccine2.png') }}" alt="">
                     <h2>Vacinas</h2>
                 </div>
                 <div>
@@ -61,26 +65,25 @@
 
             <div class="card first-cards card-3">
                 <div class="img-title">
-                    <img src="{{ url('assets/img/icon/exame.png') }}" alt="">
-                    <h2>Exames</h2>
-                </div>
-                <div>
-                    <p>Na área de exames, você pode cadastrar o registro de todos os seus exames médicos. Adicione
-                        informações como data, tipo de exame, instituição e os resultados, além de anexar uma cópia digital
-                        do exame.
-                    </p>
-                </div>
-            </div>
-
-            <div class="card first-cards card-4">
-                <div class="img-title">
-                    <img src="{{ url('assets/img/icon/exame.png') }}" alt="">
+                    <img src="{{ url('assets/img/icon/main/pills.png') }}" alt="">
                     <h2>Medicamentos</h2>
                 </div>
                 <div>
                     <p>Em medicamentos, você pode cadastrar e gerenciar os medicamentos que utiliza regularmente.
                         Mantenha um histórico organizado de todos os medicamentos que você
                         está tomando.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card first-cards card-4">
+                <div class="img-title">
+                    <img src="{{ url('assets/img/icon/main/profile.png') }}" alt="">
+                    <h2>Perfil</h2>
+                </div>
+                <div>
+                    <p>Na área do perfil do usuário, você pode adicionar e atualizar suas informações clínicas, incluindo
+                        histórico médico, medicamentos de uso contínuo, doenças crônicas e alergias
                     </p>
                 </div>
             </div>
@@ -135,7 +138,4 @@
 
         </div>
     </section>
-
-
-    <x-btn-toTop />
 @endsection

@@ -11,48 +11,53 @@
                     @method('PUT')
 
                     <div class="cad-new-title pb-2 text-center">
-                        <h1>Editar Medicamento</h1>
+                        <h1 class="py-5 text-3xl">Editar Medicamento</h1>
                     </div>
 
                     <div class="py-4 px-10">
 
                         <div class="mb-3">
                             <div class="relative w-full">
-                                <x-input-label for="medicamento" :value="__('Nome do Medicamento:')" />
+                                <x-input-label for="medicamento" :value="__('Nome do Medicamento')" />
+                                <span class="text-red-500">*</span>:
                                 <x-text-input type="text" name="medicamento" id="medicamento"
                                     value="{{ $medications->medication_name }}" required />
                             </div>
                         </div>
 
-                        <div class="mb-3">
-                            <div class="relative w-full">
-                                <x-input-label for="dosage" :value="__('Dosagem:')" />
-                                <x-text-input type="text" name="dosage" id="dosage"
-                                    value="{{ $medications->dosage }}" required />
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <div class="relative w-full">
+                                    <x-input-label for="dosage" :value="__('Dosagem:')" />
+                                    <span class="text-red-500">*</span>:
+                                    <x-text-input type="text" name="dosage" id="dosage"
+                                        value="{{ $medications->dosage }}" required />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="mb-3">
-                            <div class="relative w-full">
-                                <x-input-label for="laboratory" :value="__('Laboratorio:')" />
-                                <x-text-input type="text" name="laboratory" value="{{ $medications->laboratory }}"
-                                    id="laboratory" />
+                            <div>
+                                <div class="relative w-full">
+                                    <x-input-label for="laboratory" :value="__('Laboratório:')" />
+                                    <x-text-input type="text" name="laboratory"
+                                        value="{{ $medications->laboratory }}" id="laboratory" />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="mb-3">
-                            <div class="relative w-full">
-                                <x-input-label for="frequency" :value="__('Frequência:')" />
-                                <x-text-input type="text" name="frequency" value="{{ $medications->frequency }}"
-                                    id="frequency" />
+                            <div>
+                                <div class="relative w-full">
+                                    <x-input-label for="treatment" :value="__('Tratamento:')" />
+                                    <span class="text-red-500">*</span>:
+                                    <x-text-input type="text" name="treatment" value="{{ $medications->treatment }}"
+                                        id="treatment" required />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="mb-3">
-                            <div class="relative w-full">
-                                <x-input-label for="treatment" :value="__('Tratamento:')" />
-                                <x-text-input type="text" name="treatment" value="{{ $medications->treatment }}"
-                                    id="treatment" required />
+                            <div>
+                                <div class="relative w-full">
+                                    <x-input-label for="frequency" :value="__('Frequência:')" />
+                                    <x-text-input type="text" name="frequency" value="{{ $medications->frequency }}"
+                                        id="frequency" />
+                                </div>
                             </div>
                         </div>
 

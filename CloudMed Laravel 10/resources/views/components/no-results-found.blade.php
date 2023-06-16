@@ -4,7 +4,7 @@
             <img src="{{ url('assets/img/svg/no-result-found.svg') }}" class="drop-shadow" alt="">
         </div>
         <div class="text-lg text-center mr-5 w-1/3">
-            <h1 class="leading-tight text-cyan-900">Ops!... Não foi encontrado nenhum resultado!</h1>
+            <h1 class="leading-tight text-cyan-900 text-4xl">Ops!... Não foi encontrado nenhum resultado!</h1>
             <p class="py-5">
                 Por favor, tente novamente.
             </p>

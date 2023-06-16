@@ -11,8 +11,8 @@
 
                     <div class="bg-[#119abb57] py-10">
                         <div class="title m-auto w-4/5">
-                            <h1> Meus Medicamentos </h1>
-                            <p> Aqui você encontra ...</p>
+                            <h1 class="text-3xl mb-2"> Meus Medicamentos </h1>
+                            <p> Mantenha um registro completo e atualizado de sua terapia medicamentosa. Nesta seção, você pode visualizar, adicionar ou remover medicamentos conforme necessário. Tenha controle sobre os medicamentos que está tomando e garanta uma gestão eficiente do seu tratamento.</p>
                         </div>
                     </div>
 
@@ -53,7 +53,7 @@
                 @if ($medications->isEmpty())
                     <x-no-results-found />
                 @else
-                    <div class="mx-auto my-2 grid w-4/6 gap-4 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="mx-auto my-2 grid w-4/6 gap-4 md:grid-cols-2 lg:grid-cols-4 content-stretch ">
                         @foreach ($medications as $medication)
                             <div
                                 class="card-vacina relative rounded-md border border-gray-300 bg-slate-100 hover:bg-gray-200">

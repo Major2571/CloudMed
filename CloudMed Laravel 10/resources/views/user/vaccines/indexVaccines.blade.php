@@ -11,8 +11,8 @@
 
                     <div class="bg-[#119abb57] py-10">
                         <div class="title m-auto w-4/5">
-                            <h1> Minhas Vacinas </h1>
-                            <p> Aqui você encontra suas Vacinas salvas no nosso sistema.</p>
+                            <h1 class="text-3xl mb-2"> Minhas Vacinas </h1>
+                            <p> Mantenha-se informado sobre sua imunização. Na seção de Vacinas, você pode acessar, adicionar ou remover vacinas, garantindo que seu histórico de imunização esteja sempre completo e atualizado. Fique protegido contra doenças e tenha um acompanhamento detalhado de suas vacinações.</p>
                         </div>
                     </div>
 

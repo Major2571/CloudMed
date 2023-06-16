@@ -56,3 +56,42 @@ ScrollReveal().reveal(".join-us", {
     distance: "1500px",
     easing: "ease-in-out"
 });
+
+
+
+// Services
+
+ScrollReveal().reveal(".img-r", {
+    duration: 1700,
+    origin: "left",
+    distance: "500px",
+    easing: "ease-in-out"
+});
+
+ScrollReveal().reveal(".content-r", {
+    duration: 1700,
+    origin: "left",
+    distance: "500px",
+    easing: "ease-in-out"
+});
+
+ScrollReveal().reveal(".img-l", {
+    duration: 1700,
+    origin: "right",
+    distance: "500px",
+    easing: "ease-in-out"
+});
+
+ScrollReveal().reveal(".content-l", {
+    duration: 1700,
+    origin: "right",
+    distance: "500px",
+    easing: "ease-in-out"
+});
+
+ScrollReveal().reveal(".service-join-us", {
+    duration: 1700,
+    origin: "bottom",
+    distance: "1500px",
+    easing: "ease-in-out"
+});

@@ -17,20 +17,19 @@ class VaccinesController extends Controller
     public function index(Request $request)
     {
         // Retrieve all vaccine names from the database
-        $nameVaccines = NameVaccines::all();
-
-        // Retrieve the filter inputs from the request
-        $filterNameVaccine = $request->input('filterNameVaccine');
-        $filterDoseType = $request->input('filterDoseType');
-
+        $userId = Auth::user()->id;
+        $nameVaccines = NameVaccines::orderBy('name_vaccine', 'asc')->get();
+        
         // Create a base query to retrieve vaccines for the current user
-        $query = Vaccines::where('id_user', Auth::user()->id);
-
+        $query = Vaccines::where('id_user', $userId)->orderBy('created_at', 'desc');
+        
         // Apply filters to the query if provided
+        $filterNameVaccine = $request->input('filterNameVaccine');
         if ($filterNameVaccine) {
             $query->where('id_vaccine', $filterNameVaccine);
         }
-
+        
+        $filterDoseType = $request->input('filterDoseType');
         if ($filterDoseType) {
             $query->where('doses', $filterDoseType);
         }

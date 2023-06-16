@@ -4,13 +4,16 @@
 
 @section('conteudo')
 
+    <div class="title-profile mb-5 absolute top-0 w-3/5 py-8 px-16">
+        <h2> Perfil </h2>
+        <p class="text-base">
+            Gerencie suas informações pessoais de forma simples e segura. Nesta seção, você pode atualizar seus dados, como nome, email, data de nascimento e outros detalhes importantes. 
+        </p>
+    </div>
     @if ($userDetail->isEmpty())
         <!-- Exibir o btn de cadastro -->
         <form>
             @csrf
-            <div class="title-profile mb-5">
-                <h2> Perfil </h2>
-            </div>
             <div class="grid md:grid-cols-2 md:gap-4">
                 <div class="input-box cad-exame">
                     <x-input-label for="nome" :value="__('Nome:')" />
@@ -99,10 +102,6 @@
         <form action="">
             @csrf
             @foreach ($userDetail as $userDetail)
-                <div class="title-profile mb-5">
-                    <h2> Perfil </h2>
-                </div>
-
                 <div class="grid md:grid-cols-2 md:gap-4">
                     <div class="input-box cad-exame">
                         <x-input-label for="nome" :value="__('Nome:')" />
@@ -189,6 +188,5 @@
                 </a>
             </div>
         </form>
-
     @endif
 @endsection

@@ -10,57 +10,62 @@
                     @csrf
 
                     <div class="cad-new-title pb-2 text-center">
-                        <h1>Cadastre um novo Medicamento</h1>
+                        <h1 class="py-5 text-3xl">Cadastre um novo Medicamento</h1>
                     </div>
 
                     <div class="py-4 px-10">
 
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <div class="relative w-full">
-                                <x-input-label for="medicamento" :value="__('Nome do Medicamento:')" />
+                                <x-input-label for="medicamento" :value="__('Nome do Medicamento')" /><span
+                                    class="text-red-500">*</span>:
                                 <x-text-input type="text" name="medicamento" id="medicamento"
                                     placeholder="Ex: Losartana Potássica" required />
                             </div>
                         </div>
 
-                        <div class="mb-3">
-                            <div class="relative w-full">
-                                <x-input-label for="dosage" :value="__('Dosagem:')" />
-                                <x-text-input type="text" name="dosage" id="dosage" placeholder="Ex: 50mg"
-                                    required />
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <div class="relative w-full">
+                                    <x-input-label for="dosage" :value="__('Dosagem')" /><span
+                                        class="text-red-500">*</span>:
+                                    <x-text-input type="text" name="dosage" id="dosage" placeholder="Ex: 50mg"
+                                        required />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="mb-3">
-                            <div class="relative w-full">
-                                <x-input-label for="laboratory" :value="__('Laboratorio:')" />
-                                <x-text-input type="text" name="laboratory" placeholder="Ex: sNeo Química"
-                                    id="laboratory" />
+                            <div>
+                                <div class="relative w-full">
+                                    <x-input-label for="laboratory" :value="__('Laboratório:')" />
+                                    <x-text-input type="text" name="laboratory" placeholder="Ex: Neo Química"
+                                        id="laboratory" />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="mb-3">
-                            <div class="relative w-full">
-                                <x-input-label for="frequency" :value="__('Frequência:')" />
-                                <x-text-input type="text" name="frequency" placeholder="Ex: Uso contínuo "
-                                    id="frequency" />
+                            <div>
+                                <div class="relative w-full">
+                                    <x-input-label for="treatment" :value="__('Tratamento')" /><span
+                                        class="text-red-500">*</span>:
+                                    <x-text-input type="text" name="treatment"
+                                        placeholder="Ex: Pressão Alta / Hipertensão" id="treatment" required />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="mb-3">
-                            <div class="relative w-full">
-                                <x-input-label for="treatment" :value="__('Tratamento:')" />
-                                <x-text-input type="text" name="treatment"
-                                    placeholder="Ex: Pressão Alta / Hipertensão" id="treatment" required />
+                            <div class="mb-3">
+                                <div class="relative w-full">
+                                    <x-input-label for="frequency" :value="__('Frequência:')" />
+                                    <x-text-input type="text" name="frequency" placeholder="Ex: Uso contínuo "
+                                        id="frequency" />
+                                </div>
                             </div>
                         </div>
 
                         <div class="col-span-2 mb-3">
                             <div class="relative w-full">
-                                <x-input-label for="observations" :value="__('Observacoes:')" />
+                                <x-input-label for="observations" :value="__('Observações:')" />
                                 <textarea id="observations" name="observations" rows="4"
                                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
-                                    placeholder=" Tomar 1 comprimido de 12/12 horas "></textarea>
+                                    placeholder="Ex: Tomar 1 comprimido de 12/12 horas "></textarea>
                             </div>
                         </div>
 

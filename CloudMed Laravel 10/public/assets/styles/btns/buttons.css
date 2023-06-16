@@ -1,24 +1,24 @@
 .nav-menu button.btnLogin {
-    background-color: #f0f8ff33;
+    background-color: #117c7c;
     letter-spacing: 2px;
-    border: 2px solid #f5f5f5;
+    border: 2px solid #117c7c;
+    color: white;
 }
 
 .nav-menu button.btnLogin:hover {
     transition: all .3s ease-in-out;
-    background-color: var(--azulClaro);
-    border: 2px solid var(--azulClaro);
+    background-color: #024d4d;
 }
 
 .section-one .main-top button {
-    background-color: var(--azulClaro);
+    background-color: #178181;
     border: none;
     margin-top: 1em;
 }
 
 .section-one .main-top button:hover {
     transition: all .3s ease-in-out;
-    background-color: #36a598;
+    background-color: #0c6868;
 }
 
 .join-us button {
@@ -34,13 +34,12 @@
 }
 
 .login .btnLogin:hover {
-    background-color: #117c7c;
+    background-color: #085050;
     transition: all .3s ease-in-out;
 }
 
 .login .btnLogin {
-    text-transform: uppercase;
-    background-color: var(--btnLogin);
+    background-color: #1e6a6a;
 }
 
 :where(.nav-menu, .main-top, .join-us, .login) button {

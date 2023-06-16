@@ -54,6 +54,26 @@
             {{ $slot }}
         </main>
     </div>
+
+    
+    <footer class="bg-[#c9e4e5]">
+        <div class="mx-auto w-full max-w-screen-xl p-4 md:py-4">
+            <hr class="my-6 border-cyan-700 sm:mx-auto lg:my-5" />
+            <div class="flex justify-between items-center py-5">
+                <div class="footer-img block w-[7%] text-gray-500 sm:text-right">
+                    <a href="/">
+                        <img src="{{ url('assets/img/logo.png') }}" alt="logo">
+                    </a>
+                </div>
+                <span class="block text-sm text-gray-500 sm:text-center"> Copyright &copy; 2023, CloudMed. <br>All Rights
+                    Reserved.</span>
+                <div class="block text-sm text-gray-500 sm:text-right"> 
+                    <span> Dúvidas ou sugestões? </span> <br>
+                    <a href="#" class="text-cyan-800 font-medium">Entre em Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
@@ -75,6 +95,7 @@
 
 <script src="{{ url('assets/js/inputs/inputHiddenVaccine.js') }}"></script>
 <script src="{{ url('assets/js/inputs/imgPreview.js') }}"></script>
+<script src="{{ url('assets/js/inputs/dates.js') }}"></script>
 <script src="{{ url('assets/js/inputs/regex.js') }}"></script>
 
 <script src="{{ url('assets/js/dashboard.js') }}"></script>

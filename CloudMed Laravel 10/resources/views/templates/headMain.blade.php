@@ -47,12 +47,12 @@
 
                 <ul class="menu manu-main">
                     <li>
-                        <a href="/funcionalidades" target="_blank">
-                            Funcionalidades
+                        <a href="/servicos">
+                            Serviços
                         </a>
                     </li>
                     <li>
-                        <a href="/sobre" target="_blank">
+                        <a href="/sobre">
                             Sobre
                         </a>
                     </li>
@@ -69,8 +69,9 @@
 
     @yield('contentMain')
 
-
-    <footer>
+    <x-btn-toTop />
+    
+    <footer class="index">
 
         <img src="{{ url('assets/img/logo.png') }}" alt="logo">
 
@@ -79,17 +80,17 @@
                 <h4>Links Rápidos</h4>
             </li>
             <li>
-                <a href="/funcionalidades" target="_blank">
-                    Funcionalidades
+                <a href="/servicos">
+                    Serviços
                 </a>
             </li>
             <li>
-                <a href="/sobre" target="_blank">
+                <a href="/sobre">
                     Sobre
                 </a>
             </li>
             <li>
-                <a href="#" target="_blank">
+                <a href="#">
                     Politica de Privacidade
                 </a>
             </li>

@@ -1,15 +1,11 @@
-<form method="POST" action="{{ route('infoClinica.store') }}">
+<form method="POST" action="{{ route('infoClinica.store') }}" id="cadastroForm">
     @csrf
-    <div class="title-profile mb-5">
-        <h2> Informações Clínicas </h2>
-    </div>
 
     <div class="grid gap-x-5 md:grid-cols-2">
-
         <div class="mb-3">
             <div class="relative w-full">
                 <label for="blood_type" class="mb-2 block font-medium text-gray-900"> Tipo
-                    Sanguínio
+                    Sanguíneo
                 </label>
                 <select name="blood_type"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
@@ -28,7 +24,7 @@
 
         <div class="mb-3">
             <div class="relative w-full">
-                <label for="is_donor" class="mb-2 block font-medium text-gray-900"> É is_donor de
+                <label for="is_donor" class="mb-2 block font-medium text-gray-900"> É doador de
                     orgãos?
                 </label>
                 <select name="is_donor"
@@ -44,9 +40,9 @@
             <div class="relative">
                 <x-input-label for="height" :value="__('Altura:')" />
                 <div class="flex items-center">
-                    <x-text-input type="text" name="height" placeholder="Ex: 170" id="height" max="300"
-                        onkeyup="formatarAltura(this)" required />
-                    <span class="ml-2 pb-3"> cm </span>
+                    <x-text-input type="text" name="height" placeholder="Ex: 1.70" id="height" maxlength="4"
+                        onkeyup="this.value = formatHeight(this.value)" />
+                    <span class="ml-2 pb-3"> m </span>
                 </div>
             </div>
         </div>
@@ -55,8 +51,8 @@
             <div class="relative w-full">
                 <x-input-label for="weight" :value="__('Peso:')" />
                 <div class="flex items-center">
-                    <x-text-input type="text" name="weight" placeholder="Ex: 65,4" id="weight" max="300"
-                        onkeyup="formatarPeso(this)" required />
+                    <x-text-input type="text" name="weight" placeholder="Ex: 65.4" id="weight" maxlength="6"
+                        onkeyup="formatWeight(this)" />
                     <span class="ml-2 pb-3"> kg </span>
                 </div>
             </div>
@@ -67,7 +63,7 @@
                 <x-input-label for="allergies" :value="__('Alergias:')" />
                 <textarea id="allergies" name="allergies" rows="4"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
-                    placeholder="Escreva suas principais allergies..."></textarea>
+                    placeholder="Escreva suas principais alergias..."></textarea>
             </div>
         </div>
 

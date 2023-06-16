@@ -3,20 +3,19 @@
 <x-app-layout>
     <section class="login session-allow">
         <section class="form-cad-new-exam">
-
             <div class="form sm:w-9/12 xl:w-2/5">
                 <form method="POST" action="{{ route('updateExam', $exam->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
                     <div class="cad-new-title pb-2 text-center">
-                        <h1>Edite seu Exame cadastrado</h1>
+                        <h1 class="text-3xl py-5">Edite seu Exame cadastrado</h1>
                     </div>
 
                     <div class="py-4 px-10">
 
                         <div class="mb-6">
-                            <x-input-label for="name" :value="__('Título:')" />
+                            <x-input-label for="name" :value="__('Título')" /><span class="text-red-500">*</span>:
                             <x-text-input type="text" name="name" id="name" value="{{ $exam->exam_title }}"
                                 placeholder="Ex: Hemograma Completo" required />
                         </div>
@@ -25,10 +24,10 @@
                             <div>
                                 <div class="mb-6">
                                     <label for="medical_specialty" class="mb-2 block font-medium text-gray-900">
-                                        Especialidade:
+                                        Especialidade<span class="text-red-500">*</span>:
                                     </label>
                                     <div class="relative w-full">
-                                        <select name="medical_specialty"
+                                        <select name="medical_specialty" required
                                             class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pr-10 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700">
                                             <option value=""> Selecionar </option>
                                             @foreach ($medical_specialtys as $medical_specialty)
@@ -44,21 +43,21 @@
 
                             </div>
                             <div>
-                                <x-input-label for="exam_date" :value="__('Data de realização:')" />
+                                <x-input-label for="exam_date" :value="__('Data de realização')" /><span class="text-red-500">*</span>:
                                 <x-text-input type="date" name="exam_date" id="exam_date"
                                     value="{{ $exam->exam_date }}" required />
                             </div>
                         </div>
 
                         <div class="mb-6">
-                            <x-input-label for="local" :value="__('Instituição:')" />
+                            <x-input-label for="local" :value="__('Instituição')" /><span class="text-red-500">*</span>:
                             <x-text-input type="text" name="local" id="local" value="{{ $exam->institution }}"
                                 placeholder="Ex: Santa Casa" required />
                         </div>
 
                         <div class="grid md:grid-cols-2 md:gap-4">
                             <div class="mb-6">
-                                <x-input-label for="city" :value="__('Cidade:')" />
+                                <x-input-label for="city" :value="__('Cidade')" /><span class="text-red-500">*</span>:
                                 <x-text-input type="text" name="city" id="city" value="{{ $exam->city }}"
                                     required />
                             </div>
@@ -97,7 +96,8 @@
 
                                         <img src="{{ asset('storage/exam_files/' . $exam->file_exam_name) }}"
                                             alt="Preview do Exame" id="chosen-image"
-                                            class="img-preview m-auto w-4/5 rounded-lg border border-gray-300 shadow-sm">
+                                            class="img-preview m-auto w-4/5 rounded-lg border border-gray-300 shadow-sm"
+                                            >
 
                                         <figcaption id="file-name" class="mb-2 block py-2 font-medium text-gray-900">
                                             {{ $exam->file_exam_name }}
@@ -125,7 +125,7 @@
 
                                     <div class="mb-5 m-auto w-4/5" id="preview-container">
 
-                                        <embed src="{{ asset('storage/arquivos_exams/' . $exam->file_exam_name) }}"
+                                        <embed src="{{ asset('storage/exam_files/' . $exam->file_exam_name) }}"
                                             alt="Preview do Exame" id="chosen-image"
                                             class="img-preview m-auto w-full h-96 rounded-lg border border-gray-300 shadow-sm">
 

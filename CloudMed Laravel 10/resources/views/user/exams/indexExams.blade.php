@@ -10,8 +10,12 @@
                 <div class="title-filters m-auto w-full">
                     <div class="bg-[#119abb57] py-10">
                         <div class="title m-auto w-4/5">
-                            <h1> Meus Exames </h1>
-                            <p> Aqui você encontra seus Exames salvos no nosso sistema.</p>
+                            <h1 class="mb-2 text-3xl"> Meus Exames </h1>
+                            <p> Organize e gerencie seus arquivos de saúde de forma segura. Nesta seção, você pode
+                                visualizar os resultados de seus exames médicos, incluindo análises laboratoriais,
+                                radiografias e outros documentos relevantes. Mantenha seus resultados de exames sempre
+                                disponíveis, facilite o compartilhamento com profissionais de saúde e tenha um histórico
+                                completo de sua saúde.</p>
                         </div>
                     </div>
                 </div>
@@ -46,7 +50,7 @@
                                     <label for="filterExamDate"
                                         class="mb-2 block text-sm font-medium text-black dark:text-black">Data de
                                         realização:</label>
-                                    <input type="date"
+                                    <input type="date" max="{{date('Y-m-d')}}"
                                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-cyan-500 focus:ring-cyan-700"
                                         name="filterExamDate" id="filterExamDate" value="{{ $filterExamDate }}">
                                 </div>
@@ -113,15 +117,26 @@
                                         </td>
 
                                         {{-- Visualizar --}}
-                                        <td class="px-6 py-4 text-center">
-                                            <a href="{{ asset('storage/exam_files/' . $exam_detail->file_exam_name) }}"
-                                                target="blank">
-                                                <button type="button"
-                                                    class="mr-2 inline-flex items-center rounded-lg border border-gray-500 p-2.5 text-center font-medium text-gray-500 hover:bg-gray-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-300">
+                                        @if ($exam_detail->file_exam_name === null)
+                                            <td class="px-6 py-4 text-center">
+
+                                                <button type="button" disabled
+                                                    class="mr-2 inline-flex cursor-not-allowed items-center rounded-lg border p-2.5 text-center font-medium focus:outline-none focus:ring-2 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-300 disabled:shadow-none">
                                                     <i class="fa-solid fa-eye"></i>
                                                 </button>
-                                            </a>
-                                        </td>
+
+                                            </td>
+                                        @else
+                                            <td class="px-6 py-4 text-center">
+                                                <a href="{{ asset('storage/exam_files/' . $exam_detail->file_exam_name) }}"
+                                                    target="blank">
+                                                    <button type="button"
+                                                        class="mr-2 inline-flex items-center rounded-lg border border-gray-500 p-2.5 text-center font-medium text-gray-500 hover:bg-gray-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-300">
+                                                        <i class="fa-solid fa-eye"></i>
+                                                    </button>
+                                                </a>
+                                            </td>
+                                        @endif
 
                                         <!-- Editar -->
                                         <td class="px-6 py-4 text-center">
@@ -147,7 +162,7 @@
                         </table>
                     </div>
 
-                    <div class="m-auto w-4/5 py-2">
+                    <div class="m-auto w-4/5 py-2 mt-10">
                         <p class="mr-2 mb-5 text-lg font-bold">
                             Gostaria de fazer um novo cadastro de Exame?
                         </p>
