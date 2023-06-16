@@ -66,6 +66,26 @@
     width: calc(100% + 1.3px);
 }
 
+.custom-shape-divider-top-1686932932 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1686932932 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 79px;
+}
+
+.custom-shape-divider-top-1686932932 .shape-fill {
+    fill: #C9E4E5;
+}
+
 /* Respulsividade do Blob */
 @media(max-width:1200px) {
     .blob-maker img {

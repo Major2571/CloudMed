@@ -9,13 +9,12 @@
         <div class="relative -z-10 mt-[-6em] bg-[#c9e4e5] py-60">
             <div class="px-72 text-center">
                 <h1
-                    class="text-grey-900 m-auto mb-5 block w-3/5 border-b-4 border-[#FE6767] pb-5 text-5xl font-bold leading-tight drop-shadow-lg">
-                    Lorem </h1>
-                <p class="mt-7 block text-2xl leading-tight text-gray-800 drop-shadow-lg"> Lorem, ipsum dolor sit amet
-                    consectetur adipisicing elit. Dolor ex consequuntur corporis aliquid quos
-                    deleniti, rerum perferendis quam reiciendis dicta, temporibus ab animi eveniet pariatur commodi.
-                    Aspernatur
-                    laboriosam laborum voluptate. </p>
+                    class="text-grey-900 m-auto mb-5 block w-3/5 border-b-4 border-[#FE6767] pb-5 text-4xl font-bold leading-tight drop-shadow-lg">
+                    Potencialize seu Bem-Estar
+                </h1>
+                <p class="mt-7 block text-xl leading-tight text-gray-800 drop-shadow-lg px-10">
+                    Imagine ter todo o seu histórico médico ao seu alcance, organizado e seguro, pronto para ser acessado em um instante. Com o Cloud Med, isso é uma realidade. Nossa plataforma é uma solução completa para o gerenciamento de informações médicas, desde o cadastro de exames e vacinas até o registro de suas informações clínicas mais importantes. Simplificamos o processo para você, para que possa tomar decisões informadas sobre sua saúde.
+                </p>
             </div>
             <div class="polygon-services">
                 <div
@@ -176,18 +175,14 @@
 
     </section>
 
-    <section class="service-join-us w-full mt-32">
+    <section class="service-join-us mt-32 w-full">
         <div class="m-auto w-2/3 text-center">
-            <h1>Junte-se a nós!</h1>
-            <p class="m-auto mb-10 w-2/3">
-                Imagine poder acessar todas as informações relevantes sobre sua saúde com apenas alguns cliques! Não perca
-                mais tempo procurando por exames antigos ou informações médicas espalhadas em diferentes lugares. Garantimos
-                a segurança e privacidade das suas informações. Escolha nossa plataforma e tenha mais controle e organização
-                sobre sua saúde!
-
+            <h1>Não perca tempo!</h1>
+            <p class="m-auto mb-10 w-2/3 text-lg">
+                Não se contente com soluções antiquadas e ineficientes. Com nossa plataforma, você terá a facilidade de acesso a todas as informações médicas que precisa, quando precisa. Não importa se você está em uma consulta médica, viajando ou simplesmente deseja ter um controle maior sobre sua saúde, o Cloud Med está aqui para oferecer uma experiência única e transformadora.
             </p>
             <a href="/register"
-                class="inline-flex items-center rounded-md bg-[#ff6666] px-3 py-2 text-center text-sm font-medium text-white hover:bg-[#a33535] focus:outline-none focus:ring-2 focus:ring-gray-300">
+                class="inline-flex items-center rounded-md bg-[#ff6666] px-5 py-2 text-center font-medium text-white hover:bg-[#a33535] focus:outline-none focus:ring-2 focus:ring-gray-300">
                 Cadastre-se agora mesmo
                 <div class="ml-2 text-base">
                     <i class="fa-solid fa-arrow-right"></i>
@@ -196,6 +191,4 @@
             <div><img src="{{ url('assets/img/svg/imgLastSecJoinUs.svg') }}" alt="" class="m-auto w-2/3"></div>
         </div>
     </section>
-
-    <x-btn-toTop />
 @endsection
