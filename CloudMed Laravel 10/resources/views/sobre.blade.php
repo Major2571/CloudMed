@@ -57,7 +57,7 @@
                         <img class="h-30 my-5 w-28 rounded-full shadow-lg"
                             src="https://avatars.githubusercontent.com/u/101678614?v=4" />
                         <h5 class="mb-1 text-2xl font-bold text-gray-900">Andressa Cavalcante</h5>
-                        <span class="text-gray-500 dark:text-gray-400">Lorem</span>
+                        <span class="text-gray-500 dark:text-gray-400">Desenvolvedora Back-End</span>
                         <div class="mt-4 flex space-x-3 md:mt-6">
                             <a href="https://github.com/ddcrm"
                                 class="mr-2 inline-flex items-center text-5xl hover:text-[3.1em] hover:text-gray-700">
@@ -74,7 +74,7 @@
                 <div class="w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow">
                     <div class="flex flex-col items-center pb-10">
                         <img class="h-30 my-5 w-28 rounded-full shadow-lg"
-                            src="" />
+                            src="assets/img/icon/icon-ester.png" />
                         <h5 class="mb-1 text-2xl font-bold text-gray-900">Ester Moura</h5>
                         <span class="text-gray-500 dark:text-gray-400">Lorem</span>
                         <div class="mt-4 flex space-x-3 md:mt-6">
