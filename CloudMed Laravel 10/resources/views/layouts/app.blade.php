@@ -60,10 +60,15 @@
         <div class="mx-auto w-full max-w-screen-xl p-4 md:py-4">
             <hr class="my-6 border-cyan-700 sm:mx-auto lg:my-5" />
             <div class="flex justify-between items-center py-5">
-                <span class="block text-sm text-gray-500 sm:text-center"> Copyright &copy; 2023, CloudMed. All Rights
+                <div class="footer-img block w-[7%] text-gray-500 sm:text-right">
+                    <a href="/">
+                        <img src="{{ url('assets/img/logo.png') }}" alt="logo">
+                    </a>
+                </div>
+                <span class="block text-sm text-gray-500 sm:text-center"> Copyright &copy; 2023, CloudMed. <br>All Rights
                     Reserved.</span>
                 <div class="block text-sm text-gray-500 sm:text-right"> 
-                    <span> Dúvidas ou sugestões? </span>
+                    <span> Dúvidas ou sugestões? </span> <br>
                     <a href="#" class="text-cyan-800 font-medium">Entre em Contato</a>
                 </div>
             </div>

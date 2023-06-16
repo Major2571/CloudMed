@@ -83,7 +83,7 @@
                 </div>
                 <div>
                     <p>Na área do perfil do usuário, você pode adicionar e atualizar suas informações clínicas, incluindo
-                        histórico médico, medicamentos de uso contínuo, doenças crônicas e allergies.
+                        histórico médico, medicamentos de uso contínuo, doenças crônicas e alergias
                     </p>
                 </div>
             </div>
@@ -138,7 +138,4 @@
 
         </div>
     </section>
-
-
-    <x-btn-toTop />
 @endsection

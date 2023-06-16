@@ -69,7 +69,8 @@
 
     @yield('contentMain')
 
-
+    <x-btn-toTop />
+    
     <footer class="index">
 
         <img src="{{ url('assets/img/logo.png') }}" alt="logo">

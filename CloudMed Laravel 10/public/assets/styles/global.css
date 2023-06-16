@@ -112,6 +112,20 @@ footer.index ul {
     line-height: 2em;
 }
 
+footer.index a {
+    text-decoration: none;
+    color: #272626;
+}
+footer.index h4 {
+    text-decoration: none;
+    color: #272626;
+    font-weight: 800;
+}
+
+footer.index a:hover {
+    color: #00535B;
+}
+
 footer.index img {
     max-width: 10em;
 }

@@ -11,14 +11,14 @@
 }
 
 .section-one .main-top button {
-    background-color: var(--azulClaro);
+    background-color: #178181;
     border: none;
     margin-top: 1em;
 }
 
 .section-one .main-top button:hover {
     transition: all .3s ease-in-out;
-    background-color: #36a598;
+    background-color: #0c6868;
 }
 
 .join-us button {
@@ -39,8 +39,7 @@
 }
 
 .login .btnLogin {
-    text-transform: uppercase;
-    background-color: var(--btnLogin);
+    background-color: #1e6a6a;
 }
 
 :where(.nav-menu, .main-top, .join-us, .login) button {

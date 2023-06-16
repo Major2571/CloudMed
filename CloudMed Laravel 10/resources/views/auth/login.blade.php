@@ -15,8 +15,7 @@
 
                 <form method="POST" action="{{ route('login') }}" id="login-form">
                     @csrf
-                    <div class="">
-
+                    <div>
                         <div class="mb-6">
                             <x-input-label for="email" :value="__('Email')" />
                             <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus

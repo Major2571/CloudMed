@@ -4,10 +4,10 @@
 
 @section('conteudo')
     <div class="profile-forms block">
-        <div class="">
+        <div>
             @include('profile.partials.update-password-form')
         </div>
-        <div class="">
+        <div>
             @include('profile.partials.delete-user-form')
         </div>
     </div>

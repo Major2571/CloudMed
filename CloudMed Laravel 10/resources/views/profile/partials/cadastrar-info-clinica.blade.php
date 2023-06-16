@@ -2,7 +2,6 @@
     @csrf
 
     <div class="grid gap-x-5 md:grid-cols-2">
-
         <div class="mb-3">
             <div class="relative w-full">
                 <label for="blood_type" class="mb-2 block font-medium text-gray-900"> Tipo
@@ -64,7 +63,7 @@
                 <x-input-label for="allergies" :value="__('Alergias:')" />
                 <textarea id="allergies" name="allergies" rows="4"
                     class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-cyan-700 focus:ring-cyan-700"
-                    placeholder="Escreva suas principais allergies..."></textarea>
+                    placeholder="Escreva suas principais alergias..."></textarea>
             </div>
         </div>
 
