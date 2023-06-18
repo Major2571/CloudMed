@@ -28,14 +28,18 @@ class ExamsController extends Controller
         $exam = Exams::where('id_user', $userId)->orderBy('created_at', 'desc');
 
         // Apply filters to the query if provided
-        $filterExamDate = $request->input('filterExamDate');
-        if ($filterExamDate) {
-            $exam->whereDate('exam_date', $filterExamDate);
-        }
-
-        $filterMedicalSpecialty = $request->input('filterMedicalSpecialty');
+        $filterMedicalSpecialty = $request->filterMedicalSpecialty;
         if ($filterMedicalSpecialty) {
             $exam->where('id_medical_specialty', $filterMedicalSpecialty);
+        }
+        
+        $order = $request->get('order');
+        if($order){
+            if ($order == 'asc') {
+                $exam = Exams::where('id_user', $userId)->orderBy('exam_date', 'asc');
+            } else {
+                $exam = Exams::where('id_user', $userId)->orderBy('exam_date', 'desc');
+            }
         }
 
         // Execute the query and retrieve the filtered exams
@@ -46,7 +50,6 @@ class ExamsController extends Controller
             'user.exams.indexExams',
             compact(
                 'exam',
-                'filterExamDate',
                 'filterMedicalSpecialty',
                 'medical_specialtys'
             )
@@ -78,13 +81,17 @@ class ExamsController extends Controller
         // Create a new instance of Exames model
         $exams = new Exams();
 
+        // Assign the current user's ID to the model
+        $user = auth()->user();
+        $exams->id_user = $user->id;
+
         // Assign values from the request inputs to the model attributes
-        $exams->id_medical_specialty = $request->input('medical_specialty');
-        $exams->id_uf = $request->input('uf');
-        $exams->exam_title = $request->input('name');
-        $exams->exam_date = $request->input('exam_date');
-        $exams->institution = $request->input('local');
-        $exams->city = $request->input('city');
+        $exams->id_medical_specialty = $request->medical_specialty;
+        $exams->id_uf = $request->uf;
+        $exams->exam_title = $request->name;
+        $exams->exam_date = $request->exam_date;
+        $exams->institution = $request->local;
+        $exams->city = $request->city;
 
         // Save the Files
         if ($request->hasFile('arquivo')) {
@@ -94,23 +101,11 @@ class ExamsController extends Controller
             $exams->file_exam_name = $fileName;
         }
 
-        // Assign the current user's ID to the model
-        $user = auth()->user();
-        $exams->id_user = $user->id;
-
         // Save the model to the database
         $exams->save();
 
         // Redirect the user to the 'myExams' route
         return redirect()->route('myExams');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Exams $exams, $id)
-    {
-        // 
     }
 
     /**
@@ -145,12 +140,12 @@ class ExamsController extends Controller
         $exam = Exams::FindOrFail($id);
 
         // Update the Exames model with the input values
-        $exam->id_medical_specialty = $request->input('medical_specialty');
-        $exam->id_uf = $request->input('uf');
-        $exam->exam_title = $request->input('name');
-        $exam->exam_date = $request->input('exam_date');
-        $exam->institution = $request->input('local');
-        $exam->city = $request->input('city');
+        $exam->id_medical_specialty = $request->medical_specialty;
+        $exam->id_uf = $request->uf;
+        $exam->exam_title = $request->name;
+        $exam->exam_date = $request->exam_date;
+        $exam->institution = $request->local;
+        $exam->city = $request->city;
 
         // Replace the file if a new file is uploaded
         if ($request->hasFile('arquivo')) {

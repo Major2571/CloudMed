@@ -10,14 +10,15 @@ class ClinicalInformationController extends Controller
 {
     public function index()
     {
+        // Get the authenticated user's ID
         $userId = Auth::user()->id;
+
+        // Retrieve the ClinicalInformation records for the user
         $clinicalInfo = ClinicalInformation::where('id_user', $userId)->get();
 
         return view(
             'profile.infoClinicas',
-            compact(
-                'clinicalInfo',
-            )
+            compact('clinicalInfo')
         );
     }
 
@@ -25,39 +26,41 @@ class ClinicalInformationController extends Controller
     {
         $clinicalInfo = new ClinicalInformation();
 
-        $clinicalInfo->id_user = $request->id_user;
-        $clinicalInfo->blood_type = $request->input('blood_type');
-        $clinicalInfo->is_donor = $request->input('is_donor');
-        $clinicalInfo->height = $request->input('height');
-        $clinicalInfo->weight = $request->input('weight');
-        $clinicalInfo->allergies = $request->input('allergies');
-
+        // Get the authenticated user
         $user = auth()->user();
         $clinicalInfo->id_user = $user->id;
 
+        // Set the clinical information from the form input
+        $clinicalInfo->blood_type = $request->blood_type;
+        $clinicalInfo->is_donor = $request->is_donor;
+        $clinicalInfo->height = $request->height;
+        $clinicalInfo->weight = $request->weight;
+        $clinicalInfo->allergies = $request->allergies;
+
+        // Save the clinical information record
         $clinicalInfo->save();
 
         return redirect()->route('infoClinicas');
-
     }
 
     public function update(Request $request, $id)
     {
-        $clinicalInfo = ClinicalInformation::FindOrFail($id);
+        $clinicalInfo = ClinicalInformation::findOrFail($id);
 
-        $clinicalInfo->id_user = $request->id_user;
-        $clinicalInfo->blood_type = $request->input('blood_type');
-        $clinicalInfo->is_donor = $request->input('is_donor');
-        $clinicalInfo->height = $request->input('height');
-        $clinicalInfo->weight = $request->input('weight');
-        $clinicalInfo->allergies = $request->input('allergies');
-
+        // Get the authenticated user
         $user = auth()->user();
         $clinicalInfo->id_user = $user->id;
 
+        // Update the clinical information from the form input
+        $clinicalInfo->blood_type = $request->blood_type;
+        $clinicalInfo->is_donor = $request->is_donor;
+        $clinicalInfo->height = $request->height;
+        $clinicalInfo->weight = $request->weight;
+        $clinicalInfo->allergies = $request->allergies;
+
+        // Save the updated clinical information record
         $clinicalInfo->save();
 
         return redirect()->route('infoClinicas');
     }
-
 }

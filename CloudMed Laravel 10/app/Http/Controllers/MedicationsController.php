@@ -13,20 +13,22 @@ class MedicationsController extends Controller
      */
     public function index(Request $request)
     {
-        // $userId = Auth::user()->id;
-        // $medications = Medications::where('id_user', $userId)->get();
+        // Get the authenticated user's ID
+        $userId = Auth::user()->id;
 
-        $filterMedicationName = $request->input('filterMedicationName');
+        // Get the filter value for medication name
+        $filterMedicationName = $request->filterMedicationName;
 
-        $filterMedicamentionNameResult = Medications::where('id_user', Auth::user()->id);
+        // Query the medications for the user
+        $medications = Medications::where('id_user', $userId);
 
+        // Apply the filter if medication name is provided
         if ($filterMedicationName) {
-            $filterMedicamentionNameResult->where('medication_name', 'like', '%' . $filterMedicationName . '%');
+            $medications->where('medication_name', 'like', '%' . $filterMedicationName . '%');
         }
 
-        $medications = $filterMedicamentionNameResult->get();
-
-        // dd($medications);
+        // Retrieve the medications
+        $medications = $medications->get();
 
         return view('user.medications.indexMedications', compact(
             'medications',
@@ -47,29 +49,24 @@ class MedicationsController extends Controller
      */
     public function store(Request $request)
     {
-        $medication = New Medications();
-        
-        $user = auth()->user();
+        $medication = new Medications();
 
+        // Get the authenticated user
+        $user = auth()->user();
         $medication->id_user = $user->id;
-        $medication->medication_name = $request->input('medicamento');
-        $medication->dosage = $request->input('dosage');
-        $medication->laboratory = $request->input('laboratory');
-        $medication->frequency = $request->input('frequency');
-        $medication->treatment = $request->input('treatment');
-        $medication->observations = $request->input('observations');
-        
+
+        // Set the medication details from the form input
+        $medication->medication_name = $request->medicamento;
+        $medication->dosage = $request->dosage;
+        $medication->laboratory = $request->laboratory;
+        $medication->frequency = $request->frequency;
+        $medication->treatment = $request->treatment;
+        $medication->observations = $request->observations;
+
+        // Save the medication
         $medication->save();
 
         return redirect()->route('myMedications');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Medications $medications)
-    {
-        //
     }
 
     /**
@@ -77,7 +74,8 @@ class MedicationsController extends Controller
      */
     public function edit(Medications $medications, $id)
     {
-        $medications = Medications::FindOrFail($id);
+        // Find the medication by ID
+        $medications = Medications::findOrFail($id);
 
         return view('user.medications.editMedications', compact(
             'medications'
@@ -89,18 +87,22 @@ class MedicationsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $medication = Medications::FindOrFail($id);
-        
-        $user = auth()->user();
+        // Find the medication by ID
+        $medication = Medications::findOrFail($id);
 
+        // Get the authenticated user
+        $user = auth()->user();
         $medication->id_user = $user->id;
-        $medication->medication_name = $request->input('medicamento');
-        $medication->dosage = $request->input('dosage');
-        $medication->laboratory = $request->input('laboratory');
-        $medication->frequency = $request->input('frequency');
-        $medication->treatment = $request->input('treatment');
-        $medication->observations = $request->input('observations');
-        
+
+        // Update the medication details from the form input
+        $medication->medication_name = $request->medicamento;
+        $medication->dosage = $request->dosage;
+        $medication->laboratory = $request->laboratory;
+        $medication->frequency = $request->frequency;
+        $medication->treatment = $request->treatment;
+        $medication->observations = $request->observations;
+
+        // Save the updated medication
         $medication->save();
 
         return redirect()->route('myMedications');
@@ -111,8 +113,9 @@ class MedicationsController extends Controller
      */
     public function destroy(Medications $medications, $id)
     {
-        $medications = new Medications();
-        $medications->where('id', $id)->delete();
+        // Find the medication by ID and delete it
+        Medications::where('id', $id)->delete();
+
         return redirect()->route('myMedications');
     }
 }

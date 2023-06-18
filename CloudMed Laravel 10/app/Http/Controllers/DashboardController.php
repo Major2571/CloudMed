@@ -15,7 +15,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        //Auth::user()->id é usada para obter o id do usuário autenticado, logo, a variável recebe este id, permitindo que o controller faça uso deste valor para realizar consultas e outras operações que sejam específicas para aquele usuário.
         $userId = Auth::user()->id;
 
         // número total de exames cadastrados

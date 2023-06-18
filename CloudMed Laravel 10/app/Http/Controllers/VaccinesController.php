@@ -24,14 +24,21 @@ class VaccinesController extends Controller
         $query = Vaccines::where('id_user', $userId)->orderBy('created_at', 'desc');
         
         // Apply filters to the query if provided
-        $filterNameVaccine = $request->input('filterNameVaccine');
+        $filterNameVaccine = $request->filterNameVaccine;
         if ($filterNameVaccine) {
             $query->where('id_vaccine', $filterNameVaccine);
         }
         
-        $filterDoseType = $request->input('filterDoseType');
+        $filterDoseType = $request->filterDoseType;
         if ($filterDoseType) {
             $query->where('doses', $filterDoseType);
+        }
+
+        $order = $request->get('order');
+        if ($order == 'asc') {
+            $query = Vaccines::where('id_user', $userId)->orderBy('vaccination_date', 'asc');
+        } else {
+            $query = Vaccines::where('id_user', $userId)->orderBy('vaccination_date', 'desc');
         }
 
         // Execute the query and retrieve the filtered vaccines
@@ -83,28 +90,20 @@ class VaccinesController extends Controller
         $vacinne->id_user = $user->id;
 
         // Assign values from request inputs to the model properties
-        $vacinne->id_vaccine = $request->input('vaccine_name');
-        $vacinne->id_uf = $request->input('uf');
-        $vacinne->new_vaccine_name = $request->input('new_vaccine');
-        $vacinne->doses = $request->input('dose_type');
-        $vacinne->vaccination_date = $request->input('vaccination_date');
-        $vacinne->manufacturer = $request->input('manufacturer');
-        $vacinne->lot_number = $request->input('lot_number');
-        $vacinne->city = $request->input('city');
+        $vacinne->id_vaccine = $request->vaccine_name;
+        $vacinne->id_uf = $request->uf;
+        $vacinne->new_vaccine_name = $request->new_vaccine;
+        $vacinne->doses = $request->dose_type;
+        $vacinne->vaccination_date = $request->vaccination_date;
+        $vacinne->manufacturer = $request->manufacturer;
+        $vacinne->lot_number = $request->lot_number;
+        $vacinne->city = $request->city;
 
         // Save the vaccine to the database
         $vacinne->save();
 
         // Redirect the user to the 'myVaccines' route
         return redirect()->route('myVaccines');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Vaccines $vaccines)
-    {
-        //
     }
 
     /**
@@ -141,14 +140,14 @@ class VaccinesController extends Controller
         $vacinne = Vaccines::FindOrFail($id);
 
         // Update the vaccine attributes with the input values from the request
-        $vacinne->id_vaccine = $request->input('vaccine_name');
-        $vacinne->id_uf = $request->input('uf');
-        $vacinne->new_vaccine_name = $request->input('new_vaccine');
-        $vacinne->doses = $request->input('dose_type');
-        $vacinne->vaccination_date = $request->input('vaccination_date');
-        $vacinne->manufacturer = $request->input('manufacturer');
-        $vacinne->lot_number = $request->input('lot_number');
-        $vacinne->city = $request->input('city');
+        $vacinne->id_vaccine = $request->vaccine_name;
+        $vacinne->id_uf = $request->uf;
+        $vacinne->new_vaccine_name = $request->new_vaccine;
+        $vacinne->doses = $request->dose_type;
+        $vacinne->vaccination_date = $request->vaccination_date;
+        $vacinne->manufacturer = $request->manufacturer;
+        $vacinne->lot_number = $request->lot_number;
+        $vacinne->city = $request->city;
 
         // Save the updated vaccine to the database
         $vacinne->save();
