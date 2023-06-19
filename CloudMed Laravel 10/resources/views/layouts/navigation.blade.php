@@ -54,7 +54,7 @@
                                 {{ __('Exame') }}
                             </x-dropdown-link>
                             <x-dropdown-link :href="route('createNewMedications')">
-                                {{ __('Medicamentos') }}
+                                {{ __('Medicamento') }}
                             </x-dropdown-link>
                         </x-slot>
                     </x-dropdown>
