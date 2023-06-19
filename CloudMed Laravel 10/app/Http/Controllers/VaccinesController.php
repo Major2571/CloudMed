@@ -35,10 +35,12 @@ class VaccinesController extends Controller
         }
 
         $order = $request->get('order');
-        if ($order == 'asc') {
-            $query = Vaccines::where('id_user', $userId)->orderBy('vaccination_date', 'asc');
-        } else {
-            $query = Vaccines::where('id_user', $userId)->orderBy('vaccination_date', 'desc');
+        if($order){
+            if ($order == 'asc') {
+                $query = Vaccines::where('id_user', $userId)->orderBy('vaccination_date', 'asc');
+            } else {
+                $query = Vaccines::where('id_user', $userId)->orderBy('vaccination_date', 'desc');
+            }
         }
 
         // Execute the query and retrieve the filtered vaccines
