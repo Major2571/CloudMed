@@ -131,7 +131,7 @@ Certifique-se de ter essas versões ou versões superiores instaladas em seu sis
 Pronto! Agora você pode acessar o CloudMed localmente em `http://localhost:8000`.
 
 
-# Uso do CloudMed
+## Uso do CloudMed
 
 O uso do CloudMed é voltado para indivíduos que desejam centralizar e gerenciar suas informações médicas de forma conveniente e segura. Alguns dos recursos e funcionalidades que os usuários podem encontrar na plataforma incluem:
 
@@ -147,7 +147,7 @@ O uso do CloudMed é voltado para indivíduos que desejam centralizar e gerencia
 
 No geral, o uso do CloudMed simplifica o gerenciamento de informações médicas, oferecendo conveniência, organização e segurança aos usuários. A centralização de exames, vacinas, medicamentos, carteirinhas de convênio, CNS e informações clínicas em uma única plataforma torna mais fácil e eficiente o acesso e o compartilhamento desses dados, contribuindo para uma melhor gestão da saúde pessoal.
 
-# Trabalho de Conclusão de Curso (TCC)
+## Trabalho de Conclusão de Curso (TCC)
 
 O CloudMed foi desenvolvido como um projeto de Trabalho de Conclusão de Curso (TCC), o que significa que ele serviu como uma forma de aplicar os conhecimentos adquiridos durante um curso acadêmico e demonstrar as habilidades técnicas dos desenvolvedores. O objetivo principal do TCC foi criar uma plataforma de gestão de informações médicas para facilitar o armazenamento e o acesso seguro aos dados de saúde dos usuários.
 
