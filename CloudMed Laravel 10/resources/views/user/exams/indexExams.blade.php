@@ -94,7 +94,7 @@
                                 <tr>
                                     <th scope="col" class="px-6 py-3">Nome</th>
                                     <th scope="col" class="px-6 py-3">Especialidade</th>
-                                    <th scope="col" class="px-6 py-3">Data</th>
+                                    <th scope="col" class="px-6 py-3">Data de Realização:</th>
                                     <th scope="col" class="px-6 py-3">Instituição</th>
                                     <th scope="col" class="px-6 py-3">Cidade</th>
                                     <th scope="col" class="px-6 py-3">UF</th>
