@@ -11,17 +11,15 @@ class HealthInsuranceController extends Controller
 {
     public function index()
     {
+        // Get the authenticated user's ID
         $userId = Auth::user()->id;
 
+        // Retrieve the HealthInsurance records for the user
         $healthInsurance = HealthInsurance::where('id_user', $userId)->get();
-
-        // dd($healthInsurance);
 
         return view(
             'profile.cartaoConvenio',
-            compact(
-                'healthInsurance'
-            )
+            compact('healthInsurance')
         );
     }
 
@@ -29,10 +27,14 @@ class HealthInsuranceController extends Controller
     {
         $healthInsuranceInfo = new HealthInsurance();
 
-        $healthInsuranceInfo->id_user = $request->id_user;
-        $healthInsuranceInfo->insurance_number = $request->input('insurance_number');
-        $healthInsuranceInfo->insurance_name = $request->input('insurance_name');
-        $healthInsuranceInfo->insurance_plan = $request->input('insurance_plan');
+        // Get the authenticated user
+        $user = auth()->user();
+        $healthInsuranceInfo->id_user = $user->id;
+
+        // Set the health insurance information from the form input
+        $healthInsuranceInfo->insurance_number = $request->insurance_number;
+        $healthInsuranceInfo->insurance_name = $request->insurance_name;
+        $healthInsuranceInfo->insurance_plan = $request->insurance_plan;
 
         if ($request->hasFile('arquivo')) {
             $file = $request->file('arquivo');
@@ -41,10 +43,7 @@ class HealthInsuranceController extends Controller
             $healthInsuranceInfo->file_insurance_name = $fileName;
         }
 
-
-        $user = auth()->user();
-        $healthInsuranceInfo->id_user = $user->id;
-
+        // Save the health insurance information record
         $healthInsuranceInfo->save();
 
         return redirect()->route('meuConvenio');
@@ -53,12 +52,16 @@ class HealthInsuranceController extends Controller
 
     public function update(Request $request, $id)
     {
-        $healthInsuranceInfo = HealthInsurance::FindOrFail($id);
+        $healthInsuranceInfo = HealthInsurance::findOrFail($id);
 
-        $healthInsuranceInfo->id_user = $request->id_user;
-        $healthInsuranceInfo->insurance_number = $request->input('insurance_number');
-        $healthInsuranceInfo->insurance_name = $request->input('insurance_name');
-        $healthInsuranceInfo->insurance_plan = $request->input('insurance_plan');
+        // Get the authenticated user
+        $user = auth()->user();
+        $healthInsuranceInfo->id_user = $user->id;
+
+        // Update the health insurance information from the form input
+        $healthInsuranceInfo->insurance_number = $request->insurance_number;
+        $healthInsuranceInfo->insurance_name = $request->insurance_name;
+        $healthInsuranceInfo->insurance_plan = $request->insurance_plan;
 
         if ($request->hasFile('arquivo')) {
             if (Storage::exists('public/health_card/insurance_file/' . $healthInsuranceInfo->file_insurance_name)) {
@@ -71,9 +74,7 @@ class HealthInsuranceController extends Controller
             $healthInsuranceInfo->file_insurance_name = $fileName;
         }
 
-        $user = auth()->user();
-        $healthInsuranceInfo->id_user = $user->id;
-
+        // Save the updated health insurance information record
         $healthInsuranceInfo->save();
 
         return redirect()->route('meuConvenio');

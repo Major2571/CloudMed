@@ -14,4 +14,3 @@
 <link rel="stylesheet" href="{{url('assets/styles/views/main-cards.css')}}">
 <link rel="stylesheet" href="{{url('assets/styles/views/main.css')}}">
 <link rel="stylesheet" href="{{url('assets/styles/views/profile.css')}}">
-<link rel="stylesheet" href="{{url('assets/styles/views/sobre.css')}}">

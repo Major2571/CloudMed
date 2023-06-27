@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\UFs;
 use App\Models\UserDetails;
 use App\Models\User;
-use Dotenv\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,18 +15,17 @@ class UserDetailsController extends Controller
      */
     public function index()
     {
+        // Get all UF (states)
         $uf = UFs::all();
 
-        $user = Auth::user();
+        // Get the authenticated user's ID
         $userId = Auth::id();
 
-        $user = User::with('userDetails')->find(Auth::id());
+        // Retrieve the user with their userDetails
+        $user = User::with('userDetails')->find($userId);
 
-        // $userDetails = $user->userDetails;
-        $userDetail = UserDetails::where('id_user', $userId);
-        $userDetail = $userDetail->get();
-
-        // dd($userDetail);
+        // Retrieve the userDetails for the user
+        $userDetail = UserDetails::where('id_user', $userId)->get();
 
         return view(
             'profile.profile',
@@ -44,14 +42,20 @@ class UserDetailsController extends Controller
      */
     public function create()
     {
+        // Get the authenticated user's ID
         $userId = Auth::id();
-        $userDetails = UserDetails::where('id_user', $userId)->first();
 
+        // Check if user already has userDetails and status is true
+        $userDetails = UserDetails::where('id_user', $userId)->first();
         if ($userDetails && $userDetails->status) {
+            // Redirect to the edit profile page
             return redirect()->route('profile.edit', $userDetails->id);
         }
 
+        // Get all UF (states)
         $uf = UFs::all();
+
+        // Get the authenticated user
         $user = Auth::user();
 
         return view(
@@ -69,31 +73,27 @@ class UserDetailsController extends Controller
      */
     public function store(Request $request)
     {
+        // Create a new instance of UserDetails model
         $userDetail = new UserDetails();
+
+        // Get the authenticated user
         $user = auth()->user();
-
         $userDetail->id_user = $user->id;
-        $userDetail->last_name = $request->input('last_name');
-        $userDetail->date_of_birth = $request->input('data_nasc');
-        $userDetail->rg = $request->input('rg');
-        $userDetail->cpf = $request->input('cpf');
-        $userDetail->phone = $request->input('phone');
-        $userDetail->city = $request->input('city');
-        $userDetail->id_uf = $request->input('uf');
 
+        // Set the user details from the form input
+        $userDetail->last_name = $request->last_name;
+        $userDetail->date_of_birth = $request->data_nasc;
+        $userDetail->rg = $request->rg;
+        $userDetail->cpf = $request->cpf;
+        $userDetail->phone = $request->phone;
+        $userDetail->city = $request->city;
+        $userDetail->id_uf = $request->uf;
         $userDetail->status = true;
 
+        // Save the user details
         $userDetail->save();
 
         return redirect()->route('profile');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(UserDetails $UserDetails)
-    {
-        //
     }
 
     /**
@@ -101,8 +101,13 @@ class UserDetailsController extends Controller
      */
     public function edit()
     {
+        // Get the authenticated user
         $user = Auth::user();
+
+        // Retrieve the user's userDetails
         $userDetail = $user->userDetails;
+
+        // Get all UF (states)
         $uf = UFs::all();
 
         return view(
@@ -120,30 +125,25 @@ class UserDetailsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $userDetail = UserDetails::FindOrFail($id);
+        // Find the userDetails by ID
+        $userDetail = UserDetails::findOrFail($id);
 
+        // Get the authenticated user
         $user = auth()->user();
-
         $userDetail->id_user = $user->id;
-        $userDetail->last_name = $request->input('last_name');
-        $userDetail->date_of_birth = $request->input('data_nasc');
-        $userDetail->rg = $request->input('rg');
-        $userDetail->cpf = $request->input('cpf');
-        $userDetail->phone = $request->input('phone');
-        $userDetail->city = $request->input('city');
-        $userDetail->id_uf = $request->input('uf');
 
-        $userDetail->status = true;
+        // Update the user details from the form input
+        $userDetail->last_name = $request->last_name;
+        $userDetail->date_of_birth = $request->data_nasc;
+        $userDetail->rg = $request->rg;
+        $userDetail->cpf = $request->cpf;
+        $userDetail->phone = $request->phone;
+        $userDetail->city = $request->city;
+        $userDetail->id_uf = $request->uf;
 
+        // Save the updated user details
         $userDetail->save();
 
         return redirect()->route('profile');
-    }
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(UserDetails $UserDetails)
-    {
-        //
     }
 }

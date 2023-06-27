@@ -11,94 +11,124 @@
 
                     <div class="bg-[#119abb57] py-10">
                         <div class="title m-auto w-4/5">
-                            <h1 class="text-3xl mb-2"> Minhas Vacinas </h1>
-                            <p> Mantenha-se informado sobre sua imunização. Na seção de Vacinas, você pode acessar, adicionar ou remover vacinas, garantindo que seu histórico de imunização esteja sempre completo e atualizado. Fique protegido contra doenças e tenha um acompanhamento detalhado de suas vacinações.</p>
+                            <h1 class="mb-2 text-3xl"> Minhas Vacinas </h1>
+                            <p> Mantenha-se informado sobre sua imunização. Na seção de Vacinas, você pode acessar,
+                                adicionar ou remover vacinas, garantindo que seu histórico de imunização esteja sempre
+                                completo e atualizado. Fique protegido contra doenças e tenha um acompanhamento
+                                detalhado de suas vacinações.</p>
                         </div>
                     </div>
 
                 </div>
 
                 <div class="py-5">
-                    <div class="title m-auto w-4/5">
-                        <h3 class="mb-1 font-bold">
-                            Filtrar por:
-                        </h3>
+                    <div class="title m-auto flex w-4/5 items-baseline justify-between">
+                        <div>
+                            <h3 class="mb-1 font-bold">
+                                Filtrar por:
+                            </h3>
+                            <form method="GET" action="{{ route('myVaccines') }}" class="w-full font-semibold">
+                                <div class="justufy-center flex items-end">
 
-                        <form method="GET" action="{{ route('myVaccines') }}" class="font-semibold md:w-full lg:w-1/2">
+                                    <div class="mr-4 w-3/4">
+                                        <label for="filterNameVaccine"
+                                            class="mb-2 block text-sm font-medium text-black dark:text-black">
+                                            Nome da Vacina
+                                        </label>
+                                        <select name="filterNameVaccine" id="filterNameVaccine"
+                                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-cyan-500 focus:ring-cyan-700">
+                                            <option value="">Todas</option>
+                                            @foreach ($nameVaccines as $name)
+                                                <option value="{{ $name->id }}"
+                                                    {{ $filterNameVaccine == $name->id ? 'selected' : '' }}>
+                                                    {{ $name->name_vaccine }}
+                                                </option>
+                                            @endforeach
+                                            <option value="0">Outras</option>
+                                        </select>
+                                    </div>
 
-                            <div class="justufy-center flex items-end">
+                                    <div class="mr-1 w-3/5">
+                                        <label for="filterDoseType"
+                                            class="mb-2 block text-sm font-medium text-black dark:text-black">Tipo de
+                                            Dose</label>
+                                        <select name="filterDoseType" id="filterDoseType"
+                                            class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-cyan-500 focus:ring-cyan-700">
 
-                                <div class="mr-4 w-3/4">
-                                    <label for="filterNameVaccine"
-                                        class="mb-2 block text-sm font-medium text-black dark:text-black">
-                                        Nome da Vacina
-                                    </label>
-                                    <select name="filterNameVaccine" id="filterNameVaccine"
-                                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-cyan-500 focus:ring-cyan-700">
-                                        <option value="">Todas</option>
-                                        @foreach ($nameVaccines as $name)
-                                            <option value="{{ $name->id }}"
-                                                {{ $filterNameVaccine == $name->id ? 'selected' : '' }}>
-                                                {{ $name->name_vaccine }}
+                                            <option value="">Todas</option>
+                                            <option value="Dose Única"
+                                                {{ $filterDoseType == 'Dose Única' ? 'selected' : '' }}>
+                                                Dose Única
                                             </option>
-                                        @endforeach
-                                        <option value="0">Outras</option>
-                                    </select>
+                                            <option value="Primeira Dose"
+                                                {{ $filterDoseType == 'Primeira Dose' ? 'selected' : '' }}>
+                                                Primeira Dose
+                                            </option>
+                                            <option value="Segunda Dose"
+                                                {{ $filterDoseType == 'Segunda Dose' ? 'selected' : '' }}>
+                                                Segunda Dose
+                                            </option>
+                                            <option value="Terceira Dose"
+                                                {{ $filterDoseType == 'Terceira Dose' ? 'selected' : '' }}>
+                                                Terceira Dose
+                                            </option>
+                                            <option value="Quarta Dose"
+                                                {{ $filterDoseType == 'Quarta Dose' ? 'selected' : '' }}>
+                                                Quarta Dose
+                                            </option>
+                                            <option value="Reforco"
+                                                {{ $filterDoseType == 'Reforco' ? 'selected' : '' }}>
+                                                Reforço
+                                            </option>
+
+                                            <option value="Primeiro Reforço"
+                                                {{ $filterDoseType == 'Primeiro Reforço' ? 'selected' : '' }}>
+                                                Primeiro Reforço
+                                            </option>
+                                            <option value="Segundo Reforço"
+                                                {{ $filterDoseType == 'Segundo Reforço' ? 'selected' : '' }}>
+                                                Segundo Reforço
+                                            </option>
+
+                                        </select>
+                                    </div>
+
+                                    <button type="submit"
+                                        class="ml-2 rounded-lg border border-cyan-700 bg-cyan-600 py-2 px-2.5 text-white hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-300">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <span class="sr-only">Search</span>
+                                    </button>
                                 </div>
+                            </form>
+                        </div>
 
-                                <div class="mr-1 w-3/5">
-                                    <label for="filterDoseType"
-                                        class="mb-2 block text-sm font-medium text-black dark:text-black">Tipo de
-                                        Dose</label>
-                                    <select name="filterDoseType" id="filterDoseType"
-                                        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-cyan-500 focus:ring-cyan-700">
+                        <div>
+                            <h3 class="mb-1 font-bold">
+                                Ordernar por:
+                            </h3>
+                            <p class="mb-2 block text-sm font-medium text-black ">Aplicação:</p>
 
-                                        <option value="">Todas</option>
-                                        <option value="Dose Única"
-                                            {{ $filterDoseType == 'Dose Única' ? 'selected' : '' }}>
-                                            Dose Única
-                                        </option>
-                                        <option value="Primeira Dose"
-                                            {{ $filterDoseType == 'Primeira Dose' ? 'selected' : '' }}>
-                                            Primeira Dose
-                                        </option>
-                                        <option value="Segunda Dose"
-                                            {{ $filterDoseType == 'Segunda Dose' ? 'selected' : '' }}>
-                                            Segunda Dose
-                                        </option>
-                                        <option value="Terceira Dose"
-                                            {{ $filterDoseType == 'Terceira Dose' ? 'selected' : '' }}>
-                                            Terceira Dose
-                                        </option>
-                                        <option value="Quarta Dose"
-                                            {{ $filterDoseType == 'Quarta Dose' ? 'selected' : '' }}>
-                                            Quarta Dose
-                                        </option>
-                                        <option value="Reforco" {{ $filterDoseType == 'Reforco' ? 'selected' : '' }}>
-                                            Reforço
-                                        </option>
-
-                                        <option value="Primeiro Reforço"
-                                            {{ $filterDoseType == 'Primeiro Reforço' ? 'selected' : '' }}>
-                                            Primeiro Reforço
-                                        </option>
-                                        <option value="Segundo Reforço"
-                                            {{ $filterDoseType == 'Segundo Reforço' ? 'selected' : '' }}>
-                                            Segundo Reforço
-                                        </option>
-
-                                    </select>
-                                </div>
-
-                                <button type="submit"
-                                    class="ml-2 rounded-lg border border-cyan-700 bg-cyan-600 py-2 px-2.5 text-white hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-300">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                    <span class="sr-only">Search</span>
+                            <a href="{{ route('myVaccines', ['order' => 'desc']) }}">
+                                <button type="button"
+                                    class="inline-flex content-center items-center rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                    <div class="mr-2 flex">
+                                        <i class="fa-solid fa-arrow-up"></i>
+                                    </div>
+                                    Mais Recente
                                 </button>
-                            </div>
-                        </form>
-
+                            </a>
+                            <a href="{{ route('myVaccines', ['order' => 'asc']) }}">
+                                <button type="button"
+                                    class="inline-flex content-center items-center rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                    <div class="mr-2 flex">
+                                        <i class="fa-solid fa-arrow-down"></i>
+                                    </div>
+                                    Mais Antiga
+                                </button>
+                            </a>
+                        </div>
                     </div>
+
                 </div>
 
                 @if ($vaccines->isEmpty())

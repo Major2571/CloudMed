@@ -25,17 +25,18 @@
                         </h3>
 
                         <form method="GET" action="{{ route('myMedications') }}"
-                            class="font-semibold md:w-full lg:w-1/2">
+                            class="font-semibold md:w-full lg:w-1/2 my-2">
 
                             <div class="justufy-center flex items-end">
 
                                 <div class="mr-1 w-3/5">
-                                    <label for="filterMedicationName"
+                                    {{-- <label for="filterMedicationName"
                                         class="mb-2 block text-sm font-medium text-black dark:text-black">Nome do
-                                        Medicamento:</label>
+                                        Medicamento:</label> --}}
                                     <input type="text"
                                         class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-cyan-500 focus:ring-cyan-700"
                                         name="filterMedicationName" id="filterMedicationName"
+                                        placeholder="Nome do medicamento"
                                         value="{{ $filterMedicationName }}">
                                 </div>
 

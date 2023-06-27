@@ -11,14 +11,15 @@ class CardSUSController extends Controller
 {
     public function index()
     {
+        // Get the authenticated user's ID
         $userId = Auth::user()->id;
+
+        // Retrieve the CardSUS records for the user
         $sus = CardSUS::where('id_user', $userId)->get();
 
         return view(
             'profile.cartaoSus',
-            compact(
-                'sus'
-            )
+            compact('sus')
         );
     }
 
@@ -26,12 +27,12 @@ class CardSUSController extends Controller
     {
         $cardSUS = new CardSUS();
 
-        $cardSUS->id_user = $request->id_user;
-
+        // Get the authenticated user
         $user = auth()->user();
         $cardSUS->id_user = $user->id;
-        
-        $cardSUS->number_cardSUS = $request->input('number_cardSUS');
+
+        // Set the cardSUS number from the form input
+        $cardSUS->number_cardSUS = $request->number_cardSUS;
 
         if ($request->hasFile('arquivo')) {
             $file = $request->file('arquivo');
@@ -40,6 +41,7 @@ class CardSUSController extends Controller
             $cardSUS->file_cardSUS_name = $fileName;
         }
 
+        // Save the cardSUS record
         $cardSUS->save();
 
         return redirect()->route('meuSus');
@@ -47,12 +49,14 @@ class CardSUSController extends Controller
 
     public function update(Request $request, $id)
     {
-        $cardSUS = CardSUS::FindOrFail($id);
+        $cardSUS = CardSUS::findOrFail($id);
 
+        // Get the authenticated user
         $user = auth()->user();
         $cardSUS->id_user = $user->id;
 
-        $cardSUS->number_cardSUS = $request->input('number_cardSUS');
+        // Set the cardSUS number from the form input
+        $cardSUS->number_cardSUS = $request->number_cardSUS;
 
         if ($request->hasFile('arquivo')) {
             if (Storage::exists('public/health_card/card_sus_file/' . $cardSUS->file_cardSUS_name)) {
@@ -65,6 +69,7 @@ class CardSUSController extends Controller
             $cardSUS->file_cardSUS_name = $fileName;
         }
 
+        // Save the updated cardSUS record
         $cardSUS->save();
 
         return redirect()->route('meuSus');
