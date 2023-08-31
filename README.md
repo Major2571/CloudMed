@@ -53,7 +53,7 @@ Certifique-se de ter essas versões ou versões superiores instaladas em seu sis
 &nbsp;&nbsp; Clone o repositório do projeto em sua máquina local usando o comando abaixo.
 
 ```bash
-    git clone https://github.com/Major2571/WebApp-TCC.git
+    git clone https://github.com/Major2571/CloudMed.git
 ```
    
 &nbsp;&nbsp; Isso criará uma cópia local do código-fonte do projeto.
