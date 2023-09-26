@@ -1,7 +1,7 @@
 
 # CloudMed
 
-Cloud Med é uma plataforma de gestão e gerenciamento de informações médicas, projetada para facilitar o armazenamento e o acesso seguro aos seus dados de saúde. Com o Cloud Med, você pode centralizar seu histórico médico, realizar o upload de exames, registrar vacinas, acompanhar medicamentos e muito mais, tudo em um só lugar.
+Cloud Med é uma plataforma de gestão e gerenciamento de informações médicas, projetada para facilitar o armazenamento e o acesso seguro aos seus dados de saúde. Com o CloudMed, você pode centralizar seu histórico médico, realizar o upload de exames, registrar vacinas, acompanhar medicamentos e muito mais, tudo em um só lugar.
 
 &nbsp;
 
@@ -13,8 +13,8 @@ Cloud Med é uma plataforma de gestão e gerenciamento de informações médicas
 &nbsp;
 &nbsp;
 
-## Design:     
-[<img src='https://img.shields.io/badge/figma-0D1117.svg?style=for-the-badge&logo=figma&logoColor=white' align="center">](https://www.figma.com/file/BDAuXVC40VFH11sySz9PUy/WebApp-TCC?node-id=480%3A2&t=bA80zUyv2VS2Tb31-1) 
+## Design e Screenshots:     
+[<img src='https://img.shields.io/badge/figma-0D1117.svg?style=for-the-badge&logo=figma&logoColor=white' align="center">](https://www.figma.com/file/eWAU1WDeMBg4i8Pz2dRyOu/CloudMed?type=design&node-id=1%3A3353&mode=design&t=rqA1IoewsNaKKnpn-1) 
 
 ## Tecnologias Utilizadas
 <div>
