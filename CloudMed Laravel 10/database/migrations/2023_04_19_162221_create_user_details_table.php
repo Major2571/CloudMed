@@ -12,15 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('user_details', function (Blueprint $table) {
-            
             $table->id();
-
-            $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-
-            $table->integer('id_uf')->unsigned()->nullable();
-            $table->foreign('id_uf')->references('id')->on('uf')->onDelete('cascade');
-
+            $table->integer('id_user')->index();
+            $table->integer('id_uf')->index();
             $table->string('last_name')->nullable();
             $table->date('date_of_birth')->nullable();
             $table->string('rg')->nullable();
@@ -28,8 +22,6 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('phone')->nullable();
             $table->boolean('status');
-
-
             $table->timestamps();
         });
     }

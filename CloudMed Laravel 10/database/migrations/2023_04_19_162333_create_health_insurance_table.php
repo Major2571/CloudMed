@@ -12,19 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('health_insurance', function (Blueprint $table) {
-
             $table->id('id');
-
-            $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-            
+            $table->integer('id_user')->index();
             $table->string('insurance_number')->nullable();
             $table->string('insurance_name')->nullable();
             $table->string('insurance_plan')->nullable();
             $table->string('file_insurance_name')->nullable();
-
             $table->timestamps();
-
         });
     }
 

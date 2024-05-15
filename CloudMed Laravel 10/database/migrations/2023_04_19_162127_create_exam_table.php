@@ -11,25 +11,15 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('exam', function (Blueprint $table) {
-
             $table->id();
-
-            $table->integer('id_user')->unsigned()->nullable();
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-
-            $table->integer('id_uf')->unsigned()->nullable();
-            $table->foreign('id_uf')->references('id')->on('uf')->onDelete('cascade');
-
-            $table->integer('id_medical_specialty')->unsigned()->nullable();
-            $table->foreign('id_medical_specialty')->references('id')->on('medical_specialty')->onDelete('cascade');
-
+            $table->integer('id_user')->index();;
+            $table->integer('id_uf')->index();;
+            $table->integer('id_medical_specialty')->index();;
             $table->string('exam_title')->nullable();
             $table->date('exam_date')->nullable();
             $table->string('institution')->nullable();
             $table->string('city')->nullable();
-
             $table->string('file_exam_name')->nullable();
-
             $table->timestamps();
 
         });

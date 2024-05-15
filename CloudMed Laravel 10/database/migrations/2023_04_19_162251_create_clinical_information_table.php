@@ -12,20 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('clinical_information', function (Blueprint $table) {
-
             $table->id('id');
-
-            $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-
+            $table->integer('id_user')->index();
             $table->string('height')->nullable();
             $table->string('weight')->nullable();
             $table->string('is_donor')->nullable();
             $table->string('blood_type')->nullable();
             $table->text('allergies')->nullable();
-            
             $table->timestamps();
-
         });
     }
 

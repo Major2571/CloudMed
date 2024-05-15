@@ -12,15 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('card_sus', function (Blueprint $table) {
-
             $table->id('id');
-            
-            $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-
+            $table->integer('id_user')->index();
             $table->string('number_cardSUS')->nullable();
             $table->string('file_cardSUS_name')->nullable();
-            
             $table->timestamps();
         });
     }
