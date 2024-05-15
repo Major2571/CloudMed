@@ -43,7 +43,7 @@ Antes de executar o projeto, verifique se você possui os seguintes requisitos i
 |[Composer](https://getcomposer.org/download/)          |     2.5.x    |
 |[Laravel](https://laravel.com/docs/10.x/configuration) |     10.4.x   |
 |[Node](https://nodejs.org/en)                          |     18.x     |
-|WampServer                                             |              |
+|WampServer / XAMPP*                                    |              |
 
 Certifique-se de ter essas versões ou versões superiores instaladas em seu sistema.
 
@@ -57,6 +57,12 @@ Certifique-se de ter essas versões ou versões superiores instaladas em seu sis
 ```
    
 &nbsp;&nbsp; Isso criará uma cópia local do código-fonte do projeto.
+
+#### 1.1 Utilizando o XAMPP**
+&nbsp;&nbsp; Se você estiver utilizando o XAMPP como seu ambiente de desenvolvimento, recomendamos que você utilize a branch específica para compatibilidade com o XAMPP.
+```bash
+    git checkout branch/xampp-environment
+```
 
  #### 2. Acesse o diretório do projeto
 &nbsp;&nbsp; Certifique-se de estar no diretório correto antes de prosseguir com os próximos passos.
